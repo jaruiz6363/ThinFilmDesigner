@@ -12,6 +12,11 @@ search, needle optimisation and gradual evolution, and read the spectrum. One sh
 It ships with 370 designs rebuilt from 58 published papers, and reproduces the published
 results of over 250 of them.
 
+## Download
+
+**[Download ThinFilmDesigner 1.0.0](https://github.com/jaruiz6363/ThinFilmDesigner/releases/latest)**:
+installers for Windows, macOS (Apple Silicon) and Linux. Pick your platform's file under **Assets**.
+
 ## Documents
 
 | | |
