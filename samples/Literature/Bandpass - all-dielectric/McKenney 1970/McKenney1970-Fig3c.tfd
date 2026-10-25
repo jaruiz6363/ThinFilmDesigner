@@ -1,0 +1,262 @@
+{
+  "Version": 2,
+  "Name": "McKenney1970-Fig3c",
+  "Source": "D. B. McKenney and P. N. Slater, \"Design and Use of Interference Passband Filters with Wide-Angle Lenses for Multispectral Photography,\" Appl. Opt. 9, 2435-2440 (1970). doi:10.1364/AO.9.002435 - Fig. 3 caption, p. 2437 (lambda1 = 0.6580 lambda0, lambda2 = 1.5700 lambda0); structure from Fig. 2 caption",
+  "Notes": "Widest low-pass:low-pass passband filter of Fig. 3, showing the long-wavelength transmission dip of single matching layers\nSpecification: Passband between the reflection bands of stacks at 0.6580 lambda0 and 1.5700 lambda0.\nReported: Fig. 3 curve c: widest passband, roughly lambda0/lambda ~0.68-1.3; text p. 2437: 'the limitation of using only single matching layers can be seen for the widest design, where the long wavelength transmission dip becomes more severe' - the dip near lambda0/lambda ~0.75 falls to roughly 0.6 (read off plot, approximate).\nNotes: Same assumptions as McKenney1970-Fig3a. QWOT at lambda0: stack 1 layers 0.658 (H/2 0.329), stack 2 layers 1.57 (H/2 0.785), M and H' 1.0. 32 layers.\nLayers from Fig. 3 caption, p. 2437 (lambda1 = 0.6580 lambda0, lambda2 = 1.5700 lambda0); structure from Fig. 2 caption; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    553.6
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.30 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater, Appl. Opt. 9, 2435 (1970), Fig. 2 caption: nH = 2.30"
+      }
+    },
+    {
+      "Name": "L n=1.38 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater 1970, Fig. 2 caption: nL = 1.38"
+      }
+    },
+    {
+      "Name": "M n=2.10 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.1,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater 1970, Fig. 2 caption: nM = 2.10"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 19.797217391304354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 39.59443478260871,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 65.99072463768117,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 19.797217391304354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 65.9047619047619,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 47.23652173913044,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 94.47304347826088,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.45507246376815,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 47.23652173913044,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 60.173913043478265,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 553.6,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 395,
+    "To": 925,
+    "Steps": 531,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 553.6
+  }
+}

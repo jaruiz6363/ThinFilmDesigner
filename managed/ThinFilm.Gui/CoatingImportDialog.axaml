@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="using:System"
+        x:Class="ThinFilm.Gui.CoatingImportDialog"
+        Title="Import coating" Width="640" Height="560"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- One coating from a file - a ZEMAX COAT, an Optiland ThinFilmCoating - into the design, in place
+       of its layers. A coating that cannot be imported is listed with the reason, and OK refuses it. -->
+  <DockPanel Margin="16">
+    <TextBlock x:Name="FileText" DockPanel.Dock="Top" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,8"/>
+    <StackPanel DockPanel.Dock="Bottom" Spacing="10" Margin="0,10,0,0">
+      <TextBlock x:Name="ReplaceText" TextWrapping="Wrap" FontSize="11" Foreground="#505050"/>
+      <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+        <Button x:Name="OkButton" Content="Import" IsDefault="True" MinWidth="80"/>
+        <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+      </StackPanel>
+    </StackPanel>
+    <!-- A refused coating's reason goes on its own line and wraps: on one line it was cut off. -->
+    <ListBox x:Name="CoatingList" FontFamily="Consolas,Menlo,monospace">
+      <ListBox.ItemTemplate>
+        <DataTemplate x:DataType="sys:String">
+          <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </DockPanel>
+</Window>

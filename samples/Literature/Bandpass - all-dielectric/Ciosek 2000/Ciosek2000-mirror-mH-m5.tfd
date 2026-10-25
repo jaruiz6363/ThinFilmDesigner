@@ -1,0 +1,142 @@
+{
+  "Version": 2,
+  "Name": "Ciosek2000-mirror-mH-m5",
+  "Source": "J. Ciosek, \"Narrow-band interference filters with unconventional spacer layers,\" Appl. Opt. 39, 135-140 (2000). doi:10.1364/AO.39.000135 - Table 1 (p.136), m = 5; also Fig. 2 curve 5H",
+  "Notes": "Minus-filter subsystem mirror 632.8(0.5H L 0.5H)^5 of the unconventional-spacer filter (NCNBPIF), evaluated at its peak 652.218 nm\nSpecification: Mirror of an unconventional-spacer narrow-band filter; R and reflection phase at 652.218 nm.\nReported: Table 1: at 652.218 nm R2 = 96.1149 %, phase change on reflection phi2 = 238.6 deg (phi1 + phi2 = 360.0 deg with 632.8(0.5L H 0.5L)^5). Fig. 2 plots R and phase 400-1000 nm (curve 5H).\nNotes: Paper notation: 632.8[(0.5H L 0.5H)^5] (11 layers after merging). H = quarter wave of n = 2.25, L = quarter wave of n = 1.45 at reference_nm, no dispersion; n_S = n_0 = 1 (Table 1 footnote, Sec. 3), so incident and substrate are both air. Adjacent layers of the same material in the paper's symbol string are merged into one layer (e.g. ...0.5L)(0.5L... becomes one L), which reproduces the paper's own layer counts (27 in Fig. 3, 30 in Fig. 4). Layers are listed in the order the paper writes the symbol string; the paper's Eq. (4) 'S | ... | P' suggests the string starts at the substrate, but because both outer media are n = 1 and the stack is lossless, R and T do not depend on which side faces the light (only the reflection phase does). Normal incidence. The reflection-phase convention and the side of incidence for phi2 are not stated; R does not depend on the side.\nLayers from Table 1 (p.136), m = 5; also Fig. 2 curve 5H; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 96.1149 % at 652.218 nm; paper R 96.1149 % (Table 1).",
+  "Wavelength": [
+    632.8
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.25 (Ciosek 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.25,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Ciosek, Appl. Opt. 39, 135 (2000), Table 1 footnote and Sec. 3: \"n_H = 2.25 ... without dispersion\""
+      }
+    },
+    {
+      "Name": "L n=1.45 (Ciosek 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Ciosek, Appl. Opt. 39, 135 (2000), Table 1 footnote and Sec. 3: \"n_L = 1.45 without dispersion\""
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 35.15555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.10344827586206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 70.3111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.10344827586206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 70.3111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.10344827586206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 70.3111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.10344827586206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 70.3111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.10344827586206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 35.15555555555555,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 632.8,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 1000,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 632.8
+  }
+}

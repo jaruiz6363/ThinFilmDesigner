@@ -1,0 +1,123 @@
+{
+  "Version": 2,
+  "Name": "Hass1959-Fig18-MgF2-on-Al-1300A",
+  "Source": "G. Hass and R. Tousey, \"Reflecting Coatings for the Extreme Ultraviolet,\" J. Opt. Soc. Am. 49, 593-602 (1959). doi:10.1364/JOSA.49.000593 - Sec. VI p. 601 text and Fig. 18 caption/right panel (Al: n = 0.3, k = 1.0; MgF2: n = 1.6, k = 0; 1300 A); 250 A from Sec. VI p. 600 and Fig. 17",
+  "Notes": "Reflectance-enhancing nonabsorbing overcoat (MgF2, n = 1.6) on opaque aluminium at 1300 A, the calculated case of Fig. 18 (right); thickness set to the 250 A MgF2 used in practice\nSpecification: Maximise normal-incidence reflectance of Al at 1300 A with a dielectric overcoat.\nReported: Fig. 18 right (calculated, normal incidence, 1300 A), R vs optical thickness n*d in waves: uncoated Al R = 55 % (dashed line; exact value from n = 0.3, k = 1.0 is 55.4 %); shallow minimum ~42 % near n*d ~ 0.1 lambda; broad maximum ~71-72 % near n*d ~ 0.33 lambda; back to the uncoated value at n*d = 0.5 lambda. This design (25 nm, n*d = 40 nm = 0.308 lambda at 130 nm) sits near the maximum (~71 %). Independent check by me with the same constants: R = 70.9 % at 25 nm, maximum 71.5 % at n*d = 0.34 lambda (27.6 nm), minimum 41.9 % at n*d = 0.09 lambda.\nNotes: Single film on an opaque substrate (Al treated as semi-infinite, no oxide, as in the paper's calculation). Paper plots the curve against film optical thickness; to reproduce Fig. 18 sweep the MgF2 thickness 0-40.6 nm (0-0.5 lambda at 130 nm). The 25 nm thickness is my choice (the practical 250 A MgF2 coating of Sec. VI) - the figure itself has no single design thickness. Paper notes the measured maximum is higher than calculated because n, k of Al are only approximate.\nLayers from Sec. VI p. 601 text and Fig. 18 caption/right panel (Al: n = 0.3, k = 1.0; MgF2: n = 1.6, k = 0; 1300 A); 250 A from Sec. VI p. 600 and Fig. 17; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 70.9 % at 130 nm; paper R ~71 % (calculated, read from Fig. 18).",
+  "Wavelength": [
+    130
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 n=1.6 at 1300A (Hass 1959)",
+      "N": [
+        1.6
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.6,
+          0
+        ],
+        "MinMicrons": 0.125,
+        "MaxMicrons": 0.135,
+        "Source": "Hass & Tousey 1959, p. 601: 'MgF2 has n=1.6 and k=0' (at 1300 A, Fig. 18)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 25,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Al n=0.3 k=1.0 at 1300A (Hass 1959)",
+    "N": [
+      0.3
+    ],
+    "K": [
+      1
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        0.3,
+        1
+      ],
+      "MinMicrons": 0.125,
+      "MaxMicrons": 0.135,
+      "Source": "Hass & Tousey 1959, p. 601 and Fig. 18 caption: 'aluminum is taken to have n=0.3, and k=1.0' at 1300 A",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 130,
+  "Plot": {
+    "From": 120,
+    "To": 140,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 130
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

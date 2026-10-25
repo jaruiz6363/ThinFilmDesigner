@@ -1,0 +1,1046 @@
+{
+  "Version": 2,
+  "Name": "Gerken2003-optimized-66layer",
+  "Source": "M. Gerken and D. A. B. Miller, \"Multilayer thin-film structures with high spatial dispersion,\" Appl. Opt. 42, 1330-1345 (2003). doi:10.1364/AO.42.001330 - Appendix D, Table 1, 'Section 6' columns (layers 1-66); Sec. 6 text p. 1340; Figs. 9, 10",
+  "Notes": "Numerically optimized nonperiodic SiO2/Ta2O5 stack with a linear spatial shift over ~20 nm around 830 nm (combined penetration-depth and stored-energy dispersion); fabricated and measured\nSpecification: Linearly increasing spatial shift for 20 wavelengths over a 20-nm range around 830 nm, 54 deg, p polarization; impedance matched; layer thickness 57-454 nm\nReported: Total thickness 13.4 um (table sum 13378.5 nm); min layer 57 nm, max 453 nm (text says 454). Fig. 9(b) (with back gold layer, read from plot): shift ~2 um at 821 nm, ~7.5 um at 828 nm, ~15.5 um at 835 nm, ~24 um at 842 nm. Fig. 10 (no gold, measured and calculated): linear shift 820-840 nm, ~0 at 818 to ~21 um at 842 nm.\nNotes: Same order and medium convention as the four-cavity design: Table 1 layer 1 (Ta2O5) is next to the quartz substrate, through which light is incident; kept as layer 1. Exit medium: Fig. 9 calculation includes a back-side gold coating ('reflectance improved to nearly 100 % by a gold layer on the extreme right', thickness and index not given); Fig. 10 calculation and the measurement setup comparison omit it - air is used here. angle_deg = 54 in air; ~32.2 deg inside quartz. Indices assumed constant 2.06 / 1.456.\nLayers from Appendix D, Table 1, 'Section 6' columns (layers 1-66); Sec. 6 text p. 1340; Figs. 9, 10; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours total 13378.5 nm; paper table sum 13378.5 nm (paper: 13.4 um).",
+  "Wavelength": [
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840
+  ],
+  "Materials": [
+    {
+      "Name": "Ta2O5 n=2.06 (Gerken 2003)",
+      "N": [
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.06,
+          0
+        ],
+        "MinMicrons": 0.78,
+        "MaxMicrons": 1,
+        "Source": "Gerken & Miller 2003, Sec. 2 p. 1332: Ta2O5 n = 2.06",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2 n=1.456 (Gerken 2003)",
+      "N": [
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.456,
+          0
+        ],
+        "MinMicrons": 0.78,
+        "MaxMicrons": 1,
+        "Source": "Gerken & Miller 2003, Sec. 2 p. 1332: SiO2 n = 1.456 at 880 nm",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 188,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 276.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 188,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 276.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 188,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 276.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 208,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 380.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 194,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 380.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 218,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 320.3,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 295.4,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 278,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 276.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 453,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 286,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 453,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 263.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 235,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 311,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 245,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 289.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 249,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 276.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 254,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 262.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 258,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 257.9,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 263,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 251.7,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 60,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 241.3,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 58,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 228.8,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 57,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 221.5,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 61,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 219.4,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 66,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 207,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 70,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 199.7,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 75,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 80,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 185.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 84,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 163.3,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 89,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 171.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 93,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 196,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 98,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 164.3,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 98,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 144.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 98,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 205.9,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 98,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 197.6,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 109,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.8,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 104,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 57.2,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 9,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 10,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 11,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 12,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 13,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 14,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 15,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 16,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 17,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 18,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 19,
+      "AngleDegrees": 54
+    },
+    {
+      "Wavelength": 20,
+      "AngleDegrees": 54
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        10
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        11
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        12
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        13
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        14
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        15
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        16
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        17
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        18
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        19
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        20
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 830,
+  "Plot": {
+    "From": 810,
+    "To": 845,
+    "Steps": 201,
+    "Angle": 54,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 830
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": true
+}

@@ -1,0 +1,262 @@
+{
+  "Version": 2,
+  "Name": "McKenney1970-Fig3a",
+  "Source": "D. B. McKenney and P. N. Slater, \"Design and Use of Interference Passband Filters with Wide-Angle Lenses for Multispectral Photography,\" Appl. Opt. 9, 2435-2440 (1970). doi:10.1364/AO.9.002435 - Fig. 3 caption, p. 2437 (lambda1 = 0.7623 lambda0, lambda2 = 1.2785 lambda0); structure from Fig. 2 caption, p. 2436",
+  "Notes": "Narrowest of three low-pass:low-pass passband filters showing how the passband width is set by the two stack wavelengths\nSpecification: Passband between the reflection bands of stacks at 0.7623 lambda0 and 1.2785 lambda0; plotted against lambda0/lambda from 0.6 to 1.4.\nReported: Fig. 3 curve a (calculated, normal incidence): transmittance plotted vs lambda0/lambda; high transmittance (~0.9-1.0) roughly over lambda0/lambda ~0.85-1.15 with steep edges and low T outside, the narrowest of the three (read off a perspective plot, approximate).\nNotes: Fig. 3 says the three filters are of 'the same basic design' as Fig. 2 and differ only in the stack layer thicknesses, so assumed: A (n=1.0) | [H/2 L H/2]^7 at lambda1 | M (n=2.10) quarterwave at lambda0 | [H/2 L H/2]^7 at lambda2 | H' (n=2.30) quarterwave at lambda0 | G (n=1.52), with nH = 2.30, nL = 1.38. Thicknesses are QWOT at reference_nm = lambda0: stack 1 layers 0.7623 (H/2 0.38115), stack 2 layers 1.2785 (H/2 0.63925), M and H' 1.0. lambda0 is not given numerically; 553.6 nm is chosen to match Fig. 2 - with constant indices the response is a function of lambda0/lambda only, so any lambda0 reproduces the figure. band_nm is the plotted range 0.6-1.4 lambda0/lambda converted roughly at 553.6 nm. Not exactly specified by the paper: whether the matching-layer indices were also changed (the text says the required matching indices do not change appreciably with filter width).\nLayers from Fig. 3 caption, p. 2437 (lambda1 = 0.7623 lambda0, lambda2 = 1.2785 lambda0); structure from Fig. 2 caption, p. 2436; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    553.6
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.30 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater, Appl. Opt. 9, 2435 (1970), Fig. 2 caption: nH = 2.30"
+      }
+    },
+    {
+      "Name": "L n=1.38 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater 1970, Fig. 2 caption: nL = 1.38"
+      }
+    },
+    {
+      "Name": "M n=2.10 (McKenney 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.1,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.9,
+        "Source": "McKenney & Slater 1970, Fig. 2 caption: nM = 2.10"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 22.93528695652174,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 45.87057391304348,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.45095652173913,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 22.93528695652174,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 65.9047619047619,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 38.466173913043484,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 76.93234782608697,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.22057971014493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 38.466173913043484,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 60.173913043478265,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 553.6,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 395,
+    "To": 925,
+    "Steps": 531,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 553.6
+  }
+}

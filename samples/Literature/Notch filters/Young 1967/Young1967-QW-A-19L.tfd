@@ -1,0 +1,179 @@
+{
+  "Version": 2,
+  "Name": "Young1967-QW-A-19L",
+  "Source": "L. Young, \"Multilayer Interference Filters with Narrow Stop Bands,\" Appl. Opt. 6, 297-315 (1967). doi:10.1364/AO.6.000297 - Table II Line 16(a)-(e), p. 309; text Sec. VI.F p. 308-309",
+  "Notes": "Uniform quarter-wave stack ABA...A (Sec. IV, Fig. 5) with the same number of layers and the same peak stop-band attenuation as equal-ripple case A, for comparison\nSpecification: Peak attenuation equal to case A (Line 4: 13.59 dB).\nReported: Table II Line 16 (p. 309), case A: n1/n2 = 1.267; bandwidth to first nulls (fractional, in theta/90) 0.26; first attenuation ripple height 1.0 dB; first reflectance ripple height 0.2; peak attenuation designed equal to 13.59 dB (Line 4). Recomputed here with n1, n2 to 3 decimals: 13.41 dB, nulls bandwidth 0.258, first reflectance ripple 0.18 (0.87 dB).\nNotes: 19 layers alternating n1 (odd layers, both outer layers) and n2, all quarter waves at reference_nm (arbitrary 550 nm; the paper uses theta/90). End media n_0 = 1 on both sides (\"n_0 = 1 in each case\"); n1*n2 ~ 1. Normal incidence. Small differences from the printed attenuation come from the 3-digit indices.\nLayers from Table II Line 16(a)-(e), p. 309; text Sec. VI.F p. 308-309; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours 13.41 dB at the centre; paper 13.59 dB, the equal-ripple design it is matched to (indices printed to 3 figures).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "Young1967 QW-A n1=0.890 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.89,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Table II Line 16(a), case A: n1 = 0.890 (n_0 = 1)"
+      }
+    },
+    {
+      "Name": "Young1967 QW-A n2=1.125 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.125,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Table II Line 16(a), case A: n2 = 1.125 (n_0 = 1)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 122.22222222222223,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 154.4943820224719,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 367,
+    "To": 1100,
+    "Steps": 1467,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

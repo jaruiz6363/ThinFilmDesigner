@@ -1,0 +1,127 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gui="clr-namespace:ThinFilm.Gui"
+        xmlns:core="clr-namespace:ThinFilm.Gui.Core;assembly=ThinFilm.Gui.Core"
+        x:Class="ThinFilm.Gui.CoefficientsDialog"
+        Title="Dispersion" Width="820" Height="680" MinWidth="720" MinHeight="600"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- ONE FORM PER DISPERSION MODEL, labelled with the symbols its formula uses, instead of a
+       string of numbers to type in order. Load from library fills the fields from the database;
+       the preview redraws as they change. Modal, and nothing reaches the material until OK. -->
+  <Window.Styles>
+    <Style Selector="Grid.fields > TextBlock, Grid.fields > TextBox, Grid.fields > ComboBox">
+      <Setter Property="Margin" Value="0,0,8,6"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+  </Window.Styles>
+
+  <DockPanel Margin="14">
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8"
+                Margin="0,10,0,0">
+      <TextBlock x:Name="ProblemText" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="560"
+                 Margin="0,0,12,0"/>
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+
+    <StackPanel DockPanel.Dock="Top" Spacing="8">
+      <TextBlock x:Name="TitleText" FontWeight="SemiBold" FontSize="15"/>
+      <!-- A NEW MATERIAL is named here, before it exists; an existing one is renamed in Edit > Materials. -->
+      <StackPanel x:Name="NamePanel" Orientation="Horizontal" Spacing="8" IsVisible="False">
+        <TextBlock Text="Name" VerticalAlignment="Center"/>
+        <TextBox x:Name="NewNameBox" Width="220" Watermark="e.g. Si, ZnSe, HfO2 (Smith 2019)"/>
+      </StackPanel>
+
+      <Grid Classes="fields" ColumnDefinitions="120,180,*">
+        <TextBlock Text="Model"/>
+        <ComboBox Grid.Column="1" x:Name="KindBox" HorizontalAlignment="Stretch">
+          <ComboBoxItem Content="Sellmeier" Tag="SELLMEIER"/>
+          <ComboBoxItem Content="Cauchy" Tag="CAUCHY"/>
+          <ComboBoxItem Content="Table of n, k" Tag="TABLE"/>
+          <ComboBoxItem Content="Constant" Tag="CONSTANT"/>
+        </ComboBox>
+        <TextBlock Grid.Column="2" x:Name="FormulaText" FontFamily="Cambria Math,Times New Roman,serif"
+                   FontSize="14"/>
+      </Grid>
+
+      <!-- The library: any database material's coefficients, copied into these fields. -->
+      <Grid Classes="fields" ColumnDefinitions="120,180,Auto,*">
+        <TextBlock Text="Load from library"/>
+        <ComboBox Grid.Column="1" x:Name="LibraryBox" HorizontalAlignment="Stretch"/>
+        <Button Grid.Column="2" x:Name="LoadButton" Content="Load coefficients" Margin="0,0,8,6"/>
+        <TextBlock Grid.Column="3" FontSize="11" Foreground="#606060" TextWrapping="Wrap"
+                   Text="copies the database material's numbers into this material; the database is not changed"/>
+      </Grid>
+
+      <!-- ===== Sellmeier: rows of terms ===== -->
+      <Grid Classes="fields" x:Name="SellmeierPanel" ColumnDefinitions="120,180,180,*"
+            RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+        <TextBlock Grid.Column="0" Text="term" FontWeight="SemiBold"/>
+        <TextBlock Grid.Column="1" Text="B" FontWeight="SemiBold"/>
+        <TextBlock Grid.Column="2" Text="C (µm²)" FontWeight="SemiBold"/>
+        <TextBlock Grid.Row="1" Text="1"/><TextBox Grid.Row="1" Grid.Column="1" x:Name="B1"/><TextBox Grid.Row="1" Grid.Column="2" x:Name="C1"/>
+        <TextBlock Grid.Row="2" Text="2"/><TextBox Grid.Row="2" Grid.Column="1" x:Name="B2"/><TextBox Grid.Row="2" Grid.Column="2" x:Name="C2"/>
+        <TextBlock Grid.Row="3" Text="3"/><TextBox Grid.Row="3" Grid.Column="1" x:Name="B3"/><TextBox Grid.Row="3" Grid.Column="2" x:Name="C3"/>
+        <TextBlock Grid.Row="4" Text="4"/><TextBox Grid.Row="4" Grid.Column="1" x:Name="B4"/><TextBox Grid.Row="4" Grid.Column="2" x:Name="C4"/>
+        <TextBlock Grid.Row="5" Text="5"/><TextBox Grid.Row="5" Grid.Column="1" x:Name="B5"/><TextBox Grid.Row="5" Grid.Column="2" x:Name="C5"/>
+        <TextBlock Grid.Row="6" Text="6"/><TextBox Grid.Row="6" Grid.Column="1" x:Name="B6"/><TextBox Grid.Row="6" Grid.Column="2" x:Name="C6"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" FontSize="11" Foreground="#606060"
+                   TextWrapping="Wrap" VerticalAlignment="Top"
+                   Text="Leave unused terms empty. Most fits have three."/>
+      </Grid>
+
+      <!-- ===== Cauchy ===== -->
+      <Grid Classes="fields" x:Name="CauchyPanel" ColumnDefinitions="120,180,*" RowDefinitions="Auto,Auto,Auto">
+        <TextBlock Text="A"/><TextBox Grid.Column="1" x:Name="CauchyA"/>
+        <TextBlock Grid.Row="1" Text="B (µm²)"/><TextBox Grid.Row="1" Grid.Column="1" x:Name="CauchyB"/>
+        <TextBlock Grid.Row="2" Text="C (µm⁴)"/><TextBox Grid.Row="2" Grid.Column="1" x:Name="CauchyC"/>
+      </Grid>
+
+      <!-- ===== Constant ===== -->
+      <Grid Classes="fields" x:Name="ConstantPanel" ColumnDefinitions="120,180,*" RowDefinitions="Auto,Auto">
+        <TextBlock Text="n"/><TextBox Grid.Column="1" x:Name="ConstantN"/>
+        <TextBlock Grid.Row="1" Text="k"/><TextBox Grid.Row="1" Grid.Column="1" x:Name="ConstantK"/>
+      </Grid>
+
+      <!-- ===== Table ===== -->
+      <DockPanel x:Name="TablePanel" Height="200">
+        <StackPanel DockPanel.Dock="Right" Spacing="6" Margin="8,0,0,0" Width="170">
+          <Button x:Name="AddRowButton" Content="Add row" HorizontalAlignment="Stretch"/>
+          <Button x:Name="RemoveRowButton" Content="Remove row" HorizontalAlignment="Stretch"/>
+          <TextBlock Text="Import λ n k from a file" FontSize="11" Margin="0,8,0,0"/>
+          <ComboBox x:Name="ImportUnitBox" HorizontalAlignment="Stretch" PlaceholderText="wavelengths in…">
+            <ComboBoxItem Content="wavelengths in µm" Tag="um"/>
+            <ComboBoxItem Content="wavelengths in nm" Tag="nm"/>
+          </ComboBox>
+          <Button x:Name="ImportButton" Content="Import file…" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <DataGrid x:Name="TableGrid" x:DataType="core:TableRowEntry" AutoGenerateColumns="False"
+                  CanUserSortColumns="False" CanUserReorderColumns="False" GridLinesVisibility="All"
+                  HeadersVisibility="Column">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="λ (µm)" Binding="{Binding Wavelength}" Width="*"/>
+            <DataGridTextColumn Header="n" Binding="{Binding N}" Width="*"/>
+            <DataGridTextColumn Header="k" Binding="{Binding K}" Width="*"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </DockPanel>
+
+      <Grid Classes="fields" ColumnDefinitions="120,120,Auto,120,*" RowDefinitions="Auto,Auto">
+        <TextBlock Text="Valid range (µm)"/>
+        <TextBox Grid.Column="1" x:Name="RangeMinBox" Watermark="no lower limit"/>
+        <TextBlock Grid.Column="2" Text="to"/>
+        <TextBox Grid.Column="3" x:Name="RangeMaxBox" Watermark="no upper limit"/>
+        <TextBlock Grid.Row="1" Text="Source"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" x:Name="SourceBox"
+                 Watermark="where the numbers come from: a paper, a catalogue, a measurement"/>
+      </Grid>
+    </StackPanel>
+
+    <DockPanel>
+      <TextBlock DockPanel.Dock="Bottom" x:Name="PreviewNote" FontSize="10" Foreground="#606060"
+                 TextWrapping="Wrap" Margin="0,4,0,0"/>
+      <gui:SpectrumPlot x:Name="Preview" YTitle="n" EmptyText="No preview: the fields do not make a model yet." Margin="0,8,0,0"/>
+    </DockPanel>
+  </DockPanel>
+</Window>

@@ -1,0 +1,81 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.SystemParametersDialog"
+        Title="System Parameters" Width="560" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- MODAL. The dialog holds its own copy of each choice; Apply makes them and stays open, OK
+       makes them and closes, Cancel closes and undoes nothing already applied. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock Text="Length unit (this design)" FontWeight="SemiBold"/>
+    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+               Text="How every length is shown and typed: wavelengths, and physical thicknesses in the layer table, Layer properties and the merit table's limits. Saved with the design; it changes no number the design holds."/>
+    <StackPanel x:Name="UnitChoices" Spacing="4">
+      <RadioButton x:Name="NanometreChoice" GroupName="unit" Content="nanometres (nm)"/>
+      <RadioButton x:Name="MicronChoice" GroupName="unit" Content="micrometres (µm)"/>
+    </StackPanel>
+
+    <Border Height="1" Background="#E0E0E0" Margin="0,4"/>
+
+    <!-- The default thickness unit and the reference wavelength together, as the user asked:
+         QWOT and FWOT mean nothing without the wavelength they are counted at. -->
+    <TextBlock Text="Layer thickness (this design)" FontWeight="SemiBold"/>
+    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+               Text="The unit layers are shown and typed in, unless a layer names its own (Layer properties). QWOT is 4nd/λ and FWOT nd/λ at the reference wavelength, n the layer's own index there."/>
+    <StackPanel x:Name="ThicknessChoices" Spacing="4">
+      <StackPanel Orientation="Horizontal" Spacing="12">
+        <RadioButton x:Name="NmThicknessChoice" GroupName="thickness" Content="physical (nm)"/>
+        <RadioButton x:Name="QwotChoice" GroupName="thickness" Content="QWOT (quarter-wave)"/>
+        <RadioButton x:Name="FwotChoice" GroupName="thickness" Content="FWOT (full-wave)"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="Reference wavelength" VerticalAlignment="Center"/>
+        <TextBox x:Name="ReferenceBox" Width="90"/>
+        <TextBlock x:Name="ReferenceUnitText" VerticalAlignment="Center"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="Maximum for unconstrained layers" VerticalAlignment="Center"/>
+        <TextBox x:Name="MaximumBox" Width="90"/>
+        <TextBlock x:Name="MaximumUnitText" VerticalAlignment="Center"/>
+      </StackPanel>
+      <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+                 Text="The thickest the optimiser may make a layer that has no maximum of its own (Layer properties, Set vary constraints). Unconstrained layers have no minimum but zero."/>
+      <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+                 Text="A new reference keeps every QWOT and FWOT number, so those layers move and the spectrum moves with them. To keep the spectrum instead, choose physical and press Apply, then choose QWOT at the new reference and press OK."/>
+    </StackPanel>
+    <Border Height="1" Background="#E0E0E0" Margin="0,4"/>
+
+    <TextBlock Text="Substrate and angle of incidence (this design)" FontWeight="SemiBold"/>
+    <StackPanel x:Name="SystemChoices" Spacing="6">
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <CheckBox x:Name="BackSurfaceBox" Content="Include the substrate's back surface" VerticalAlignment="Center"/>
+        <TextBlock Text="   Substrate thickness" VerticalAlignment="Center"/>
+        <TextBox x:Name="SubstrateBox" Width="70"/>
+        <TextBlock Text="mm" VerticalAlignment="Center"/>
+      </StackPanel>
+      <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+                 Text="Reflectance and transmittance, and what is built on them (absorptance, OD, the averages), then add the uncoated back surface incoherently, with the incident medium behind it. The thickness matters only when the substrate absorbs. Tan Psi, Psi, Cos Delta, Delta and the phases always describe the coated surface alone."/>
+      <CheckBox x:Name="AngleInAirBox" Content="Angles of incidence are given in air"/>
+      <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+                 Text="Unticked, an angle is the angle in the incident medium itself."/>
+    </StackPanel>
+
+    <Border Height="1" Background="#E0E0E0" Margin="0,4"/>
+
+    <TextBlock Text="Material database (all designs)" FontWeight="SemiBold"/>
+    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+               Text="The file New design and Edit > Materials choose from. Choosing a material copies it into the design, so changing or replacing this file never alters a design already made."/>
+    <Grid ColumnDefinitions="*,Auto">
+      <TextBox x:Name="DatabaseBox" Margin="0,0,6,0"/>
+      <Button Grid.Column="1" x:Name="BrowseButton" Content="Choose…"/>
+    </Grid>
+
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="72"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="72"/>
+      <Button x:Name="ApplyButton" Content="Apply" MinWidth="72"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

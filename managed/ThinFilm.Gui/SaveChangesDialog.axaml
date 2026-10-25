@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.SaveChangesDialog"
+        Title="Save changes?" Width="440" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- Asked before a changed design is closed or replaced: Save, Don't save, or Cancel what was
+       about to happen. Closing the window is Cancel. -->
+  <StackPanel Margin="16" Spacing="14">
+    <TextBlock x:Name="MessageText" TextWrapping="Wrap"/>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="SaveButton" Content="Save" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="DiscardButton" Content="Don't save" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

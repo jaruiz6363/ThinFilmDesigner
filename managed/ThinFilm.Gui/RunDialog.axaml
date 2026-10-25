@@ -1,0 +1,248 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gui="clr-namespace:ThinFilm.Gui"
+        xmlns:core="clr-namespace:ThinFilm.Gui.Core;assembly=ThinFilm.Gui.Core"
+        x:Class="ThinFilm.Gui.RunDialog"
+        Title="Refine" Width="980" Height="720" MinWidth="680" MinHeight="520"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <Window.Styles>
+    <Style Selector="Grid.readout > TextBlock">
+      <Setter Property="Margin" Value="0,0,12,4"/>
+    </Style>
+    <Style Selector="StackPanel.settings > TextBlock">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="MinHeight" Value="32"/>
+      <Setter Property="Padding" Value="12,4"/>
+    </Style>
+    <Style Selector="TabItem:selected">
+      <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="Padding" Value="8,0,8,0"/>
+      <Setter Property="MinHeight" Value="28"/>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid Background="{TemplateBinding Background}" ColumnDefinitions="*,Auto">
+            <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+            <Rectangle Name="VerticalSeparator" Grid.Column="1" Width="1" VerticalAlignment="Stretch"
+                       Fill="{TemplateBinding SeparatorBrush}" IsVisible="{TemplateBinding AreSeparatorsVisible}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="DataGridCell.num">
+      <Setter Property="HorizontalContentAlignment" Value="Right"/>
+    </Style>
+  </Window.Styles>
+
+  <!-- MODAL, AFTER LensHH-LT's optimisation windows: settings and Start/Stop on top, a live
+       readout, the log and the before-and-after tabs, and Accept, Revert and Close at the bottom.
+       One window class, opened for refine, global, needle or evolve, each showing only its own
+       settings. The run works on a copy of the design (ThinFilm.Api Runs.cs), so nothing changes
+       until Accept. Revert drops the run and leaves the window open to start again; Close, Escape
+       or the title bar's X stop the run and drop it.
+       What every control says comes from RunMonitor and RunCompareView (Gui.Core). -->
+  <DockPanel Margin="14">
+
+    <StackPanel DockPanel.Dock="Top" Spacing="10">
+      <TextBlock x:Name="DescriptionText" TextWrapping="Wrap" FontSize="12" Foreground="#505050"/>
+      <WrapPanel>
+        <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="NormPanel">
+          <TextBlock Text="Norm"/>
+          <ComboBox x:Name="NormBox" Width="100"/>
+        </StackPanel>
+        <WrapPanel x:Name="StartsPanel">
+          <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6">
+            <ComboBox x:Name="GlobalModeBox" Width="230"/>
+            <TextBlock x:Name="StartsLabel" Text="Starts" Margin="8,0,0,0"/>
+            <TextBox x:Name="StartsBox" Width="70"/>
+          </StackPanel>
+          <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="RandomPanel">
+            <TextBlock Text="Range 0 to"/>
+            <TextBox x:Name="RandomRangeBox" Width="50"/>
+            <TextBlock Text="× each thickness"/>
+          </StackPanel>
+          <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="HopPanel">
+            <TextBlock Text="Perturbation"/>
+            <TextBox x:Name="PerturbationBox" Width="50"/>
+            <TextBlock Text="%"/>
+            <TextBlock Text="Accept worse by up to" Margin="8,0,0,0"/>
+            <TextBox x:Name="AcceptWorseBox" Width="50"/>
+            <TextBlock Text="%"/>
+          </StackPanel>
+          <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6">
+            <TextBlock Text="Seed"/>
+            <TextBox x:Name="SeedBox" Width="80" Watermark="new each run"/>
+            <TextBlock Text="Threads" Margin="8,0,0,0"/>
+            <TextBox x:Name="ThreadsBox" Width="50"/>
+          </StackPanel>
+        </WrapPanel>
+        <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="InsertionsPanel">
+          <TextBlock x:Name="InsertionsLabel" Text="Max insertions"/>
+          <TextBox x:Name="InsertionsBox" Width="60"/>
+          <TextBlock Text="Insert" Margin="8,0,0,0"
+                     ToolTip.Tip="The materials a needle may be. Untick a metal: a thin needle of it refines well and cannot be made."/>
+          <StackPanel Orientation="Horizontal" Spacing="10" x:Name="InsertMaterialsPanel"/>
+        </StackPanel>
+        <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="GrowthPanel">
+          <TextBlock Text="Growth steps"/>
+          <TextBox x:Name="GrowthStepsBox" Width="50"/>
+          <TextBlock Text="each adding" Margin="8,0,0,0"/>
+          <TextBox x:Name="GrowthQwotBox" Width="50"/>
+          <TextBlock Text="QWOT at"/>
+          <ComboBox x:Name="GrowAtBox" Width="190"/>
+          <TextBlock Text="Max layers" Margin="8,0,0,0"/>
+          <TextBox x:Name="MaxLayersBox" Width="50" Watermark="no limit"
+                   ToolTip.Tip="The most layers the design may have: growth stops there, and no needle takes the stack past it"/>
+        </StackPanel>
+        <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6" x:Name="EvolutionPanel">
+          <TextBlock Text="Minimum thickness"/>
+          <TextBox x:Name="MinimumThicknessBox" Width="70"/>
+          <TextBlock x:Name="MinimumThicknessUnit"/>
+          <!-- Remove thin layers: what to do with a layer under the minimum. -->
+          <StackPanel Orientation="Horizontal" Spacing="6" Margin="8,0,0,0" x:Name="ThinActionPanel">
+            <RadioButton x:Name="RemoveThinChoice" GroupName="thin" Content="Remove them"/>
+            <RadioButton x:Name="RaiseThinChoice" GroupName="thin" Content="Raise them to the minimum and fix them"/>
+          </StackPanel>
+          <!-- Remove thin layers takes only the minimum; the rest judges evolve's removals. -->
+          <StackPanel Orientation="Horizontal" Spacing="6" x:Name="JudgedRemovalPanel">
+          <TextBlock Text="Allowed degradation" Margin="8,0,0,0"/>
+          <TextBox x:Name="DegradationBox" Width="50"/>
+          <TextBlock Text="% or merit up to"/>
+          <TextBox x:Name="AcceptMeritBox" Width="50"
+                   ToolTip.Tip="A removal that leaves the merit at or under this is kept however much it cost, and growth stops there. 0 is off."/>
+          <TextBlock Text="Max removals per step" Margin="8,0,0,0"/>
+          <TextBox x:Name="RemovalsBox" Width="50"/>
+          </StackPanel>
+        </StackPanel>
+        <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,6">
+          <TextBlock x:Name="IterationsLabel" Text="Max iterations"/>
+          <TextBox x:Name="IterationsBox" Width="70"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,6">
+          <Button x:Name="StartButton" Content="Start" MinWidth="80"/>
+          <Button x:Name="StopButton" Content="Stop" MinWidth="80" IsEnabled="False"/>
+        </StackPanel>
+      </WrapPanel>
+
+      <Border Background="#F5F5F5" Padding="10,8" CornerRadius="3">
+        <StackPanel Spacing="6">
+          <TextBlock x:Name="StateText" TextWrapping="Wrap" FontWeight="SemiBold"/>
+          <Grid Classes="readout" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowDefinitions="Auto,Auto">
+            <TextBlock Text="Elapsed" Foreground="#505050"/>
+            <TextBlock Grid.Column="1" x:Name="ElapsedText" MinWidth="80"/>
+            <TextBlock Grid.Column="2" Text="Start RMSE" Foreground="#505050"/>
+            <TextBlock Grid.Column="3" x:Name="StartMeritText" MinWidth="110" FontFamily="Consolas,Menlo,monospace"/>
+            <TextBlock Grid.Column="4" x:Name="CurrentLabel" Foreground="#505050"/>
+            <TextBlock Grid.Column="5" x:Name="CurrentMeritText" MinWidth="110" FontFamily="Consolas,Menlo,monospace"
+                       Foreground="#2E7D32"/>
+            <TextBlock Grid.Row="1" x:Name="StepLabel" Foreground="#505050"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="StepText"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="Layers" Foreground="#505050"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" x:Name="LayersText"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="Change" Foreground="#505050"/>
+            <TextBlock Grid.Row="1" Grid.Column="5" x:Name="ChangeText"/>
+          </Grid>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+
+    <StackPanel DockPanel.Dock="Bottom" Spacing="8" Margin="0,10,0,0">
+      <TextBlock x:Name="LogFileText" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+      <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <Button x:Name="CopyLogButton" Content="Copy log"/>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8">
+          <Button x:Name="AcceptButton" Content="Accept results" IsEnabled="False" MinWidth="110"/>
+          <Button x:Name="RevertButton" Content="Revert" IsEnabled="False" MinWidth="90"/>
+          <Button x:Name="CloseButton" Content="Close" IsCancel="True" MinWidth="90"/>
+        </StackPanel>
+      </Grid>
+    </StackPanel>
+
+    <!-- THE LOG, THEN WHAT THE RUN DID (the user, 2026-10-18): Merit function, Spectrum and
+         Layers compare the run's design with the one it started from, so the choice between
+         Accept and Revert is made looking at it. They open once the run has ended; the window
+         shows the log on opening and on every Start. -->
+    <TabControl x:Name="Tabs" Margin="0,10,0,0" Padding="0,6,0,0">
+      <TabItem Header="Log" x:Name="LogTab">
+        <TextBox x:Name="LogBox" IsReadOnly="True" AcceptsReturn="True" TextWrapping="NoWrap"
+                 FontFamily="Consolas,Menlo,monospace" FontSize="12"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+      </TabItem>
+
+      <TabItem Header="Merit function" x:Name="MeritTab" IsEnabled="False">
+        <DockPanel>
+          <TextBlock DockPanel.Dock="Top" x:Name="MeritSummaryText" FontWeight="SemiBold" Margin="2,0,0,6"/>
+          <DataGrid x:Name="CompareGrid" x:DataType="core:ComparisonRow"
+                    IsReadOnly="True" AutoGenerateColumns="False" CanUserSortColumns="False"
+                    CanUserReorderColumns="False" GridLinesVisibility="All" HeadersVisibility="Column" RowHeight="24">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="#" Binding="{Binding Number}" Width="40"/>
+              <DataGridTextColumn Header="Code" Binding="{Binding Code}" Width="56"/>
+              <DataGridTextColumn Header="Wv (nm)" Binding="{Binding Wavelength}" Width="72" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Wv2 (nm)" Binding="{Binding Wavelength2}" Width="72" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Pts" Binding="{Binding Points}" Width="44" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="AOI (°)" Binding="{Binding Angle}" Width="58" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Mode" Binding="{Binding Mode}" Width="60"/>
+              <DataGridTextColumn Header="Target" Binding="{Binding Target}" Width="70" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Target 2" Binding="{Binding Target2}" Width="70" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="60" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Value (Before)" Binding="{Binding Before}" Width="104" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Value (After)" Binding="{Binding After}" Width="104" CellStyleClasses="num"/>
+              <DataGridTextColumn Header="Delta" Binding="{Binding Delta}" Width="104" CellStyleClasses="num"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </DockPanel>
+      </TabItem>
+
+      <TabItem Header="Spectrum" x:Name="SpectrumTab" IsEnabled="False">
+        <DockPanel>
+          <WrapPanel DockPanel.Dock="Top" Margin="0,0,0,4">
+            <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,4">
+              <TextBlock Text="Show"/>
+              <ComboBox x:Name="ShowBox" Width="150"/>
+            </StackPanel>
+            <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,4">
+              <TextBlock Text="from"/>
+              <TextBox x:Name="FromBox" Width="70"/>
+              <TextBlock Text="to"/>
+              <TextBox x:Name="ToBox" Width="70"/>
+              <TextBlock x:Name="SpectrumUnitText" Text="nm, steps"/>
+              <TextBox x:Name="StepsBox" Width="56"/>
+            </StackPanel>
+            <StackPanel Classes="settings" Orientation="Horizontal" Spacing="6" Margin="0,0,14,4">
+              <TextBlock Text="AOI (°)"/>
+              <TextBox x:Name="AngleBox" Width="56"/>
+              <Button x:Name="QuantitiesButton" Content="Quantities…"
+                      ToolTip.Tip="Choose what is plotted"/>
+              <TextBlock x:Name="QuantitiesText" MaxWidth="220" TextTrimming="CharacterEllipsis"
+                         Foreground="#404040"/>
+              <Button x:Name="RedrawButton" Content="Redraw"/>
+            </StackPanel>
+          </WrapPanel>
+          <TextBlock DockPanel.Dock="Bottom" x:Name="SpectrumProblemText" Foreground="#B00020"
+                     TextWrapping="Wrap" IsVisible="False" Margin="2,4,0,0"/>
+          <gui:SpectrumPlot x:Name="ComparePlot"/>
+        </DockPanel>
+      </TabItem>
+
+      <TabItem Header="Layers" x:Name="LayersTab" IsEnabled="False">
+        <DockPanel>
+          <TextBlock DockPanel.Dock="Bottom" x:Name="ProfileNoteText" FontSize="11" Foreground="#505050"
+                     TextWrapping="Wrap" Margin="2,4,0,0"/>
+          <Grid RowDefinitions="*,6,*">
+            <gui:LayerGraph x:Name="BeforeGraph"/>
+            <gui:LayerGraph Grid.Row="2" x:Name="AfterGraph"/>
+          </Grid>
+        </DockPanel>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</Window>

@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- X1.11. The row X1.10 opened against itself: Gui.Core was covered and the window was not.
+       Avalonia.Headless renders to a bitmap with no display, so the things that genuinely needed
+       one - the window opening, a button being wired to the handler it appears wired to, the plot
+       actually painting - can be checked after all.
+
+       A SEPARATE TEST EXECUTABLE, so that ThinFilm.Native.Tests keeps its property of referencing
+       no UI at all. The harness is shared by linking the file rather than by copying it: two
+       copies of a test harness drift, and the one that drifts is the one nobody is reading. -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>ThinFilm.Gui.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless" Version="11.2.3" />
+    <!-- A real rasteriser behind the headless window, so a rendered frame can be captured and
+         its pixels read. The default headless platform lays out and does not draw. -->
+    <PackageReference Include="Avalonia.Skia" Version="11.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Gui\ThinFilm.Gui.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ThinFilm.Native.Tests\Harness.cs" Link="Harness.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeLibrary Include="..\..\build\**\thinfilm_native.dll" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.so" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.dylib" />
+    <None Include="@(NativeLibrary)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

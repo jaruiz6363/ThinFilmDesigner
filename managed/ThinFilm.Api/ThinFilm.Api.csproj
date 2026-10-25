@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- X1.7. One API, three front ends: X1.8 (CLI), X1.9 (MCP) and X1.10 (GUI) all bind here, so
+       that three answers to the same question cannot drift apart. -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>The ThinFilm service API: documents, sessions, evaluation, spectra and optimisation.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Native\ThinFilm.Native.csproj" />
+    <ProjectReference Include="..\ThinFilm.Optimize\ThinFilm.Optimize.csproj" />
+  </ItemGroup>
+
+  <!-- The shipped material database, copied beside every program that uses the API, at
+       materials/thinfilm-materials.txt. It is the starting point a person's own database is copied
+       from; see MaterialDatabase. -->
+  <ItemGroup>
+    <None Include="..\..\materials\glass\*.AGF" Link="materials\glass\%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\materials\thinfilm-materials.txt" Link="materials\thinfilm-materials.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <!-- The materials the literature samples use; copied beside the person's own (MaterialDatabase). -->
+    <None Include="..\..\materials\literature-materials.txt" Link="materials\literature-materials.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- The named spectra band operands are weighted by (Spectra.cs), embedded so that evaluating a
+       design never depends on a file beside the program. -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\spectra\astm-g173-03.csv" LogicalName="ThinFilm.Api.astm-g173-03.csv" />
+  </ItemGroup>
+
+  <!-- The sample designs, copied beside every program under samples/: Examples/<name>/<name>.tfd and
+       Literature/<category>/<paper>/<design>.tfd. See Samples. -->
+  <ItemGroup>
+    <None Include="..\..\samples\**\*.tfd" Link="samples\%(RecursiveDir)%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

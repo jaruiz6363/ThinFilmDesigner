@@ -1,0 +1,351 @@
+{
+  "Version": 2,
+  "Name": "Raut2011-Fig6b-SiO2-Si-Ge-on-Si",
+  "Source": "H. K. Raut, V. A. Ganesh, A. S. Nair, and S. Ramakrishna, \"Anti-reflective coatings: A critical, in-depth review,\" Energy Environ. Sci. 4, 3779-3804 (2011). doi:10.1039/c1ee01297e - Fig. 6(b) and caption, p. 3783 (labels SiO2 123 nm / Si 47.8 nm / Ge 36.75 nm / Si active medium; caption: Si (RI 3.76)|Ge (RI 4.897)|Si|SiO2(RI 1.455)|Air, lambda/4 at lambda0 = 720 nm, n_active medium = 3.76, nH = 4.897, nL = 1.455, nM = 3.76); text p. 3784, Sec. 6.2.3 (ref. 20, Macleod)",
+  "Notes": "Simulated three-layer quarter-wave AR on a Si absorber with an extra Si layer between high-index Ge and low-index SiO2\nSpecification: Maximise transmissivity into Si in the far-red zone 720-750 nm (p. 3784).\nReported: Text p. 3784: 'the insertion of an extra layer of Si between the high index Ge and the low index SiO2 has maximum blue transmissivity of approximately 96% (at 480 nm)'. Fig. 6(b) curve has no readable axis numbers. Caution: a quick recomputation with the printed constant indices gives T = 0.9995 at 720 nm (admittance 0.955) but only about 0.69 at 480 nm, so the review's '96 % at 480 nm' may be a misreading of the original Macleod figure; the quarter-wave design itself peaks at 720 nm.\nNotes: Paper lists from the substrate: Si (active medium) | Ge | Si | SiO2 | Air; reversed here so layer 1 (SiO2) is next to air. All indices constant and lossless as in the simulation (Ge 4.897 and Si 3.76 are real-only here; real Ge and Si absorb at 720 nm). Printed thicknesses are rounded quarter waves at 720 nm (exact: SiO2 123.71, Si 47.87, Ge 36.76 nm). The merit row is inferred from the stated 720-750 nm analysis zone, not given by the paper.\nLayers from Fig. 6(b) and caption, p. 3783 (labels SiO2 123 nm / Si 47.8 nm / Ge 36.75 nm / Si active medium; caption: Si (RI 3.76)|Ge (RI 4.897)|Si|SiO2(RI 1.455)|Air, lambda/4 at lambda0 = 720 nm, n_active medium = 3.76, nH = 4.897, nL = 1.455, nM = 3.76); text p. 3784, Sec. 6.2.3 (ref. 20, Macleod); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), differs from the paper: ours T 69.1 % at 480 nm, 99.9 % at 720 nm; paper maximum blue transmissivity ~96 % at 480 nm (text); quarter waves at 720 nm. The review’s 96 % at 480 nm is not what this quarter-wave stack gives with its printed indices; it transmits 99.9 % at its 720 nm design wavelength, so the review probably misread the original figure.",
+  "Wavelength": [
+    720,
+    725,
+    730,
+    735,
+    740,
+    745,
+    750
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.455 (Raut 2011)",
+      "N": [
+        1.455,
+        1.455,
+        1.455,
+        1.455,
+        1.455,
+        1.455,
+        1.455
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.455,
+          0
+        ],
+        "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'SiO2(RI 1.455)', nL = 1.455 (simulation from Macleod, ref. 20)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Si n=3.76 (Raut 2011)",
+      "N": [
+        3.76,
+        3.76,
+        3.76,
+        3.76,
+        3.76,
+        3.76,
+        3.76
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.76,
+          0
+        ],
+        "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'Si(RI 3.76)', nH = nM = n_active medium = 3.76",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Ge n=4.897 (Raut 2011)",
+      "N": [
+        4.897,
+        4.897,
+        4.897,
+        4.897,
+        4.897,
+        4.897,
+        4.897
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          4.897,
+          0
+        ],
+        "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'Ge (RI 4.897)', nH = 4.897",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 123,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 47.8,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 36.75,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Si n=3.76 (Raut 2011)",
+    "N": [
+      3.76,
+      3.76,
+      3.76,
+      3.76,
+      3.76,
+      3.76,
+      3.76
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.76,
+        0
+      ],
+      "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'Si(RI 3.76)', nH = nM = n_active medium = 3.76",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 720,
+  "Plot": {
+    "From": 400,
+    "To": 1000,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 720
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

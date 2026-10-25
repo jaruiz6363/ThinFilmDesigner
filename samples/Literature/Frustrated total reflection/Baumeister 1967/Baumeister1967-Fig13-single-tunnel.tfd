@@ -1,0 +1,199 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig13-single-tunnel",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table III, columns 'Figs. 13-15' (p. 902); Figs. 11-14 captions and text pp. 902-903",
+  "Notes": "Single tunnel layer bandpass filter (induced-transmission analogue / MacNeille-like polarizer): one 1/3-wave n=1.35 tunnel layer between 1.65L H(LH)^4 matching stacks, transmitting p and rejecting s at 60 deg in glass of index 1.70\nSpecification: Transmit the p polarization in a band around lambda0 (admittance-matched to the isotransmittance contours of Fig. 11), reject s.\nReported: Fig. 13 (frequency lambda0/lambda 0.8-1.2): p transmittance ~1.0 (flat top) from about 0.95 to 1.0, ~0.2 near 0.85-0.9, ~0.07 near 1.1 rising to ~0.18 at 1.2, ~0.45 at 0.8; s transmittance essentially zero except narrow spikes (near 0.82 and ~1.03). Fig. 14: external angle -1.70 deg (curve a) and +1.70 deg (curve b), i.e. +-1.0 deg inside the prism, shift the p passband to ~0.95 and ~1.0 (plot). Text p. 903: peak T drops to 84 % if the tunnel layer is slightly absorbing (see Baumeister1967-Fig15-single-tunnel-absorbing).\nNotes: Thicknesses in quarter waves at lambda0 (Table III footnote) except layer 11, which has a physical thickness of one-third wave (printed 0.333) -> 333.333 nm at reference_nm = lambda0 = 1000 nm (the stack is non-dispersive, lambda0 arbitrary; plot vs lambda0/lambda). TWO PRINTED VALUES ARE CORRECTED HERE: Table III prints layer 9 = 3.300 (index 2.30) and layer 18 = 2.900 (index 1.70). The Fig. 11 caption gives the matching stack as 1.65L H(LH)^4 with L = 2.0 QW (n 1.70) and H = 1.3016 QW (n 2.30), i.e. from the tunnel layer outward 3.30, 1.302, 2.0, 1.302, ... on each side, and the printed table is otherwise symmetric; so layer 9 should be 1.302 and layer 18 should be 2.000. Own TMM check: with the corrections the p curve matches Fig. 13 (T = 1.00 at 0.9685, 0.915 at 0.95, 0.962 at 1.0, 0.21 at 0.9, 0.07 at 1.1, 0.18 at 1.2) and k = 0.01 gives a peak of 0.866 (paper 84 %); with the values as printed the p peak is only 0.56 at 1.04, which does not resemble Fig. 13. H printed as 1.302 (caption 1.3016); 1.302 used. Angle 60 deg inside the 1.70 medium (Fig. 11 caption). Media index 1.70 per Table III.\nLayers from Table III, columns 'Figs. 13-15' (p. 902); Figs. 11-14 captions and text pp. 902-903; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours p peak T 100 %; above 90 % of it from lambda0/lambda 0.949 to 1.005; paper p ~1.0 from lambda0/lambda 0.95 to 1.0 (Fig. 13).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.30 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "Baumeister 1967, Table III (Figs. 13-15, odd layers) and Fig. 11 caption: 'H is 1.3016 quarter-waves at lambda0 and index 2.30'"
+      }
+    },
+    {
+      "Name": "L n=1.70 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.7,
+          0
+        ],
+        "Source": "Baumeister 1967, Table III (Figs. 13-15, even layers) and Fig. 11 caption: 'L is 2.0 quarter-waves at lambda0 and index 1.70'"
+      }
+    },
+    {
+      "Name": "Tunnel layer n=1.35 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.35,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 6, 897 (1967), Table I (Figs. 3, 4) and Table III (layer 11, Figs. 13-14): index 1.35"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 485.29411764705884,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 333.333
+    },
+    {
+      "Material": 1,
+      "Thickness": 485.29411764705884,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.7",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.7",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 833.33,
+    "To": 1250,
+    "Steps": 418,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

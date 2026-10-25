@@ -1,0 +1,222 @@
+{
+  "Version": 2,
+  "Name": "Ciosek2000-FP-652-HL7-LH7",
+  "Source": "J. Ciosek, \"Narrow-band interference filters with unconventional spacer layers,\" Appl. Opt. 39, 135-140 (2000). doi:10.1364/AO.39.000135 - Fig. 7 curve 1 and Fig. 8 (p.138-139); Fig. 3 (thickness sensitivity)",
+  "Notes": "Conventional all-dielectric Fabry-Perot narrow-band filter (2L half-wave spacer), peak at 652.2 nm\nSpecification: Narrow transmittance peak at 652.2 nm.\nReported: T = 1 (R = 0) at 652.2 nm (Figs. 7-8). Fig. 8 (approximate, read off the plot): the reflectance dip of curves 1-2 is narrower than that of the NCNBPIFs, R < 0.5 roughly from 651.8 to 652.6 nm. Fig. 3: for a relative thickness change of 0.01 in a single layer the transmittance change at 652.2 nm is largest (~7.5 a.u.) for the central layers (about layers 12-16 of 27).\nNotes: Paper notation: 652.2[(H L)^7(L H)^7] (27 layers after merging). H = quarter wave of n = 2.25, L = quarter wave of n = 1.45 at reference_nm, no dispersion; n_S = n_0 = 1 (Table 1 footnote, Sec. 3), so incident and substrate are both air. Adjacent layers of the same material in the paper's symbol string are merged into one layer (e.g. ...0.5L)(0.5L... becomes one L), which reproduces the paper's own layer counts (27 in Fig. 3, 30 in Fig. 4). Layers are listed in the order the paper writes the symbol string; the paper's Eq. (4) 'S | ... | P' suggests the string starts at the substrate, but because both outer media are n = 1 and the stack is lossless, R and T do not depend on which side faces the light (only the reflection phase does). Normal incidence.\nLayers from Fig. 7 curve 1 and Fig. 8 (p.138-139); Fig. 3 (thickness sensitivity); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours T peak 100.000 % at 652.200 nm; paper T = 1 at 652.2 nm.",
+  "Wavelength": [
+    652.2
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.25 (Ciosek 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.25,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Ciosek, Appl. Opt. 39, 135 (2000), Table 1 footnote and Sec. 3: \"n_H = 2.25 ... without dispersion\""
+      }
+    },
+    {
+      "Name": "L n=1.45 (Ciosek 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Ciosek, Appl. Opt. 39, 135 (2000), Table 1 footnote and Sec. 3: \"n_L = 1.45 without dispersion\""
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 224.89655172413796,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 112.44827586206898,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 72.46666666666667,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 652.2,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 640,
+    "To": 665,
+    "Steps": 2501,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 652.2
+  }
+}

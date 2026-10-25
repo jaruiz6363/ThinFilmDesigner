@@ -1,0 +1,211 @@
+{
+  "Version": 2,
+  "Name": "Thelen1966-fig7-NBP",
+  "Source": "A. Thelen, \"Equivalent Layers in Multilayer Filters,\" J. Opt. Soc. Am. 56, 1533-1538 (1966). doi:10.1364/JOSA.56.001533 - Fig. 7 caption, p. 1537: 4.0 | (HLH)^2 (HLHLHLHLH)^2 (HL'H) | 1.0, nH = 4.0, nL = 1.8, nL' = 1.6",
+  "Notes": "Narrow-band-pass filter built from equivalent layers I = HLH (matching to the 4.0 substrate, used twice), II = HLHLHLHLH repeated twice, III = HL'H with lower-index L' for matching to air\nSpecification: High transmittance in a narrow pass band centred at lambda0/lambda = 1; matching conditions Eqs. (22)-(23).\nReported: Fig. 7 (p. 1537), log %T (0.01-100 %) vs lambda0/lambda 0.95-1.05 (read from plot, approximate): flat top ~100 % with slight ripple from about 0.984 to 1.013; T falls to 0.01 % near 0.955 and 1.047. Theory check (Eq. 25, case 1 nA > nB, A = H, B = L, v = 5 A layers): half-width dlambda/lambda = (1/pi) arcsin 2[(nA/nB - 1)/(nA/nB)^v] ~ 0.0144 with nA/nB = 4.0/1.8 (value evaluated here; the paper prints only the formula).\nNotes: Printed substrate-first; reversed here so (HL'H) is next to air and (HLH)^2 next to the substrate. Adjacent H layers merged into 2-QW (half-wave) H layers: 27 printed QW layers -> 23 layers. The last H layer next to the substrate has the same index as the substrate (4.0) and is optically invisible. All layers are quarter waves at lambda0; reference_nm = 1000 arbitrary since only lambda0/lambda is given. Normal incidence assumed.\nLayers from Fig. 7 caption, p. 1537: 4.0 | (HLH)^2 (HLHLHLHLH)^2 (HL'H) | 1.0, nH = 4.0, nL = 1.8, nL' = 1.6; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours T never reaches 90 % from 0.9 to 1.1: peak 19.0 % at lambda0/lambda 0.995; paper top ~100 % from 0.984 to 1.013; 0.01 % near 0.955 and 1.047 (read from the figure). Built from the caption’s sequence; its pass band peaks near 19 %, where Fig. 7 shows about 100 %, so the sequence as read from the caption is probably not the one plotted. Not resolved.",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "nH=4.0 (Thelen 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          4,
+          0
+        ],
+        "Source": "Thelen 1966, Figs. 7-9 captions: nH = 4.0"
+      }
+    },
+    {
+      "Name": "nL'=1.6 (Thelen 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.6,
+          0
+        ],
+        "Source": "Thelen 1966, Fig. 7 caption: nL' = 1.6"
+      }
+    },
+    {
+      "Name": "nL=1.8 (Thelen 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.8,
+          0
+        ],
+        "Source": "Thelen 1966, Figs. 7-9 captions: nL = 1.8"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 156.25,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 138.88888888888889,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.5,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=4",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        4,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 952,
+    "To": 1053,
+    "Steps": 1011,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

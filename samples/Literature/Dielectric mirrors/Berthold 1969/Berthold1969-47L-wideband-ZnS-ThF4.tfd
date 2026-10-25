@@ -1,0 +1,2304 @@
+{
+  "Version": 2,
+  "Name": "Berthold1969-47L-wideband-ZnS-ThF4",
+  "Source": "J. Berthold, \"Computer Design and Fabrication Techniques for a Wideband Dielectric Mirror,\" Appl. Opt. 8, 1919-1924 (1969). doi:10.1364/AO.8.001919 - Table I p. 1921 (layer QWOTs in um and indices); design discussion p. 1921-1922; Fig. 4",
+  "Notes": "Wideband dielectric mirror with ~1-2 % transmission for an optical parametric oscillator (three interleaved stacks: 0.41/0.49 um, 0.55/0.70 um, 0.78/0.89 um, then iterated)\nSpecification: Bandwidth 6000 cm^-1 centred at 14400 cm^-1 (11400-17400 cm^-1, i.e. 574.7-877.2 nm) with approximately constant 1-2 % transmission; the computer calculation covered 10000-18000 cm^-1 every 50 cm^-1, nonabsorbing layers, normal incidence.\nReported: p. 1922 and abstract: theoretical bandwidth 6000 cm^-1 centred about 14400 cm^-1 (694.4 nm); transmission varies between 0.6 % and 2.6 % across the band, with one point of 7.4 % transmission (a peak placed deliberately for the OPO) at the 14400 cm^-1 centre. Fig. 4 (calculated vs experimental R, 10000-18000 cm^-1): calculated R has a sharp dip to ~92.5 % near 14400 cm^-1 and maxima ~99-99.5 % elsewhere in the band (read off the plot, approximate); experimental agrees within 1 % except at the band ends (ZnS dispersion); the experimental curve was shifted to correct a 370 A shift to shorter wavelength caused by a substrate-position error. Sum of the 47 QWOTs (computed here, not printed) = 29.01 um.\nNotes: Table I numbers layers from the substrate (layer 1 = ThF4 adhesion layer on the quartz substrate, 'the first dielectric layer placed on the substrate'); the list here is reversed so layer 1 = Table I layer 47 (n = 1.51, next to air). Table I gives the quarter-wave optical thickness QWOT = 4 n l in um (Eq. 1), i.e. the wavelength at which each layer is a quarter wave; with reference_nm = 1000 the QWOT count equals the printed um value (e.g. 0.63 um -> 0.63 QWOT at 1000 nm; physical thickness l = QWOT/(4n), e.g. Table I layer 1 = 630/(4*1.48) = 106.4 nm). Indices: 2.40 = ZnS, 1.51 = ThF4 (Table I footnote); Table I layer 1 is ThF4 with n = 1.48 (lowered by stress on quartz, p. 1923), so it gets its own material. All layers nonabsorbing and dispersionless as in the paper's calculation. The substrate is quartz with no index given; database SiO2 used (the paper neglected substrate absorption; whether the back surface was included is not stated - assume a semi-infinite substrate). Air incident, coated side facing the light, normal incidence. Layer count 47 matches the title and Table I (24 low-index incl. layer 1, 23 ZnS). The merit TA target 0.015 is an interpretation of 'approximately 1-2 % transmission'; the actual design was hand-iterated. During construction the ZnS index for the first ZnS layer on each new monitor slide was set to 2.35 in the monitoring program; this affects monitoring, not the Table I design.\nLayers from Table I p. 1921 (layer QWOTs in um and indices); design discussion p. 1921-1922; Fig. 4; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours T 7.32 % at 694.4 nm; elsewhere in the band 0.454 % to 2.61 %; paper T 0.6-2.6 % across 575-877 nm, 7.4 % at the centre.",
+  "Wavelength": [
+    574.7,
+    579.7,
+    584.7,
+    589.7,
+    594.7,
+    599.7,
+    604.7,
+    609.7,
+    614.7,
+    619.7,
+    624.7,
+    629.7,
+    634.7,
+    639.7,
+    644.7,
+    649.7,
+    654.7,
+    659.7,
+    664.7,
+    669.7,
+    674.7,
+    679.7,
+    684.7,
+    689.7,
+    694.7,
+    699.7,
+    704.7,
+    709.7,
+    714.7,
+    719.7,
+    724.7,
+    729.7,
+    734.7,
+    739.7,
+    744.7,
+    749.7,
+    754.7,
+    759.7,
+    764.7,
+    769.7,
+    774.7,
+    779.7,
+    784.7,
+    789.7,
+    794.7,
+    799.7,
+    804.7,
+    809.7,
+    814.7,
+    819.7,
+    824.7,
+    829.7,
+    834.7,
+    839.7,
+    844.7,
+    849.7,
+    854.7,
+    859.7,
+    864.7,
+    869.7,
+    874.7
+  ],
+  "Materials": [
+    {
+      "Name": "ThF4 n=1.51 (Berthold 1969)",
+      "N": [
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51,
+        1.51
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.51,
+          0
+        ],
+        "MinMicrons": 0.55,
+        "MaxMicrons": 1,
+        "Source": "Berthold 1969, Table I and p. 1923: ThF4 (mixed with ThOF2) n = 1.51 +/- 0.01",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "ZnS n=2.40 (Berthold 1969)",
+      "N": [
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.4,
+          0
+        ],
+        "MinMicrons": 0.55,
+        "MaxMicrons": 1,
+        "Source": "Berthold 1969, Table I and p. 1923: ZnS index 2.40 at 0.63 um (from fitting 6328 A monitor traces; accepted value 2.30, Ref. 2)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "ThF4 first layer n=1.48 (Berthold 1969)",
+      "N": [
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48,
+        1.48
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.48,
+          0
+        ],
+        "MinMicrons": 0.55,
+        "MaxMicrons": 1,
+        "Source": "Berthold 1969, Table I layer 1 and p. 1923: first ThF4 layer on quartz, n = 1.48 (stress-lowered)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 139.0728476821192,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 92.70833333333334,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 129.13907284768212,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 81.25,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 139.0728476821192,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 92.70833333333334,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 135.76158940397352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 81.25,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 147.35099337748343,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 92.70833333333334,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 129.13907284768212,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 85.41666666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 147.35099337748343,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 92.70833333333334,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.43708609271523,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 55.208333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 112.58278145695364,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 76.04166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 91.05960264900662,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.89403973509934,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 72.91666666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 99.33774834437087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 62.5,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 87.74834437086092,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 62.5,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.43708609271523,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 53.125,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 77.81456953642385,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 48.958333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 81.12582781456953,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 51.04166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 77.81456953642385,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 48.958333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 81.12582781456953,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 51.04166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.88079470198676,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 42.708333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 81.12582781456953,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 51.04166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.88079470198676,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 42.708333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 77.81456953642385,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 48.958333333333336,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 74.50331125827815,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.875,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 106.41891891891892,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 9,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 10,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 11,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 12,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 13,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 14,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 15,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 16,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 17,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 18,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 19,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 20,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 21,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 22,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 23,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 24,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 25,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 26,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 27,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 28,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 29,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 30,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 31,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 32,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 33,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 34,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 35,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 36,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 37,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 38,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 39,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 40,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 41,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 42,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 43,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 44,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 45,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 46,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 47,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 48,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 49,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 50,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 51,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 52,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 53,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 54,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 55,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 56,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 57,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 58,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 59,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 60,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "SiO2",
+    "N": [
+      1.458930277198671,
+      1.458745568217719,
+      1.4585651069296866,
+      1.4583887374112212,
+      1.458216310623951,
+      1.4580476840496424,
+      1.457882721347896,
+      1.457721292034784,
+      1.4575632711809707,
+      1.4574085391279674,
+      1.4572569812212792,
+      1.4571084875592923,
+      1.456962952756847,
+      1.4568202757225142,
+      1.4566803594486675,
+      1.456543110813515,
+      1.4564084403943112,
+      1.4562762622910281,
+      1.4561464939598205,
+      1.45601905605566,
+      1.4558938722835657,
+      1.455770869257894,
+      1.4556499763691884,
+      1.4555311256581298,
+      1.455414251696149,
+      1.4552992914723064,
+      1.455186184286058,
+      1.4550748716455617,
+      1.4549652971711966,
+      1.4548574065039894,
+      1.4547511472186634,
+      1.454646468741046,
+      1.454543322269581,
+      1.45444166070072,
+      1.4543414385579654,
+      1.4542426119243685,
+      1.4541451383782873,
+      1.4540489769322253,
+      1.4539540879745816,
+      1.4538604332141567,
+      1.4537679756272628,
+      1.4536766794072993,
+      1.4535865099166663,
+      1.4534974336408855,
+      1.4534094181448196,
+      1.453322432030878,
+      1.4532364448991029,
+      1.4531514273090462,
+      1.4530673507433403,
+      1.4529841875728766,
+      1.452901911023516,
+      1.4528204951442478,
+      1.4527399147767301,
+      1.4526601455261423,
+      1.4525811637332817,
+      1.4525029464478505,
+      1.4524254714028677,
+      1.4523487169901572,
+      1.4522726622368596,
+      1.4521972867829152,
+      1.452122570859478
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        0.6961663,
+        0.0046791,
+        0.4079426,
+        0.0135121,
+        0.8974794,
+        97.934
+      ],
+      "MinMicrons": 0.21,
+      "MaxMicrons": 3.71,
+      "Source": "ARCoatingDesigner; matches Malitson 1965, fused silica",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        10
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        11
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        12
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        13
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        14
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        15
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        16
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        17
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        18
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        19
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        20
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        21
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        22
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        23
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        24
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        25
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        26
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        27
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        28
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        29
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        30
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        31
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        32
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        33
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        34
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        35
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        36
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        37
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        38
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        39
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        40
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        41
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        42
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        43
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        44
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        45
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        46
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        47
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        48
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        49
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        50
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        51
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        52
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        53
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        54
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        55
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        56
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        57
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        58
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        59
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 0.015,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        60
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1000,
+  "Plot": {
+    "From": 555.6,
+    "To": 1000,
+    "Steps": 445,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

@@ -1,0 +1,761 @@
+{
+  "Version": 2,
+  "Name": "Yu2014-OLT-wedge-4cav-stack1",
+  "Source": "K. Yu, Y. Liu, J. Bao, and D. Huang, \"Design of angle-tuned wedge narrowband thin film filter,\" Opt. Laser Technol. 56, 71-75 (2014). doi:10.1016/j.optlastec.2013.07.006 - Eq. (1), p. 71 (Sec. 2); materials and reference wavelength in the text above it",
+  "Notes": "Polarization-insensitive angle-tuned 100 GHz four-cavity DWDM bandpass filter (fabricated as a 0.8 deg wedge filter); the planar stack is rebuilt here\nSpecification: 100 GHz DWDM channel at 1567 nm at normal incidence, angle tuned 0-20 deg (theory) to cover the C-band with low polarization sensitivity; mixed H/L spacer removes the s/p centre splitting.\nReported: p. 71: theoretical tuning 0-20 deg covers 1567 nm to 1528 nm; practical 0-15 deg covers 1567 to 1545 nm; equivalent index of stack (1) n_M = 1.82 (p. 72). Measured on the 0.8 deg wedge filter (Fig. 7, p. 74, normal incidence): centre 1567 nm, half-bandwidth 0.5 nm, bandwidth at 0.5 dB > 0.4 nm, at 25 dB < 1 nm, rectangular degree 0.43, insertion loss < 2 dB, flat passband. Fig. 8(a), 15 deg, +0.8 deg wedge: centre 1545.4 nm, half-bandwidth 0.8 nm, 0.5 dB bandwidth < 0.2 nm, 25 dB bandwidth > 1.6 nm, rectangular degree 0.12, IL > 5 dB. Fig. 8(b), 17.5 deg, -0.8 deg wedge: centre 1535.4 nm, half-bandwidth 0.6 nm, 0.5 dB bandwidth 0.3 nm, 25 dB bandwidth 1.2 nm, rectangular degree 0.25, IL < 4 dB. Oblique-incidence numbers include wedge and beam effects, so a planar recomputation should match only the centre wavelengths approximately.\nNotes: Every H and L is a quarter wave at 1567 nm; \"2L3H4L3H2L\" is the spacer 2L, 3H, 4L, 3H, 2L. As printed the 2L layers touch the L of (HL)^m and (LH)^m, so each spacer is physically 3L 3H 4L 3H 3L; the 143 layers as printed merge to 135 layers (179 quarter waves). No printed total thickness. The stack is a palindrome, so orientation does not matter. Incident medium assumed air. The paper does not give the substrate: n = 1.523 glass is assumed, borrowed from the same authors' Optik 125, 397 (2014) filter at the same wavelength. n_L = 1.456 here vs 1.465 in the Optik paper (both as printed). The fabricated part is a 0.8 deg wedge; this rebuild is the parallel-surface design.\nLayers from Eq. (1), p. 71 (Sec. 2); materials and reference wavelength in the text above it; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours centre 1567.03 nm at 0 deg, 1547.22 at 15 deg, 1532.22 at 20 deg; paper 1567 nm at 0 deg; 1545 at 15 deg; 1528 at 20 deg (theory). The paper’s tuning figures come from an equivalent-index approximation (n = 1.82); the exact stack tunes slightly less, 2-4 nm short of them at 15 and 20 deg.",
+  "Wavelength": [
+    1567
+  ],
+  "Materials": [
+    {
+      "Name": "Ta2O5 n=2.05 (Yu 2014 OLT)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.05,
+          0
+        ],
+        "MinMicrons": 1.5,
+        "MaxMicrons": 1.6,
+        "Source": "Yu et al., Opt. Laser Technol. 56, 71 (2014), p. 71: \"Ta2O5 (n_H = 2.05)\""
+      }
+    },
+    {
+      "Name": "SiO2 n=1.456 (Yu 2014 OLT)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.456,
+          0
+        ],
+        "MinMicrons": 1.5,
+        "MaxMicrons": 1.6,
+        "Source": "Yu et al., Opt. Laser Technol. 56, 71 (2014), p. 71: \"SiO2 (n_L = 1.456)\""
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 1076.2362637362637,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 1076.2362637362637,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 1076.2362637362637,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 1076.2362637362637,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 573.2926829268293,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 807.1771978021978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 269.0590659340659,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 191.09756097560978,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.523",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.523,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1567,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 1560,
+    "To": 1575,
+    "Steps": 1501,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1567
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig6-FP-tunnel",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table I column 'Fig. 6' (p. 899); Fig. 6, Fig. 7 and text p. 900",
+  "Notes": "Fabry-Perot tunnel layer (FTR) filter: two n=1.38 tunnel layers around an n=2.30 spacer, used at 60 deg in glass of index 1.72; strongly polarizing narrow passbands\nSpecification: None stated (illustrative design).\nReported: Fig. 6: one passband per polarization in 0.4-0.7 um, both with peak T ~1; p passband near 0.48 um and s passband near 0.58 um (read from plot), separated by more than 1000 A (text p. 900). Angle shift: when the external angle changes by +1.72 deg (Fig. 7, ~ +1 deg internal), the p passband shifts 85 A toward the blue (~50 A/deg, text p. 900).\nNotes: Table I: layers 1 and 3 physical thickness 0.18 um, index 1.38; layer 2 'quarter-wave optical thickness' 1.837 um, index 2.30 (thicknesses in microns). Interpreted as: layer 2 is one quarter wave at 1.837 um (n d = 0.45925 um, d = 199.674 nm), coded as 1 QWOT at reference_nm 1837. The alternative reading (optical thickness 1.837 um) gives several orders in 0.4-0.7 um and does not match Fig. 6/8. Angle of incidence is not printed for Fig. 6; 60 deg inside the 1.72 medium (as for Figs. 3, 9, 11) is assumed - own TMM at 60 deg gives p peak T = 1.00 at 0.479 um, s peak T = 1.00 at 0.578 um, and p peak shift 0.4788 -> 0.4689 um for 60 -> 61 deg, consistent with the paper. The design is symmetric so the side facing the light does not matter.\nLayers from Table I column 'Fig. 6' (p. 899); Fig. 6, Fig. 7 and text p. 900; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours p peak at 478.8 nm, s peak at 577.9 nm; paper p near 480 nm, s near 580 nm (Fig. 6).",
+  "Wavelength": [
+    1837
+  ],
+  "Materials": [
+    {
+      "Name": "Tunnel layer n=1.38 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Baumeister 1967, Table I (Fig. 6, layers 1 and 3) and Table II (layers 2 and 6): index 1.38"
+      }
+    },
+    {
+      "Name": "Spacer n=2.30 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "Baumeister 1967, Table I (Figs. 6 and 8, layer 2): index 2.30"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 180
+    },
+    {
+      "Material": 1,
+      "Thickness": 199.67391304347828,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 180
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1837,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 700,
+    "Steps": 301,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1837
+  }
+}

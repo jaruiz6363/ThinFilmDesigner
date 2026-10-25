@@ -1,0 +1,195 @@
+{
+  "Version": 2,
+  "Name": "Behrndt1966-ZnS-ThOF2-21L",
+  "Source": "K. H. Behrndt and D. W. Doughty, \"Fabrication of Multilayer Dielectric Films,\" J. Vac. Sci. Technol. 3, 264-272 (1966). doi:10.1116/1.1492487 - Sec. II.C p. 270-271 (Figs. 4 and 5), Eq. (1) p. 269",
+  "Notes": "21-layer quarter-wave ZnS/ThOF2 dielectric laser mirror\nSpecification: Maximum reflectance at the design wavelength (quarter-wave high reflector).\nReported: Fig. 4(b) p. 270: experimental and theoretical T vs wavelength for 21 layers coincide at the minimum. Text p. 271: measured transmittance at the minimum for N = 21 has already reached 0.05 %. Eq. (1) with nH = 2.32, nL = 1.50, ns = 1.52 gives 1 - Rmax = 0.0184 % (computed here from the paper's formula; not printed).\nNotes: Quarter-wave stack (H L)^m H: the paper says the first layer deposited on the substrate is the high-index material and the last layer is also high index, every layer a quarter wave (QWOT 1) at the design wavelength (p. 264-266). The stack is symmetric, so the paper's substrate-first order and the incident-first order listed here are the same. Light is incident from air on the coated side (reflectance monitored from the front; Eq. 1 is written for air incidence). Indices are the constant values the authors used for their calculations (p. 269, 271, Table I); no dispersion or absorption. Substrate is soda-lime glass, ns = 1.52 (p. 269); Eq. (1) ignores the uncoated back face of the substrate, so compare 1-Rmax with a single-interface calculation (no back-surface reflection). reference_nm 632.8 is an assumption: the paper monitors with a 6328 A He-Ne laser and states the mirrors have their maximum at 6328 A for the standard monitor position (p. 268), but the plotted transmittance minima (Figs. 4-6) look centred nearer ~640 nm (read off the plots, approximate). Normal incidence assumed (spectrophotometer measurements). Mirrors of 99.6-99.8 % reflectance with T < 0.01 % (losses mainly scattering) were used in the multireflection experiment (p. 272); the layer count of those mirrors is not stated.\nLayers from Sec. II.C p. 270-271 (Figs. 4 and 5), Eq. (1) p. 269; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours 1 - R 0.0184 % at 632.8 nm; paper 1 - Rmax 0.0184 % (Eq. 1).",
+  "Wavelength": [
+    632.8
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.32 (Behrndt 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.32,
+          0
+        ],
+        "MinMicrons": 0.6,
+        "MaxMicrons": 0.7,
+        "Source": "Behrndt & Doughty 1966, p. 269: 'we determined n_ZnS = 2.32 at lambda = 6328 A' (from Koppelman and Krebs dispersion curve); Table I p. 272: ZnS n = 2.32"
+      }
+    },
+    {
+      "Name": "ThOF2 n=1.50 (Behrndt 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.5,
+          0
+        ],
+        "MinMicrons": 0.6,
+        "MaxMicrons": 0.7,
+        "Source": "Behrndt & Doughty 1966, p. 269: 'For the calculations, the value n_ThOF2 = 1.50 was chosen'; Table I: ThOF2 1.5"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 105.46666666666665,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 68.1896551724138,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "soda-lime glass n=1.52 (Behrndt 1966)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "MinMicrons": 0.6,
+      "MaxMicrons": 0.7,
+      "Source": "Behrndt & Doughty 1966, p. 269: soda-lime glass substrates, 'ns = 1.52 was taken for the calculations'"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 632.8,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 560,
+    "To": 740,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 632.8
+  }
+}

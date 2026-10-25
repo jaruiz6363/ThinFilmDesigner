@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The raw ABI mirror. No physics, no convenience, no dependencies: it declares the native
+       calls, mirrors the frozen structs and owns the allocation primitive. Everything above it
+       (Design, the optimisers, the API) builds on this and never re-declares any of it. -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Required: every struct here holds raw pointers, which is the whole point. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!-- Warnings are errors here for the same reason they are in the native build: this layer is
+         a layout contract, and a warning about it is a defect report. -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsAotCompatible>true</IsAotCompatible>
+
+    <Description>Raw P/Invoke bindings for the ThinFilm native evaluation engine.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>

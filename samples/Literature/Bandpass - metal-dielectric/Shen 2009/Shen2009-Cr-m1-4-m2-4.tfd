@@ -1,0 +1,230 @@
+{
+  "Version": 2,
+  "Name": "Shen2009-Cr-m1-4-m2-4",
+  "Source": "W. Shen, X. Sun, Y. Zhang, Z. Luo, X. Liu, and P. Gu, \"Narrow band filters in both transmission and reflection with metal/dielectric thin films,\" Opt. Commun. 282, 242-246 (2009). doi:10.1016/j.optcom.2008.09.080 - Sec. 2 pp. 244-245 and Fig. 4 (m1 = 4, m2 = 4); same materials and Cr as Sec. 2 p. 243",
+  "Notes": "Metal/dielectric narrow-band filter peaking in both reflection and transmission at 700 nm (m1 = m2 = 4, symmetric mirrors, maximum Tmax)\nSpecification: Reflectance and transmittance both maximal at 700 nm; with m1 = m2 the two cavity mirrors are closest in reflectance, giving the highest Tmax.\nReported: Calculated (Fig. 4, right column): Rmax = 32.8 % at 700 nm; Tmax = 44.1 % at 700 nm; R ~0 near 670 and 715 nm, rising to ~7-9 % at 640 and 760 nm. Measured (Fig. 5): Rmax = 34 %, Tmax = 45.2 % near 698 nm, transmittance FWHM 7.7 nm.\nNotes: Stack written from the incident side as in the paper (Air/Cr/(LH)^4/2L/(HL)^4/H/Sub): 1 + 8 + 1 + 8 + 1 = 19 layers. Same assumptions as Shen2009-Cr-m1-2-m2-4: quarter waves at 700 nm, constant nH = 2.17, nL = 1.45, ns = 1.52 with back surface ignored, 5 nm Cr from Table 1 (no 700 nm entry, nearest 704 nm), normal incidence.\nLayers from Sec. 2 pp. 244-245 and Fig. 4 (m1 = 4, m2 = 4); same materials and Cr as Sec. 2 p. 243; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R max 36.4 % at 699.9 nm, T max 49.0 %; paper calculated R max 32.8 %, T max 44.1 % at 700 nm. Ours is 4-5 points higher; the paper’s Cr table has no point between 653 and 704 nm, so the Cr index at 700 nm is interpolated here and the paper may have used a different value.",
+  "Wavelength": [
+    700
+  ],
+  "Materials": [
+    {
+      "Name": "Cr Johnson-Christy table (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "TABLE",
+        "Table": [
+          [
+            0.496,
+            2.75,
+            3.3
+          ],
+          [
+            0.548,
+            3.18,
+            3.33
+          ],
+          [
+            0.617,
+            3.17,
+            3.3
+          ],
+          [
+            0.659,
+            3.09,
+            3.34
+          ],
+          [
+            0.704,
+            3.05,
+            3.39
+          ],
+          [
+            0.756,
+            3.08,
+            3.42
+          ],
+          [
+            0.821,
+            3.2,
+            3.48
+          ]
+        ],
+        "MinMicrons": 0.496,
+        "MaxMicrons": 0.821,
+        "Source": "Shen et al. 2009, Table 1 p. 243 'Optical constants of Cr film at different wavelengths' (taken from Johnson and Christy, Phys. Rev. B 9, 5056 (1974), ref. 15)"
+      }
+    },
+    {
+      "Name": "SiO2 n=1.45 (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "MinMicrons": 0.64,
+        "MaxMicrons": 0.76,
+        "Source": "Shen et al. 2009, Sec. 2 p. 243 and Sec. 3 p. 245 ('SiO2 (nL = 1.45@700 nm)')"
+      }
+    },
+    {
+      "Name": "TiO2 n=2.17 (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.17,
+          0
+        ],
+        "MinMicrons": 0.64,
+        "MaxMicrons": 0.76,
+        "Source": "Shen et al. 2009, Sec. 2 p. 243 ('refractive indexes of H, L and substrate are respectively 2.17, 1.45 and 1.52') and Sec. 3 p. 245 ('TiO2 (nH = 2.17@700 nm)', photometric determination)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 5
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 241.3793103448276,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 700,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 640,
+    "To": 760,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA",
+      "AA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 700
+  }
+}

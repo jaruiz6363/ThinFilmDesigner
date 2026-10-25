@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- X1.5. Exists to answer a question, not to produce a number: the ledger says this decides
+       whether S1.10 (the structured derivative sweep) is worth writing. -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Optimize>true</Optimize>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <RootNamespace>ThinFilm.Bench</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Native\ThinFilm.Native.csproj" />
+    <ProjectReference Include="..\ThinFilm.Optimize\ThinFilm.Optimize.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeLibrary Include="..\..\build\**\thinfilm_native.dll" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.so" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.dylib" />
+    <None Include="@(NativeLibrary)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

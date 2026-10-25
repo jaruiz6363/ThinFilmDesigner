@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The optimisation stages. Allowed to be managed code because X1.4 binds to "residuals + J":
+       an optimiser CONSUMES derivatives, it does not compute them. Every quantity describing the
+       design still comes from the engine through Design. -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>Optimisation stages for ThinFilm: damped least squares, needle, gradual evolution, global search.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Native\ThinFilm.Native.csproj" />
+  </ItemGroup>
+
+</Project>

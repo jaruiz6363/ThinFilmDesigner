@@ -1,0 +1,454 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gui="clr-namespace:ThinFilm.Gui"
+        xmlns:core="clr-namespace:ThinFilm.Gui.Core;assembly=ThinFilm.Gui.Core"
+        x:Class="ThinFilm.Gui.MainWindow"
+        Width="1180" Height="760" MinWidth="820" MinHeight="560"
+        Title="ThinFilm">
+
+  <!-- A PLAIN COLUMN HEADER. Fluent's reserves a 32 px column for the sort arrow whether or not
+       sorting is on, plus 12 px of padding, so a column had to be 45 px wider than its header
+       text before the text showed at all. Neither table sorts - the row order is the stack order
+       and the operand order - so the slot is dropped rather than paid for in every column. -->
+  <Window.Styles>
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="Padding" Value="8,0,8,0"/>
+      <Setter Property="MinHeight" Value="30"/>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid Background="{TemplateBinding Background}" ColumnDefinitions="*,Auto">
+            <ContentPresenter Name="PART_ContentPresenter"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="Center"/>
+            <Rectangle Name="VerticalSeparator" Grid.Column="1" Width="1"
+                       VerticalAlignment="Stretch" Fill="{TemplateBinding SeparatorBrush}"
+                       IsVisible="{TemplateBinding AreSeparatorsVisible}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+
+    <!-- TAB HEADERS AT BODY SIZE. Fluent draws them at 24 px, which is a page title, not a tab;
+         the selected tab is told apart by weight rather than size. -->
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="FontWeight" Value="Normal"/>
+      <Setter Property="MinHeight" Value="34"/>
+      <Setter Property="Padding" Value="12,4"/>
+    </Style>
+    <Style Selector="TabItem:selected">
+      <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!-- A merit-table cell: a TextBox that reads as text in a grid, not as a form field. A cell
+         that does not apply to its row is disabled and drawn with no box at all, so a blank is
+         read as "not applicable" rather than "empty, fill me in". -->
+    <Style Selector="TextBox.cell">
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Padding" Value="4,2"/>
+      <Setter Property="MinHeight" Value="0"/>
+      <Setter Property="HorizontalContentAlignment" Value="Right"/>
+      <Setter Property="TextAlignment" Value="Right"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="TextBox.cell:disabled /template/ Border#PART_BorderElement">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+  </Window.Styles>
+
+  <!-- ONE PANEL AT A TIME, after LensHH-LT. The editors this program needs - the layer stack,
+       the merit function, variables, bounds, pickups, materials - each come with a strip of
+       helper buttons and dialogs, and one panel holding all of them is a panel nobody can read.
+       So: a menu bar, one tab per editor with its own button strip on top, and the status bar
+       under everything, because a failure has to be readable from any tab. -->
+  <DockPanel>
+
+    <Menu DockPanel.Dock="Top" x:Name="MainMenu">
+      <MenuItem Header="_File" x:Name="FileMenu">
+        <MenuItem Header="_New design…" x:Name="NewDesignMenu" InputGesture="Ctrl+N" HotKey="Ctrl+N"/>
+        <MenuItem Header="_Open…" x:Name="OpenMenu"/>
+        <!-- The sample designs that ship in the samples folder. A sample opens as a copy: Save asks
+             where to write it, so the shipped file is never overwritten. -->
+        <MenuItem Header="Open sa_mple…" x:Name="OpenSampleMenu"/>
+        <!-- Save writes to the file the design came from, and asks only when there is none;
+             Save As always asks. Save… once did both under one name. -->
+        <MenuItem Header="_Save" x:Name="SaveMenu" InputGesture="Ctrl+S" HotKey="Ctrl+S"/>
+        <MenuItem Header="Save _As…" x:Name="SaveAsMenu" InputGesture="Ctrl+Shift+S" HotKey="Ctrl+Shift+S"/>
+        <Separator/>
+        <!-- OpticStudio coating files (ZemaxCoating.cs): one COAT in or out; the rest of the file kept. -->
+        <MenuItem Header="_Import ZEMAX coating…" x:Name="ImportZemaxMenu"/>
+        <MenuItem Header="Export to _ZEMAX coating…" x:Name="ExportZemaxMenu"/>
+        <!-- Optiland's ThinFilmCoating, in a coating file or on a lens surface (OptilandCoating.cs). -->
+        <MenuItem Header="Import Optiland coating…" x:Name="ImportOptilandMenu"/>
+        <MenuItem Header="Export Optiland coating…" x:Name="ExportOptilandMenu"/>
+        <Separator/>
+        <!-- The layers in nm and n,k tables, for a program with no dispersion equations (DesignReport.cs). -->
+        <MenuItem Header="Export design _report…" x:Name="ExportReportMenu"/>
+        <Separator/>
+        <MenuItem Header="E_xit" x:Name="ExitMenu"/>
+      </MenuItem>
+      <MenuItem Header="_Edit" x:Name="EditMenu">
+        <MenuItem Header="_System Parameters…" x:Name="SystemParametersMenu"/>
+        <MenuItem Header="_Materials…" x:Name="MaterialsMenu"/>
+      </MenuItem>
+      <MenuItem Header="_Optimization" x:Name="OptimizationMenu">
+        <!-- One window per method (RunDialog), after LensHH-LT. The Stages box and Optimise
+             button that ran them from the Design tab are gone (X1.33). -->
+        <MenuItem Header="_Refine…" x:Name="RefineMenu"/>
+        <MenuItem Header="_Global search…" x:Name="GlobalMenu"/>
+        <MenuItem Header="_Needle optimisation…" x:Name="NeedleRunMenu"/>
+        <MenuItem Header="Gradual _evolution…" x:Name="EvolveMenu"/>
+        <MenuItem Header="Remove _thin layers…" x:Name="ThinMenu"/>
+        <Separator/>
+        <MenuItem Header="_Merit function" x:Name="MeritMenu"/>
+      </MenuItem>
+      <MenuItem Header="_Analysis" x:Name="AnalysisMenu">
+        <MenuItem Header="_Spectrum" x:Name="SpectrumMenu"/>
+      </MenuItem>
+      <MenuItem Header="_Help" x:Name="HelpMenu">
+        <MenuItem Header="_User guide" x:Name="UserGuideMenu"/>
+        <Separator/>
+        <MenuItem Header="Connect to _Claude (MCP)…" x:Name="McpSetupMenu"/>
+      </MenuItem>
+    </Menu>
+
+    <!-- The status bar carries every failure, because a window that throws is a window that
+         closes and a status line is something a person can read and act on. The summary sits
+         at its right so the merit is visible from every tab. -->
+    <Border DockPanel.Dock="Bottom" Padding="8,5" Background="#F0F0F0">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock x:Name="StatusText" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+        <TextBlock Grid.Column="1" x:Name="SummaryText" Margin="16,0,0,0"/>
+      </Grid>
+    </Border>
+
+    <TabControl x:Name="Tabs" Padding="0">
+
+      <!-- ===== Design: the layer stack ================================================== -->
+      <TabItem Header="Design" x:Name="DesignTab">
+        <DockPanel>
+          <!-- The stack's own strip: what changes the layers, apart from what optimises them. -->
+          <Border DockPanel.Dock="Top" Padding="8,4" Background="#FAFAFA">
+            <!-- Per-layer actions as buttons; whole-stack actions under one Stack menu button, so
+                 the strip has room to grow. It wraps rather than clips in a narrow window. -->
+            <WrapPanel Orientation="Horizontal">
+              <WrapPanel.Styles>
+                <Style Selector="WrapPanel > Button, WrapPanel > DropDownButton">
+                  <Setter Property="Margin" Value="0,2,6,2"/>
+                </Style>
+              </WrapPanel.Styles>
+              <Button x:Name="InsertLayerButton" Content="Insert layer"/>
+              <Button x:Name="DeleteLayerButton" Content="Delete layer"/>
+              <Button x:Name="MoveLayerUpButton" Content="Move up"/>
+              <Button x:Name="MoveLayerDownButton" Content="Move down"/>
+              <Border Width="1" Background="#D0D0D0" Margin="0,4,6,4"/>
+              <Button x:Name="LayerPropertiesButton" Content="Layer properties…"/>
+              <Border Width="1" Background="#D0D0D0" Margin="0,4,6,4"/>
+              <DropDownButton x:Name="StackButton" Content="Stack">
+                <DropDownButton.Flyout>
+                  <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                    <MenuItem x:Name="DesignStringItem" Header="Input design string…"/>
+                    <Separator/>
+                    <MenuItem x:Name="CoupleLayersItem" Header="Couple all layers"/>
+                    <MenuItem x:Name="DecoupleLayersItem" Header="Decouple all layers"/>
+                    <MenuItem x:Name="BoundsItem" Header="Set vary constraints…"/>
+                    <Separator/>
+                    <MenuItem x:Name="ReverseLayersItem" Header="Reverse layers"/>
+                    <MenuItem x:Name="ReverseAllItem" Header="Reverse layers and media"/>
+                    <Separator/>
+                    <MenuItem x:Name="ClearLayersItem" Header="Delete all layers…"/>
+                  </MenuFlyout>
+                </DropDownButton.Flyout>
+              </DropDownButton>
+            </WrapPanel>
+          </Border>
+          <!-- THE DESCRIPTION (the user, 2026-10-21): where the design came from and notes on it,
+               saved in the design. Folded, its header is the source in one line. A box's text
+               reaches the design when the box is left. -->
+          <Expander DockPanel.Dock="Top" x:Name="DescriptionExpander" IsExpanded="True"
+                    Margin="8,4,8,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            <Expander.Header>
+              <TextBlock x:Name="DescriptionHeader" Text="Description" TextTrimming="CharacterEllipsis"/>
+            </Expander.Header>
+            <Grid ColumnDefinitions="Auto,8,*" RowDefinitions="Auto,6,Auto,6,Auto">
+              <TextBlock Grid.Row="0" Text="Name" VerticalAlignment="Center"/>
+              <TextBox Grid.Row="0" Grid.Column="2" x:Name="NameBox" Watermark="the design's name"/>
+              <TextBlock Grid.Row="2" Text="Source" VerticalAlignment="Center"/>
+              <TextBox Grid.Row="2" Grid.Column="2" x:Name="SourceBox"
+                       Watermark="where it came from: authors, title, journal or book, year, figure or table"/>
+              <TextBlock Grid.Row="4" Text="Notes" VerticalAlignment="Top" Margin="0,6,0,0"/>
+              <TextBox Grid.Row="4" Grid.Column="2" x:Name="NotesBox" AcceptsReturn="True"
+                       TextWrapping="Wrap" MinHeight="44" MaxHeight="140"
+                       Watermark="what it is for, what was changed from the source, caveats"/>
+            </Grid>
+          </Expander>
+          <!-- The layer table is sized to its rows, up to the height the tab has, so the
+               substrate line sits directly under the last layer rather than at the foot of a
+               half-empty table. The limit comes from the panel's height in code-behind: a Grid
+               measures an Auto row with unbounded height, and a fixed MaxHeight is right for
+               one window size only. -->
+          <Grid x:Name="DesignPanel" RowDefinitions="Auto,Auto,Auto,*" Margin="0,4,0,0">
+            <!-- Which end is which. Layer 1 faces the incident medium; the last layer sits on
+                 the substrate. -->
+            <TextBlock Grid.Row="0" x:Name="IncidentText" Margin="8,4,8,4" FontSize="11"
+                       TextWrapping="Wrap" Foreground="#505050"/>
+
+            <!-- FIXED COLUMNS, as in the merit table. The last, empty column keeps the rows out
+                 from under the vertical scrollbar, which Fluent draws OVER the rightmost 16 px. -->
+            <DataGrid Grid.Row="1" x:Name="LayerGrid" Margin="8,0,8,4"
+                      HorizontalAlignment="Left" x:DataType="core:LayerRow"
+                      IsReadOnly="False" AutoGenerateColumns="False" CanUserSortColumns="False"
+                      CanUserReorderColumns="False"
+                      GridLinesVisibility="All" HeadersVisibility="Column">
+              <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding Number}" IsReadOnly="True" Width="64"/>
+                <!-- Material and Vary edit the design the moment they change; thickness is typed
+                     and taken when the cell is left, as before. -->
+                <DataGridTemplateColumn Header="Material" Width="150" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="core:LayerRow">
+                      <ComboBox ItemsSource="{Binding MaterialOptions}" SelectedItem="{Binding MaterialChoice}"
+                                HorizontalAlignment="Stretch" Margin="2,0"/>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- THE THICKNESS IN THE ROW'S OWN UNIT, which the next column names: a QWOT
+                     design reads 1.0000, an aluminium layer kept in nm reads 40.000. The
+                     nanometres stand beside it, read-only, so both are in view. A picked-up
+                     layer's thickness comes from its parent and cannot be typed. -->
+                <DataGridTemplateColumn Header="Thickness" Width="100" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="core:LayerRow">
+                      <TextBox Classes="cell" Text="{Binding ValueText, UpdateSourceTrigger=LostFocus}"
+                               IsEnabled="{Binding CanEditThickness}"/>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Unit" Width="132" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="core:LayerRow">
+                      <ComboBox ItemsSource="{Binding UnitOptions}" SelectedItem="{Binding UnitChoice}"
+                                HorizontalAlignment="Stretch" Margin="2,0"/>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="nm" Binding="{Binding PhysicalText}" IsReadOnly="True" Width="96"/>
+                <DataGridTemplateColumn Header="Vary" Width="60" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="core:LayerRow">
+                      <CheckBox IsChecked="{Binding Vary}" IsEnabled="{Binding CanVary}" HorizontalAlignment="Center"/>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Bounds" Binding="{Binding BoundsText}" IsReadOnly="True" Width="110"/>
+                <DataGridTextColumn Header="Pickup" Binding="{Binding PickupText}" IsReadOnly="True" Width="160"/>
+                <DataGridTemplateColumn Header="" Width="40" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate x:DataType="core:LayerRow">
+                      <Button Classes="layerProperties" Content="…" Padding="8,0"
+                              HorizontalAlignment="Center" ToolTip.Tip="Layer properties"/>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="" IsReadOnly="True" Width="18"/>
+              </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock Grid.Row="2" x:Name="SubstrateText" Margin="8,0,8,8" FontSize="11"
+                       TextWrapping="Wrap" Foreground="#505050"/>
+          </Grid>
+        </DockPanel>
+      </TabItem>
+
+      <!-- ===== Merit Function ============================================================ -->
+      <TabItem Header="Merit Function" x:Name="MeritTab">
+        <DockPanel>
+          <Border DockPanel.Dock="Top" Padding="8,6" Background="#F5F5F5">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <!-- The merit function as a file of its own (MeritFiles.cs): the rows, not the design. -->
+              <DropDownButton x:Name="MeritFileButton" Content="Merit function">
+                <DropDownButton.Flyout>
+                  <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                    <MenuItem x:Name="OpenMeritItem" Header="Open merit function…"/>
+                    <MenuItem x:Name="AppendMeritItem" Header="Append merit function…"/>
+                    <MenuItem x:Name="SaveMeritItem" Header="Save merit function"/>
+                    <MenuItem x:Name="SaveMeritAsItem" Header="Save merit function as…"/>
+                    <Separator/>
+                    <MenuItem x:Name="ExportMeritItem" Header="Export as CSV with values…"/>
+                  </MenuFlyout>
+                </DropDownButton.Flyout>
+              </DropDownButton>
+              <Border Width="1" Background="#D0D0D0" Margin="6,2"/>
+              <Button x:Name="InsertOperandButton" Content="Insert"/>
+              <Button x:Name="RemoveOperandButton" Content="Remove"/>
+              <Border Width="1" Background="#D0D0D0" Margin="6,2"/>
+              <!-- Building the table quickly. Each is one call into ThinFilm.Api (MeritTable.cs),
+                   which the CLI's `thinfilm merit` and the MCP server's operand tools call too. -->
+              <Button x:Name="ClearOperandsButton" Content="Clear all"/>
+              <Button x:Name="DeleteOperandsButton" Content="Delete operands…"/>
+              <Button x:Name="AdjustWeightButton" Content="Adjust weight…"/>
+              <Border Width="1" Background="#D0D0D0" Margin="6,2"/>
+              <Button x:Name="AddOperandsButton" Content="Add operands…"/>
+              <Button x:Name="AddMultipleAoiButton" Content="Add multiple AOI…"/>
+              <Button x:Name="AddSingleWvButton" Content="Add single Wv…"/>
+              <Border Width="1" Background="#D0D0D0" Margin="6,2"/>
+              <TextBlock x:Name="MeritText" FontWeight="SemiBold" VerticalAlignment="Center"/>
+            </StackPanel>
+          </Border>
+
+          <!-- What the selected row means, in words: "RA" and "MINT" are codes, and a person
+               reading the table should not need the specification open beside it. -->
+          <Border DockPanel.Dock="Bottom" Padding="8,6" Background="#F5F5F5">
+            <TextBlock x:Name="OperandHelp" TextWrapping="Wrap" FontSize="12" Foreground="#404040"
+                       Text="Select a row to see what it asks for."/>
+          </Border>
+
+          <!-- FIXED COLUMNS, AFTER LensHH-LT: every row has the same columns, and whether a cell
+               means anything depends on the row's Code and Mode. Where it does not, the cell is
+               blank and disabled. Widths are fixed, so no column grows to fill the table; the
+               wavelength headers carry the unit chosen in Edit > System Parameters and are set from
+               code, which is why they are addressed by index there. Weight is always shown and
+               always editable. -->
+          <DataGrid x:Name="OperandGrid" Margin="8,4,8,4" x:DataType="core:MeritRow"
+                    IsReadOnly="True" AutoGenerateColumns="False" CanUserSortColumns="False"
+                    CanUserReorderColumns="False" HorizontalAlignment="Left"
+                    GridLinesVisibility="All" HeadersVisibility="Column">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="#" Binding="{Binding Number}" Width="64"/>
+              <DataGridTemplateColumn Header="Code" Width="96">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <ComboBox ItemsSource="{Binding CodeOptions}" SelectedItem="{Binding Code}"
+                              HorizontalAlignment="Stretch" Margin="2,0"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Wv (nm)" Width="92">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding WavelengthText, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanWavelength}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Wv2 (nm)" Width="92">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding Wavelength2Text, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanSpan}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Pts" Width="56">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding PointsText, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanSpan}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="AOI (°)" Width="72">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding AngleText, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanAngle}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Mode" Width="100">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <ComboBox ItemsSource="{Binding ModeList}" SelectedItem="{Binding Mode}"
+                              HorizontalAlignment="Stretch" Margin="2,0"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Target" Width="92">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding TargetText, UpdateSourceTrigger=LostFocus}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Target 2" Width="92">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding Target2Text, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanTarget2}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Limit (nm)" Width="92">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding LimitText, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanLimit}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Temp (K)" Width="72">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding TemperatureText, UpdateSourceTrigger=LostFocus}"
+                             IsEnabled="{Binding CanTemperature}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTemplateColumn Header="Weight" Width="84">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate x:DataType="core:MeritRow">
+                    <TextBox Classes="cell" Text="{Binding WeightText, UpdateSourceTrigger=LostFocus}"/>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTextColumn Header="Value" Binding="{Binding ValueText}" Width="130"/>
+              <DataGridTextColumn Header="" Width="18"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </DockPanel>
+      </TabItem>
+
+      <!-- ===== Spectrum ================================================================== -->
+      <TabItem Header="Spectrum" x:Name="SpectrumTab">
+        <DockPanel>
+          <Border DockPanel.Dock="Top" Padding="8,6" Background="#F5F5F5">
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <TextBlock Text="vs" VerticalAlignment="Center"/>
+              <RadioButton x:Name="VsWavelengthButton" GroupName="SpectrumX" Content="wavelength"
+                           IsChecked="True" VerticalAlignment="Center"/>
+              <RadioButton x:Name="VsAngleButton" GroupName="SpectrumX" Content="angle"
+                           VerticalAlignment="Center" Margin="0,0,10,0"/>
+              <TextBlock Text="from" VerticalAlignment="Center"/>
+              <TextBox x:Name="FromBox" Width="70" Text="400"/>
+              <TextBlock Text="to" VerticalAlignment="Center"/>
+              <TextBox x:Name="ToBox" Width="70" Text="800"/>
+              <TextBlock x:Name="SpectrumUnitText" Text="nm, steps" VerticalAlignment="Center"/>
+              <TextBox x:Name="StepsBox" Width="60" Text="241"/>
+              <TextBlock x:Name="FixedLabel" Text="AOI (°)" VerticalAlignment="Center"/>
+              <TextBox x:Name="AngleBox" Width="56" Text="0"/>
+              <Button x:Name="QuantitiesButton" Content="Quantities…"
+                      ToolTip.Tip="Choose what is plotted"/>
+              <TextBlock x:Name="QuantitiesText" VerticalAlignment="Center" MaxWidth="260"
+                         TextTrimming="CharacterEllipsis" Foreground="#404040"/>
+              <Button x:Name="PlotButton" Content="Redraw"/>
+              <Button x:Name="ExportSpectrumButton" Content="Export…"
+                      ToolTip.Tip="Write the plotted curves to a text file, one column per quantity"/>
+            </StackPanel>
+          </Border>
+
+          <!-- What the numbers mean: fractions, normal incidence, no back surface in T. -->
+          <TextBlock DockPanel.Dock="Bottom" x:Name="PlotNote" Margin="8,4,8,8" FontSize="11"
+                     TextWrapping="Wrap" Foreground="#505050"/>
+
+          <gui:SpectrumPlot x:Name="Plot" Margin="8,8,8,4"/>
+        </DockPanel>
+      </TabItem>
+
+    </TabControl>
+  </DockPanel>
+</Window>

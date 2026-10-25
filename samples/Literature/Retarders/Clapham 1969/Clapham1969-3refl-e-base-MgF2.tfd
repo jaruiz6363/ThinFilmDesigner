@@ -1,0 +1,84 @@
+{
+  "Version": 2,
+  "Name": "Clapham1969-3refl-e-base-MgF2",
+  "Source": "P. B. Clapham, M. J. Downs, and R. J. King, \"Some applications of thin films to polarization devices,\" Appl. Opt. 8, 1965-1974 (1969). doi:10.1364/AO.8.001965 - Table III footnote e (p. 1970); text and Fig. 5(b) p. 1971",
+  "Notes": "Achromatic three-reflection quarter-wave device in fused silica (Table III column e): base surface coated with 275 A MgF2, the two oblique surfaces uncoated\nSpecification: Total retardation of the three reflections = 90 deg from 214 to 546 nm.\nReported: Table III column e (computed), total of all three reflections (two uncoated oblique faces at theta = 72 deg 15 min plus this coated base): 90.1, 90.0, 89.9, 89.8, 89.8, 89.8 deg at 546, 405, 334, 289, 248, 214 nm. Uncoated device with theta = 73 deg 15 min (column d): 88.9, 89.7, 90.5, 91.4, 92.8, 94.6 deg. Measured (Fig. 6 curve 3, qualitative): flat at ~89.6-90.0 deg from 200 to 550 nm. A +-1.5 deg (in air) change of incidence changes the retardation by about +-3 deg.\nNotes: Footnote theta = 72 deg 15 min is the angle at the two OBLIQUE faces; the beam enters normal to the end face, so the base reflection is at 2 theta - 90 = 54.5 deg (in silica); this geometry is inferred and confirmed numerically: with n_silica = 1.46 the uncoated device (73.25 deg, 56.5 deg, 73.25 deg) gives 88.88 deg (column d 88.9) and the coated one gives 2 x 25.08 + 39.97 = 90.13 deg (column e 90.1). Only the base reflection is a thin-film stack; the two bare oblique reflections (25.08 deg each at 546 nm) must be added to compare with Table III. Silica (Spectrosil synthetic fused silica) index is not printed; database SiO2 is used. A check with n = 1.460 at 546 nm reproduces the uncoated rhomb column a (84.55 deg for two reflections at 54 deg). MgF2 index as in the rhomb designs (Cauchy through 1.385 at 546 nm and 1.419 at 214 nm).\nLayers from Table III footnote e (p. 1970); text and Fig. 5(b) p. 1971; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours total retardation 90.1, 90.0, 89.9, 89.9, 89.9, 89.8 deg at 546, 405, 334, 289, 248, 214 nm; paper 90.1, 90, 89.9, 89.8, 89.8, 89.8 deg (Table III).",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 Cauchy 214-546 nm (Clapham 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CAUCHY",
+        "Coefficients": [
+          1.37883,
+          0.0018397,
+          0
+        ],
+        "MinMicrons": 0.214,
+        "MaxMicrons": 0.546,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1971: MgF2 'refractive index values used in the computations ranging from 1.385 at 546 nm to 1.419 at 214 nm'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 27.5
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "SiO2",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        0.6961663,
+        0.0046791,
+        0.4079426,
+        0.0135121,
+        0.8974794,
+        97.934
+      ],
+      "MinMicrons": 0.21,
+      "MaxMicrons": 3.71,
+      "Source": "ARCoatingDesigner; matches Malitson 1965, fused silica"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 214,
+    "To": 546,
+    "Steps": 333,
+    "Angle": 54.5,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

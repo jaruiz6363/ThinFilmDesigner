@@ -1,0 +1,119 @@
+{
+  "Version": 2,
+  "Name": "Brennan1963-ruby-ZnS-1L",
+  "Source": "E. R. Brennan, \"Multi-Layer All-Dielectric Reflection Filters,\" M.S. thesis (Physics), Polytechnic Institute of Brooklyn (1963), thesis adviser A. Zajac. No doi. - Sec. II.A, p. 2; Fig. 1(b), p. 3",
+  "Notes": "Step 1 of the ruby-rod end reflector: a single quarter-wave ZnS layer on the ruby face\nSpecification: Raise the reflectance of the ruby end face at 694.3 nm (light incident from inside the ruby).\nReported: Uncoated ruby/air face reflects 7.4 % (p. 2); with the quarter-wave ZnS layer the reflectance rises to 27 % at 694.3 nm, normal incidence (p. 2).\nNotes: Light travels inside the ruby rod (incident medium n0) and strikes the coated end face; the exit medium is air (Fig. 1(b)), so the ruby is the INCIDENT medium and air is the substrate. The ruby index is not printed in the preview pages: 1.76 (ordinary index of ruby) is assumed; the quoted 7.4 % uncoated reflectance implies n0 = 1.75 (1.76 gives 7.6 %). With n0 = 1.76 and ZnS 2.36, a quarter-wave admittance calculation gives 27.0 %, matching the thesis. Absorption is neglected (Sec. II.B, assumption b). Normal incidence.\nLayers from Sec. II.A, p. 2; Fig. 1(b), p. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 27.0 % at 694.3 nm; paper R 27.0 % (pp. 2-4).",
+  "Wavelength": [
+    694.3
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.36 (Brennan 1963)",
+      "N": [
+        2.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.36,
+          0
+        ],
+        "Source": "Brennan 1963 thesis, Sec. II.A p. 2: 'A layer of ZnS with an index of refraction 2.36'",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 73.54872881355932,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.76",
+    "N": [
+      1.76
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.76,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 694.3,
+  "Plot": {
+    "From": 417,
+    "To": 1111,
+    "Steps": 695,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 694.3
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

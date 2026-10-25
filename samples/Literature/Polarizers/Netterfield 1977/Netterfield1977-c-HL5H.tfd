@@ -1,0 +1,208 @@
+{
+  "Version": 2,
+  "Name": "Netterfield1977-c-HL5H",
+  "Source": "R. P. Netterfield, \"Practical thin-film polarizing beam-splitters,\" Optica Acta 24(1), 69-79 (1977). doi:10.1080/713819379 - Fig. 3 caption case (c); text p. 73",
+  "Notes": "Cemented-cube polarizing beam-splitter, 633 nm; 11 layers, ratio 1:2\nSpecification: Rp minimum (zero) at 633 nm, Ts < 0.1 % at 633 nm\nReported: Ts at 633 nm = 0.01 % (theory); Rp = 0 at 633 nm.\nNotes: Incident/exit media both n = 1.57; constant indices at 633 nm.\nLayers from Fig. 3 caption case (c); text p. 73; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Ts 0.010 %, Rp 4.0e-8 % at 633 nm; paper Ts 0.01 %, Rp ~0 (theory).",
+  "Wavelength": [
+    633
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.33 (Netterfield 1977)",
+      "N": [
+        2.33
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.33,
+          0
+        ],
+        "MinMicrons": 0.38,
+        "MaxMicrons": 0.87,
+        "Source": "Netterfield 1977, p. 72 text and Figs. 2-3 captions (n_H = 2.33 at 633 nm)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Cryolite n=1.31 (Netterfield 1977)",
+      "N": [
+        1.31
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.31,
+          0
+        ],
+        "MinMicrons": 0.38,
+        "MaxMicrons": 0.87,
+        "Source": "Netterfield 1977, p. 72 text and Figs. 2-3 captions (n_L = 1.31 at 633 nm)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.1,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 78.55,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.57",
+    "N": [
+      1.57
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.57,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.57",
+    "N": [
+      1.57
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.57,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TS",
+      "Comparison": "LE",
+      "Target": 0.001,
+      "Weight": 1,
+      "Scale": 0.001,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 633,
+  "Plot": {
+    "From": 580,
+    "To": 700,
+    "Steps": 201,
+    "Angle": 45,
+    "Quantities": [
+      "TS",
+      "TP",
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 633
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

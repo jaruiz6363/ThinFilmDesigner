@@ -1,0 +1,291 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1969-TableII-NIR-bandpass",
+  "Source": "P. W. Baumeister, \"Radiant power flow and absorptance in thin films,\" Appl. Opt. 8, 423-436 (1969). doi:10.1364/AO.8.000423 - Table II, p. 425 (Sec. III); Figs. 3 and 4",
+  "Notes": "Near-infrared induced-transmission bandpass filter: Au 200 A + Al 250 A absorbing stack, admittance-matched with a ZnS/cryolite matching stack on crown glass and antireflected on the air side; peak at 9500 A\nSpecification: Maximise transmittance at lambda0 = 9500 A (zero reflectance from both sides at lambda0, T = Psi_max).\nReported: p. 425-426: Psi_max of the Au(200 A)/Al(250 A) absorbing stack = 0.482 at 9500 A, reached at emergent admittance Y_max = 3.66 + j10.28; Psi (= T, since R = 0) of the composite filter = 0.481 at lambda0 = 9500 A. Reflectance from both sides is zero at lambda0 (Fig. 4). Passband FWHM (at 0.5 T_max) = 330 A. Fig. 3: peak T ~0.48 at 0.95 um, T ~0.2 near 0.75-0.8 um and < 0.05 beyond ~1.0 um; optical density up to ~4 at 1.1 um. Fig. 4: Psi (c), reflectance from incident side (a) and from emergent side (b), 0.7-1.1 um. Check computed here (normal incidence, constant indices): T = 0.4815, R = 0.0002 at 950 nm; FWHM ~33.7 nm; matching stack (layers 11-15 on n = 1.51) admittance 3.57 + j10.26.\nNotes: Table II lists layers from the incident medium (n = 1.0) as layer 1 to the emergent medium (massive crown glass n = 1.51), same order as here. Table footnote: absorbing films are physical thickness, nonabsorbing films quarter-wave optical thickness - the 'Thickness in mu' column for dielectric layers is the wavelength (um) at which the layer is a quarter wave, so 0.950 = 1 QWOT at 950 nm, 0.747 = 0.747/0.950 QWOT, 0.827 = 0.827/0.950 QWOT. Layer 9 (0.0200 um, n = 0.174, k = 5.70) is the gold film and layer 10 (0.0250 um, n = 1.75, k = 8.50) the aluminum film per the text. Indices 1.46 (unnamed, layer 1), 2.36 (ZnS) and 1.35 (cryolite) are constants at 9500 A; no dispersion stated, so constant models are used across the band. The text says the matching stack is 'six alternating layers' of cryolite and ZnS, while Table II has five dielectric layers (11-15) after the metals; layers 1-8 form the antireflection stack. 15 layers, matches the table count.\nLayers from Table II, p. 425 (Sec. III); Figs. 3 and 4; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours T 0.4815 at 950 nm, FWHM 33.7 nm; paper T 0.481 at 950 nm, FWHM 33 nm.",
+  "Wavelength": [
+    950
+  ],
+  "Materials": [
+    {
+      "Name": "n=1.46 (Baumeister 1969)",
+      "N": [
+        1.46
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.46,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II layer 1: n = 1.46",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "ZnS n=2.36 (Baumeister 1969)",
+      "N": [
+        2.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.36,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II and p. 425: zinc sulfide 'index 2.36'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Cryolite n=1.35 (Baumeister 1969)",
+      "N": [
+        1.35
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.35,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II and p. 425: cryolite 'index 1.35'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Au 950nm n=0.174 k=5.70 (Baumeister 1969)",
+      "N": [
+        0.174
+      ],
+      "K": [
+        5.7
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.174,
+          5.7
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II layer 9: n = 0.174, k = 5.70 (gold, 200 A)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Al 950nm n=1.75 k=8.50 (Baumeister 1969)",
+      "N": [
+        1.75
+      ],
+      "K": [
+        8.5
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.75,
+          8.5
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II layer 10: n = 1.75, k = 8.50 (aluminum, 250 A)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 162.67123287671234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 100.63559322033899,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 175.92592592592592,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 100.63559322033899,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 175.92592592592592,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 100.63559322033899,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 175.92592592592592,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 79.1313558845339,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 4,
+      "Thickness": 25,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 87.60593222457626,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 175.92592592592592,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 100.63559322033899,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 175.92592592592592,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 100.63559322033899,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Crown glass n=1.51 (Baumeister 1969)",
+    "N": [
+      1.51
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.51,
+        0
+      ],
+      "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table II emergent medium: crown glass n = 1.51",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 950,
+  "Plot": {
+    "From": 700,
+    "To": 1100,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "TA",
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 950
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

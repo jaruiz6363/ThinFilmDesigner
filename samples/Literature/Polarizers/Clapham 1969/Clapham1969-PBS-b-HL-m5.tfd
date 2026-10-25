@@ -1,0 +1,207 @@
+{
+  "Version": 2,
+  "Name": "Clapham1969-PBS-b-HL-m5",
+  "Source": "P. B. Clapham, M. J. Downs, and R. J. King, \"Some applications of thin films to polarization devices,\" Appl. Opt. 8, 1965-1974 (1969). doi:10.1364/AO.8.001965 - Design formula p. 1967 (Eq. (1), (3)); indices from Table I footnote (p. 1968); quarter waves at operating angle p. 1969; lambda0 = 546 nm p. 1969",
+  "Notes": "Cube polarizing beam splitter (MacNeille type), design (HL)^5, high Rs and zero Rp at 45 deg in glass\nSpecification: Rs as high as possible and Rp = 0 at 546 nm, 45 deg in the glass.\nReported: Table I (p. 1968), column 'HL' (b), m = 5: Rs = 100.0 % at 546 nm, 45 deg in glass, computed from Eq. (3); Rp = 0 for all m.\nNotes: Table I combination (b): nG = 1.70 (extra dense flint), nL = 1.385 (MgF2), nH = 2.44 (reactively sputtered Bi2O3). Polarizing beam-splitter cube: the multilayer sits on the 45-deg diagonal of a cemented glass cube, light in the glass at 45 deg, which by Eq. (1) is the Brewster angle at every internal film interface (computed theta_L = 60.22 deg, theta_H = 29.52 deg). Every layer is a quarter wave of OPTICAL thickness AT THE OPERATING ANGLE at lambda0 = 546 nm (paper p. 1969: 'optical thickness 0.25 lambda0 under conditions of operation'), so thicknesses are given in physical nm computed as d = 546/(4 n cos theta): L = 198.426 nm, H = 64.285 nm (= 2.0133 and 1.1491 normal-incidence QWOT at 546 nm). Incident and exit media are the same glass (constant index from the paper); the parallel-sided cement layer (n ~ 1.58) is ignored, as in the paper's Table I computation. Lossless materials as in Table I. Polarizing efficiency (footnote p. 1966) = (I1 - I2)/(I1 + I2): reflected (Rs - Rp)/(Rs + Rp), transmitted (Tp - Ts)/(Tp + Ts). (HL)^5 = 10 layers, H first next to the incident glass as written in Table I (the text also writes (LH)^m; for a lossless stack between identical glasses Rs is the same either way). Check by the closed form Eq. (3) (squared) gives Rs = 99.99 % (Table I prints 100.0 %). No total thickness is printed. Bi2O3 is absorbing (k = 0.02 at 633 nm, larger at shorter wavelengths, p. 1968), so the measured cube has losses; Table I is lossless.\nLayers from Design formula p. 1967 (Eq. (1), (3)); indices from Table I footnote (p. 1968); quarter waves at operating angle p. 1969; lambda0 = 546 nm p. 1969; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rs 100 %, Rp 7.6e-4 at 546 nm, 45 deg in glass; paper Rs 100.0 %, Rp 0 (Table I).",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "Bi2O3 n=2.44 (Clapham 1969)",
+      "N": [
+        2.44
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.44,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 0.7,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), Table I footnote (b) nH = 2.44; p. 1968: 'At 633 nm ... the absorption index k has fallen to 0.02, while the refractive index of 2.44 is perfectly matched to the 1.385 of MgF2 and 1.70 of an EDF glass'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "MgF2 n=1.385 (Clapham 1969)",
+      "N": [
+        1.385
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.385,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.7,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967, Table I footnote: nL = 1.385 (magnesium fluoride)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 64.285,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.426,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 64.285,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.426,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 64.285,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.426,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 64.285,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.426,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 64.285,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.426,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "EDF glass n=1.70 (Clapham 1969)",
+    "N": [
+      1.7
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ],
+      "MinMicrons": 0.4,
+      "MaxMicrons": 0.7,
+      "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967 and Table I footnote (b): extra dense flint glass nG = 1.70",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "EDF glass n=1.70 (Clapham 1969)",
+    "N": [
+      1.7
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ],
+      "MinMicrons": 0.4,
+      "MaxMicrons": 0.7,
+      "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967 and Table I footnote (b): extra dense flint glass nG = 1.70",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 546,
+  "Plot": {
+    "From": 425,
+    "To": 675,
+    "Steps": 251,
+    "Angle": 45,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

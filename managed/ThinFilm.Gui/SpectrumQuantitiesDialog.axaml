@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.SpectrumQuantitiesDialog"
+        Title="Spectrum Quantities" Width="560" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- One checkbox per quantity, a row per group, built from SpectrumQuantities. Nothing changes
+       until OK. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+               Text="Tick what the spectrum shows. Quantities in different units are drawn against separate y axes: the first on the left, the others on the right."/>
+    <Grid x:Name="QuantityGrid" ColumnDefinitions="130,*"/>
+    <TextBlock x:Name="ProblemText" Foreground="Firebrick" TextWrapping="Wrap"/>
+    <DockPanel>
+      <Button x:Name="ClearButton" Content="Clear all" DockPanel.Dock="Left"/>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+        <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="72"/>
+        <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="72"/>
+      </StackPanel>
+    </DockPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,201 @@
+{
+  "Version": 2,
+  "Name": "Dobrowolski1970-filterF-ybar",
+  "Source": "J. A. Dobrowolski, \"Optical Interference Filters for the Adjustment of Spectral Response and Spectral Power Distribution,\" Appl. Opt. 9, 1396-1402 (1970). doi:10.1364/AO.9.001396 - Table II (Filter F), p. 1401; Sec. III.E, Fig. 12",
+  "Notes": "y-bar tristimulus filter (CIE standard observer colour-matching function) for use with a Gillod-Boutry photocell, in series with absorbing glass cutoff filters (Sec. III.E)\nSpecification: Relative transmittance of the interference filter x glass filters (9.98 mm GG-5 and 2.0 mm KG-1, as labelled in Fig. 12(a); glass data not given) x photocell sensitivity (Fig. 9) should match the CIE 1931 y-bar colour-matching function (solid target curve of Fig. 12(a)); only the relative shape was specified, any peak transmittance > 50 % acceptable.\nReported: Peak transmittance of the y-bar filter combination: calculated 87 % (allowing for two air-glass surfaces), experimental 84 %, 76 % with correction filters (text p. 1401-1402, Fig. 12). The computed transmittance of the 17-layer filter alone (dashed, Fig. 12(a)) peaks ~0.94 near 0.555 um, with blocked-by-glass sidebands ~0.72 near 0.40 um and ~0.96 near 0.44 um (plot readings). Fig. 12(b): calculated (target - normalized transmittance) of the cutoff + interference filter combination; worst case among the three filters (x-bar) is < +/-5 % of peak transmittance.\nNotes: Medium and substrate both 1.514 as printed (filter cemented between glass); the 'two air-glass surfaces' in the reported peak transmittances are the outer faces of the assembly. Identification: Fig. 12 is labelled 17-LAYER FILTER, F is the only 17-layer design. Table lists Substrate, layers 1..N, Medium; layer 1 is next to the substrate (the synthesis program grows the design from the bare substrate), so the order is REVERSED here (layer 1 below = last printed layer, next to the medium). Thicknesses are printed as optical thicknesses n*d in micrometres; they are entered as FWOT at reference_nm = 1000 nm, which is the same number (1 FWOT at 1000 nm = 1 um optical thickness), with constant, non-dispersive, lossless indices exactly as printed. Physical thickness d = OT/n. Normal incidence assumed (not stated). 17 layers, as stated in the text; summed optical thickness of the printed layers = 3.0797 um (no total is printed).\nLayers from Table II (Filter F), p. 1401; Sec. III.E, Fig. 12; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours peak T 94.5 % at 570 nm; paper peak ~0.94 near 555 nm (Fig. 12a).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "film n=1.590 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.59,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filter F, n = 1.590"
+      }
+    },
+    {
+      "Name": "film n=1.360 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.36,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filters C, F, G, n = 1.360"
+      }
+    },
+    {
+      "Name": "film n=2.360 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.36,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filters F, G, n = 2.360"
+      }
+    },
+    {
+      "Name": "film n=1.540 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.54,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filter F, n = 1.540"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 64.52830188679245,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 200.80882352941177,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 114.40677966101696,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 91.36363636363636,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 55.08474576271187,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 82.07792207792208,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 93.45588235294116,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 65.67796610169492,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 124.63235294117646,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 65.16949152542372,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 201.02941176470586,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 59.61864406779661,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 109.26470588235296,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 118.72881355932203,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 123.8235294117647,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 128.86792452830187,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 158.30882352941174,
+      "Unit": "FWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.514",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.514,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.514",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.514,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 380,
+    "To": 750,
+    "Steps": 371,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

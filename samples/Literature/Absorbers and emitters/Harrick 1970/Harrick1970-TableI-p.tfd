@@ -1,0 +1,143 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-TableI-p",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table I (p design), p. 2112; construction Fig. 1, p. 2111",
+  "Notes": "Cavity inducing complete p-polarized absorption in a weak absorber (n0 = 1.4 - i0.04) from a Si hemicylinder by internal reflection\nSpecification: Rp = 0 (complete absorption A = 1 - R = 1 in the thick absorbing layer) at alpha = 28.8 deg in the Si hemicylinder, p polarization.\nReported: Table I p design: Rp = 0.002, Rs = 0.998 at alpha = 28.8 deg (at the design wavelength, where thicknesses are h/lambda = 0.124 cavity, 0.260 FTR). For comparison (text p. 2112): absorber in direct contact with the Si hemicylinder, no films, gives Rp = 0.82 and Rs = 0.93.\nNotes: Table I gives physical thicknesses as h/lambda with wavelength-independent indices, so the design scales with lambda; reference_nm = 1000 is chosen so that thickness in nm = 1000 x h/lambda exactly (0.124 -> 124 nm, 0.260 -> 260 nm). The paper scaled it to the 3.4 um region for the experiment (Fig. 2: 3.3 um C-H band in chloroform, measured at 29.5 deg). Paper lists from the absorber side (n0 absorber, n1 cavity, n2 FTR, n hemicylinder); reversed here so layer 1 (FTR SiO2) is next to the incident Si hemicylinder. Light is incident from the Si (n = 3.5) at alpha = 28.8 deg in the Si, beyond the 24.5 deg critical angle of the SiO2 film. Paper's index convention is n - ik; k = 0.04 positive for absorption. Absorber taken as semi-infinite substrate (thickness infinity in Table I).\nLayers from Table I (p design), p. 2112; construction Fig. 1, p. 2111; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.002, Rs 0.998 at 28.8 deg, 1000 nm; paper Rp 0.002, Rs 0.998 (Tables I and III).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.45 FTR film (Harrick 1970)",
+      "N": [
+        1.45
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n2 = 1.45 (SiO2) FTR film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Si n=3.1 cavity film (Harrick 1970)",
+      "N": [
+        3.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.1,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n1 = 3.1 (Si) evaporated cavity film",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 260,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 124,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 28.8
+    }
+  ],
+  "Incident": {
+    "Name": "Si n=3.5 hemicylinder (Harrick 1970)",
+    "N": [
+      3.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.5,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n = 3.5 (Si) hemicylinder",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Absorber n=1.4 k=0.04 (Harrick 1970)",
+    "N": [
+      1.4
+    ],
+    "K": [
+      0.04
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.4,
+        0.04
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1 and Tables I-III: n0 = 1.4 - i0.04",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1000,
+  "Plot": {
+    "From": 900,
+    "To": 1100,
+    "Steps": 201,
+    "Angle": 28.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

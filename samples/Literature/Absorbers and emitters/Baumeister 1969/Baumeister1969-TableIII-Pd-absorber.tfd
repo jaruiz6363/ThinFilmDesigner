@@ -1,0 +1,203 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1969-TableIII-Pd-absorber",
+  "Source": "P. W. Baumeister, \"Radiant power flow and absorptance in thin films,\" Appl. Opt. 8, 423-436 (1969). doi:10.1364/AO.8.000423 - Table III, p. 427 (Sec. IV)",
+  "Notes": "Absorbing coating maximising the absorptance of a 200 A palladium film at 5461 A with five dielectric layers (indices constrained to 1.38-2.32)\nSpecification: Maximise absorptance of the Pd film at lambda0 = 5461 A using five dielectric layers with 1.38 <= n <= 2.32.\nReported: p. 427: maximum absorptance 94.20 % at 5461 A. Four dielectric layers (3-6) form the matching stack, layer 1 is a single-layer antireflection coating. Check computed here: A = 0.9420, R = 0.0000, T = 0.0580 at 546.1 nm.\nNotes: Table III lists from incident medium (air, n = 1.00) to substrate (n = 1.52), same order as here. Footnote: dielectric thicknesses are quarter-wave optical thickness - the 'Thickness in mu' column is the wavelength at which each layer is a quarter wave, so 0.5461 = 1 QWOT at 546.1 nm, L'' = 0.4096/0.5461 QWOT, L' = 0.4915/0.5461 QWOT; Pd is 200 A physical (0.0200 um). Layer labels: 1 L'' (n = 1.87), 2 Pd, 3 L', 4 H, 5 L, 6 H. Pd index printed as 2.3 - j2.70 (k = +2.70 here). Absorptance of the whole stack equals the Pd absorptance (dielectrics lossless). Single-wavelength design; band_nm is the design wavelength only. 6 layers, matches the table.\nLayers from Table III, p. 427 (Sec. IV); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours A 94.20 % at 546.1 nm; paper A 94.20 %.",
+  "Wavelength": [
+    546.1
+  ],
+  "Materials": [
+    {
+      "Name": "n=1.87 (Baumeister 1969)",
+      "N": [
+        1.87
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.87,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table III layer 1 (L''): index 1.87",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Pd 546.1nm n=2.3 k=2.70 (Baumeister 1969)",
+      "N": [
+        2.3
+      ],
+      "K": [
+        2.7
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          2.7
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table III and Fig. 5 caption: Pd n - jk = 2.3 - j2.70 at 5461 A",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "n=1.38 (Baumeister 1969)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table III layers 3, 5 (L', L): index 1.38",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "n=2.32 (Baumeister 1969)",
+      "N": [
+        2.32
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.32,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table III layers 4, 6 (H): index 2.32",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 54.75935827699198,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 89.03985510565218,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 58.8469827586207,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 98.93115942028987,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 58.8469827586207,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Glass n=1.52 (Baumeister 1969)",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table III substrate: index 1.52",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 546.1,
+  "Plot": {
+    "From": 328,
+    "To": 874,
+    "Steps": 547,
+    "Angle": 0,
+    "Quantities": [
+      "AA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546.1
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

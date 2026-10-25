@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.LayerPropertiesDialog"
+        Title="Layer properties" Width="520" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <Window.Styles>
+    <!-- Spacing in the form grids: this Avalonia's Grid has no RowSpacing or ColumnSpacing. -->
+    <Style Selector="Grid.form > TextBlock, Grid.form > TextBox, Grid.form > ComboBox, Grid.form > CheckBox">
+      <Setter Property="Margin" Value="0,0,6,6"/>
+    </Style>
+  </Window.Styles>
+
+  <!-- MODAL, AND NOTHING CHANGES UNTIL OK. The dialog fills a LayerPropertiesForm (Gui.Core,
+       tested); OK hands its properties to the design in one call, and a refusal keeps the dialog
+       open with the reason above the buttons. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock x:Name="HeadingText" FontWeight="SemiBold"/>
+
+    <Grid Classes="form" ColumnDefinitions="110,130,*" RowDefinitions="Auto,Auto,Auto,Auto">
+      <TextBlock Text="Material" VerticalAlignment="Center"/>
+      <ComboBox Grid.Column="1" Grid.ColumnSpan="2" x:Name="MaterialBox" Width="200"/>
+
+      <TextBlock Grid.Row="1" Text="Unit" VerticalAlignment="Center"/>
+      <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="UnitBox" Width="200"/>
+
+      <TextBlock Grid.Row="2" Text="Thickness" VerticalAlignment="Center"/>
+      <TextBox Grid.Row="2" Grid.Column="1" x:Name="ThicknessBox"/>
+      <TextBlock Grid.Row="2" Grid.Column="2" x:Name="NmText" FontSize="11" Foreground="#505050"
+                 VerticalAlignment="Center"/>
+
+      <TextBlock Grid.Row="3" Text="Optimise" VerticalAlignment="Center"/>
+      <CheckBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="VaryBox"
+                Content="Vary this thickness"/>
+    </Grid>
+    <!-- BOUNDS, between Vary and the pickup as the user placed them: what the optimiser may do
+         with this layer's thickness. -->
+    <Grid Classes="form" ColumnDefinitions="110,130,*" RowDefinitions="Auto,Auto" x:Name="BoundsFields">
+      <TextBlock Text="Constraint" VerticalAlignment="Center"/>
+      <ComboBox Grid.Column="1" Grid.ColumnSpan="2" x:Name="ConstraintBox" Width="200"/>
+      <TextBlock Grid.Row="1" Text="Min / max" VerticalAlignment="Center"/>
+      <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="6" Margin="0,0,0,6">
+        <TextBox x:Name="MinBox" Width="90"/>
+        <TextBlock Text="to" VerticalAlignment="Center"/>
+        <TextBox x:Name="MaxBox" Width="90"/>
+        <TextBlock x:Name="BoundsUnitText" VerticalAlignment="Center" FontSize="11" Foreground="#505050"/>
+      </StackPanel>
+    </Grid>
+    <TextBlock x:Name="BoundsNoteText" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+
+    <TextBlock x:Name="UnitNoteText" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+
+    <Border Height="1" Background="#E0E0E0"/>
+
+    <CheckBox x:Name="PickupBox" Content="Pick up the thickness from another layer"/>
+    <Grid Classes="form" ColumnDefinitions="110,90,*" RowDefinitions="Auto,Auto,Auto" x:Name="PickupFields">
+      <TextBlock Text="Parent layer" VerticalAlignment="Center"/>
+      <TextBox Grid.Column="1" x:Name="ParentBox"/>
+      <TextBlock Grid.Row="1" Text="Scale" VerticalAlignment="Center"/>
+      <TextBox Grid.Row="1" Grid.Column="1" x:Name="ScaleBox"/>
+      <TextBlock Grid.Row="2" Text="Offset" VerticalAlignment="Center"/>
+      <TextBox Grid.Row="2" Grid.Column="1" x:Name="OffsetBox"/>
+    </Grid>
+    <TextBlock x:Name="PickupNoteText" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

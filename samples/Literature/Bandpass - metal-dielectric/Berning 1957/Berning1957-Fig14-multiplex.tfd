@@ -1,0 +1,159 @@
+{
+  "Version": 2,
+  "Name": "Berning1957-Fig14-multiplex",
+  "Source": "P. H. Berning and A. F. Turner, \"Induced Transmission in Absorbing Films Applied to Band Pass Filter Design,\" J. Opt. Soc. Am. 47, 230-239 (1957). doi:10.1364/JOSA.47.000230 - Fig. 14 caption and text p. 238 ((h/lambda)_Ag = 0.0641)",
+  "Notes": "Multiplex filter Ag-L-2Ag-L-Ag (calculated)\nSpecification: Single pass band at 546 nm\nReported: Fig. 14(a): half-width 5.1 deg phi; peak transmittance 45 % (text p. 239).\nLayers from Fig. 14 caption and text p. 238 ((h/lambda)_Ag = 0.0641); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), differs from the paper: ours peak T 41.3 % at 531 nm; paper peak T 45 % (constant Ag index). Not exactly reproducible: the paper plots against the dielectric phase thickness with the silver held fixed, which a calculation against wavelength does not do (T at 546 nm, phase 90 deg: 26 %).",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "Ag n=0.075 k=3.41 (Hass, Berning 1957)",
+      "N": [
+        0.075
+      ],
+      "K": [
+        3.41
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.075,
+          3.41
+        ],
+        "Source": "Berning & Turner 1957, p. 233 and p. 236: N_Ag = 0.075 - 3.41i at 546 nm (G. Hass, unpublished)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "L n=1.38 (Berning 1957)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Berning & Turner 1957, p. 236 ('that of L to be 1.38')",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 35,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 144.41304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 70,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 144.41304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 35,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 546,
+  "Plot": {
+    "From": 420,
+    "To": 800,
+    "Steps": 381,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

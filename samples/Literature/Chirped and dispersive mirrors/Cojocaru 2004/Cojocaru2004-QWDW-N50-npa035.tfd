@@ -1,0 +1,1056 @@
+{
+  "Version": 2,
+  "Name": "Cojocaru2004-QWDW-N50-npa035",
+  "Source": "E. Cojocaru, \"Quarter-wave discrete wavelet design of dichroic highly reflecting-transmitting mirrors for ultrafast solid-state lasers,\" Appl. Opt. 43, 1261-1265 (2004). doi:10.1364/AO.43.001261 - Sec. 3, Eqs. (1)-(3), pp. 1261-1262; parameters of Figs. 1, 2(b), 2(c) (solid) and 3 (solid): N = 50, na = 1.9, npa = 0.35 (npp = 0.7), lambda0 = 1 um, n0 = ns = na",
+  "Notes": "Quarter-wave discrete wavelet (QWDW) high reflector for a dichroic ultrafast-laser mirror: 50 QW layers whose indices follow the upper/lower quintic envelopes na +/- npa A(x)\nSpecification: High-reflectance stop band centred at lambda0 = 1 um with no sidelobes; compared with a periodic QW stack of the same N, na, npa.\nReported: Fig. 3(a): full width of the stop band at R = 0.5 is almost the same as for the periodic QW stack (n1 = 2.25, n2 = 1.55, N = 50), given by Eq. (4): dl/l0 ~ (4/pi)(npa/na) = 0.2345 (Sec. 4: for N >= 40 the QWDW width at R = 0.5 differs from Eq. (4) by < 3 %). Fig. 3(b): QWDW peak R0 at lambda0 is lower than the periodic stack's (solid curve peaks a little below 1 on a 0.99-1 scale). Figs. 2(c)/3(a): no sidelobes outside the stop band. Fig. 4/Eq. (7) (f = 0.5164): R0 >= 0.9999 needs N ~ 55.5 at npa = 0.35, so N = 50 stays below 0.9999. Recomputed here at lambda0 with the assumed sampling: R0 = 0.999628.\nNotes: Layer i (counted from the substrate, as in the paper) has n_i = na + (-1)^(i+1) npa A(x_i), A = quintic of Eq. (2) with T = N lambda0/4 = 12.5 um, sampled at the layer centre x_i = (i - 1/2) lambda0/4. The sign follows sin(4 pi x/lambda0) of Eq. (1) with phi = 0, which is +1 at every odd layer's centre, so n_i equals n(x_i) of Eq. (1) with npp = 2 npa. The paper does not print the sampling point or the numeric indices; mid-layer sampling is an assumption. x = 0 is assumed at the substrate; the list is reversed so layer 1 here = layer N of the paper (next to the incident medium). Each layer is one QWOT at 1000 nm. Normal incidence; incident medium and substrate both n = na = 1.9 (n0 = ns = na), non-dispersive and lossless, so R is the same whichever side faces the light.\nLayers from Sec. 3, Eqs. (1)-(3), pp. 1261-1262; parameters of Figs. 1, 2(b), 2(c) (solid) and 3 (solid): N = 50, na = 1.9, npa = 0.35 (npp = 0.7), lambda0 = 1 um, n0 = ns = na; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R0 0.99962777 at 1000 nm; paper below the periodic stack of the same contrast (Fig. 3b). Each layer’s index is the paper’s wavelet (Eqs. 1-3) taken at the middle of the layer, which the paper does not specify.",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "Cojocaru2004 QWDW50 L50 n=1.89997",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.89997,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 50 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L49 n=1.90069",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.90069,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 49 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L48 n=1.89700",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.897,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 48 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L47 n=1.90770",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.9077,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 47 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L46 n=1.88470",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.8847,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 46 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L45 n=1.92605",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.92605,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 45 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L44 n=1.85998",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.85998,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 44 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L43 n=1.95708",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.95708,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 43 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L42 n=1.82305",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.82305,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 42 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L41 n=1.99922",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.99922,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 41 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L40 n=1.77661",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.77661,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 40 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L39 n=2.04886",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.04886,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 39 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L38 n=1.72500",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.725,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 38 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L37 n=2.10114",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.10114,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 37 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L36 n=1.67339",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.67339,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 36 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L35 n=2.15078",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.15078,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 35 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L34 n=1.62695",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.62695,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 34 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L33 n=2.19292",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.19292,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 33 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L32 n=1.59002",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.59002,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 32 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L31 n=2.22395",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.22395,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 31 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L30 n=1.56530",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.5653,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 30 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L29 n=2.24230",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.2423,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 29 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L28 n=1.55300",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.553,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 28 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L27 n=2.24931",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.24931,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 27 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L26 n=1.55003",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.55003,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 26 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L25 n=2.24997",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.24997,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 25 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L24 n=1.55069",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.55069,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 24 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L23 n=2.24700",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.247,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 23 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L22 n=1.55770",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.5577,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 22 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L21 n=2.23470",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.2347,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 21 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L20 n=1.57605",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.57605,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 20 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L19 n=2.20998",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.20998,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 19 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L18 n=1.60708",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.60708,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 18 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L17 n=2.17305",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.17305,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 17 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L16 n=1.64922",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.64922,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 16 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L15 n=2.12661",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.12661,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 15 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L14 n=1.69886",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.69886,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 14 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L13 n=2.07500",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.075,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 13 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L12 n=1.75114",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.75114,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 12 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L11 n=2.02339",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.02339,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 11 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L10 n=1.80078",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.80078,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 10 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L09 n=1.97695",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.97695,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 9 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L08 n=1.84292",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.84292,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 8 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L07 n=1.94002",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.94002,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 7 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L06 n=1.87395",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.87395,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 6 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L05 n=1.91530",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.9153,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 5 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L04 n=1.89230",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.8923,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 4 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L03 n=1.90300",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.903,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 3 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L02 n=1.89931",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.89931,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 2 counted from the substrate"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QWDW50 L01 n=1.90003",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.90003,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Eqs. (2) and (3): n_i = 1.9 + (-1)^(i+1) * 0.35 * A(x_i), x_i = (i - 1/2) lambda0/4, T = 50 lambda0/4, layer i = 1 counted from the substrate"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 131.58102496355207,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 131.5311807817161,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 131.78703215603585,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 131.0478586779892,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 4,
+      "Thickness": 132.64710564015493,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 5,
+      "Thickness": 129.79933023545598,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 6,
+      "Thickness": 134.41004741986472,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 7,
+      "Thickness": 127.74132891859301,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 8,
+      "Thickness": 137.1328268560928,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 9,
+      "Thickness": 125.04876901991777,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 10,
+      "Thickness": 140.71743376430393,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 11,
+      "Thickness": 122.01907402165106,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 12,
+      "Thickness": 144.92753623188406,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 13,
+      "Thickness": 118.98302826084887,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 14,
+      "Thickness": 149.39733116607604,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 15,
+      "Thickness": 116.23690010135857,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 16,
+      "Thickness": 153.6617597344725,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 17,
+      "Thickness": 114.00324681246921,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 18,
+      "Thickness": 157.23072665752633,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 19,
+      "Thickness": 112.4125992041188,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 20,
+      "Thickness": 159.7137928831534,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 21,
+      "Thickness": 111.49266378272308,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 22,
+      "Thickness": 160.97875080489376,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 23,
+      "Thickness": 111.14519563777337,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 24,
+      "Thickness": 161.28720089288595,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 25,
+      "Thickness": 111.11259261234595,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 26,
+      "Thickness": 161.2185543209797,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 27,
+      "Thickness": 111.25945705384959,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 28,
+      "Thickness": 160.49303460229825,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 29,
+      "Thickness": 111.87183962053071,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 30,
+      "Thickness": 158.624409124076,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 31,
+      "Thickness": 113.12319568502883,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 32,
+      "Thickness": 155.5616397441322,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 33,
+      "Thickness": 115.0456731322335,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 34,
+      "Thickness": 151.5868107347716,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 35,
+      "Thickness": 117.55799135713649,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 36,
+      "Thickness": 147.1575056214167,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 37,
+      "Thickness": 120.48192771084337,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 38,
+      "Thickness": 142.7641422159279,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 39,
+      "Thickness": 123.55502399438566,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 40,
+      "Thickness": 138.82872977265407,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 41,
+      "Thickness": 126.45742178608462,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 42,
+      "Thickness": 135.65428776072756,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 43,
+      "Thickness": 128.86465087988782,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 44,
+      "Thickness": 133.40804183676192,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 45,
+      "Thickness": 130.52785464418108,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 46,
+      "Thickness": 132.1143581884479,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 47,
+      "Thickness": 131.37151865475565,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 48,
+      "Thickness": 131.62674866135598,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 49,
+      "Thickness": 131.57686983889727,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.9",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.9,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.9",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.9,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 700,
+    "To": 1300,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

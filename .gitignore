@@ -1,0 +1,41 @@
+# Build output
+build/
+out/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.suo
+*.tlog
+*.log
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.obj
+*.o
+
+# CUDA
+*.ptx
+*.cubin
+*.fatbin
+
+# IDE
+.vs/
+.vscode/
+*.VC.db
+*.opendb
+
+# Scratch
+scratch/
+
+# Claude Code working notes - local only
+.claude/

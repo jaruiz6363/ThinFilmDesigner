@@ -1,0 +1,247 @@
+{
+  "Version": 2,
+  "Name": "Holloway1969-IT-2um-Ag515",
+  "Source": "R. J. Holloway and P. H. Lissberger, \"The Design and Preparation of Induced Transmission Filters,\" Appl. Opt. 8, 653-660 (1969). doi:10.1364/AO.8.000653 - Table II footnote (structure and constants) and Table II 'Theoretical filter d = 515 A' row, p. 658; same design in Fig. 3(d) and Fig. 4 captions, p. 655; M = 0.9074 also in Table I, 515 A row, p. 657",
+  "Notes": "Spacerless induced-transmission narrow-band filter, peak at 2.000 um, half-width about 0.05 um (the 'theoretical filter' of Table II, also Figs. 3(d) and 4)\nSpecification: Maximum transmittance at the design wavelength 2.000 um (criterion 1), largest possible effective index (criterion 2), simplest structure (criterion 3); T at peak equal to the maximum potential transmittance of the 515 A silver layer.\nReported: Table II, theoretical filter d = 515 A: peak transmittance 67.5 % at 2.000 um, effective refractive index 1.814, half-width 0.051 um. Table I (515 A row, lambda0 = 2.000 um): maximum potential transmittance 0.675; first non-quarter-wave layer 0.9074 quarter-waves. Fig. 3(d) (calculated): T peak at 2.0 um with suppressed sidebands; psi, tau0' and 1/(1+F sin^2 phi) each peak at 2.0 um. Fig. 4: R1 and R2 (reflectances at the reference medium boundaries) close to 1 around 2.0 um, minima near 1.5 and 3.0 um (read from plot, approximate). Table I half-filter monitoring values for d = 515 A (incidence in vacuo on the partially built filter on glass): T(dM=0) of the quarter-wave stack 0.222, T after the first non-quarter-wave layer 0.0475, T_A after the silver layer 0.0320, monitoring wavelength for the first non-quarter-wave layer 1.927 um. Measured (Table II): twelve filters with T 28-92 %, peak 1.916-2.025 um, effective index 1.78-2.0, half-width 0.025-0.164 um (e.g. filter 9: 70 %, 2.008 um, 1.87, 0.053 um; spectrum in Fig. 6).\nNotes: Paper writes glass | HLHLHL | M | Ag | M | LHLHLH | glass; the structure is symmetric, so incidence side does not matter and the list is as printed. H, L are quarter-waves at lambda0 = 2.000 um; M = 0.9074 H means a ZnS (mu_M = mu_H = 2.29) layer of 0.9074 quarter-wave optical thickness (physical 198.1 nm). Silver 515 A = 51.5 nm with N = 0.67 + 13.9i (k positive = absorbing). Both outer media are glass mu_g = 1.5 (cemented cover assumed, as the label shows glass on both sides). All indices are constant (no dispersion given). Normal incidence. 15 layers; no total thickness printed. Caveat: a quick check of glass|HLHLHL (cryolite outermost) seen from air gives T = 0.293, not the 0.222 printed in Table I for T(dM=0), so the Table I half-filter numbers may refer to a different reference (e.g. ratio to the uncoated substrate or a different stack); treat them with care. Table I also gives M for other silver thicknesses at 2 um: 500 A 0.9086, 505 A 0.9082, 510 A 0.9078, 520 A 0.9071, 525 A 0.9067, 530 A 0.9064 (psi_max 0.695, 0.688, 0.681, 0.668, 0.661, 0.654).\nLayers from Table II footnote (structure and constants) and Table II 'Theoretical filter d = 515 A' row, p. 658; same design in Fig. 3(d) and Fig. 4 captions, p. 655; M = 0.9074 also in Table I, 515 A row, p. 657; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours T 63.7 %, A 32.0 % at 2.000 um, half-width 52 nm; paper T 67.5 % at 2.000 um (the potential transmittance, A 32.5 %), half-width 51 nm (Tables I-II). The paper’s 67.5 % is the potential transmittance, the most the silver could pass with the best matching; the best matching layer found here gives 64.8 %.",
+  "Wavelength": [
+    2000
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.29 (Holloway 1969)",
+      "N": [
+        2.29
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.29,
+          0
+        ],
+        "MinMicrons": 1,
+        "MaxMicrons": 3.5,
+        "Source": "Holloway & Lissberger 1969, Table I, Table II footnote, Conclusions: zinc sulfide mu_H = mu_M = 2.29",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "cryolite n=1.423 (Holloway 1969)",
+      "N": [
+        1.423
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.423,
+          0
+        ],
+        "MinMicrons": 1,
+        "MaxMicrons": 3.5,
+        "Source": "Holloway & Lissberger 1969, Table I, Table II footnote, Conclusions: cryolite mu_L = 1.423",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Ag 0.67+13.9i at 2 um (Holloway 1969)",
+      "N": [
+        0.67
+      ],
+      "K": [
+        13.9
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.67,
+          13.9
+        ],
+        "Source": "Holloway & Lissberger 1969, Table I (lambda0 = 2.000 u, n = 0.67, k = 13.9), Table II footnote N_Ag = 0.67 + 13.9i, Conclusions p. 659",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 198.12227074235807,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 51.5,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 198.12227074235807,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 351.37034434293747,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 218.34061135371178,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [
+      1.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [
+      1.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 0.675,
+      "Weight": 1,
+      "Scale": 0.675,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 2000,
+  "Plot": {
+    "From": 1000,
+    "To": 3500,
+    "Steps": 2501,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 2000
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

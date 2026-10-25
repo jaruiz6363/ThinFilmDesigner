@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.McpSetup.SetupWindow"
+        Title="ThinFilmDesigner — connect to Claude (MCP)"
+        Width="680" SizeToContent="Height" CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+  <!-- After LensHH-LT's helper: the server, then each client with its state and its two buttons. -->
+  <StackPanel Margin="18" Spacing="6">
+    <TextBlock TextWrapping="Wrap" Foreground="#505050"
+               Text="Lets Claude design coatings with ThinFilmDesigner: Claude starts thinfilm-mcp, the program's MCP server, and calls its tools. Choose the clients to connect, then restart them."/>
+
+    <TextBlock Text="The MCP server" FontWeight="SemiBold" Margin="0,8,0,0"/>
+    <Grid ColumnDefinitions="*,Auto,Auto">
+      <TextBox x:Name="ServerBox" IsReadOnly="True"/>
+      <Button Grid.Column="1" x:Name="BrowseButton" Content="Browse…" Margin="8,0,0,0"/>
+      <Button Grid.Column="2" x:Name="TestButton" Content="Test the server" Margin="8,0,0,0"/>
+    </Grid>
+    <TextBlock x:Name="ServerState"/>
+
+    <TextBlock Text="Claude Desktop" FontWeight="SemiBold" Margin="0,10,0,0"/>
+    <TextBlock x:Name="DesktopState" TextWrapping="Wrap"/>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button x:Name="DesktopAddButton" Content="Connect Claude Desktop"/>
+      <Button x:Name="DesktopRemoveButton" Content="Remove from Claude Desktop"/>
+    </StackPanel>
+
+    <TextBlock Text="Claude Code" FontWeight="SemiBold" Margin="0,10,0,0"/>
+    <TextBlock x:Name="CodeState" TextWrapping="Wrap"/>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button x:Name="CodeAddButton" Content="Connect Claude Code"/>
+      <Button x:Name="CodeRemoveButton" Content="Remove from Claude Code"/>
+      <Button x:Name="CopyButton" Content="Copy the command"/>
+    </StackPanel>
+
+    <Border Height="1" Background="#E0E0E0" Margin="0,10,0,0"/>
+    <TextBlock x:Name="StatusText" TextWrapping="Wrap" Text="Ready."/>
+  </StackPanel>
+</Window>

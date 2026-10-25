@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>ThinFilm.Native.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Native\ThinFilm.Native.csproj" />
+    <ProjectReference Include="..\ThinFilm.Optimize\ThinFilm.Optimize.csproj" />
+    <ProjectReference Include="..\ThinFilm.Api\ThinFilm.Api.csproj" />
+    <ProjectReference Include="..\ThinFilm.Cli\ThinFilm.Cli.csproj" />
+    <ProjectReference Include="..\ThinFilm.Mcp\ThinFilm.Mcp.csproj" />
+    <ProjectReference Include="..\ThinFilm.Gui.Core\ThinFilm.Gui.Core.csproj" />
+  </ItemGroup>
+
+  <!-- THE PINS THEMSELVES, not a copy of them. The managed layout test reads the same file the
+       native test compiles, so the two cannot disagree about what the ABI froze at. -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\tests\native\test_abi_frozen.cpp" LogicalName="abi_pins.cpp" />
+    <!-- X1.3: the fixture file itself. Embedded so there is no copy to drift and no path to
+         get wrong; the native suite reads the same bytes. -->
+    <EmbeddedResource Include="..\..\tests\fixtures\evaluation.fixtures" LogicalName="evaluation.fixtures" />
+    <EmbeddedResource Include="..\..\tests\fixtures\bandpass-needled.tfd" LogicalName="bandpass-needled.tfd" />
+    <EmbeddedResource Include="..\..\docs\user-guide\data\Si-Green-2008.csv" LogicalName="Si-Green-2008.csv" />
+  </ItemGroup>
+
+  <!-- The native library, wherever CMake put it. Globbed rather than hard-coded to one
+       configuration so that a Debug build of the engine is picked up too; if BOTH exist the
+       newest wins, and if neither does the test says so rather than failing to load. -->
+  <ItemGroup>
+    <NativeLibrary Include="..\..\build\**\thinfilm_native.dll" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.so" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.dylib" />
+    <None Include="@(NativeLibrary)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,162 @@
+{
+  "Version": 2,
+  "Name": "Dinca1996-basic-stack",
+  "Source": "A. Dinca, M. E. Trifan, V. Lupei, and M. Dinca, \"Dichroic mirror design by complete admittance matching,\" Opt. Eng. 35(5), 1284-1287 (1996). doi:10.1117/1.600667 - Sec. 3, p. 1286 ('The basic stack was chosen to have the structure (0.5L H 0.5L)^7'), spectrum in Fig. 1",
+  "Notes": "Basic high-reflectance stack (0.5L H 0.5L)^7 alone, chosen for its low ripple on the short-wavelength side (Fig. 1)\nSpecification: High reflectance at 1064 nm with low ripple in the short-wavelength region (before matching).\nReported: Equivalent refractive index of the period at 532 nm Eb = 1.176 (Sec. 3). Fig. 1 (0.4-2.0 um): reflectance band near 1 from ~0.95 to ~1.2 um, small ripple below ~0.8 um, larger side lobes on the long-wavelength side. Recomputation check (this extraction): E of the (0.5L H 0.5L) period at 532 nm = 1.181.\nNotes: Fig. 1 does not state the media; assumed air incidence on the same BK7 substrate (n = 1.52) as the final design. QWOT at 1064 nm. (0.5L H 0.5L)^7 merged to 0.5L (H L)^6 H 0.5L, 15 layers. Normal incidence assumed.\nLayers from Sec. 3, p. 1286 ('The basic stack was chosen to have the structure (0.5L H 0.5L)^7'), spectrum in Fig. 1; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R 99.0 % at 1064 nm, 4.26 % at 532 nm; paper the basic stack, with the 532 nm ripple the matching layers remove (Fig. 1); Eb 1.176 at 532 nm.",
+  "Wavelength": [
+    1064
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.46 (Dinca 1996)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.46,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 2,
+        "Source": "Dinca et al., Opt. Eng. 35, 1284 (1996), Sec. 3, p. 1286: 'silicium dioxide (SiO2) with nL = 1.46'"
+      }
+    },
+    {
+      "Name": "TiO2 n=2.23 (Dinca 1996)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.23,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 2,
+        "Source": "Dinca et al., Opt. Eng. 35, 1284 (1996), Sec. 3, p. 1286: 'titanium dioxide (TiO2) with nH = 2.23'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 91.0958904109589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 91.0958904109589,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1064,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 2000,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1064
+  }
+}

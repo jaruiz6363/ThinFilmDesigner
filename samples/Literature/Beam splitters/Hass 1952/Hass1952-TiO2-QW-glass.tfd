@@ -1,0 +1,77 @@
+{
+  "Version": 2,
+  "Name": "Hass1952-TiO2-QW-glass",
+  "Source": "G. Hass, \"Preparation, properties and optical applications of thin films of titanium dioxide,\" Vacuum 2(4), 331-345 (1952). (doi not printed in the PDF) - Table on p. 338 (row 'TiO2'); thickness 505 A and optical thickness 1370 A from text p. 338; Fig. 6 (p. 337)",
+  "Notes": "Single quarter-wave rutile beam-splitter film on glass\nSpecification: Quarter-wave TiO2 at 550 nm on glass ng = 1.51 for a high-reflectance beam divider.\nReported: Table p. 338: R = 44.5 %, T = 55.0 % at 550 nm on glass ng = 1.51. Text p. 338: physical thickness 505 A, optical thickness nt = 1370 A (= lambda/4 at 550 nm). Fig. 6: Rmax of a lambda/4 rutile film on glass decreases from 52.9 % at 400 nm to 41.4 % at 800 nm (Rmax at each wavelength, i.e. a different film per wavelength); measured values not corrected for back reflection.\nNotes: Rutile index taken as the constant n = 1370/505 = 2.713 at 550 nm (the film dispersion of Fig. 5, about 2.9 at 400 nm to 2.5 at 2000 nm, is only plotted). Physical thickness 50.5 nm corresponds to 1 QWOT at 550 nm with this n. Normal incidence assumed; glass treated as a semi-infinite substrate (no back surface).\nLayers from Table on p. 338 (row 'TiO2'); thickness 505 A and optical thickness 1370 A from text p. 338; Fig. 6 (p. 337); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 43.5 % at 550 nm; paper R 44.5 % (measured, table p. 338).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 rutile film n=2.713 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.713,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: rutile film of 505 A with optical thickness nt = 1370 A (lambda/4 at 550 nm), n = 1370/505 = 2.713 at 550 nm"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.51",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.51,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

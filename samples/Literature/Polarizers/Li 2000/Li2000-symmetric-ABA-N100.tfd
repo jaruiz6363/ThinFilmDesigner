@@ -1,0 +1,892 @@
+{
+  "Version": 2,
+  "Name": "Li2000-symmetric-ABA-N100",
+  "Source": "L. Li and J. A. Dobrowolski, \"High-performance thin-film polarizing beam splitter operating at angles greater than the critical angle,\" Appl. Opt. 39, 2754-2771 (2000). doi:10.1364/AO.39.002754 - Sec. 3, text p. 2758 (n0 = 2.35, n1 = 1.45, n2 = 4.0, lambda0 = 50 um, d1 = 0.02 um, d2 = 0.013056 um from Eq. 7); Fig. 3 A4/B4 (N = 100)",
+  "Notes": "Theoretical symmetric structure n0|[ABA]^N|n0 illustrating the FTIR PBS principle: broadband, wide-angle AR for s-polarisation and reflector for p-polarisation\nSpecification: Es matched to eta0s (perfect s-AR) at all wavelengths and angles; p-polarised light totally reflected above theta_LL = 44.1 deg; plotted over g = lambda0/lambda = 0-50 (lambda >= 1 um)\nReported: Fig. 3 A4: Ts close to unity and Rs low for theta0 = 0-85 deg (Rs below ~1e-2 at 85 deg); Fig. 3 B4: Rp very close to unity, Tp < 1e-6 for theta0 > 60 deg for most wavelengths. Critical angle for the 1.45 layer 38.1 deg, lower-limit angle 44.1 deg (relations 8).\nNotes: A is the n1 = 1.45 layer of thickness d1 (it appears twice in each ABA period), B the n2 = 4.0 layer of thickness d2. For N = 100 the 300 sublayers merge to 201 layers (end A layers 20 nm, inner A layers 40 nm). Fig. 3 also shows N = 1 and N = 50 (same period, fewer repeats) at 60 deg. The paper mentions the optimal substrate n0' = 3.01 but states the same n0 = 2.35 structure is reused for p. Band chosen to cover the plotted g range; angle_deg 60 is the angle of the Fig. 3 A3/B3 curves.\nLayers from Sec. 3, text p. 2758 (n0 = 2.35, n1 = 1.45, n2 = 4.0, lambda0 = 50 um, d1 = 0.02 um, d2 = 0.013056 um from Eq. 7); Fig. 3 A4/B4 (N = 100); layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    50000
+  ],
+  "Materials": [
+    {
+      "Name": "L n=1.45 (Li 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "MinMicrons": 1,
+        "MaxMicrons": 50,
+        "Source": "Li & Dobrowolski 2000, Sec. 3-4, Tables 2-3"
+      }
+    },
+    {
+      "Name": "H n=4.00 (Li 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          4,
+          0
+        ],
+        "MinMicrons": 2,
+        "MaxMicrons": 40,
+        "Source": "Li & Dobrowolski 2000, Sec. 4, Tables 2-3 (Ge-like high index for IR designs)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 20
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.056
+    },
+    {
+      "Material": 0,
+      "Thickness": 20
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=2.35",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        2.35,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=2.35",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        2.35,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 50000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 1000,
+    "To": 50000,
+    "Steps": 2001,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP",
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 50000
+  }
+}

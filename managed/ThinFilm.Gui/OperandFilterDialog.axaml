@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.OperandFilterDialog"
+        Title="Delete Operands" Width="520" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- DELETE OPERANDS AND ADJUST WEIGHT ARE ONE DIALOG: the same filter, and Adjust weight adds the
+       new weight. A blank box or "(any)" filters nothing. The count under the filter is the rows
+       OK will act on, so nothing is deleted on a guess. Nothing changes until OK. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock x:Name="IntroText" TextWrapping="Wrap" FontSize="12" Foreground="#505050"/>
+
+    <Grid ColumnDefinitions="130,*,12,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+      <Grid.Styles>
+        <Style Selector="Grid > TextBlock">
+          <Setter Property="VerticalAlignment" Value="Center"/>
+          <Setter Property="Margin" Value="0,0,8,8"/>
+        </Style>
+        <Style Selector="Grid > TextBox, Grid > ComboBox">
+          <Setter Property="Margin" Value="0,0,0,8"/>
+          <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+      </Grid.Styles>
+
+      <TextBlock Grid.Row="0" x:Name="WavelengthLabel" Text="WV1 to WV2 (nm)"/>
+      <TextBox Grid.Row="0" Grid.Column="1" x:Name="Wavelength1Box" Watermark="WV1, blank = any"/>
+      <TextBox Grid.Row="0" Grid.Column="3" x:Name="Wavelength2Box" Watermark="WV2, blank = any"/>
+
+      <TextBlock Grid.Row="1" Text="Type or code"/>
+      <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" x:Name="CodeBox"/>
+
+      <TextBlock Grid.Row="2" Text="Mode"/>
+      <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="ModeBox"/>
+
+      <TextBlock Grid.Row="3" Text="AOI (°)"/>
+      <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" ColumnDefinitions="*,8,*,8,*" Margin="0,0,0,8">
+        <ComboBox Grid.Column="0" x:Name="AngleTestBox" HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Column="2" x:Name="Angle1Box" Watermark="XX"/>
+        <TextBox Grid.Column="4" x:Name="Angle2Box" Watermark="YY"/>
+      </Grid>
+
+      <TextBlock Grid.Row="4" x:Name="WeightLabel" Text="New weight"/>
+      <TextBox Grid.Row="4" Grid.Column="1" x:Name="WeightBox"/>
+    </Grid>
+
+    <TextBlock x:Name="CountText" FontWeight="SemiBold" TextWrapping="Wrap"/>
+    <TextBlock x:Name="ProblemText" Foreground="Firebrick" TextWrapping="Wrap"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="Delete" IsDefault="True" MinWidth="72"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="72"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

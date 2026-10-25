@@ -1,0 +1,114 @@
+{
+  "Version": 2,
+  "Name": "Yenisoy2019-Ge-MWIR-AR3-asbuilt",
+  "Source": "A. Yenisoy, C. Yesilyaprak, K. Ruzgar, and S. Tuzemen, \"Ultra-broad band antireflection coating at mid wave infrared for high efficient germanium optics,\" Opt. Mater. Express 9, 3123-3131 (2019). doi:10.1364/OME.9.003123 - Table 2 (p. 3128), column 'Measured Thickness (nm)': 132 / 108 / 733 nm (layers 1-3 numbered from the substrate); thickness errors -3, +3, +8 nm in Fig. 6",
+  "Notes": "Same AR coating with the measured (as-deposited) layer thicknesses\nSpecification: As-built version of Yenisoy2019-Ge-MWIR-AR3; each layer within the 3 % tolerance window (131-139, 102-108, 703-747 nm).\nReported: Overall stack thickness measured by optical profiler on a witness: 972 nm (p. 3127); the measured layers sum to 973 nm (132+108+733), consistent. Measured Rav 0.256 %, Tav 99.744 %, R 0.005 % at 3550 nm (measured at AOI 10 deg). Recomputation with these thicknesses (this extraction): R min 0.008 % at 3650 nm, average 0.18 % over 3400-4800 nm, 0.68 % at 3400 nm.\nNotes: Reversed from the paper's substrate-first numbering. Thicknesses were extracted from FTIR spectra by random error analysis. Paper attributes the sim/measurement differences to thickness deviations and AOI 10 deg in the FTIR.\nLayers from Table 2 (p. 3128), column 'Measured Thickness (nm)': 132 / 108 / 733 nm (layers 1-3 numbered from the substrate); thickness errors -3, +3, +8 nm in Fig. 6; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), differs from the paper: ours Rav 0.183 %, R max 0.68 % over 3.4-4.8 um; paper Rav 0.256 % (measured), R < 0.5 % throughout. The measured thicknesses with the printed dispersions exceed the measured 0.5 % only at the 3.4 um band edge (0.68 %); the measurement was at 10 deg and a nanometre of thickness moves that edge.",
+  "Wavelength": [
+    4000
+  ],
+  "Materials": [
+    {
+      "Name": "Al2O3 film Sellmeier (Yenisoy 2019)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "SELLMEIER",
+        "Coefficients": [
+          1.561,
+          0,
+          0.046,
+          -5.843,
+          7.006,
+          599.958
+        ],
+        "MinMicrons": 3.4,
+        "MaxMicrons": 4.8,
+        "Source": "Yenisoy et al. 2019, p. 3126: Sellmeier constants of the 250 nm e-beam Al2O3 film on Ge (Eq. 3) A0..A4 = 2.561, 0.046, -5.843 (printed '-5,843'), 7.006, 599.958; Fig. 5"
+      }
+    },
+    {
+      "Name": "Ge Sellmeier (Yenisoy 2019)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "SELLMEIER",
+        "Coefficients": [
+          15.229,
+          0,
+          0.044,
+          9.249,
+          0.083,
+          92.139
+        ],
+        "MinMicrons": 3.4,
+        "MaxMicrons": 4.8,
+        "Source": "Yenisoy et al. 2019, Eq. (3) p. 3125: n^2 = A0 + A1 l^2/(l^2 - A2) + A3 l^2/(l^2 - A4) with A0..A4 = 16.229, 0.044, 9.249, 0.083, 92.139 for the Ge substrate (fitted to FTIR T/R, Fig. 2-3); also used for the Ge film"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 733
+    },
+    {
+      "Material": 1,
+      "Thickness": 108
+    },
+    {
+      "Material": 0,
+      "Thickness": 132
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "Ge Sellmeier (Yenisoy 2019)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        15.229,
+        0,
+        0.044,
+        9.249,
+        0.083,
+        92.139
+      ],
+      "MinMicrons": 3.4,
+      "MaxMicrons": 4.8,
+      "Source": "Yenisoy et al. 2019, Eq. (3) p. 3125: n^2 = A0 + A1 l^2/(l^2 - A2) + A3 l^2/(l^2 - A4) with A0..A4 = 16.229, 0.044, 9.249, 0.083, 92.139 for the Ge substrate (fitted to FTIR T/R, Fig. 2-3); also used for the Ge film"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 4000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 3400,
+    "To": 4800,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 4000
+  }
+}

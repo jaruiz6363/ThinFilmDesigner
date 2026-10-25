@@ -1,0 +1,174 @@
+{
+  "Version": 2,
+  "Name": "Vasicek1953-mirror-n2-k7",
+  "Source": "A. Vasicek, \"Multiple thin dielectric films as mirrors and interference filters,\" Czech. J. Phys. 3, 206-222 (1953). doi:10.1007/BF01687127 - Sec. II a-b, pp. 208-212 (Eqs. 19, 24-34'); Table II p. 214; Table IV lower part p. 222",
+  "Notes": "Same quarter-wave H/L mirror on glass (k = 7) but with the incident medium of low index n2 = 1.36 (the reflectance r_k^2 of Sec. II and the mirror half of the interference filter)\nSpecification: Reflectance r_k^2 of H L H L H L H | glass seen from a medium of index 1.36\nReported: Normal incidence from the low-index medium n2 = 1.36 onto film H; reflectance r_k^2 (fraction). Table II (p. 214), exact (multiple-reflection) values: x=60 deg (1650 nm) 0.043028, x=90 deg (1100 nm) 0.02788, x=120 deg (825 nm) 0.04982; the paper's single-reflection approximation gives 0.064915, 0.00265, 0.18945. Table IV lower part (p. 222): r_k^2 = 0.95363 at x = 180 deg (550 nm); Fabry-Perot half-width 2*dLambda = 83.1 A from Eq. (48) using this r^2 (spacer of index n2). Note: Table II exact x=60 deg value 0.043028 disagrees with an independent matrix calculation (0.0745); the other k=7 entries match. Fig. 4 (p. 213) plots r_k^2 vs k for x = 60-180 deg (plot only).\nNotes: The paper treats the incident medium as a semi-infinite medium of index n2 (film B / cryolite), i.e. the reflectance inside a filter at the spacer boundary. Here it is modelled as an incident medium of constant n = 1.36. Same index and x-to-wavelength assumptions as the air designs.\nLayers from Sec. II a-b, pp. 208-212 (Eqs. 19, 24-34'); Table II p. 214; Table IV lower part p. 222; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 0.953637 at 550 nm; paper R 0.95363 (printed).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.40 ZnS or TiO2 (Vasicek 1953)",
+      "N": [
+        2.4
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.4,
+          0
+        ],
+        "Source": "Vasicek 1953, p. 208: \"high refractive index n1 = 2.4000 (films ZnS or TiO2)\" at lambda = 5500 A",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "L n=1.36 MgF2 or cryolite (Vasicek 1953)",
+      "N": [
+        1.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.36,
+          0
+        ],
+        "Source": "Vasicek 1953, p. 208: \"low refractive index n2 = 1.3600 (films MgF2 or cryolith)\"; p. 221 cryolite n2 = 1.3600",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 101.10294117647058,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 101.10294117647058,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 101.10294117647058,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "L n=1.36 MgF2 or cryolite (Vasicek 1953)",
+    "N": [
+      1.36
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.36,
+        0
+      ],
+      "Source": "Vasicek 1953, p. 208: \"low refractive index n2 = 1.3600 (films MgF2 or cryolith)\"; p. 221 cryolite n2 = 1.3600",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "BK7 n=1.518 (Vasicek 1953)",
+    "N": [
+      1.518
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.518,
+        0
+      ],
+      "Source": "Vasicek 1953, p. 208: glass BK7 (Schott catalogue) n = 1.5180 at lambda = 5500 A",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 550,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

@@ -1,0 +1,283 @@
+{
+  "Version": 2,
+  "Name": "Young1967-caseB-equal-ripple-19L",
+  "Source": "L. Young, \"Multilayer Interference Filters with Narrow Stop Bands,\" Appl. Opt. 6, 297-315 (1967). doi:10.1364/AO.6.000297 - Sec. VI.E p. 305: Eq. (48) n_i/n_0 = 1 - x*sum_{k=1}^{i}(-1)^k I_k with Table I currents (p. 305); case list p. 305; results Table II p. 309 and Fig. 10",
+  "Notes": "Non-optimum equal-ripple narrow stop-band (minus) filter designed from a 40-dB-sidelobe Dolph-Chebyshev linear antenna array (first-order theory); 19 quarter-wave layers of graded index, x = 0.8\nSpecification: Stop band centred where every layer is a quarter wave; equal reflection ripples in the passband with 40 dB sidelobe ratio (Table I currents for 20 array elements).\nReported: Table II (p. 309), case B, with theta = layer phase thickness (theta/90 = 1 at stop-band centre, i.e. lambda = reference_nm/(theta/90)): number of layers 19; maximum attenuation 33.10 dB at centre; minimum transmittance 4.9e-4; Vmax 8160; ripple SWR Vr predicted by Eq. (43) and computed 1.10; centre index ratio 2.25; zeros of reflectance between theta = 0 and 90 deg: 8 (10 expected); equal-ripple fractional bandwidth computed by analysis (Line 15) w = 0.72 (band edges at theta/90 = 0.64 and 1.36, i.e. about 404.4-859.4 nm for reference 550 nm); predicted by Eq. (47) 0.73; first-order nulls bandwidth w1 (Eq. 8, quarter-wave stack of the centre ratio) 0.542, w1a 0.366, w0a 0.352, optimum filter w0 0.494. Fig. 10: response plotted vs theta/90 from 0 to 2 (reflectance ripples below about 0.002 for case A/C).\nNotes: All layers are quarter waves at reference_nm (theta = 90 deg); reference_nm = 550 nm is arbitrary (the paper works in normalised frequency theta/90). End media n_0 = 1 on both sides (the formula returns n_0 after the last interface, since the currents are symmetric), indices are relative to n_0; normal incidence, no dispersion or absorption. Layer i uses index n_i of Eq. (48), layer 1 next to the incident medium; the stack is symmetric (n_i = n_{20-i}), so 10 distinct materials. Recomputed here with a matrix calculation: Vmax = 8158, centre attenuation 33.10 dB, centre index ratio 2.2481 (Table II Line 9 prints 2.25).\nLayers from Sec. VI.E p. 305: Eq. (48) n_i/n_0 = 1 - x*sum_{k=1}^{i}(-1)^k I_k with Table I currents (p. 305); case list p. 305; results Table II p. 309 and Fig. 10; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours 33.10 dB at the centre; paper 33.1 dB (Table II).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "Young1967 case B n1=1.09416 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.09416,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_1/n_0 = 1 - x*sum_{k=1..1} (-1)^k I_k; also layer 19 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n2=0.96168 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.96168,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_2/n_0 = 1 - x*sum_{k=1..2} (-1)^k I_k; also layer 18 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n3=1.17256 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.17256,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_3/n_0 = 1 - x*sum_{k=1..3} (-1)^k I_k; also layer 17 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n4=0.86760 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.8676,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_4/n_0 = 1 - x*sum_{k=1..4} (-1)^k I_k; also layer 16 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n5=1.27696 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.27696,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_5/n_0 = 1 - x*sum_{k=1..5} (-1)^k I_k; also layer 15 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n6=0.76032 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.76032,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_6/n_0 = 1 - x*sum_{k=1..6} (-1)^k I_k; also layer 14 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n7=1.37824 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.37824,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_7/n_0 = 1 - x*sum_{k=1..7} (-1)^k I_k; also layer 13 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n8=0.67408 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.67408,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_8/n_0 = 1 - x*sum_{k=1..8} (-1)^k I_k; also layer 12 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n9=1.44096 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.44096,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_9/n_0 = 1 - x*sum_{k=1..9} (-1)^k I_k; also layer 11 by symmetry"
+      }
+    },
+    {
+      "Name": "Young1967 case B n10=0.64096 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.64096,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Eq. (48) with Table I currents (20 elements), x = 0.8: n_10/n_0 = 1 - x*sum_{k=1..10} (-1)^k I_k (centre layer)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 125.66717847481172,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 142.9789534980451,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 117.26478815582998,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 158.48317196864915,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 4,
+      "Thickness": 107.67760932214007,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 5,
+      "Thickness": 180.84490740740742,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 6,
+      "Thickness": 99.76491757603901,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 7,
+      "Thickness": 203.98172323759792,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 8,
+      "Thickness": 95.42249611370198,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 9,
+      "Thickness": 214.52196704942588,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 8,
+      "Thickness": 95.42249611370198,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 7,
+      "Thickness": 203.98172323759792,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 6,
+      "Thickness": 99.76491757603901,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 5,
+      "Thickness": 180.84490740740742,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 4,
+      "Thickness": 107.67760932214007,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 158.48317196864915,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 117.26478815582998,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 142.9789534980451,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125.66717847481172,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 367,
+    "To": 1100,
+    "Steps": 1467,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

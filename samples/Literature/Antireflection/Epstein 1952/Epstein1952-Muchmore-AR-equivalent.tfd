@@ -1,0 +1,111 @@
+{
+  "Version": 2,
+  "Name": "Epstein1952-Muchmore-AR-equivalent",
+  "Source": "L. I. Epstein, \"The Design of Optical Filters,\" J. Opt. Soc. Am. 42, 806-810 (1952). doi:10.1364/JOSA.42.000806 - Table IV (p.810), text p.810",
+  "Notes": "Five-layer ZnS/MgF2 antireflection coating simulating R. B. Muchmore's two-layer achromatic AR coating (quarter waves of n = 1.318 and 1.151 on glass 1.517) by Herpin-equivalent symmetrical periods of total thickness 3/4 wave (2phi_p + phi_q = 270 deg, phi_q = 4.0 deg for N = 1.318 and phi_q = 20.0 deg for N = 1.151)\nSpecification: Low reflectance across the visible, better than a single MgF2 layer over more than half the visible spectrum.\nReported: Fig. 7 (calculated reflectance, 0.2 % grid, read off the plot, approximate): two zeros at ~500 nm and ~612 nm with a maximum of ~0.45 % at ~552 nm between them; R ~ 1.7 % at ~468 nm and ~677 nm, rising steeply outside. The dashed single-MgF2-film curve (thickness not stated; it behaves like a quarter wave near 550 nm) lies at ~1.45 % at 468 nm, minimum ~1.27 % near 550 nm, ~1.6 % at 680 nm. Sum of printed optical thicknesses 550.88 deg at 546 nm. NOTE: a direct recomputation with the printed values at 546 nm (this extraction) gives the same shape (max 0.42 %) but about 3 % to the red: zeros near ~517 and ~628 nm, 1.7 % near ~473 and ~687 nm.\nNotes: Table IV lists the layers from the glass (1.517) to air (1.00); reversed here so layer 1 is next to air. Thicknesses are optical thicknesses at 546 nm in degrees (QWOT = deg/90, 6 decimals). The design was computed exactly, not through the equivalence approximation; the two equivalent periods (MgF2/ZnS/MgF2 with phi_q = 4.0 and 20.0 deg) share the middle MgF2 layer (263.2 deg) and their outer layers are not exactly 133 and 125 deg as gamma ~ 2phi_p + phi_q would give, so the printed values are taken as final. Indices 2.30 and 1.38 are non-dispersive. Normal incidence from air; back surface ignored. Total of printed optical thicknesses: 550.88 deg.\nLayers from Table IV (p.810), text p.810; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours minima at 517 and 626 nm, 0.430 % between; paper Fig. 7: zeros at ~500 and ~612 nm, ~0.45 % between. The shape and the 0.43 % maximum match Fig. 7, but the curve sits about 3 % to the red of the plotted one; the table was checked against the scan, so the paper probably drew it with slightly different indices.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 n=1.38 (Epstein 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.35,
+        "MaxMicrons": 0.8,
+        "Source": "Epstein, JOSA 42, 806 (1952), p.807: magnesium fluoride (1.38); Tables I-IV"
+      }
+    },
+    {
+      "Name": "ZnS n=2.30 (Epstein 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.35,
+        "MaxMicrons": 0.8,
+        "Source": "Epstein, JOSA 42, 806 (1952), p.807: \"The indices used are those of zinc sulfide (2.30) and magnesium fluoride (1.38)\"; Tables I-IV"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 140.1268445652174,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 13.452193695652175,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 289.2656565217391,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 2.6904150000000002,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 149.13891086956522,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.517",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.517,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 450,
+    "To": 720,
+    "Steps": 271,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

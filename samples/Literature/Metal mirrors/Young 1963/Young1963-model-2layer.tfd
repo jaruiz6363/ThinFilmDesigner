@@ -1,0 +1,97 @@
+{
+  "Version": 2,
+  "Name": "Young1963-model-2layer",
+  "Source": "L. Young, \"Multilayer reflection coatings on a metal mirror,\" Appl. Opt. 2, 445-447 (1963). doi:10.1364/AO.2.000445 - Fig. 1, Fig. 2 inset and Eq. (7), p. 446",
+  "Notes": "Computed model of Fig. 2: 2 quarter-wave ZnS/cryolite layers on a fictitious lossless medium of index 132 that has the 97 % reflectance of gold.\nSpecification: Maximum reflectance at the band centre f/f0 = 1.\nReported: Fig. 2 (scale 1, Rm = 0.97): peak R ~0.989 at f/f0 = 1; Eq. (6) approximation R ~ 1 - x(1-Rm) with x = (1.32/2.2)^2 = 0.36 gives 0.9892. Curves symmetric about f/f0 = 1 on a frequency scale and return to the bare-medium R = 0.970 at f/f0 = 0 and 2 (half-wave layers). Text p. 447 (2 layers, read off Fig. 2): R = 0.988 at f/f0 = 1.06 on scale 1 (Rm = 0.97). With reference_nm 1000, f/f0 = 1000/lambda(nm).\nNotes: Fig. 1 and the Fig. 2 inset show the stack from the incident medium (n = 1) as ZnS (high, n1) / cryolite (low, n2) / ... / cryolite / metal, i.e. the low-index layer is next to the metal and the high-index layer faces the light; listed here in that order. All layers are quarter waves at reference_nm with non-absorbing constant indices ZnS 2.2, cryolite 1.32. Normal incidence, vacuum/air incident medium. reference_nm 1000 is arbitrary: the paper plots against normalized frequency f/f0 = reference_nm/lambda (0 to 2), so band_nm [500, 4000] covers f/f0 = 0.25-2. Substrate n = 132, k = 0 from Eq. (7) (n = (1+sqrt(Rm))/(1-sqrt(Rm)) for Rm = 0.97). Scale 2 of Fig. 2 corresponds to Rm = 0.982, i.e. an equivalent medium n = (1+sqrt(0.982))/(1-sqrt(0.982)) ~ 220 (not printed).\nLayers from Fig. 1, Fig. 2 inset and Eq. (7), p. 446; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 0.9889 at f/f0 = 1.06 (943.4 nm); paper R 0.988 (read from Fig. 2).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.2 (Young 1963)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.2,
+          0
+        ],
+        "MinMicrons": 0.7,
+        "MaxMicrons": 1.06,
+        "Source": "Young, Appl. Opt. 2, 445 (1963), p. 445: 'ZnS (n = 2.2)'"
+      }
+    },
+    {
+      "Name": "cryolite n=1.32 (Young 1963)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.32,
+          0
+        ],
+        "MinMicrons": 0.7,
+        "MaxMicrons": 1.06,
+        "Source": "Young 1963, p. 445: 'cryolite (refractive index n = 1.32)'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 113.63636363636363,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 189.39393939393938,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=132",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        132,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 500,
+    "To": 4000,
+    "Steps": 351,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

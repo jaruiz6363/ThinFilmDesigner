@@ -1,0 +1,606 @@
+{
+  "Version": 2,
+  "Name": "ShokoohSaremi2004-Cband-cube-PBS-flipflop",
+  "Source": "M. Shokooh-Saremi, M. Nourian, M. M. Mirsalehi, S. H. Keshmiri, \"Design of multilayer polarizing beam splitters using genetic algorithm,\" Optics Communications 233, 57-65 (2004). doi:10.1016/j.optcom.2004.01.008 - Table 2, column Flip-flop (p. 63); design settings text p. 62",
+  "Notes": "C-band cube polarizing beam splitter, designed by the flip-flop method (FilmWizard) for comparison\nSpecification: Same as GA design; flip-flop settings: initial total thickness 6000 nm, max 20 layers, min layer 10 nm, mesh 10 nm, 25 iterations.\nReported: 19 layers; sum d = 5.96 um; sum(nd) = 9.6674 um; P over band: max 0.9995, min 0.9710, mean 0.9927, std 0.0077; yield 2 %. Fig. 9: Rp ~3 % at 1520 nm; Fig. 8: Rs ~99.65 % at 1520 nm falling to ~98.95 % at 1570 nm.\nNotes: Table order is incident (A) -> substrate (S), kept as is. Thicknesses are multiples of 10 nm (flip-flop mesh). Recomputed sum d and sum nd match the table.\nLayers from Table 2, column Flip-flop (p. 63); design settings text p. 62; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), differs from the paper: ours total 5960.0 nm; P min 0.9710, mean 0.9916; paper total 5960 nm; P min 0.971, mean 0.9927. The mean depends on which 10 wavelengths are taken; the paper does not list them.",
+  "Wavelength": [
+    1528,
+    1531.556,
+    1535.112,
+    1538.668,
+    1542.224,
+    1545.78,
+    1549.336,
+    1552.892,
+    1556.448
+  ],
+  "Materials": [
+    {
+      "Name": "L n=1.465 (Shokooh-Saremi 2004)",
+      "N": [
+        1.465,
+        1.465,
+        1.465,
+        1.465,
+        1.465,
+        1.465,
+        1.465,
+        1.465,
+        1.465
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.465,
+          0
+        ],
+        "MinMicrons": 1.5,
+        "MaxMicrons": 1.6,
+        "Source": "Shokooh-Saremi et al. 2004, text pp. 60 and 62 (SiO2, n = 1.465)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "H n=2.065 (Shokooh-Saremi 2004)",
+      "N": [
+        2.065,
+        2.065,
+        2.065,
+        2.065,
+        2.065,
+        2.065,
+        2.065,
+        2.065,
+        2.065
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.065,
+          0
+        ],
+        "MinMicrons": 1.5,
+        "MaxMicrons": 1.6,
+        "Source": "Shokooh-Saremi et al. 2004, text p. 62 (Ta2O5, n = 2.065)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 1360,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 350,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 200,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 460,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 140,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 260,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 610,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 80,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 500,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 190,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 200,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 270,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 270,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 200,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 330,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 180,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 60,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.5",
+    "N": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.5",
+    "N": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1550,
+  "Plot": {
+    "From": 1528,
+    "To": 1560,
+    "Steps": 201,
+    "Angle": 45,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

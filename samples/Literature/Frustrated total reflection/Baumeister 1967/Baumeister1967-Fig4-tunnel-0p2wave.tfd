@@ -1,0 +1,73 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig4-tunnel-0p2wave",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table I column 'Fig. 4' (p. 899); Fig. 4 caption and text p. 898",
+  "Notes": "Single tunnel layer, 0.2 wavelength physical thickness, index 1.35, between prisms of index 1.72: reflectance vs angle of incidence for s and p\nSpecification: None (R vs angle of incidence 0-90 deg at one wavelength).\nReported: Fig. 4 / text p. 898: Rs = Rp at an angle near 60 deg; that angle phi_s = arcsin[2/(n0^2 n^-2 + 1)]^(1/2), independent of film thickness (= 60.8 deg for n0 = 1.72, n = 1.35; 61.6 deg for n0 = 1.70). Critical angle marked in Fig. 4 (arcsin(1.35/1.72) = 51.7 deg). R -> 1 at 90 deg for both polarizations; p reflectance ~0 near 30-40 deg (plot).\nNotes: Thickness 0.20 wavelengths physical (Table I, 'in wavelengths' for Fig. 4 only). The stack is non-dispersive, so lambda = 1000 nm and d = 200 nm is an arbitrary but exact choice; sweep the angle 0-90 deg to reproduce Fig. 4. angle_deg 60 is a representative point (the equal-R angle). Media 1.72 per Table I (text says prism 1.70). Own TMM check with n0 = 1.72: Rs = Rp = 0.474 at 60.8 deg; R = 0.056 at normal incidence.\nLayers from Table I column 'Fig. 4' (p. 899); Fig. 4 caption and text p. 898; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rs = Rp at 60.83 deg; paper Rs = Rp at 60.8 deg, whatever the thickness (p. 898).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "Tunnel layer n=1.35 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.35,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 6, 897 (1967), Table I (Figs. 3, 4) and Table III (layer 11, Figs. 13-14): index 1.35"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 200
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 600,
+    "To": 1600,
+    "Steps": 1001,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

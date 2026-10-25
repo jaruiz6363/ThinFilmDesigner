@@ -1,0 +1,104 @@
+{
+  "Version": 2,
+  "Name": "Clapham1969-rhomb-c-surface1",
+  "Source": "P. B. Clapham, M. J. Downs, and R. J. King, \"Some applications of thin films to polarization devices,\" Appl. Opt. 8, 1965-1974 (1969). doi:10.1364/AO.8.001965 - Table III footnote c (p. 1970); text p. 1971",
+  "Notes": "Achromatic Fresnel rhomb, unsymmetrical coatings (Table III column c, the preferred design): reflecting surface (1) carries 200 A NdF3 + 380 A MgF2\nSpecification: Together with surface (2) (Clapham1969-rhomb-c-surface2) the rhomb gives 90 deg total retardation from 214 to 546 nm.\nReported: Table III column c (computed): total retardation of the rhomb = delta(this surface) + delta(surface 2, 100 A MgF2), both at 54 deg: 87.0, 88.6, 90.5, 90.75, 90.0, 89.1 deg at 546, 405, 334, 289, 248, 214 nm. Sensitivity (p. 1971): the MgF2 thickness increase that lowers the phase difference by 1 deg is 120 A at 546 nm but only 15 A at 214 nm. Measured (Fig. 6 curve 2, with thicknesses adjusted in production, read only qualitatively): within 1 deg of 90 deg from 200 to 400 nm, slightly larger errors in the visible (~91 deg near 290 nm falling to ~88 deg at 550 nm). Tolerance: +-1.5 deg (in air) change of incidence alters total retardation by < 0.5 deg over 200-600 nm.\nNotes: Reflection is total internal reflection from inside the silica; incident medium = silica, exit medium = air beyond the films, angle in the silica. Phase retardation delta = difference of the p and s reflection phase changes (Eq. (4) for the bare surface). Film indices: computations used MgF2 1.385 at 546 nm rising to 1.419 at 214 nm and NdF3 1.605 at 546 nm rising to 1.70 at 214 nm (p. 1971); only these end points are printed, so a two-term Cauchy through them is used (intermediate values are an assumption). Thicknesses in angstrom in the paper, converted to nm. Films are NdF3 (high index) next to the silica, MgF2 on top (outer, air side): the text (p. 1971) says the high-index film raises delta and the further addition of a low-index film depresses it. A check with n_silica = 1.46 at 546 nm and this order reproduces Table III (opposite order does not). Silica (Spectrosil synthetic fused silica) index is not printed; database SiO2 is used. A check with n = 1.460 at 546 nm reproduces the uncoated rhomb column a (84.55 deg for two reflections at 54 deg). Table III wavelengths 546, 405, 334, 289, 248, 214 nm. Recomputation at 546 nm with n_silica = 1.46: 45.44 deg (this surface) + 41.57 deg (surface 2) = 87.0 deg, matching Table III.\nLayers from Table III footnote c (p. 1970); text p. 1971; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours total retardation 87.0, 89.0, 90.2, 90.7, 90.5, 89.1 deg at 546, 405, 334, 289, 248, 214 nm; paper 87, 88.6, 90.5, 90.75, 90, 89.1 deg (Table III). As the column b rhomb: exact where the indices are printed, within 0.5 deg between.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "NdF3 Cauchy 214-546 nm (Clapham 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CAUCHY",
+        "Coefficients": [
+          1.58776,
+          0.0051402,
+          0
+        ],
+        "MinMicrons": 0.214,
+        "MaxMicrons": 0.546,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1971: NdF3 indices from Hass et al. (JOSA 49, 116, 1959), '1.605 at 546 nm rising to 1.70 at 214 nm'"
+      }
+    },
+    {
+      "Name": "MgF2 Cauchy 214-546 nm (Clapham 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CAUCHY",
+        "Coefficients": [
+          1.37883,
+          0.0018397,
+          0
+        ],
+        "MinMicrons": 0.214,
+        "MaxMicrons": 0.546,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1971: MgF2 'refractive index values used in the computations ranging from 1.385 at 546 nm to 1.419 at 214 nm'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 20
+    },
+    {
+      "Material": 1,
+      "Thickness": 38
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "SiO2",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        0.6961663,
+        0.0046791,
+        0.4079426,
+        0.0135121,
+        0.8974794,
+        97.934
+      ],
+      "MinMicrons": 0.21,
+      "MaxMicrons": 3.71,
+      "Source": "ARCoatingDesigner; matches Malitson 1965, fused silica"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 214,
+    "To": 546,
+    "Steps": 333,
+    "Angle": 54,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

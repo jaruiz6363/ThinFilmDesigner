@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.BoundsDialog"
+        Title="Set vary constraints" Width="500" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <Window.Styles>
+    <Style Selector="Grid.form > TextBlock, Grid.form > TextBox, Grid.form > ComboBox, Grid.form > StackPanel">
+      <Setter Property="Margin" Value="0,0,6,6"/>
+    </Style>
+  </Window.Styles>
+
+  <!-- MODAL, AND NOTHING CHANGES UNTIL OK. The dialog fills a BoundsForm (Gui.Core, tested); OK
+       hands its request to the design, and a refusal keeps the dialog open with the reason. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="#505050"
+               Text="The thickness range the optimiser may give each layer reached. A QWOT or FWOT bound is counted in each layer's own index at the reference wavelength."/>
+
+    <Grid Classes="form" ColumnDefinitions="110,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+      <TextBlock Text="Layers" VerticalAlignment="Center"/>
+      <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
+        <TextBox x:Name="FromBox" Width="60"/>
+        <TextBlock Text="to" VerticalAlignment="Center"/>
+        <TextBox x:Name="ToBox" Width="60"/>
+      </StackPanel>
+
+      <TextBlock Grid.Row="1" Text="Material" VerticalAlignment="Center"/>
+      <ComboBox Grid.Row="1" Grid.Column="1" x:Name="MaterialBox" Width="200"/>
+
+      <TextBlock Grid.Row="2" Text="Constraint" VerticalAlignment="Center"/>
+      <ComboBox Grid.Row="2" Grid.Column="1" x:Name="ConstraintBox" Width="200"/>
+
+      <TextBlock Grid.Row="3" Text="Min / max" VerticalAlignment="Center"/>
+      <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Spacing="6">
+        <TextBox x:Name="MinBox" Width="80"/>
+        <TextBlock Text="to" VerticalAlignment="Center"/>
+        <TextBox x:Name="MaxBox" Width="80"/>
+        <ComboBox x:Name="UnitBox" Width="90"/>
+      </StackPanel>
+    </Grid>
+
+    <TextBlock x:Name="BoundsNoteText" TextWrapping="Wrap" FontSize="11" Foreground="#505050"/>
+    <TextBlock x:Name="PreviewText" TextWrapping="Wrap" FontSize="12"/>
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

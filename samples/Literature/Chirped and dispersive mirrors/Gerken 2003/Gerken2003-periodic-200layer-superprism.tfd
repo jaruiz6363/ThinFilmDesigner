@@ -1,0 +1,1397 @@
+{
+  "Version": 2,
+  "Name": "Gerken2003-periodic-200layer-superprism",
+  "Source": "M. Gerken and D. A. B. Miller, \"Multilayer thin-film structures with high spatial dispersion,\" Appl. Opt. 42, 1330-1345 (2003). doi:10.1364/AO.42.001330 - Sec. 2, text p. 1332 ('100-period dielectric stack consists of 150-nm alternating layers of SiO2 ... and Ta2O5 ... total stack thickness of 30 um on a quartz substrate'); Figs. 2, 4",
+  "Notes": "Periodic SiO2/Ta2O5 stack used in reflection near the stop-band edge for superprism spatial beam shift (demultiplexing)\nSpecification: Large wavelength-dependent lateral shift of the beam passing twice through the stack, just outside the stop band (40 deg, p-pol)\nReported: Bloch theory: stop-band edge at 901 nm for 40 deg incidence (Fig. 4; 36.5 deg and 43.5 deg move it to ~893 and ~908 nm). Measured/calculated shift rises from ~0 at 866 nm to ~13 um at 892 nm (Fig. 2, read from plot).\nNotes: Light enters through the quartz substrate (n = 1.52) at 40 deg (angle in air, outside the tilted plate), p polarization; exit medium assumed air. Which material is next to the substrate is NOT stated - Ta2O5 first is assumed (as in the paper's Table 1 designs). Both layers 150 nm physical. The RP merit line is only a rough stand-in; the real spec is the spatial shift, which has no merit code.\nLayers from Sec. 2, text p. 1332 ('100-period dielectric stack consists of 150-nm alternating layers of SiO2 ... and Ta2O5 ... total stack thickness of 30 um on a quartz substrate'); Figs. 2, 4; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910
+  ],
+  "Materials": [
+    {
+      "Name": "Ta2O5 n=2.06 (Gerken 2003)",
+      "N": [
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06,
+        2.06
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.06,
+          0
+        ],
+        "MinMicrons": 0.78,
+        "MaxMicrons": 1,
+        "Source": "Gerken & Miller 2003, Sec. 2 p. 1332: Ta2O5 n = 2.06",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2 n=1.456 (Gerken 2003)",
+      "N": [
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456,
+        1.456
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.456,
+          0
+        ],
+        "MinMicrons": 0.78,
+        "MaxMicrons": 1,
+        "Source": "Gerken & Miller 2003, Sec. 2 p. 1332: SiO2 n = 1.456 at 880 nm",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 150,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 40
+    },
+    {
+      "Wavelength": 9,
+      "AngleDegrees": 40
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 880,
+  "Plot": {
+    "From": 860,
+    "To": 910,
+    "Steps": 201,
+    "Angle": 40,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 880
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": true
+}

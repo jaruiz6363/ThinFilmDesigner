@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- X1.10, binding to X1.7 through Gui.Core. Cross-platform is the row's own word, which is why
+       Avalonia rather than WPF: the same window runs on Windows, Linux and macOS.
+
+       THIS IS THE ONLY PROJECT IN THE TREE THAT RESTORES A PACKAGE. Everything else builds on a
+       machine with no network, deliberately. A GUI toolkit is not in the BCL and writing one is
+       not what this row is for, so the dependency is taken here and nowhere else - and the half of
+       the GUI that can be tested lives in Gui.Core, which has none. -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>thinfilm-gui</AssemblyName>
+    <RootNamespace>ThinFilm.Gui</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3" />
+    <!-- The layer and operand tables. Its theme has to be included in App.axaml as well, or the
+         grid renders as an unstyled blank - which looks like a binding failure and is not one. -->
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Gui.Core\ThinFilm.Gui.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeLibrary Include="..\..\build\**\thinfilm_native.dll" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.so" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.dylib" />
+    <None Include="@(NativeLibrary)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

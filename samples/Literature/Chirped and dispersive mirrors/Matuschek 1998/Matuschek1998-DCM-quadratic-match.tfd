@@ -1,0 +1,282 @@
+{
+  "Version": 2,
+  "Name": "Matuschek1998-DCM-quadratic-match",
+  "Source": "N. Matuschek, F. X. Kärtner, and U. Keller, \"Theory of double-chirped mirrors,\" IEEE J. Sel. Top. Quantum Electron. 4, 197-208 (1998). doi:10.1109/2944.686723 - Sec. IV-C text p. 203-204, Fig. 7(b) solid curve; Fig. 2 solid curve",
+  "Notes": "Double-chirped mirror with quadratically chirped (alpha = 2) high-index thickness over the first 12 steps (Z(0) = 1 and Z'(0) = 0)\nSpecification: Very smooth group delay over the high-reflectivity range\nReported: Very smooth group delay at the expense of part of the high-reflectivity range (Fig. 7(b)); high reflectivity roughly 620-1000 nm from the plot. Sec. V approximate expressions (for a linearly chirped mirror with kappa0 = -0.5, k0 = 10.47 um^-1, k1 = 0.17 um^-1): GDD ~ -52 fs^2 and TOD ~ 21 fs^3 at 800 nm (k/k0 = 0.75) - analytic estimates, not exact.\nNotes: Construction (Sec. IV-C, Figs. 3, 6, 7): 25 symmetric index steps, each = 1/2 d_l | d_h | 1/2 d_l (Fig. 3), n_h = 2.5, n_l = 1.5, no dispersion. Bragg wavelength of step |m| (|m| = 1 at the front, where light enters): k_B = k0 - (|m|-1)(k0 - kmin)/19 for |m| = 1..20 with k0 = 2pi/600 nm, kmin = 2pi/900 nm; |m| = 21..25 kept at kmin. Bragg wavelength = 2 (n_h d_h + n_l d_l). The paper computes reflectivity with respect to the first low-index (SiO2-like) layer and explicitly ignores the jump to air, so the incident medium is taken as n = 1.5 (the front half-low layer merges into it); the back half-low layer merges into the n = 1.5 (SiO2) substrate. Adjacent half low layers of steps m and m+1 are merged, giving 49 layers (25 H, 24 L). Thicknesses computed by me from the stated formulas (rounded to 0.001 nm); layer 1 = front (incident side), last H layer is next to the substrate. For |m| <= 12, d_h = (lambda_B(12)/(4 n_h)) (|m|/12)^2; for |m| > 12 quarter-wave; d_l = (lambda_B/2 - n_h d_h)/n_l. Note the paper quotes k1 = 0.17 um^-1 although (k0 - kmin)/19 = 0.184 um^-1 per step; the Sec. V numbers are approximations only.\nLayers from Sec. IV-C text p. 203-204, Fig. 7(b) solid curve; Fig. 2 solid curve; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    600
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.5 (Matuschek 1998)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.5,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.2,
+        "Source": "Matuschek et al. 1998, Sec. IV-C (n_h = 2.5, TiO2-like), Figs. 6-7"
+      }
+    },
+    {
+      "Name": "L n=1.5 (Matuschek 1998)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.5,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.2,
+        "Source": "Matuschek et al. 1998, Sec. IV-C (n_l = 1.5, SiO2-like), Figs. 6-7"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 0.516
+    },
+    {
+      "Material": 1,
+      "Thickness": 199.634
+    },
+    {
+      "Material": 0,
+      "Thickness": 2.065
+    },
+    {
+      "Material": 1,
+      "Thickness": 199.829
+    },
+    {
+      "Material": 0,
+      "Thickness": 4.647
+    },
+    {
+      "Material": 1,
+      "Thickness": 198.436
+    },
+    {
+      "Material": 0,
+      "Thickness": 8.261
+    },
+    {
+      "Material": 1,
+      "Thickness": 195.462
+    },
+    {
+      "Material": 0,
+      "Thickness": 12.908
+    },
+    {
+      "Material": 1,
+      "Thickness": 190.917
+    },
+    {
+      "Material": 0,
+      "Thickness": 18.587
+    },
+    {
+      "Material": 1,
+      "Thickness": 184.809
+    },
+    {
+      "Material": 0,
+      "Thickness": 25.299
+    },
+    {
+      "Material": 1,
+      "Thickness": 177.146
+    },
+    {
+      "Material": 0,
+      "Thickness": 33.043
+    },
+    {
+      "Material": 1,
+      "Thickness": 167.94
+    },
+    {
+      "Material": 0,
+      "Thickness": 41.821
+    },
+    {
+      "Material": 1,
+      "Thickness": 157.201
+    },
+    {
+      "Material": 0,
+      "Thickness": 51.63
+    },
+    {
+      "Material": 1,
+      "Thickness": 144.941
+    },
+    {
+      "Material": 0,
+      "Thickness": 62.473
+    },
+    {
+      "Material": 1,
+      "Thickness": 131.172
+    },
+    {
+      "Material": 0,
+      "Thickness": 74.348
+    },
+    {
+      "Material": 1,
+      "Thickness": 125.29
+    },
+    {
+      "Material": 0,
+      "Thickness": 76
+    },
+    {
+      "Material": 1,
+      "Thickness": 128.106
+    },
+    {
+      "Material": 0,
+      "Thickness": 77.727
+    },
+    {
+      "Material": 1,
+      "Thickness": 131.052
+    },
+    {
+      "Material": 0,
+      "Thickness": 79.535
+    },
+    {
+      "Material": 1,
+      "Thickness": 134.136
+    },
+    {
+      "Material": 0,
+      "Thickness": 81.429
+    },
+    {
+      "Material": 1,
+      "Thickness": 137.369
+    },
+    {
+      "Material": 0,
+      "Thickness": 83.415
+    },
+    {
+      "Material": 1,
+      "Thickness": 140.762
+    },
+    {
+      "Material": 0,
+      "Thickness": 85.5
+    },
+    {
+      "Material": 1,
+      "Thickness": 144.327
+    },
+    {
+      "Material": 0,
+      "Thickness": 87.692
+    },
+    {
+      "Material": 1,
+      "Thickness": 148.077
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    },
+    {
+      "Material": 1,
+      "Thickness": 150
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    },
+    {
+      "Material": 1,
+      "Thickness": 150
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    },
+    {
+      "Material": 1,
+      "Thickness": 150
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    },
+    {
+      "Material": 1,
+      "Thickness": 150
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    },
+    {
+      "Material": 1,
+      "Thickness": 150
+    },
+    {
+      "Material": 0,
+      "Thickness": 90
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.5",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.5",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 600,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 500,
+    "To": 1200,
+    "Steps": 701,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "R_GDD_S"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 600
+  }
+}

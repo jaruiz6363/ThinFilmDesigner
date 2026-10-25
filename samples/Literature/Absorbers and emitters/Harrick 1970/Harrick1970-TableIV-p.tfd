@@ -1,0 +1,143 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-TableIV-p",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table IV (p design), p. 2113; construction of Fig. 1",
+  "Notes": "Cavity inducing unit p-polarized thermal emittance Ep = 1 - Rp = 1 from a gold emitter at 5.5 um, viewed through a Si hemicylinder\nSpecification: Ep = 1 - Rp = 1 at 5.5 um, alpha = 28.8 deg in the Si hemicylinder.\nReported: Table IV title: calculated cavity data to induce Ep = 1 at 5.5 um (i.e. Rp = 0 at 28.8 deg). Text: cavities are first order; for the p component emission peaks (not shown) vs wavelength are more closely spaced, resolving power ~1 um; emittance of the other polarization is small.\nNotes: Table IV h/lambda at 5.5 um: cavity n1 = 3.1 0.052 -> 286 nm, FTR n2 = 1.45 0.290 -> 1595 nm. Reversed from the paper's emitter-first list. Gold at 5.5 um n0 = 9.05 - i28.2 (Table IV footnote, presumably ref. 8). Emittance is evaluated by Kirchhoff's law as E = 1 - R of the opaque gold-backed stack seen from the Si, with angle of emission = angle in the Si hemicylinder.\nLayers from Table IV (p design), p. 2113; construction of Fig. 1; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.000, Rs 0.998 at 28.8 deg, 5500 nm; paper Rp 0 (the design condition, Table IV).",
+  "Wavelength": [
+    5500
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.45 FTR film (Harrick 1970)",
+      "N": [
+        1.45
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n2 = 1.45 (SiO2) FTR film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Si n=3.1 cavity film (Harrick 1970)",
+      "N": [
+        3.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.1,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n1 = 3.1 (Si) evaporated cavity film",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 1595,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 286,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 28.8
+    }
+  ],
+  "Incident": {
+    "Name": "Si n=3.5 hemicylinder (Harrick 1970)",
+    "N": [
+      3.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.5,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n = 3.5 (Si) hemicylinder",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Au 5.5um n=9.05 k=28.2 (Harrick 1970)",
+    "N": [
+      9.05
+    ],
+    "K": [
+      28.2
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        9.05,
+        28.2
+      ],
+      "Source": "Harrick & Turner 1970, Table IV: n0 = 9.05 - i28.2 (gold thermal emitter at 5.5 um)",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 5500,
+  "Plot": {
+    "From": 5000,
+    "To": 6000,
+    "Steps": 1001,
+    "Angle": 28.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 5500
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

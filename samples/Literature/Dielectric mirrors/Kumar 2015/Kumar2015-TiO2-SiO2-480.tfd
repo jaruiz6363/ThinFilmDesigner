@@ -1,0 +1,391 @@
+{
+  "Version": 2,
+  "Name": "Kumar2015-TiO2-SiO2-480",
+  "Source": "M. Kumar, N. Kumari, P. K. Rao, V. Karar, S. V. Ramagopal, and A. L. Sharma, \"Multi-layer dielectric thin-film optical filters for beam folding applications,\" Proc. SPIE 9654, 96540F (2015). doi:10.1117/12.2181776 - Sec. 2.1 text below Fig. 1 (p. 2): TiO2 56 nm, SiO2 92 nm; substrate BK7 from Sec. 2.2; indices Table 1",
+  "Notes": "Five-layer TiO2/SiO2 folding mirror for blue light, peak reflectance at 480 nm at 45 deg (Multilayer I)\nSpecification: Peak reflectance at 480 nm at 45 deg incidence (beam folding, blue).\nReported: Text: peak reflectance at 480 nm (45 deg); TiO2-SiO2 multilayers peak 'close to 80 %'. Fig. 1 simulated (blue curve, read off the plot, approximate): R ~42 % at 400 nm, rising to a broad maximum of ~81 % around 470-490 nm, ~70 % at 550 nm, ~50 % at 600 nm, ~10 % at 700 nm. Fig. 3 measured (Multilayer I): maximum ~78 % near 480 nm, ~26 % at 400 nm, ~12 % at 700 nm.\nNotes: The paper says only '5 layered alternate TiO2-SiO2' for peak reflection; the HLHLH order (TiO2 outermost and on the substrate, 3 TiO2 + 2 SiO2) is assumed. TiO2 index is given as a range 2.2-2.4 at 550 nm; n = 2.3 (midpoint) is assumed, non-dispersive. Polarisation not stated; unpolarised (RA) assumed. Angle 45 deg in air. The simulation included the incoherent BK7 back-side reflection ('Any backside incoherent reflection was taken into account'), so the reported curves include the uncoated back surface. Total physical thickness 3x56 + 2x92 = 352 nm (not printed).\nLayers from Sec. 2.1 text below Fig. 1 (p. 2): TiO2 56 nm, SiO2 92 nm; substrate BK7 from Sec. 2.2; indices Table 1; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R peak 79.5 % at 483 nm, 45 deg, with the back surface; paper peak near 480 nm, R ~80 %.",
+  "Wavelength": [
+    460,
+    465,
+    470,
+    475,
+    480,
+    485,
+    490,
+    495,
+    500
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 n=2.3 (Kumar 2015)",
+      "N": [
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.39,
+        "MaxMicrons": 12,
+        "Source": "Kumar et al. 2015, Table 1 (p. 3): TiO2 refractive index (at 550 nm) '2.2~2.4'; transparency 0.39-12 um",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2 n=1.47 (Kumar 2015)",
+      "N": [
+        1.47,
+        1.47,
+        1.47,
+        1.47,
+        1.47,
+        1.47,
+        1.47,
+        1.47,
+        1.47
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.47,
+          0
+        ],
+        "MinMicrons": 0.2,
+        "MaxMicrons": 9,
+        "Source": "Kumar et al. 2015, Table 1 (p. 3): SiO2 refractive index 1.47 at 550 nm; transparency 0.2-9 um",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 56,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 92,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 56,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 92,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 56,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "SCHOTT N-BK7",
+    "N": [
+      1.5244334977011411,
+      1.5240123784970663,
+      1.5236049373630844,
+      1.5232105409185566,
+      1.5228285922279536,
+      1.522458528270238,
+      1.522099817614206,
+      1.521751958280554,
+      1.5214144757734767
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "GLASS",
+      "Coefficients": [],
+      "Catalog": "SCHOTT",
+      "Glass": "N-BK7",
+      "IsCatalogueGlass": true
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 480,
+  "Plot": {
+    "From": 400,
+    "To": 700,
+    "Steps": 301,
+    "Angle": 45,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 480
+  },
+  "BackSurface": true,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

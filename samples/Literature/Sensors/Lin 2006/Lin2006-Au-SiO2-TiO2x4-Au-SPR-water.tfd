@@ -1,0 +1,200 @@
+{
+  "Version": 2,
+  "Name": "Lin2006-Au-SiO2-TiO2x4-Au-SPR-water",
+  "Source": "C.-W. Lin, K.-P. Chen, C.-N. Hsiao, S. Lin, and C.-K. Lee, \"Design and fabrication of an alternating dielectric multi-layer device for surface plasmon resonance sensor,\" Sens. Actuators B 113, 169-176 (2006). doi:10.1016/j.snb.2005.02.044 - Fig. 3 (layer table with thicknesses, p. 172), Table 1 (n, k at 632 nm), Sec. 2.2-2.3 and Sec. 3",
+  "Notes": "Multilayer SPR sensor chip (Kretschmann prism coupling): Au / 4 x (TiO2/SiO2) / Au, read in p-polarised reflectance versus angle at 632 nm with water as the sample\nSpecification: Bring the admittance locus at the resonant angle as close to zero reflectance as possible (Sec. 2.2): a deep, narrow p-reflectance dip at 632 nm, at a smaller angle than the single-layer Au chip.\nReported: Table 2 / Sec. 3 (measured, water n = 1.331, 632 nm, BK7 prism): SPR angle 62.54 deg (vs 73.9 deg single-layer Au), half-maximum bandwidth HMBW 2 deg (vs 6.5 deg; abstract quotes FWHM 1.92 vs 6.18, 3.25x narrower), dynamic range 1.331-1.50 RIU (vs 1.331-1.38), intensity slope 127.5 a.u./deg. Fig. 7 dashed theory curve: p-reflectance dip near 0 at ~62.5 deg, R ~80 % below ~60 deg, rising to ~80 % by ~64 deg (read off plot). Fig. 4: same theory, dip ~63 deg vs ~73-74 deg for single-layer Au. Glucose solutions (Fig. 8, Sec. 3): sample n = 1.331, 1.3484, 1.3644, 1.3968 give SPR angles 62.54 +/- 0.021, 63.55 +/- 0.015, 64.7 +/- 0.02, 67.46 +/- 0.017 deg; linear fit y = 75.617x - 38.288 (deg vs RIU), R^2 = 0.9927. Total physical thickness 230 nm (40 + 8 x 20 + 30).\nNotes: Fig. 3 lists the stack from the top (sample side) down: Au 30 / SiO2 20 / TiO2 20 / SiO2 / TiO2 / SiO2 / TiO2 / SiO2 20 / TiO2 20 / Au 40 / glass slide; it is reversed here because light arrives through the prism and glass slide (Kretschmann). The glass slide (SuperFrost, n = 1.51) is index-matched to the BK7 prism and treated as part of the incident medium, taken as BK7 n = 1.515 from Table 1. Exit medium is water (Table 1 n = 1.33169; measured ddH2O 1.331). Angle is the internal angle in the BK7 prism (a single-Au estimate with the Table 1 Au gives ~75 deg, matching the quoted 74 deg); measured external angles relate by Eq. (16) with Psi = 45 deg. p-polarisation (TM). Optical constants of Table 1 are single values (presumably at 632 nm); k entered positive (paper writes N = n - ik). Sec. 2.3 mentions 'Cr for the surface layer' and the fabrication text gives 1 nm Cr only for the single-layer Au film; no Cr appears in the Fig. 3 simulation model, so none is included. Wavelength 632 nm as printed (He-Ne 632.8 nm presumably). angle_deg set to the measured resonance; scan 40-90 deg (Sec. 3) to find the computed dip. 10 layers.\nLayers from Fig. 3 (layer table with thicknesses, p. 172), Table 1 (n, k at 632 nm), Sec. 2.2-2.3 and Sec. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp minimum 2.67 % at 64.04 deg in the prism, 632 nm; paper resonance at 62.54 deg (measured), width 2 deg. Computed with the paper’s Table 1 indices at 632 nm; the measured resonance is 1.5 deg lower, within the measured 2 deg width and the up-to-33 % thickness deviation the paper reports.",
+  "Wavelength": [
+    632
+  ],
+  "Materials": [
+    {
+      "Name": "Au n=0.16195 k=3.20991 (Lin 2006)",
+      "N": [
+        0.16195
+      ],
+      "K": [
+        3.20991
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.16195,
+          3.20991
+        ],
+        "Source": "Lin et al. 2006, Table 1: Au n = 0.16195, k = 3.20991",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "TiO2 n=2.27892 (Lin 2006)",
+      "N": [
+        2.27892
+      ],
+      "K": [
+        0.00015
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.27892,
+          0.00015
+        ],
+        "Source": "Lin et al. 2006, Table 1: TiO2 n = 2.27892, k = 0.00015 (Sec. 2.3 quotes n = 2.28)",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2 n=1.45705 (Lin 2006)",
+      "N": [
+        1.45705
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45705,
+          0
+        ],
+        "Source": "Lin et al. 2006, Table 1: SiO2 n = 1.45705, k = 0 (Sec. 2.3 quotes n = 1.46)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 40,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 20,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 30,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 62.54
+    }
+  ],
+  "Incident": {
+    "Name": "Glass BK7 n=1.515 (Lin 2006)",
+    "N": [
+      1.515
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.515,
+        0
+      ],
+      "Source": "Lin et al. 2006, Table 1: Glass (BK7) n = 1.515, k = 0",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "H2O n=1.33169 (Lin 2006)",
+    "N": [
+      1.33169
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.33169,
+        0
+      ],
+      "Source": "Lin et al. 2006, Table 1: H2O n = 1.33169, k = 0",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 632,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 241,
+    "Angle": 0,
+    "Quantities": [
+      "RP"
+    ],
+    "VsAngle": true,
+    "AngleFrom": 40,
+    "AngleTo": 89,
+    "AngleSteps": 4901,
+    "Wavelength": 632
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

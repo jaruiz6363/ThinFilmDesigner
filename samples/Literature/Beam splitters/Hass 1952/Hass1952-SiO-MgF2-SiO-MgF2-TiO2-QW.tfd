@@ -1,0 +1,127 @@
+{
+  "Version": 2,
+  "Name": "Hass1952-SiO-MgF2-SiO-MgF2-TiO2-QW",
+  "Source": "G. Hass, \"Preparation, properties and optical applications of thin films of titanium dioxide,\" Vacuum 2(4), 331-345 (1952). (doi not printed in the PDF) - Table on p. 338 (row 'SiO - MgF2 - SiO - MgF2 - TiO2')",
+  "Notes": "Five-layer quarter-wave beam divider\nSpecification: All layers quarter-wave at 550 nm.\nReported: Table p. 338: R = 74.0 %, T = 24.0 % at 550 nm.\nNotes: Paper lists from the glass outward (SiO on glass, TiO2 on top); reversed here. Ideal calculation with SiO n = 1.97 gives about 82 %, above the printed 74 % (see SiO note in the three-layer design).\nLayers from Table on p. 338 (row 'SiO - MgF2 - SiO - MgF2 - TiO2'); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R 82.1 % at 550 nm; paper R 74 % (measured, table p. 338). The paper’s SiO index (1.97, true SiO) is used; its own footnote says evaporated SiO films often come out lower, which would bring R down towards the measured value.",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 rutile film n=2.713 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.713,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: rutile film of 505 A with optical thickness nt = 1370 A (lambda/4 at 550 nm), n = 1370/505 = 2.713 at 550 nm"
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: 'magnesium fluoride (nD = 1.38)'"
+      }
+    },
+    {
+      "Name": "SiO n=1.97 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.97,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: 'silicon monoxide (nD = 1.97)'; footnote: true SiO with nD = 1.97 by fast deposition (10-15 A/s) at p ~ 1e-5 mm Hg"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 69.79695431472081,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 69.79695431472081,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.51",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.51,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig3-tunnel-1wave",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table I column 'Fig. 3' (p. 899); text p. 898 ('optical density is greater than 2.0 when the thickness of the layer exceeds one wavelength'), Fig. 3 caption",
+  "Notes": "Single tunnel layer (index 1.35) between two prisms at 60 deg - frustrated total reflection; the thickness sweep of Fig. 3 evaluated at a thickness of one wavelength\nSpecification: None (illustration of R and T vs tunnel-layer thickness, 0 to 1 wavelength, at 60 deg incidence).\nReported: Text p. 898: optical density > 2.0 (T < 0.01) when the layer thickness exceeds one wavelength, at 60 deg (both polarizations; s and p curves not resolved in Fig. 3). Fig. 3: R rises from 0 at zero thickness to ~1 near one wavelength, T falls correspondingly (curves only, not tabulated).\nNotes: Fig. 3 plots R and T vs physical thickness in wavelengths (0-1); the layer is non-dispersive so any wavelength works: here lambda = reference_nm = 1000 nm and thickness 1000 nm = 1.0 wavelength (the end point of the sweep, where the text quotes OD > 2). To reproduce the whole Fig. 3, sweep the thickness 0-1000 nm at 1000 nm. Media: Table I gives 1.72 for incident and emergent medium, but the text (p. 898) says 'a prism of index 1.70' - 1.72 (Table I) is used. Angle 60 deg is inside the 1.72 prism (beyond the critical angle 51.7 deg). Independent check (own TMM): T at d = 1 wave is 0.0013 (s) / 0.0014 (p) with n0 = 1.72, i.e. OD ~2.9.\nLayers from Table I column 'Fig. 3' (p. 899); text p. 898 ('optical density is greater than 2.0 when the thickness of the layer exceeds one wavelength'), Fig. 3 caption; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Ts 1.3e-3, Tp 1.4e-3 at 60 deg; paper optical density over 2 (T < 0.01) for a layer a wavelength thick.",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "Tunnel layer n=1.35 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.35,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 6, 897 (1967), Table I (Figs. 3, 4) and Table III (layer 11, Figs. 13-14): index 1.35"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 1000
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 600,
+    "To": 1600,
+    "Steps": 1001,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

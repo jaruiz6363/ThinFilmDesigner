@@ -1,0 +1,123 @@
+{
+  "Version": 2,
+  "Name": "Bermel2007-SiN-AR-on-Si",
+  "Source": "P. Bermel, C. Luo, L. Zeng, L. C. Kimerling, and J. D. Joannopoulos, \"Improving thin-film crystalline silicon solar cell efficiencies with photonic crystals,\" Opt. Express 15, 16986-17000 (2007). doi:10.1364/OE.15.016986 - Sec. 3.1, p. 16992: 'silicon nitride (n ~ 1.91) ... With a refractive index of 1.91, and a target wavelength of 535 nm, we obtain an optimal thickness of 70 nm'; Si n ~ 3.5 from the same paragraph",
+  "Notes": "Single-layer silicon nitride quarter-wave antireflection coating on c-Si (front of the solar cell)\nSpecification: Quarter-wave AR at 535 nm: n_AR ~ sqrt(n_air n_Si), d = lambda/(4 n).\nReported: Quarter-wave condition at 535 nm: 535/(4 x 1.91) = 70.0 nm, so the reflectance minimum should fall at ~535 nm (p. 16992). With n_Si = 3.5 the minimum R is ((3.5 - 1.91^2)/(3.5 + 1.91^2))^2 ~ 0.04 %. The only other numbers are cell efficiencies that need the dispersive, absorbing c-Si of Ref. 1: 9.07 % with this AR and no back reflector, 13.77 % with a perfect metal back reflector (p. 16992); the absorption curve 'no reflector' in Figs. 4 and 9 (2 um c-Si on c-Si substrate).\nNotes: Incident medium air (Fig. 2 caption: 'air is transparent'; light from directly overhead, normal incidence; TE in Sec. 3.1, unpolarised in Sec. 2 - identical at normal incidence). The paper's c-Si uses the measured complex dielectric function of Herzinger et al. (Ref. 1), which is not printed; the substrate here is the paper's own approximate value n ~ 3.5 ('n ~ 3.5 in the near-IR'), also used for the bandstructures (Fig. 8), as a constant with k = 0. Real c-Si at 535 nm has n ~ 4.1, so this rebuild checks only the quarter-wave placement, not the absorption/efficiency. The glass cover of Fig. 1(b) is not in the simulations. Treating the 2 um c-Si film on a c-Si substrate as one semi-infinite substrate is exact for the 'no back reflector' case only if Si absorption is ignored (film and substrate are the same material).\nLayers from Sec. 3.1, p. 16992: 'silicon nitride (n ~ 1.91) ... With a refractive index of 1.91, and a target wavelength of 535 nm, we obtain an optimal thickness of 70 nm'; Si n ~ 3.5 from the same paragraph; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R min 0.043 % at 535 nm (constant n 3.5 silicon); paper quarter wave at 535 nm, R min ~0.04 %.",
+  "Wavelength": [
+    535
+  ],
+  "Materials": [
+    {
+      "Name": "SiNx n=1.91 (Bermel 2007)",
+      "N": [
+        1.91
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.91,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 1.1,
+        "Source": "Bermel et al. 2007, Sec. 3.1 p. 16992: 'silicon nitride (n ~ 1.91) is commonly employed ... With a refractive index of 1.91'",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 70,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "c-Si n=3.5 (Bermel 2007)",
+    "N": [
+      3.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.5,
+        0
+      ],
+      "MinMicrons": 0.8,
+      "MaxMicrons": 1.1,
+      "Source": "Bermel et al. 2007, p. 16992 ('silicon-based solar cells (where n ~ 3.5 in the near-IR)'), p. 16994 ('c-Si (n ~ 3.5)'), Fig. 8 caption ('high index medium (n = 3.5)')",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 535,
+  "Plot": {
+    "From": 300,
+    "To": 1100,
+    "Steps": 801,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 535
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

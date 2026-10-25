@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- thinfilm-mcp-setup: connects thinfilm-mcp to Claude Desktop and Claude Code (the user,
+       2026-10-24, after LensHH-LT's helper). The logic is Gui.Core's McpClientSetup, tested there;
+       this is only its window. Avalonia, as the GUI, so it builds everywhere the rest does. -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <ApplicationManifest>..\ThinFilm.Gui\app.manifest</ApplicationManifest>
+    <AssemblyName>thinfilm-mcp-setup</AssemblyName>
+    <RootNamespace>ThinFilm.McpSetup</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Gui.Core\ThinFilm.Gui.Core.csproj" />
+  </ItemGroup>
+
+</Project>

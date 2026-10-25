@@ -1,0 +1,277 @@
+{
+  "Version": 2,
+  "Name": "Young1967-caseF-thin-thick-39L",
+  "Source": "L. Young, \"Multilayer Interference Filters with Narrow Stop Bands,\" Appl. Opt. 6, 297-315 (1967). doi:10.1364/AO.6.000297 - Sec. VII pp. 309-311: Eqs. (49)-(50), Table I currents (p. 305), y = 40; Figs. 14 and 15/16",
+  "Notes": "Narrow stop-band filter of alternating thin high-index (ZnS) and thick low-index (MgF2) layers, thin-layer phase thicknesses proportional to 40-dB Dolph-Chebyshev currents (20 elements), y = 40\nSpecification: Stop band at theta/90 = 1 (reference_nm), equal-ripple-like passband; thin layers spaced 180 deg centre to centre.\nReported: Fig. 15 (plot only): peak attenuation about 28 dB (transmittance ~0.0016) at theta/90 = 1; ripples computed for theta/90 = 0.5-1.5 only, reflectance ripples between ~0.0005 and 0.002-0.01 rising linearly with frequency; the two centre thin layers are 40 deg thick, each alone giving SWR V = 1.96 (Eqs. 52-53, p. 312), i.e. R = 0.105 for a single 40-deg ZnS layer in MgF2. Second stop band at theta/90 = 2. Recomputed here: centre attenuation 28.06 dB.\nNotes: 39 layers (20 thin + 19 thick). Thin layers (odd i): theta_i = y*I_{(i+1)/2} deg with y = 40 and the 20-element Table I currents (symmetric); thick layers (even i): theta_i = 180 - (theta_{i-1} + theta_{i+1})/2 deg (Eq. 50). Thickness in QWOT = theta/90 at reference_nm (arbitrary 550 nm), rounded to 8 decimals. Phase thicknesses in degrees: 4.708, 174.334, 6.624, 171.416, 10.544, 167.104, 15.248, 162.142, 20.468, 156.85, 25.832, 151.636, 30.896, 146.948, 35.208, 143.224, 38.344, 140.828, 40, 140, 40, 140.828, 38.344, 143.224, 35.208, 146.948, 30.896, 151.636, 25.832, 156.85, 20.468, 162.142, 15.248, 167.104, 10.544, 171.416, 6.624, 174.334, 4.708. Paper: thick layers n1 = 1.38 or 2.3, thin layers n2 = 2.3 or 1.38 (\"only the ratio 0.6 figured\"); here thin = ZnS 2.3, thick and both end media = MgF2 1.38 (the stack is embedded in the thick-layer medium, Fig. 14). Normal incidence, lossless.\nLayers from Sec. VII pp. 309-311: Eqs. (49)-(50), Table I currents (p. 305), y = 40; Figs. 14 and 15/16; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours 28.06 dB at the centre; paper about 28 dB (Figs. 15-16).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.3 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Sec. VII p. 309 and Sec. VIII p. 312 (n = 2.3, zinc sulfide; called \"zinc oxide\" on p. 301)"
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Sec. IV p. 301 (\"n2/n1 = 2.3/1.38 ... magnesium fluoride\") and Sec. VII p. 309 (n = 1.38)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 3.1272946195652174,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 193.00261630434784,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 4.4,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 189.77214148550723,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 7.003865,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 184.99838958333336,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 10.128502282608698,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 179.50503242753624,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 13.595893586956523,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 173.64633677536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 17.158937065217394,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 167.87399311594206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 20.522705380434786,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 162.68397789855075,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 23.386956521739133,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 158.5611918478261,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 25.470048043478265,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 155.90861557971016,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 26.570048043478263,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 154.9919489130435,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 26.570048043478263,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 155.90861557971016,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 25.470048043478265,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 158.5611918478261,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 23.386956521739133,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 162.68397789855075,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 20.522705380434786,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 167.87399311594206,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 17.158937065217394,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 173.64633677536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 13.595893586956523,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 179.50503242753624,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 10.128502282608698,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 184.99838958333336,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 7.003865,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 189.77214148550723,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 4.4,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 193.00261630434784,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 3.1272946195652174,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.38",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.38,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.38",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.38,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 367,
+    "To": 1100,
+    "Steps": 1467,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

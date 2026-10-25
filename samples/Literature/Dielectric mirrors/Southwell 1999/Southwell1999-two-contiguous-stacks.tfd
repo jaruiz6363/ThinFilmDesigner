@@ -1,0 +1,290 @@
+{
+  "Version": 2,
+  "Name": "Southwell1999-two-contiguous-stacks",
+  "Source": "W. H. Southwell, \"Omnidirectional mirror design with quarter-wave dielectric stacks,\" Appl. Opt. 38, 5464-5467 (1999). doi:10.1364/AO.38.005464 - Fig. 6 caption (prescription) and p. 5467 text, Eq. (7)",
+  "Notes": "Omnidirectional mirror extended by a second contiguous quarter-wave stack scaled by Eq. (7)\nSpecification: Extend the omnidirectional band by adding a stack whose centre is shifted by the shift of the upper p-band edge from normal to grazing incidence (Eq. 7).\nReported: Fig. 6: R at normal incidence (solid) and p at 85 deg (dashed), 6-20 um; the omnidirectional (overlap) band is wider than Fig. 5: normal-incidence band roughly 7.5-15 um, p 85 deg roughly 7-12.3 um (read off plot). Eq. (7) check: lambda_M/lambda_{M-1} = 1/(1 - (2/pi) asin(0.25712)) = 1.1984 for nL 1.7, nH 3.4, as used in the prescription.\nNotes: AIR (LH)^10 1.0992L 1.1984(HL)^9 1.1984H SUB, expanded: 10 x (L H), then 1.0992L, then 9 x (1.1984H 1.1984L), then 1.1984H = 40 layers, L next to air. Thicknesses in QWOT at 10 um. 1.0992 = (1 + 1.1984)/2, the average joining layer.\nLayers from Fig. 6 caption (prescription) and p. 5467 text, Eq. (7); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours min(Rs, Rp) 0.999921 over 0-89 deg at 9 um; paper wider all-angle band (Figs. 6-7, plots only).",
+  "Wavelength": [
+    10000
+  ],
+  "Materials": [
+    {
+      "Name": "L n=1.7 (Southwell 1999)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.7,
+          0
+        ],
+        "MinMicrons": 6,
+        "MaxMicrons": 20,
+        "Source": "Southwell 1999, Figs. 1-2 and 5-7 captions: nL = 1.7"
+      }
+    },
+    {
+      "Name": "H n=3.4 (Southwell 1999)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.4,
+          0
+        ],
+        "MinMicrons": 6,
+        "MaxMicrons": 20,
+        "Source": "Southwell 1999, Figs. 1-2 and 5-7 captions: nH = 3.4"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1470.5882352941178,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 735.2941176470589,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1616.4705882352941,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 1762.3529411764707,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 881.1764705882354,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "SUB n=2.4 (Southwell 1999)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        2.4,
+        0
+      ],
+      "MinMicrons": 6,
+      "MaxMicrons": 20,
+      "Source": "Southwell 1999, Fig. 2 caption: n_SUB = 2.4"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 10000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 241,
+    "Angle": 0,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": true,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 9000
+  }
+}

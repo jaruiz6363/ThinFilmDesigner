@@ -1,0 +1,84 @@
+{
+  "Version": 2,
+  "Name": "Clapham1969-rhomb-c-surface2",
+  "Source": "P. B. Clapham, M. J. Downs, and R. J. King, \"Some applications of thin films to polarization devices,\" Appl. Opt. 8, 1965-1974 (1969). doi:10.1364/AO.8.001965 - Table III footnote c (p. 1970); text p. 1971-1972",
+  "Notes": "Achromatic Fresnel rhomb, unsymmetrical coatings (Table III column c): reflecting surface (2) carries 100 A MgF2\nSpecification: Trim layer: together with surface (1) the rhomb gives 90 deg from 214 to 546 nm; in production its thickness (~100 A, held to 10 A) was chosen after measuring the rhomb with surface (1) coated.\nReported: Table III column c: total of both surfaces 87.0, 88.6, 90.5, 90.75, 90.0, 89.1 deg at 546, 405, 334, 289, 248, 214 nm (see Clapham1969-rhomb-c-surface1).\nNotes: Single MgF2 film on silica, TIR at 54 deg. Silica (Spectrosil synthetic fused silica) index is not printed; database SiO2 is used. A check with n = 1.460 at 546 nm reproduces the uncoated rhomb column a (84.55 deg for two reflections at 54 deg). Table III wavelengths 546, 405, 334, 289, 248, 214 nm. Recomputation at 546 nm with n_silica = 1.46 gives 41.57 deg (bare surface 42.28 deg).\nLayers from Table III footnote c (p. 1970); text p. 1971-1972; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 Cauchy 214-546 nm (Clapham 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CAUCHY",
+        "Coefficients": [
+          1.37883,
+          0.0018397,
+          0
+        ],
+        "MinMicrons": 0.214,
+        "MaxMicrons": 0.546,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1971: MgF2 'refractive index values used in the computations ranging from 1.385 at 546 nm to 1.419 at 214 nm'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 10
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "SiO2",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        0.6961663,
+        0.0046791,
+        0.4079426,
+        0.0135121,
+        0.8974794,
+        97.934
+      ],
+      "MinMicrons": 0.21,
+      "MaxMicrons": 3.71,
+      "Source": "ARCoatingDesigner; matches Malitson 1965, fused silica"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 214,
+    "To": 546,
+    "Steps": 333,
+    "Angle": 54,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

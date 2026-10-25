@@ -1,0 +1,196 @@
+{
+  "Version": 2,
+  "Name": "Li2000-MacNeille-comparison",
+  "Source": "L. Li and J. A. Dobrowolski, \"High-performance thin-film polarizing beam splitter operating at angles greater than the critical angle,\" Appl. Opt. 39, 2754-2771 (2000). doi:10.1364/AO.39.002754 - Sec. 6, text p. 2768 (and Fig. 5G/5H)",
+  "Notes": "Conventional MacNeille cube polarizer designed for comparison with the new FTIR PBS\nSpecification: MacNeille condition n0 sin(theta0) = n1 n2 / sqrt(n1^2 + n2^2) with theta0 = 51.53 deg, n0 = 1.52, n1 = 1.38, n2 = 2.35; bandwidth 0.42-0.76 um\nReported: Total optical thickness 5.6058 um (Sec. 6; Fig. 5H legend 5.606 um). Rp ~ 1e-2 at the design angle; extinction ratios at the design angle < 1e2 (reflected) and < 1e3 (transmitted) (Sec. 6C). Fig. 5G/H plot Rp, Rs, Tp, Ts for 50.21-52.82 deg in the prism (-2 to +2 deg in air).\nNotes: The paper says only \"27 quarter-wave-thick layers centered at a wavelength of 535 nm\" with total optical thickness 5.6058 um. Normal-incidence QWOTs would give only 3.611 um, so the layers are quarter-wave at the design angle: d = 535/(4 n cos theta_j), n_j sin theta_j = 1.52 sin 51.53 deg, giving d_H = 66.004 nm (n = 2.35), d_L = 191.432 nm (n = 1.38). With 14 H and 13 L layers (H outermost) the total n*d = 5605.8 nm, matching 5.6058 um (L outermost would give 5715 nm), which fixes the order. The thicknesses are thus derived, not tabulated. Symmetric, so order is the same from either side.\nLayers from Sec. 6, text p. 2768 (and Fig. 5G/5H); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours optical thickness 5605.8 nm; over 420-760 nm at 51.53 deg: Ts >= 0.0000, Rp >= 0.0000, Ts/Tp >= 8.4e-13, Rp/Rs >= 7.7e-6; paper optical thickness 5605.8 nm. At 535 nm, 51.53 deg: Rp 1.1 % (paper ~1e-2) and Rs/Rp 88 (paper < 1e2).",
+  "Wavelength": [
+    535
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.35 (Li 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.35,
+          0
+        ],
+        "MinMicrons": 0.33,
+        "MaxMicrons": 2,
+        "Source": "Li & Dobrowolski 2000, Sec. 4 and 6, Tables 2-3"
+      }
+    },
+    {
+      "Name": "L n=1.38 (Li 2000)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.33,
+        "MaxMicrons": 2,
+        "Source": "Li & Dobrowolski 2000, Sec. 4 and 6, Tables 2-3"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    },
+    {
+      "Material": 1,
+      "Thickness": 191.432
+    },
+    {
+      "Material": 0,
+      "Thickness": 66.004
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 535,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 420,
+    "To": 760,
+    "Steps": 341,
+    "Angle": 51.53,
+    "Quantities": [
+      "TS",
+      "TP",
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 535
+  }
+}

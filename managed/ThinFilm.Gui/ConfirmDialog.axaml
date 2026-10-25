@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.ConfirmDialog"
+        Title="Confirm" Width="420" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- For an action there is no undo for: says what will happen, and the action's own name is
+       the button, so "Clear all" is pressed and not "OK". -->
+  <StackPanel Margin="16" Spacing="14">
+    <TextBlock x:Name="MessageText" TextWrapping="Wrap"/>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="YesButton" Content="OK" MinWidth="72"/>
+      <Button x:Name="NoButton" Content="Cancel" IsCancel="True" IsDefault="True" MinWidth="72"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

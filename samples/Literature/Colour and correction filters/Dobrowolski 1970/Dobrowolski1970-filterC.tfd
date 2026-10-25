@@ -1,0 +1,186 @@
+{
+  "Version": 2,
+  "Name": "Dobrowolski1970-filterC",
+  "Source": "J. A. Dobrowolski, \"Optical Interference Filters for the Adjustment of Spectral Response and Spectral Power Distribution,\" Appl. Opt. 9, 1396-1402 (1970). doi:10.1364/AO.9.001396 - Table II (Filter C), p. 1401; Sec. III.C and Fig. 7, p. 1399",
+  "Notes": "Correction filter giving a uniform response of a tungsten quartz-iodine lamp + 1 m Ebert grating monochromator + EMI 6095 photomultiplier system over 0.4-0.7 um (Sec. III.C)\nSpecification: Transmittance equal to the inverse of the measured spectral response of the system without filter (full curve T_T of Fig. 7(a)), 0.4-0.7 um.\nReported: Only as plots: Fig. 7(a) shows the target T_T and the calculated points T_C of this 14-layer filter, which coincide closely. Approximate readings (not printed): T ~1.0 at 0.40 um, ~0.6 at 0.42 um, ~0.2 at 0.46 um, broad minimum ~0.05-0.08 around 0.50-0.56 um, ~0.15 at 0.65 um, ~0.35-0.40 at 0.70 um. Fig. 7(b): calculated relative intensity of the complete system with the filter is flat within about +/-2 % (0.98-1.02); experimental between about 0.97 and 1.15.\nNotes: Medium and substrate both 1.520 (filter cemented/immersed in glass, as printed), so the stack order does not matter for R/T of the lossless stack. Table lists Substrate, layers 1..N, Medium; layer 1 is next to the substrate (the synthesis program grows the design from the bare substrate), so the order is REVERSED here (layer 1 below = last printed layer, next to the medium). Thicknesses are printed as optical thicknesses n*d in micrometres; they are entered as FWOT at reference_nm = 1000 nm, which is the same number (1 FWOT at 1000 nm = 1 um optical thickness), with constant, non-dispersive, lossless indices exactly as printed. Physical thickness d = OT/n. Normal incidence assumed (not stated). 14 layers, as stated in the text; summed optical thickness of the printed layers = 2.4485 um (no total is printed).\nLayers from Table II (Filter C), p. 1401; Sec. III.C and Fig. 7, p. 1399; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours 0.77 at 400, 0.46 at 420, 0.18 at 460, 0.12 at 530, 0.20 at 650, 0.33 at 700 nm; paper ~1.0, ~0.6, ~0.2, 0.05-0.08, ~0.15, 0.35-0.40 (Fig. 7a).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "film n=2.010 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.01,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filter C layer 14, n = 2.010"
+      }
+    },
+    {
+      "Name": "film n=1.360 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.36,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filters C, F, G, n = 1.360"
+      }
+    },
+    {
+      "Name": "film n=2.340 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.34,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filter C, n = 2.340"
+      }
+    },
+    {
+      "Name": "film n=1.690 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.69,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table II filter C, n = 1.690"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 134.42786069651743,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 98.60294117647058,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 54.914529914529915,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 95.80882352941177,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 54.27350427350428,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 96.17647058823529,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 56.410256410256416,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 133.38235294117646,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 92.4260355029586,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 171.4705882352941,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 155.26627218934914,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 31.102941176470583,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 158.57988165680473,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 185.3676470588235,
+      "Unit": "FWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 700,
+    "Steps": 301,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

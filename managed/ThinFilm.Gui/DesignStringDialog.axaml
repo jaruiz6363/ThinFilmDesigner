@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.DesignStringDialog"
+        Title="Input design string" Width="560" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- MODAL, AND NOTHING CHANGES UNTIL OK. The dialog fills a DesignStringForm (Gui.Core, tested);
+       OK hands its request to the design, and a refusal keeps the dialog open with the reason. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock Text="Design string" FontWeight="SemiBold"/>
+    <TextBox x:Name="StringBox" FontFamily="Consolas,Menlo,monospace" Watermark="(1H 1L)12"/>
+    <TextBlock TextWrapping="Wrap" FontSize="11" Foreground="#505050"
+               Text="A layer is a number and a letter, 0.8L; a letter alone is 1. A group in brackets may be repeated: (1H 1L)12 is 24 layers, and groups may be nested: (1H (1L 1H)6 1L)3."/>
+    <TextBlock x:Name="PreviewText" TextWrapping="Wrap"/>
+
+    <Border Height="1" Background="#E0E0E0"/>
+
+    <TextBlock Text="Materials" FontWeight="SemiBold"/>
+    <StackPanel x:Name="LettersPanel" Spacing="4"/>
+
+    <Border Height="1" Background="#E0E0E0"/>
+
+    <TextBlock Text="The numbers are" FontWeight="SemiBold"/>
+    <StackPanel Orientation="Horizontal" Spacing="12">
+      <RadioButton x:Name="QwotChoice" GroupName="unit" Content="QWOT (quarter-wave)"/>
+      <RadioButton x:Name="FwotChoice" GroupName="unit" Content="FWOT (full-wave)"/>
+    </StackPanel>
+    <TextBlock x:Name="ReferenceText" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+
+    <TextBlock Text="The leftmost layer is" FontWeight="SemiBold"/>
+    <StackPanel Orientation="Horizontal" Spacing="12">
+      <RadioButton x:Name="IncidentChoice" GroupName="side" Content="next to the incident medium (layer 1)"/>
+      <RadioButton x:Name="SubstrateChoice" GroupName="side" Content="next to the substrate"/>
+    </StackPanel>
+
+    <CheckBox x:Name="PickupsBox" Content="Pick up every layer of a letter from that letter's first layer"/>
+
+    <TextBlock x:Name="ReplaceText" TextWrapping="Wrap" FontSize="11" Foreground="#505050"/>
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

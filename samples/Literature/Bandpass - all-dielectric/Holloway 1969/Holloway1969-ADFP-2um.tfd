@@ -1,0 +1,137 @@
+{
+  "Version": 2,
+  "Name": "Holloway1969-ADFP-2um",
+  "Source": "R. J. Holloway and P. H. Lissberger, \"The Design and Preparation of Induced Transmission Filters,\" Appl. Opt. 8, 653-660 (1969). doi:10.1364/AO.8.000653 - Fig. 3(b) label and caption, p. 655",
+  "Notes": "All-dielectric Fabry-Perot comparison filter at 2 um (Fig. 3(b))\nSpecification: Narrow-band all-dielectric Fabry-Perot used only for comparison.\nReported: Fig. 3(b) (calculated, plot only): psi = tau0' = 1 at all wavelengths (lossless); 1/(1+F sin^2 phi) has a narrow pass band at 2.0 um, sideband rising toward 1 near 3.3-3.5 um and a sideband/dip structure near 1.0-1.3 um.\nNotes: Label glass|HLHL|HH|LHLH|glass, mu_H = 2.748, mu_L = 1.32, mu_g = 1.5. The 2-QWOT HH spacer is one layer (9 layers). Design wavelength not stated in the caption; 2.0 um assumed from the pass-band position in the plot and the paper's 2 um context. Symmetric, constant indices, normal incidence.\nLayers from Fig. 3(b) label and caption, p. 655; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    2000
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.748 (Holloway 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.748,
+          0
+        ],
+        "MinMicrons": 1,
+        "MaxMicrons": 3.5,
+        "Source": "Holloway & Lissberger 1969, Fig. 3(b) caption: mu_H = 2.748"
+      }
+    },
+    {
+      "Name": "L n=1.32 (Holloway 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.32,
+          0
+        ],
+        "MinMicrons": 1,
+        "MaxMicrons": 3.5,
+        "Source": "Holloway & Lissberger 1969, Fig. 3(b) caption: mu_L = 1.32"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 181.95050946142646,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 378.78787878787875,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 181.95050946142646,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 378.78787878787875,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 363.9010189228529,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 378.78787878787875,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 181.95050946142646,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 378.78787878787875,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 181.95050946142646,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5"
+    }
+  },
+  "Exit": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 2000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 1000,
+    "To": 3500,
+    "Steps": 2501,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 2000
+  }
+}

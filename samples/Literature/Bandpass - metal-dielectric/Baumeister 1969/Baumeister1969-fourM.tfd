@@ -1,0 +1,400 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1969-fourM",
+  "Source": "P. W. Baumeister, \"Radiant power flow and absorptance in thin films,\" Appl. Opt. 8, 423-436 (1969). doi:10.1364/AO.8.000423 - Fig. 22 caption, p. 434 (Sec. VIII): air (HL)^7 H 1.845L M1 D1 M2 D2 M2 D1 M1 1.845L (HL)^9 quartz",
+  "Notes": "Four-M (multiplex) UV bandpass filter at 2536 A: Al 150/250/250/150 A separated by cryolite spacers, matched and antireflected with n=1.55/1.36 quarter-wave stacks\nSpecification: Absorbing stack M1D1M2D2M2D1M1 with spacers varied for optimum Psi_max (D1 = QWOT at 4100 A, D2 = QWOT at 3900 A), then matched and antireflected.\nReported: p. 434-435: maximum transmittance 0.45 for the 150-250-250-150 A four-M filter (vs 0.003 for a single 800 A Al film in a one-M filter and 0.13 for an MDM with 400 A films). Fig. 22 (log T, 0.2-0.4 um; solid = nondispersive n = 0.2 - j2.8, dashed = Hunter dispersive): peak ~0.45 near 0.25 um, long-wave leak near 3000 A (solid ~0.1-0.2 from 0.28 to 0.4 um), ~1e-5 at 0.22 um. Check computed here (nondispersive): T = 0.4495, R = 0.001 at 253.6 nm; Psi_max of the absorbing stack 0.450 at Y_max ~1.92 + j4.74; T = 1.7e-5 at 220 nm, 0.16 at 300 nm.\nNotes: Normal incidence assumed (no angle given). The notation is read left to right from the incident medium (air) to the substrate (quartz, n = 1.47), so layer 1 is next to air. All dielectric layers are quarter-wave optical thickness (QWOT) at lambda0 = 2536 A = 253.6 nm with constant indices; the Al film is a physical thickness with the nondispersive n - jk = 0.20 - j2.80 at 2536 A (Macleod sign convention; k = +2.80 here). Per the Fig. 22 caption: H = QWOT at 2536 A, index 1.55; L, D1, D2 cryolite 1.36 with QWOT at 2536, 4100 and 3900 A (D1 = 410/253.6, D2 = 390/253.6 QWOT at 253.6 nm); M1 = Al 150 A, M2 = Al 250 A. Expanded: (HL)^7 (14), H, 1.845L, M1, D1, M2, D2, M2, D1, M1, 1.845L, (HL)^9 (18): 42 layers.\nLayers from Fig. 22 caption, p. 434 (Sec. VIII): air (HL)^7 H 1.845L M1 D1 M2 D2 M2 D1 M1 1.845L (HL)^9 quartz; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours T 0.450, R 0.001 at 253.6 nm; paper T 0.45 with R = 0 at 253.6 nm.",
+  "Wavelength": [
+    253.6
+  ],
+  "Materials": [
+    {
+      "Name": "ThOF2 n=1.55 (Baumeister 1969)",
+      "N": [
+        1.55
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.55,
+          0
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table VI footnote: B, index 1.55; p. 431 thorium oxyfluoride (index 1.55); Figs. 19, 22 captions: H index 1.55",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Cryolite n=1.36 (Baumeister 1969)",
+      "N": [
+        1.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.36,
+          0
+        ],
+        "MinMicrons": 0.2536,
+        "MaxMicrons": 0.41,
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table VI footnote: L, index 1.36; Figs. 18, 19, 22: cryolite index 1.36",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Al 253.6nm n=0.20 k=2.80 (Baumeister 1969)",
+      "N": [
+        0.2
+      ],
+      "K": [
+        2.8
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.2,
+          2.8
+        ],
+        "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table VI footnote, Figs. 10, 19, 22 captions: Al n = 0.20, k = 2.80 at 2536 A",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 86.0095588235294,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 15,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 75.36764706338235,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 25,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 71.69117648970587,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 25,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 75.36764706338235,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 15,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 86.0095588235294,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.90322580645161,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.61764705882352,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Quartz n=1.47 (Baumeister 1969)",
+    "N": [
+      1.47
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.47,
+        0
+      ],
+      "Source": "Baumeister, Appl. Opt. 8, 423 (1969), Table VI footnote and Fig. 19 caption: quartz, index 1.47",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 253.6,
+  "Plot": {
+    "From": 200,
+    "To": 400,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 253.6
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

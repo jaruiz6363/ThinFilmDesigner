@@ -1,0 +1,3 @@
+# The vendor glass catalogues are kept byte for byte as the vendors issued them: no line-ending
+# conversion. (CDGM's is UTF-16, which git would otherwise guess at.)
+materials/glass/*.AGF -text

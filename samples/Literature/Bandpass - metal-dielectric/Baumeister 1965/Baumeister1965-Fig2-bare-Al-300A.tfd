@@ -1,0 +1,83 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1965-Fig2-bare-Al-300A",
+  "Source": "P. W. Baumeister, V. R. Costich, and S. C. Pieper, \"Bandpass Filters for the Ultraviolet,\" Appl. Opt. 4, 911-914 (1965). doi:10.1364/AO.4.000911 - Text p. 911-912 and Fig. 2 caption (Al constants 0.18 - i2.78 at 2536 A)",
+  "Notes": "Bare 300 A aluminium film on a quartz substrate (the unmatched reference for the 1M filter)\nSpecification: Reference: transmittance of the unmatched Al film at 2536 A.\nReported: T = 0.025 at 2536 A for a bare 300 A aluminum film on a quartz substrate, versus 0.65 maximum when properly matched (p. 911-912).\nNotes: Single layer. Uses the constant Al index printed in the Fig. 2 caption (n = 0.18, k = 2.78 at 2536 A), valid only near 253.6 nm. Quartz index not printed: generic SiO2 (n ~ 1.50 at 254 nm). Light incident from air on the film side; normal incidence assumed.\nLayers from Text p. 911-912 and Fig. 2 caption (Al constants 0.18 - i2.78 at 2536 A); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours T 0.0308 at 253.6 nm; paper T 0.025 (p. 911). Aluminium is Rakic’s data; the paper’s ultraviolet constants for evaporated aluminium are not given.",
+  "Wavelength": [
+    253.6
+  ],
+  "Materials": [
+    {
+      "Name": "Al n=0.18 k=2.78 at 253.6 nm (Baumeister 1965)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.18,
+          2.78
+        ],
+        "MinMicrons": 0.25,
+        "MaxMicrons": 0.26,
+        "Source": "Baumeister et al. 1965, Fig. 2 caption (p. 912): 'The optical constants of the aluminum are 0.18 - i2.78 at 2536 A'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 30
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "SiO2",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "SELLMEIER",
+      "Coefficients": [
+        0.6961663,
+        0.0046791,
+        0.4079426,
+        0.0135121,
+        0.8974794,
+        97.934
+      ],
+      "MinMicrons": 0.21,
+      "MaxMicrons": 3.71,
+      "Source": "ARCoatingDesigner; matches Malitson 1965, fused silica"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 253.6,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 200,
+    "To": 500,
+    "Steps": 301,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 253.6
+  }
+}

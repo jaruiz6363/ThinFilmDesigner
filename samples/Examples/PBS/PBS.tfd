@@ -1,0 +1,705 @@
+{
+  "Version": 2,
+  "Name": "PBS",
+  "Notes": "Polarising beamsplitter in glass at 45 degrees, 1064 nm\n\nCaveats:\n- Manufacturability is scored with MINT/MAXT (minimum and maximum layer thickness) at a low weight. A sensitivity term (SENS) would score robustness to thickness errors directly, but it needs second derivatives of the merit function and is not offered; MINT/MAXT keep layers depositable and have exact derivatives.\n- Rs and Tp are asked for separately. When the polarisation split itself is the specification, an R_NPOL target expresses it as one operand with a well-conditioned gradient toward balance.",
+  "Wavelength": [
+    1040,
+    1045,
+    1050,
+    1055,
+    1060,
+    1065,
+    1070,
+    1075,
+    1080,
+    1085,
+    1090
+  ],
+  "Materials": [
+    {
+      "Name": "Nb2O5",
+      "N": [
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3,
+        2.3
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2",
+      "N": [
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46,
+        1.46
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.46,
+          0
+        ],
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 115.65217391304348,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 182.1917808219178,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 9,
+      "AngleDegrees": 45
+    },
+    {
+      "Wavelength": 10,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.520000",
+    "N": [
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.520000",
+    "N": [
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RS",
+      "Comparison": "GE",
+      "Target": 0.995,
+      "Weight": 1,
+      "Scale": 0.005,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        10
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TP",
+      "Comparison": "GE",
+      "Target": 0.98,
+      "Weight": 1,
+      "Scale": 0.02,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        10
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "MINT",
+      "Comparison": "LE",
+      "Target": 0,
+      "Weight": 0.02,
+      "Scale": 20,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 20,
+      "Temperature": 0
+    },
+    {
+      "Code": "MAXT",
+      "Comparison": "LE",
+      "Target": 0,
+      "Weight": 0.02,
+      "Scale": 400,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 400,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 10,
+  "UpperBound": 400,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1065,
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

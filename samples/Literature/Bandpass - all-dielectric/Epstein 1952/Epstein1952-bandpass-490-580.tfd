@@ -1,0 +1,186 @@
+{
+  "Version": 2,
+  "Name": "Epstein1952-bandpass-490-580",
+  "Source": "L. I. Epstein, \"The Design of Optical Filters,\" J. Opt. Soc. Am. 42, 806-810 (1952). doi:10.1364/JOSA.42.000806 - Table III (p.809), design described in the text pp.809-810",
+  "Notes": "Band-pass filter (pass band 490-580 nm) made of two periodically stratified media of symmetrical periods: A = four periods of MgF2/ZnS/MgF2 (2phi_p = phi_q = 110.8 deg) on the glass side and B = four periods of ZnS/MgF2/ZnS (2phi_p = phi_q = 67.9 deg) on the air side, with one period of MgF2/ZnS/MgF2 (2phi_p = phi_q = 135 deg) as antireflection coating between glass and A\nSpecification: Pass band 490-580 nm; high reflectance on both sides (A reflects 580-803 nm, B reflects 354-490 nm).\nReported: Fig. 6 (calculated reflectance 300-800 nm, 10 % grid; read off the plot, approximate): R ~ 90-100 % with ripple from ~345 to ~445 nm, falls to ~50 % at 490 nm, minimum R ~ 0 at ~520 nm, R < 10 % roughly 505-548 nm, ~70 % at 580 nm, then ~95-100 % from ~600 to ~790 nm (~93 % at 800 nm). Vertical lines at 490 and 580 nm mark the desired pass band. Text p.810: first-order high-reflectance band of A extends from 580 to 803 nm and that of B from 354 to 490 nm; the Herpin index of B equals that of air at 540 nm; the indices of A and B are equal at 516 nm (Fig. 5); A has equivalent index 0.595 at 544 nm, and the AR period (1) with 2phi_p = phi_q = 135 deg has index (1.52 x 0.595)^0.5 = 0.95 at 544 nm. Sum of the printed optical thicknesses = 1698.6 deg at 546 nm = 18.873 QWOT.\nNotes: Table III lists the layers from the glass (1.52, massive) to air (1.00, massive); they are reversed here so layer 1 is next to air. Thicknesses are optical thicknesses at 546 nm in degrees of phase (90 deg = one quarter wave), converted to QWOT = deg/90 at reference_nm 546 and rounded to 6 decimals. 20 layers as printed: AR period 67.3 L / 134.5 H with its outer L merged into A's first L (122.7 = 67.3 + 55.4), then A (7 layers of 110.8 deg, ending with a half-layer L 55.4), then B (H 33.9, 7 layers of 67.9 deg, H 33.9) facing air with no AR coating; the indices alternate 1.38/2.30 except at the A/B junction (L 55.4 next to H 33.9). Indices 2.30 (ZnS) and 1.38 (MgF2) are non-dispersive, as in the paper. Normal incidence from air; a lossless stack reflects equally from either side, and the paper's curve ignores the back surface of the glass (semi-infinite n = 1.52). Total of printed optical thicknesses: 1698.6 deg.\nLayers from Table III (p.809), design described in the text pp.809-810; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 44.4 % at 490 nm, minimum 0.175 % at 521 nm, 69.4 % at 580 nm; paper Fig. 6: ~50 % at 490 nm, ~0 at ~520 nm, ~70 % at 580 nm.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.30 (Epstein 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.35,
+        "MaxMicrons": 0.8,
+        "Source": "Epstein, JOSA 42, 806 (1952), p.807: \"The indices used are those of zinc sulfide (2.30) and magnesium fluoride (1.38)\"; Tables I-IV"
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Epstein 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.35,
+        "MaxMicrons": 0.8,
+        "Source": "Epstein, JOSA 42, 806 (1952), p.807: magnesium fluoride (1.38); Tables I-IV"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 22.354367608695654,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 74.62435217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 44.77461130434783,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 74.62435217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 44.77461130434783,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 74.62435217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 44.77461130434783,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 74.62435217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 22.354367608695654,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 60.88651739130435,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 73.06376152173914,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 121.77293586956523,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 73.06376152173914,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 121.77293586956523,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 73.06376152173914,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 121.77293586956523,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 73.06376152173914,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 134.85141630434785,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 88.69200260869567,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 73.96499782608696,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 300,
+    "To": 800,
+    "Steps": 501,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

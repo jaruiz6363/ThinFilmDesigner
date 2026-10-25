@@ -1,0 +1,103 @@
+{
+  "Version": 2,
+  "Name": "Holloway1969-FP-Ag-visible",
+  "Source": "R. J. Holloway and P. H. Lissberger, \"The Design and Preparation of Induced Transmission Filters,\" Appl. Opt. 8, 653-660 (1969). doi:10.1364/AO.8.000653 - Fig. 3(a) label and caption, p. 655",
+  "Notes": "Metal-dielectric Fabry-Perot (Ag / dielectric spacer / Ag) comparison filter in the visible (Fig. 3(a))\nSpecification: Simple Fabry-Perot filter used only for comparison.\nReported: Fig. 3(a) (calculated, plot only): 1/(1+F sin^2 phi) shows three narrow peaks at about 0.42, 0.55 and 0.8 um (approximate plot reading); tau0' is about 1 everywhere; psi1*psi2 rises from about 0.3 at 0.35 um to about 0.85 at 0.95 um.\nNotes: Label glass|Ag|S|Ag|glass, N_Ag = 0.075 + 3.41i, mu_H = 2.367, mu_g = 1.5, d_Ag = 340 A, S = 7.17 H. The reference wavelength for the 7.17 quarter-wave spacer is not stated: 546 nm is assumed (the visible design wavelength 0.5460 um used with the same silver constants in Table I); with this choice and a thick-silver phase estimate the orders fall near 0.42, 0.54 and 0.75 um, consistent with the first two plotted peaks but less so with the third, so the authors may have used dispersive silver data for the plot. Silver constants are a single-wavelength value (k positive = absorbing) applied at all wavelengths here. Symmetric; normal incidence.\nLayers from Fig. 3(a) label and caption, p. 655; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours transmission peaks at 425, 546, 765 nm; paper peaks near 420, 550 and 800 nm (read from Fig. 3a).",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "Ag 0.075+3.41i at 0.546 um (Holloway 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.075,
+          3.41
+        ],
+        "Source": "Holloway & Lissberger 1969, Table I (lambda0 = 0.5460 u, n = 0.075, k = 3.41) and Fig. 3(a) caption N_Ag = 0.075 + 3.41i"
+      }
+    },
+    {
+      "Name": "H n=2.367 (Holloway 1969)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.367,
+          0
+        ],
+        "MinMicrons": 0.35,
+        "MaxMicrons": 0.95,
+        "Source": "Holloway & Lissberger 1969, Fig. 3(a) caption: mu_H = 2.367"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 34
+    },
+    {
+      "Material": 1,
+      "Thickness": 413.4790874524715,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 34
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5"
+    }
+  },
+  "Exit": {
+    "Name": "glass n=1.5 (Holloway 1969)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5,
+        0
+      ],
+      "MinMicrons": 0.35,
+      "MaxMicrons": 3.5,
+      "Source": "Holloway & Lissberger 1969, Fig. 3 caption and Table II footnote: mu_g = 1.5"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 350,
+    "To": 950,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

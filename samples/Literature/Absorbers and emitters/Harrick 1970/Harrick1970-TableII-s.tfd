@@ -1,0 +1,166 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-TableII-s",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table II (s design), p. 2112; construction Fig. 3",
+  "Notes": "Cavity with a semitransparent 55 A gold electrode inducing complete s-polarized absorption at 550 nm\nSpecification: Rs = 0 at 550 nm, alpha = 72.8 deg in the n = 1.52 prism.\nReported: Table III, s design with absorption: Rp = 0.088, Rs = 0.001; without absorption (see Harrick1970-TableII-s-noabs): Rp = 0.658, Rs = 0.188. At 550 nm, 72.8 deg.\nNotes: Table II s design h/lambda at 550 nm: Au 0.010 -> 5.5 nm, cavity n2 = 2.10 0.083 -> 45.65 nm, FTR n3 = 1.38 0.268 -> 147.4 nm. Reversed from the paper's absorber-first list. Same media/angle assumptions as the p design.\nLayers from Table II (s design), p. 2112; construction Fig. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.083, Rs 0.001 at 72.8 deg, 550 nm; paper Rp 0.088, Rs 0.001 (Tables I and III).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "FTR film n=1.38 (Harrick 1970)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Table II and Fig. 3: n3 = 1.38 FTR film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Cavity film n=2.10 (Harrick 1970)",
+      "N": [
+        2.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.1,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Table II and Fig. 3: n2 = 2.10 cavity film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Au 550nm n=0.331 k=2.324 (Harrick 1970)",
+      "N": [
+        0.331
+      ],
+      "K": [
+        2.324
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.331,
+          2.324
+        ],
+        "Source": "Harrick & Turner 1970, Table II: n1 = 0.331 - i2.324 (gold electrode at 550 nm)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 147.4,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 45.65,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 5.5,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 72.8
+    }
+  ],
+  "Incident": {
+    "Name": "Prism n=1.52 (Harrick 1970)",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Table II and Fig. 3: Dove prism n = 1.52",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Absorber n=1.4 k=0.04 (Harrick 1970)",
+    "N": [
+      1.4
+    ],
+    "K": [
+      0.04
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.4,
+        0.04
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1 and Tables I-III: n0 = 1.4 - i0.04",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 550,
+  "Plot": {
+    "From": 500,
+    "To": 600,
+    "Steps": 201,
+    "Angle": 72.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

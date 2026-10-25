@@ -1,0 +1,212 @@
+{
+  "Version": 2,
+  "Name": "Clapham1969-PBS-a-HLH-m5",
+  "Source": "P. B. Clapham, M. J. Downs, and R. J. King, \"Some applications of thin films to polarization devices,\" Appl. Opt. 8, 1965-1974 (1969). doi:10.1364/AO.8.001965 - Text p. 1967 (list of designs) and Fig. 3 caption (nH = 2.04, nL = 1.385, nG = 1.62, m = 5)",
+  "Notes": "Cube polarizing beam splitter, design (0.5H L 0.5H)^5, compared in Fig. 3 for angular sensitivity of Rp\nSpecification: Rs high, Rp = 0 at 546 nm, 45 deg in glass.\nReported: Fig. 3 (computed, read only qualitatively): Rp = 0 at 45 deg; Rp rises most steeply of the three designs, to ~5 % within about +-1.5 deg of incidence at the cube face (the angle axis is measured outside the cube at the face, i.e. in air, refracted into glass). Text p. 1967: all three designs give comparable Rs for a given number of layers.\nNotes: Same media, angles and quarter-wave-at-operating-angle thicknesses as Clapham1969-PBS-a-*: H = 80.864 nm (half = 40.432 nm), L = 175.343 nm. 11 layers after merging adjacent half-layers: H/2, (L, H) alternating, L, H/2. lambda0 = 546 nm is assumed from the experimental section; the Fig. 3 calculation does not state its wavelength. The Fig. 3 angle axis is the angle of incidence at the cube face (outside, in air), so +-1 deg there is about +-0.6 deg in the glass.\nLayers from Text p. 1967 (list of designs) and Fig. 3 caption (nH = 2.04, nL = 1.385, nG = 1.62, m = 5); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rs 99.8 %, Rp 7.0e-6 at 546 nm, 45 deg in glass; paper Rp = 0 at 45 deg (Fig. 3).",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "ZrO2 n=2.04 (Clapham 1969)",
+      "N": [
+        2.04
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.04,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.7,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), Table I footnote (a) nH = 2.04; Table II (p. 1969): ZrO2 deposited at 180 C has n = 2.04 at 546 nm, 2.01 at 630 nm",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "MgF2 n=1.385 (Clapham 1969)",
+      "N": [
+        1.385
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.385,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.7,
+        "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967, Table I footnote: nL = 1.385 (magnesium fluoride)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 40.432,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.343,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 80.864,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.343,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 80.864,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.343,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 80.864,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.343,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 80.864,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 175.343,
+      "Variable": true
+    },
+    {
+      "Material": 0,
+      "Thickness": 40.432,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 45
+    }
+  ],
+  "Incident": {
+    "Name": "DF glass n=1.62 (Clapham 1969)",
+    "N": [
+      1.62
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.62,
+        0
+      ],
+      "MinMicrons": 0.4,
+      "MaxMicrons": 0.7,
+      "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967 and Table I footnote (a): dense flint glass nG = 1.62",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "DF glass n=1.62 (Clapham 1969)",
+    "N": [
+      1.62
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.62,
+        0
+      ],
+      "MinMicrons": 0.4,
+      "MaxMicrons": 0.7,
+      "Source": "Clapham, Downs and King, Appl. Opt. 8, 1965 (1969), p. 1967 and Table I footnote (a): dense flint glass nG = 1.62",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 546,
+  "Plot": {
+    "From": 425,
+    "To": 675,
+    "Steps": 251,
+    "Angle": 45,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

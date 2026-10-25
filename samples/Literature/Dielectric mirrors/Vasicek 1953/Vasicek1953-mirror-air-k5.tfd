@@ -1,0 +1,162 @@
+{
+  "Version": 2,
+  "Name": "Vasicek1953-mirror-air-k5",
+  "Source": "A. Vasicek, \"Multiple thin dielectric films as mirrors and interference filters,\" Czech. J. Phys. 3, 206-222 (1953). doi:10.1007/BF01687127 - Sec. II, p. 208 (indices, Fig. 1b, odd k with H first and last); Eqs. (35)-(37) p. 212; Tables I and III (pp. 213, 215), Table IV upper part (p. 222)",
+  "Notes": "Quarter-wave high/low dielectric mirror on glass with k = 5 films (odd, H outermost and next to the glass), light incident from air\nSpecification: Maximum reflectance at 550 nm (path difference x = 180 deg in every film, i.e. quarter waves): air | H L H L H | glass\nReported: Normal incidence from air, rear glass surface ignored. Table I (p. 213): R = 89.702 %, T = 1-R = 10.298 % at x = 180 deg (550 nm); equivalent single quarter-wave index N = 7.474 (Eq. 37, N^2 = n1^(k+1)/n2^(k-1)). Table III (p. 215), exact R % vs path difference x (x = 180 deg at 550 nm, so x corresponds to wavelength 550*180/x nm, non-dispersive indices): x=10 deg (9900 nm) 6.8856; x=30 deg (3300 nm) 13.985; x=60 deg (1650 nm) 3.7108; x=90 deg (1100 nm) 21.213; x=105 deg (942.9 nm) 9.474; x=120 deg (825 nm) 8.5706; x=135 deg (733.3 nm) 55.993; x=150 deg (660 nm) 80.298; x=180 deg (550 nm) 89.702. Note: an independent matrix calculation reproduces almost every Table III entry to 3-4 digits, but x=105 deg printed 9.474, TMM gives 9.69; treat these entries as paper errors. Table IV (p. 222): R = 0.89702, Fabry-Perot half-width 2*dLambda = 190 A from Eq. (48) with this R as the mirror reflectance (air spacer, m = 1). Fig. 5 (p. 214) plots R vs x 90-270 deg (plot only).\nNotes: Path difference x = (2 pi/lambda) 2 n d (Eq. 2), so x = 180 deg is a quarter wave; all films have the same x (Eq. 12). Indices are wavelength independent (n1 = 2.40, n2 = 1.36, glass BK7 n = 1.518 at 550 nm), so Table III columns at other x equal this quarter-wave-at-550-nm stack evaluated at lambda = 550*180/x nm (the paper itself maps x to wavelength this way in Figs. 5 and 9). Absorption neglected; single coated surface, no back-surface reflection. Stack is symmetric so listing order is the same from either side.\nLayers from Sec. II, p. 208 (indices, Fig. 1b, odd k with H first and last); Eqs. (35)-(37) p. 212; Tables I and III (pp. 213, 215), Table IV upper part (p. 222); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 0.896978 at 550 nm; paper R 0.8970199999999999 (printed).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.40 ZnS or TiO2 (Vasicek 1953)",
+      "N": [
+        2.4
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.4,
+          0
+        ],
+        "Source": "Vasicek 1953, p. 208: \"high refractive index n1 = 2.4000 (films ZnS or TiO2)\" at lambda = 5500 A",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "L n=1.36 MgF2 or cryolite (Vasicek 1953)",
+      "N": [
+        1.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.36,
+          0
+        ],
+        "Source": "Vasicek 1953, p. 208: \"low refractive index n2 = 1.3600 (films MgF2 or cryolith)\"; p. 221 cryolite n2 = 1.3600",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 101.10294117647058,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 101.10294117647058,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 57.29166666666667,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "BK7 n=1.518 (Vasicek 1953)",
+    "N": [
+      1.518
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.518,
+        0
+      ],
+      "Source": "Vasicek 1953, p. 208: glass BK7 (Schott catalogue) n = 1.5180 at lambda = 5500 A",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 550,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

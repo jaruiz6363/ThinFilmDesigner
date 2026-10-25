@@ -1,0 +1,2067 @@
+{
+  "Version": 2,
+  "Name": "Wu2018-planar-ITO-aSi-Ag-reference",
+  "Source": "J. Wu, \"Absorption enhancement in thin-film solar cells based on periodically chirped structure,\" Sol. Energy 165, 85-89 (2018). doi:10.1016/j.solener.2018.03.004 - Text p. 86 (Sec. 2, last paragraph, and Fig. 1(b)); ITO thickness h_a = 60 nm from Sec. 3",
+  "Notes": "Planar reference thin-film a-Si solar cell: ITO antireflection layer on an a-Si absorber backed by an Ag reflector (absorption in the a-Si is the figure of merit)\nSpecification: Maximize AM1.5-weighted integrated absorption in the a-Si over 300-800 nm (Eq. 1); short-circuit current density Jsc over 300-800 nm with unit quantum efficiency (Eq. 3).\nReported: Absorption of the a-Si in the planar reference is > 60 % from 344 to 671 nm (Fig. 2a), low in the short and long wavebands; average integrated absorption ~71 % and Jsc 18.03 mA/cm^2 at normal incidence (AM1.5-weighted, 300-800 nm). Integrated absorption > 60 % for incident angles up to 66 deg (TE) and 69 deg (TM); Jsc > 16 mA/cm^2 up to 60 deg (TE) and 66 deg (TM).\nNotes: Paper lists the stack top to bottom (ITO / a-Si / Ag), same as here. The Ag back reflector is 200 nm thick, i.e. optically opaque, so it is treated as the substrate. ITO is given only as n = 2 (no k). a-Si and Ag optical constants are from refractiveindex.info (CRYSTALS group, a-Si) with no numbers in the paper; the names 'a-Si' and 'Ag' need a library dispersion. 'Optimized' ITO thickness 60 nm is stated together with the grating parameters; the text for the planar cell says 'an optimized antireflection coating (ITO) with a thickness h_a of 60 nm' and a-Si slab 'thickness h1 of 150 nm'. The figure of merit is absorption in the a-Si only (not total 1-R), weighted by the AM1.5G spectrum, which a plain AA operand does not reproduce exactly; reference_nm 550 is arbitrary (not given). Reported numbers mix TE/TM average; for the planar stack TE and TM coincide at normal incidence.\nLayers from Text p. 86 (Sec. 2, last paragraph, and Fig. 1(b)); ITO thickness h_a = 60 nm from Sec. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours A (all layers) > 60 % from 351 to 690 nm; mean A 300-800 nm 74.6 %; paper a-Si absorption > 60 % from 344 to 671 nm; AM1.5-weighted average 71 %. AA here is absorption in every layer (ITO and Ag too); the paper counts the a-Si alone, so ours is the upper bound.",
+  "Wavelength": [
+    300,
+    310,
+    320,
+    330,
+    340,
+    350,
+    360,
+    370,
+    380,
+    390,
+    400,
+    410,
+    420,
+    430,
+    440,
+    450,
+    460,
+    470,
+    480,
+    490,
+    500,
+    510,
+    520,
+    530,
+    540,
+    550,
+    560,
+    570,
+    580,
+    590,
+    600,
+    610,
+    620,
+    630,
+    640,
+    650,
+    660,
+    670,
+    680,
+    690,
+    700,
+    710,
+    720,
+    730,
+    740,
+    750,
+    760,
+    770,
+    780,
+    790,
+    800
+  ],
+  "Materials": [
+    {
+      "Name": "ITO n=2 (Wu 2018)",
+      "N": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "K": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.8,
+        "Source": "Wu, Sol. Energy 165, 85 (2018), Sec. 2: 'indium tin oxide (ITO) with a refractive index of 2'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "a-Si (Pierce & Spicer 1972)",
+      "N": [
+        2.66054054054054,
+        2.87,
+        3.078588957055215,
+        3.2795027624309396,
+        3.467348066298343,
+        3.6518181818181814,
+        3.8231730769230765,
+        3.9627631578947367,
+        4.081184210526316,
+        4.190348837209302,
+        4.2717441860465115,
+        4.353139534883721,
+        4.400440677966102,
+        4.4309491525423725,
+        4.4614576271186435,
+        4.474222873900293,
+        4.48008797653959,
+        4.485953079178886,
+        4.486753926701571,
+        4.476282722513089,
+        4.468058252427184,
+        4.4632038834951455,
+        4.452765957446808,
+        4.431489361702128,
+        4.410212765957446,
+        4.388936170212766,
+        4.367659574468085,
+        4.345222024866786,
+        4.322131438721137,
+        4.299040852575489,
+        4.275950266429841,
+        4.2528596802841925,
+        4.2298165137614685,
+        4.211467889908257,
+        4.193119266055046,
+        4.1747706422018345,
+        4.153646408839779,
+        4.1315469613259665,
+        4.109447513812154,
+        4.08762962962963,
+        4.067876543209876,
+        4.048123456790123,
+        4.02837037037037,
+        4.008771929824561,
+        3.9912280701754383,
+        3.973684210526316,
+        3.956140350877193,
+        3.93859649122807,
+        3.923094777562863,
+        3.9095551257253387,
+        3.896015473887814
+      ],
+      "K": [
+        3.0464864864864865,
+        3.06,
+        3.0231901840490796,
+        2.9754696132596683,
+        2.9091712707182316,
+        2.829090909090909,
+        2.7187500000000004,
+        2.5949122807017546,
+        2.472105263157895,
+        2.3451162790697673,
+        2.205581395348837,
+        2.066046511627907,
+        1.9336949152542375,
+        1.8048813559322037,
+        1.6760677966101696,
+        1.5639882697947214,
+        1.4584164222873899,
+        1.3528445747800588,
+        1.2540314136125656,
+        1.1702617801047122,
+        1.0906796116504853,
+        1.0173786407766987,
+        0.9488170212765953,
+        0.8894553191489357,
+        0.8300936170212762,
+        0.7707319148936166,
+        0.7113702127659569,
+        0.6639680284191831,
+        0.6232930728241564,
+        0.5826181172291298,
+        0.541943161634103,
+        0.5012682060390764,
+        0.4607003058103976,
+        0.43073088685015287,
+        0.40076146788990813,
+        0.37079204892966344,
+        0.3441933701657457,
+        0.3187790055248617,
+        0.29336464088397773,
+        0.2688666666666667,
+        0.2510888888888889,
+        0.2333111111111111,
+        0.2155333333333333,
+        0.19803289473684207,
+        0.18421710526315788,
+        0.17040131578947368,
+        0.15658552631578948,
+        0.14276973684210528,
+        0.13059419729206964,
+        0.11999458413926498,
+        0.10939497098646032
+      ],
+      "Model": {
+        "Kind": "TABLE",
+        "Coefficients": [],
+        "Table": [
+          [
+            0.1033,
+            0.327,
+            0.726
+          ],
+          [
+            0.1078,
+            0.363,
+            0.847
+          ],
+          [
+            0.1127,
+            0.392,
+            0.946
+          ],
+          [
+            0.1181,
+            0.423,
+            1.04
+          ],
+          [
+            0.124,
+            0.459,
+            1.14
+          ],
+          [
+            0.1305,
+            0.497,
+            1.24
+          ],
+          [
+            0.1378,
+            0.543,
+            1.35
+          ],
+          [
+            0.1459,
+            0.597,
+            1.47
+          ],
+          [
+            0.155,
+            0.66,
+            1.6
+          ],
+          [
+            0.1653,
+            0.735,
+            1.74
+          ],
+          [
+            0.1771,
+            0.832,
+            1.89
+          ],
+          [
+            0.1907,
+            0.951,
+            2.07
+          ],
+          [
+            0.2066,
+            1.11,
+            2.28
+          ],
+          [
+            0.2254,
+            1.35,
+            2.51
+          ],
+          [
+            0.248,
+            1.69,
+            2.76
+          ],
+          [
+            0.2583,
+            1.86,
+            2.85
+          ],
+          [
+            0.2695,
+            2.07,
+            2.93
+          ],
+          [
+            0.2818,
+            2.3,
+            2.99
+          ],
+          [
+            0.2952,
+            2.56,
+            3.04
+          ],
+          [
+            0.31,
+            2.87,
+            3.06
+          ],
+          [
+            0.3263,
+            3.21,
+            3
+          ],
+          [
+            0.3444,
+            3.55,
+            2.88
+          ],
+          [
+            0.3543,
+            3.73,
+            2.79
+          ],
+          [
+            0.3647,
+            3.9,
+            2.66
+          ],
+          [
+            0.3875,
+            4.17,
+            2.38
+          ],
+          [
+            0.4133,
+            4.38,
+            2.02
+          ],
+          [
+            0.4428,
+            4.47,
+            1.64
+          ],
+          [
+            0.4769,
+            4.49,
+            1.28
+          ],
+          [
+            0.496,
+            4.47,
+            1.12
+          ],
+          [
+            0.5166,
+            4.46,
+            0.969
+          ],
+          [
+            0.5636,
+            4.36,
+            0.69
+          ],
+          [
+            0.6199,
+            4.23,
+            0.461
+          ],
+          [
+            0.6526,
+            4.17,
+            0.363
+          ],
+          [
+            0.6888,
+            4.09,
+            0.271
+          ],
+          [
+            0.7293,
+            4.01,
+            0.199
+          ],
+          [
+            0.7749,
+            3.93,
+            0.136
+          ],
+          [
+            0.8266,
+            3.86,
+            0.0812
+          ],
+          [
+            0.8856,
+            3.77,
+            0.0401
+          ],
+          [
+            0.9538,
+            3.68,
+            0
+          ],
+          [
+            1.033,
+            3.61,
+            0
+          ],
+          [
+            1.127,
+            3.57,
+            0
+          ],
+          [
+            1.24,
+            3.54,
+            0
+          ],
+          [
+            1.378,
+            3.5,
+            0
+          ],
+          [
+            1.55,
+            3.48,
+            0
+          ],
+          [
+            1.771,
+            3.45,
+            0
+          ],
+          [
+            2.066,
+            3.44,
+            0
+          ]
+        ],
+        "Source": "D. T. Pierce and W. E. Spicer, Phys. Rev. B 5, 3017 (1972), values from Palik (1985), via refractiveindex.info",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 60,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 150,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 2,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 3,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 4,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 5,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 6,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 7,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 8,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 9,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 10,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 11,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 12,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 13,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 14,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 15,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 16,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 17,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 18,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 19,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 20,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 21,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 22,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 23,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 24,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 25,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 26,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 27,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 28,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 29,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 30,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 31,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 32,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 33,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 34,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 35,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 36,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 37,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 38,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 39,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 40,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 41,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 42,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 43,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 44,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 45,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 46,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 47,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 48,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 49,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 50,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Ag (Johnson & Christy 1972)",
+    "N": [
+      1.345294117647059,
+      1.1449999999999996,
+      0.8231958762886602,
+      0.25648648648648664,
+      0.14681818181818182,
+      0.1143589743589745,
+      0.08729927007299276,
+      0.06691176470588238,
+      0.052205882352941185,
+      0.05,
+      0.05,
+      0.05,
+      0.04610465116279071,
+      0.040290697674418605,
+      0.04,
+      0.04,
+      0.044439024390243914,
+      0.0493170731707317,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05328519855595668,
+      0.05689530685920579,
+      0.05958208955223878,
+      0.056597014925373106,
+      0.053611940298507466,
+      0.05062686567164179,
+      0.05227665706051873,
+      0.055158501440922186,
+      0.05804034582132564,
+      0.05925058548009368,
+      0.05690866510538642,
+      0.05456674473067915,
+      0.052224824355971894,
+      0.04988888888888888,
+      0.047666666666666656,
+      0.04544444444444443,
+      0.04322222222222224,
+      0.041000000000000016,
+      0.038932038834951464,
+      0.03699029126213593,
+      0.035048543689320394,
+      0.033106796116504855,
+      0.031165048543689323,
+      0.030614439324116744,
+      0.0321505376344086,
+      0.03368663594470046,
+      0.03522273425499232,
+      0.03675883256528418
+    ],
+    "K": [
+      0.984858823529412,
+      0.6408571428571421,
+      0.4012371134020621,
+      0.7699459459459459,
+      1.0708636363636364,
+      1.3195641025641016,
+      1.519759124087591,
+      1.6889632352941175,
+      1.8411691176470588,
+      1.9741257861635222,
+      2.1035220125786167,
+      2.232452830188679,
+      2.347843023255814,
+      2.4565639534883723,
+      2.552808823529412,
+      2.6483970588235293,
+      2.751107317073171,
+      2.854521951219512,
+      2.9476285714285715,
+      3.0390571428571427,
+      3.130884,
+      3.2232839999999996,
+      3.3156839999999996,
+      3.4100722021660648,
+      3.5046570397111916,
+      3.5973671641791047,
+      3.6785611940298515,
+      3.759755223880597,
+      3.8409492537313437,
+      3.924933717579251,
+      4.009659942363112,
+      4.094386167146974,
+      4.176805620608899,
+      4.254323185011709,
+      4.33184074941452,
+      4.4093583138173305,
+      4.486944444444444,
+      4.565833333333334,
+      4.644722222222223,
+      4.7236111111111105,
+      4.802499999999999,
+      4.881145631067961,
+      4.959592233009708,
+      5.038038834951456,
+      5.116485436893203,
+      5.194932038834952,
+      5.271800307219662,
+      5.346301075268817,
+      5.420801843317973,
+      5.495302611367128,
+      5.569803379416283
+    ],
+    "Model": {
+      "Kind": "TABLE",
+      "Coefficients": [],
+      "Table": [
+        [
+          0.1879,
+          1.07,
+          1.212
+        ],
+        [
+          0.1916,
+          1.1,
+          1.232
+        ],
+        [
+          0.1953,
+          1.12,
+          1.255
+        ],
+        [
+          0.1993,
+          1.14,
+          1.277
+        ],
+        [
+          0.2033,
+          1.15,
+          1.296
+        ],
+        [
+          0.2073,
+          1.18,
+          1.312
+        ],
+        [
+          0.2119,
+          1.2,
+          1.325
+        ],
+        [
+          0.2164,
+          1.22,
+          1.336
+        ],
+        [
+          0.2214,
+          1.25,
+          1.342
+        ],
+        [
+          0.2262,
+          1.26,
+          1.344
+        ],
+        [
+          0.2313,
+          1.28,
+          1.357
+        ],
+        [
+          0.2371,
+          1.28,
+          1.367
+        ],
+        [
+          0.2426,
+          1.3,
+          1.378
+        ],
+        [
+          0.249,
+          1.31,
+          1.389
+        ],
+        [
+          0.2551,
+          1.33,
+          1.393
+        ],
+        [
+          0.2616,
+          1.35,
+          1.387
+        ],
+        [
+          0.2689,
+          1.38,
+          1.372
+        ],
+        [
+          0.2761,
+          1.41,
+          1.331
+        ],
+        [
+          0.2844,
+          1.41,
+          1.264
+        ],
+        [
+          0.2924,
+          1.39,
+          1.161
+        ],
+        [
+          0.3009,
+          1.34,
+          0.964
+        ],
+        [
+          0.3107,
+          1.13,
+          0.616
+        ],
+        [
+          0.3204,
+          0.81,
+          0.392
+        ],
+        [
+          0.3315,
+          0.17,
+          0.829
+        ],
+        [
+          0.3425,
+          0.14,
+          1.142
+        ],
+        [
+          0.3542,
+          0.1,
+          1.419
+        ],
+        [
+          0.3679,
+          0.07,
+          1.657
+        ],
+        [
+          0.3815,
+          0.05,
+          1.864
+        ],
+        [
+          0.3974,
+          0.05,
+          2.07
+        ],
+        [
+          0.4133,
+          0.05,
+          2.275
+        ],
+        [
+          0.4305,
+          0.04,
+          2.462
+        ],
+        [
+          0.4509,
+          0.04,
+          2.657
+        ],
+        [
+          0.4714,
+          0.05,
+          2.869
+        ],
+        [
+          0.4959,
+          0.05,
+          3.093
+        ],
+        [
+          0.5209,
+          0.05,
+          3.324
+        ],
+        [
+          0.5486,
+          0.06,
+          3.586
+        ],
+        [
+          0.5821,
+          0.05,
+          3.858
+        ],
+        [
+          0.6168,
+          0.06,
+          4.152
+        ],
+        [
+          0.6595,
+          0.05,
+          4.483
+        ],
+        [
+          0.7045,
+          0.04,
+          4.838
+        ],
+        [
+          0.756,
+          0.03,
+          5.242
+        ],
+        [
+          0.8211,
+          0.04,
+          5.727
+        ],
+        [
+          0.892,
+          0.04,
+          6.312
+        ],
+        [
+          0.984,
+          0.04,
+          6.992
+        ],
+        [
+          1.088,
+          0.04,
+          7.795
+        ],
+        [
+          1.216,
+          0.09,
+          8.828
+        ],
+        [
+          1.393,
+          0.13,
+          10.1
+        ],
+        [
+          1.61,
+          0.15,
+          11.85
+        ],
+        [
+          1.937,
+          0.24,
+          14.08
+        ]
+      ],
+      "Source": "P. B. Johnson and R. W. Christy, Phys. Rev. B 6, 4370 (1972), via refractiveindex.info",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        2
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        3
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        4
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        5
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        6
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        7
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        8
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        9
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        10
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        11
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        12
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        13
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        14
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        15
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        16
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        17
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        18
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        19
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        20
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        21
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        22
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        23
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        24
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        25
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        26
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        27
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        28
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        29
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        30
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        31
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        32
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        33
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        34
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        35
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        36
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        37
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        38
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        39
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        40
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        41
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        42
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        43
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        44
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        45
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        46
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        47
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        48
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        49
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "AA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        50
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 550,
+  "Plot": {
+    "From": 300,
+    "To": 800,
+    "Steps": 501,
+    "Angle": 0,
+    "Quantities": [
+      "AA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

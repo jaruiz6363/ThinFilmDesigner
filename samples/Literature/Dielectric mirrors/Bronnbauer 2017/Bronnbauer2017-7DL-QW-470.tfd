@@ -1,0 +1,215 @@
+{
+  "Version": 2,
+  "Name": "Bronnbauer2017-7DL-QW-470",
+  "Source": "C. Bronnbauer, A. Riecke, M. Adler, J. Hornich, G. Schunk, C. J. Brabec, and K. Forberich, \"Printing of Large-Scale, Flexible, Long-Term Stable Dielectric Mirrors with Suppressed Side Interferences,\" Adv. Opt. Mater. 5, 1700518 (2017). doi:10.1002/adom.201700518 - Eq. (1) p. 1 (n_high d_high = n_low d_low = lambda0/4); Sec. 2.1 p. 3 (n_low1 = 1.29, n_high1 = 1.73 at 600 nm); Sec. 2.2 p. 3 (low index deposited first on the substrate; N = double layers); Fig. 2d caption and legend p. 4 (seven double layers, lambda0 = 470, 530, 680 nm)",
+  "Notes": "Printed (doctor-bladed) nanoparticle dielectric mirror on microscope glass: seven double layers of SiO2-ink (n_low1) and TiO2-ink (n_high1), each a quarter wave at lambda0 = 470 nm (Bragg condition, Eq. 1) - transmittance minimum / reflectance maximum at 470 nm\nSpecification: Minimum transmittance (maximum reflectance) at lambda0 = 470 nm at normal incidence; high transmittance (80-90 %) outside the stop band.\nReported: Sec. 2.2 p. 3: a minimum transmittance of 5 % is accomplished with seven double layers (60 % with two); Sec. 1 p. 2 / Conclusion: with seven layers a maximum reflectance of ~95 % for lambda0 = 420-680 nm, transmittance 80-90 % outside the band. Eq. (2) with n_high1/n_low1 = 1.73/1.29 and N = 7 (ideal, substrate ignored) gives R = 93.6 %; Eq. (3) bandwidth Delta = (4 lambda0/pi) arcsin((nH - nL)/(nH + nL)) = 87.5 nm for lambda0 = 470 nm. Fig. 2d (read off the plot, approximate): measured T minimum ~5-10 % at the stated lambda0.\nNotes: Sec. 2.2: 'the low refractive index material was deposited first on the substrate for all presented dielectric mirrors', and N counts SiO2+TiO2 double layers, so from the substrate: L H L H ... H (14 layers, TiO2 ink outermost); listed here reversed from the air side (layer 1 = high-index TiO2 ink, layer 14 = SiO2 ink on the glass). All layers are QWOT at reference_nm (Bragg condition Eq. 1, which the paper also uses for its 'perfect thickness' simulations). The inks are dispersive (Fig. 1c,f: n rises toward the UV, k ~ 0 in the visible, rising in the UV) but only the 600 nm values are printed, so constant n is an approximation; the physical thicknesses (lambda0/4n) would differ slightly if the real n(lambda0) were used. Substrate: microscope float glass, index not given; n = 1.52 assumed. Measured spectra are total (integrating sphere) transmittance at normal incidence. Printed layers are rough/porous (thickness variations), which suppresses side fringes in the measurements relative to this ideal stack (Sec. 2.3, Fig. 3). Fig. 2d legend lists 680, 470 and 530 nm; these are nominal targets.\nLayers from Eq. (1) p. 1 (n_high d_high = n_low d_low = lambda0/4); Sec. 2.1 p. 3 (n_low1 = 1.29, n_high1 = 1.73 at 600 nm); Sec. 2.2 p. 3 (low index deposited first on the substrate; N = double layers); Fig. 2d caption and legend p. 4 (seven double layers, lambda0 = 470, 530, 680 nm); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), differs from the paper: ours R 95.8 %, T 4.23 % at 470 nm; paper R 93.6 % from Eq. 2; T ~5 % at the design wavelength (measured). Ours is nearer the measured T ~5 % than the paper’s Eq. 2 (93.6 %); the inks are dispersive and given only at 600 nm, so the index contrast at other wavelengths differs.",
+  "Wavelength": [
+    470
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 nanocomposite ink n_high1=1.73 (Bronnbauer 2017)",
+      "N": [
+        1.73
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.73,
+          0
+        ],
+        "Source": "Bronnbauer et al. 2017, Sec. 2.1 p. 3: \"...the refractive index of SiO2 is 1.29 and 1.73 for TiO2\" at 600 nm; k zero in the visible",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "SiO2 nanoparticle ink n_low1=1.29 (Bronnbauer 2017)",
+      "N": [
+        1.29
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.29,
+          0
+        ],
+        "Source": "Bronnbauer et al. 2017, Sec. 2.1 p. 3: \"At the exemplary wavelength of 600 nm the refractive index of SiO2 is 1.29\"; \"The extinction coefficient is zero within our measured accuracy for the whole visible region\"",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 67.91907514450867,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 91.08527131782945,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "GE",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 470,
+  "Plot": {
+    "From": 350,
+    "To": 850,
+    "Steps": 501,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 470
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

@@ -1,0 +1,268 @@
+# evaluation.fixtures — the fixtures both test suites run.
+#
+# X1.3 EXISTS TO STOP A SECOND IMPLEMENTATION GROWING IN C#, and the only way to catch that is to
+# put the same problem through both paths and compare the numbers. So the fixtures live here,
+# owned by neither side: tests/native/test_fixtures.cpp reads this file and checks the ENGINE
+# against the recorded values; ThinFilm.Native.Tests reads the same file and checks DESIGN against
+# them. Neither suite can quietly drift onto a fixture of its own.
+#
+# WHERE THE EXPECTED NUMBERS COME FROM. They were produced by the engine and recorded here
+# (test_fixtures --regenerate). That is legitimate precisely because the engine is already checked
+# against physics elsewhere — 1750 native checks including Fresnel, quarter-wave, half-wave
+# absentee, energy conservation and analytic-vs-finite-difference derivatives. This file is not
+# where the engine is proved right; it is where the two CALLERS are proved to agree with it. If
+# the engine changes, the native suite fails first and says so; if only the managed side fails,
+# the fault is in the binding and nowhere else. The separation of blame is the point.
+#
+# FORMAT, deliberately dull so that both parsers are twenty lines and neither can be interesting:
+#
+#   fixture <name>            begins one
+#   i <key> <int> ...         an int array (a scalar is an array of one)
+#   d <key> <double> ...      a double array, written %.17g so it round-trips exactly
+#   c <key> <re> <im> ...     a complex array, interleaved
+#   end                       ends it
+#
+# Keys are the ABI's own field names. Counts are not stated: n_layers is the length of
+# layer_thickness, n_points of point_angle, n_operands of code, and so on.
+
+# ---------------------------------------------------------------------------------------------
+# A bare substrate. The one case whose answer can be checked by hand: R = ((1-1.52)/(1+1.52))^2.
+fixture bare_substrate
+i n_materials 1
+c material_index 1.46 0
+d wavelength 550
+i point_wavelength 0
+d point_angle 0
+c index_incident 1 0
+c index_exit 1.52 0
+i code 0
+i point 0
+d target 0
+d weight 1
+d expect_value 0.042579994960947345
+d expect_residual 0.042579994960947345
+d expect_merit 0.042579994960947345
+end
+
+fixture three_layer_normal
+d layer_thickness 92 140 61
+i layer_material 0 1 0
+i n_materials 2
+c material_index 2.3500000000000001 0 2.3500000000000001 0 2.3500000000000001 0 1.46 0 1.46 0 1.46 0
+d wavelength 450 550 650
+i point_wavelength 0 1 2
+d point_angle 0 0 0
+c index_incident 1 0 1 0 1 0
+c index_exit 1.52 0 1.52 0 1.52 0
+i code 0 0 0
+i point 0 1 2
+d target 0 0 0
+d weight 1 1 1
+i variable_kind 0 0 0
+i variable_layer 0 1 2
+d expect_value 0.27735256543278497 0.046188179208938807 0.50587721569887401
+d expect_residual 0.27735256543278497 0.046188179208938807 0.50587721569887401
+d expect_merit 0.33415044057730914
+d expect_jacobian 0.004357840507493614 -0.010410125916573134 -0.0090995722510591789 0.0029827803721477887 -0.0067805608914539061 -0.0049492680128441708 -0.0022974954075377294 -0.0048012522982480649 -0.0023535664506765383
+end
+
+fixture oblique_both_polarisations
+d layer_thickness 105 88
+i layer_material 0 1
+i n_materials 2
+c material_index 2.2000000000000002 0 2.2000000000000002 0 1.3799999999999999 0 1.3799999999999999 0
+d wavelength 500 600
+i point_wavelength 0 1
+d point_angle 0.52359877559829882 0.78539816339744828
+c index_incident 1 0 1 0
+c index_exit 1.52 0 1.52 0
+i code 0 1 2 3
+i point 0 0 1 1
+d target 0 0 1 1
+d weight 1 2 1 2
+i variable_kind 0 0
+i variable_layer 0 1
+d expect_value 0.087828775610201137 0.046504728923682771 0.6155101657288089 0.87794279075773796
+d expect_residual 0.087828775610201137 0.065767618358356525 -0.3844898342711911 -0.17261496069581767
+d expect_merit 0.17779558991700936
+d expect_jacobian -0.0095410414144934362 -0.0082103452725971714 0.0071649502086960394 0.0050163224606705418 -0.0009398266665038372 -0.00075786426112555024 -0.00012979716524381759 -9.9633390557887165e-05
+end
+
+fixture absorbing_stack
+d layer_thickness 40 120 25
+i layer_material 0 1 0
+i n_materials 2
+c material_index 2.3999999999999999 0.050000000000000003 2.3999999999999999 0.050000000000000003 1.46 0 1.46 0
+d wavelength 550 650
+i point_wavelength 0 1
+d point_angle 0 0.29999999999999999
+c index_incident 1 0 1 0
+c index_exit 1.52 0 1.52 0
+i code 0 2 70
+i point 0 1 0
+d target 0 1 0
+d weight 1 1 3
+i variable_kind 0 0 0
+i variable_layer 0 1 2
+d expect_value 0.49972780616322748 0.57026557228603336 0.062153852646007812
+d expect_residual 0.49972780616322748 -0.42973442771396664 0.10765363066903483
+d expect_merit 0.29865996143158779
+d expect_jacobian 0.0062200240471227512 -0.01004785066977539 -0.00066595931157428605 0.0017795383932875028 -0.0038809562597978526 -0.0009590326628624705 0.0073070116263189528 -0.0079251817502493365 0.00012882458458966589
+end
+
+fixture span_with_comparisons
+d layer_thickness 92 140 61
+i layer_material 0 1 0
+i n_materials 2
+c material_index 2.3500000000000001 0 2.3500000000000001 0 2.3500000000000001 0 2.3500000000000001 0 1.46 0 1.46 0 1.46 0 1.46 0
+d wavelength 450 500 550 600
+i point_wavelength 0 1 2 3
+d point_angle 0 0 0 0
+c index_incident 1 0 1 0 1 0 1 0
+c index_exit 1.52 0 1.52 0 1.52 0 1.52 0
+i code 0 0 0
+i point_first 0 4 8
+i point_count 4 4 4
+i point_index 0 1 2 3 0 1 2 3 0 1 2 3
+i reduction 0 2 3
+d reduction_param 0 0 0 0 0 0
+i comparison 2 1 3
+d target 0.01 0.02 0.001
+d weight 1 1 1
+d tolerance 0.002 0 0
+i variable_kind 0 0 0
+i variable_layer 0 1 2
+d expect_value 0.72044511514570575 0.046188179208938807 0.27008481051909472
+d expect_residual 0.70844511514570574 0.026188179208938806 0
+d expect_merit 0.40930033875060978
+d expect_jacobian -0.0094106795462674427 -0.010410125916573134 -0 -0.0059911237775643203 -0.0067805608914539061 -0 -0.0092709265347426101 -0.0048012522982480649 -0
+end
+
+fixture derived_ratio
+d layer_thickness 92 140
+i layer_material 0 1
+i n_materials 2
+c material_index 2.3500000000000001 0 2.3500000000000001 0 1.46 0 1.46 0
+d wavelength 500 600
+i point_wavelength 0 1
+d point_angle 0 0
+c index_incident 1 0 1 0
+c index_exit 1.52 0 1.52 0
+i code 0 0 69
+i point_first 0 1 2
+i point_count 1 1 0
+i point_index 0 1
+i input_first 0 0 0
+i input_count 0 0 2
+i input_index 0 1
+i comparison 0 0 1
+d target 0 0 1
+d weight 1 1 1
+i variable_kind 0 0
+i variable_layer 0 1
+d expect_value 0.094538591659781526 0.2356724107401014 0.40114407691122705
+d expect_residual -0.59885592308877289
+d expect_merit 0.59885592308877289
+d expect_jacobian -0.0209008842291796 0.0015527289161467845
+end
+
+fixture stack_operands
+d layer_thickness 0.40000000000000002 96 2 141
+i layer_material 0 1 0 1
+i n_materials 2
+c material_index 2.3500000000000001 0 1.46 0
+d wavelength 550
+i point_wavelength 0
+d point_angle 0
+c index_incident 1 0
+c index_exit 1.52 0
+d material_stress -250 120
+i code 0 86 87 88 90
+i point_first 0 1 1 1 1
+i point_count 1 0 0 0 0
+i point_index 0
+d reduction_param 0 0 0 0 0 0 5 0 0 0
+d target 0 200 4 0 0
+d weight 1 1 1 1 1
+i variable_kind 0 0 0 0
+i variable_layer 0 1 2 3
+d expect_value 0.033905968599343146 239.40000000000001 4 7.5999999999999996 27840
+d expect_residual 0.033905968599343146 39.400000000000006 0 7.5999999999999996 27840
+d expect_merit 12450.439430969091
+d expect_jacobian -0.0019641948297198274 1 0 -1 -250 -0.00055319211832159198 1 0 0 120 -0.0003058059137936636 1 0 -1 -250 -0.00023890894189949129 1 0 0 120
+end
+
+fixture two_configurations
+d layer_thickness 110 75
+i layer_material 0 1
+i n_materials 2
+c material_index 2.2999999999999998 0 2.2999999999999998 0 1.45 0 1.45 0
+d wavelength 520 620
+i point_wavelength 0 1 0 1
+d point_angle 0 0.40000000000000002 0 0.40000000000000002
+i n_configurations 2
+c cfg_index_incident 1 0 1 0 1.52 0 1.52 0
+c cfg_index_exit 1.52 0 1.52 0 1 0 1 0
+i cfg_reversed 0 1
+i point_configuration 0 0 1 1
+i code 0 0 2 2
+i point 0 1 2 3
+d target 0 0 1 1
+d weight 1 1 1 1
+i variable_kind 0 0
+i variable_layer 0 1
+d expect_value 0.031951276959562028 0.19498909682740501 0.96804872304043821 0.74287663069608967
+d expect_residual 0.031951276959562028 0.19498909682740501 -0.031951276959561792 -0.25712336930391033
+d expect_merit 0.16292248396281547
+d expect_jacobian -0.0026972049874768415 -0.0079133511928903902 0.002697204987476848 0.008414144551879419 -0.00024491406405351818 -0.00010291693470712137 0.00024491406405351677 1.177843814852554e-05
+end
+
+fixture trials_worst_and_mean
+d layer_thickness 92 140 61
+i layer_material 0 1 0
+i n_materials 2
+c material_index 2.3500000000000001 0 1.46 0
+d wavelength 550
+i point_wavelength 0
+d point_angle 0
+c index_incident 1 0
+c index_exit 1.52 0
+i n_trials 4
+d trial_layer_thickness 92 140 61 92 40 61 96 145 58 88 200 66
+i code 0 0 0
+i point 0 0 0
+i trial_reduction 0 1 2
+i comparison 2 2 2
+d target 0.02 0.02 0.02
+d weight 1 1 1
+i variable_kind 0 0 0
+i variable_layer 0 1 2
+d expect_value 0.046188179208938807 0.49458325745190851 0.22799734723375814
+d expect_residual 0.026188179208938806 0.47458325745190849 0.20799734723375815
+d expect_merit 0.29954297712806005
+d expect_jacobian -0.010410125916573134 -0.0047802744632488197 -0.0036785952303864545 -0.0067805608914539061 0.0026759410802652712 0.00044340168323649142 -0.0048012522982480649 0.0013272262882269956 -0.00018240894989372792
+end
+
+fixture ellipsometric
+d layer_thickness 60 130
+i layer_material 0 1
+i n_materials 2
+c material_index 2.1000000000000001 0.02 1.4399999999999999 0
+d wavelength 632.79999999999995
+i point_wavelength 0
+d point_angle 1.2217304763960306
+c index_incident 1 0
+c index_exit 3.8799999999999999 0.02
+i delta_convention 2
+i code 16 17 64 65
+i point 0 0 0 0
+d target 0 0 0 0
+d weight 1 1 1 1
+i variable_kind 0 0
+i variable_layer 0 1
+d expect_value 0.43686773618821922 0.34206758987589381 0.41187963140339834 1.221679984367918
+d expect_residual 0.43686773618821922 0.34206758987589381 0.41187963140339834 1.221679984367918
+d expect_merit 0.70178530725855148
+d expect_jacobian -0.0047159227811692413 0.02965796376926191 -0.0039601202853642402 -0.031561925892677867 -0.0014292999464480386 0.013997377227058475 -0.001200231635344025 -0.014895971489119898
+end
+

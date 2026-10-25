@@ -1,0 +1,149 @@
+{
+  "Version": 2,
+  "Name": "V-coat",
+  "Notes": "Single-wavelength AR at 1064 nm, two layers\n\nCaveats:\n- Manufacturability is scored with MINT/MAXT (minimum and maximum layer thickness) at a low weight. A sensitivity term (SENS) would score robustness to thickness errors directly, but it needs second derivatives of the merit function and is not offered; MINT/MAXT keep layers depositable and have exact derivatives.\n- L2 rather than minimax: with one wavelength there is nothing for a minimax to trade against, and the two norms coincide.",
+  "Wavelength": [
+    1064
+  ],
+  "Materials": [
+    {
+      "Name": "Ta2O5",
+      "N": [
+        2.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.1,
+          0
+        ],
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "MgF2",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 30,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 99,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.520000",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.0001,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "MINT",
+      "Comparison": "LE",
+      "Target": 0,
+      "Weight": 0.02,
+      "Scale": 10,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 10,
+      "Temperature": 0
+    },
+    {
+      "Code": "MAXT",
+      "Comparison": "LE",
+      "Target": 0,
+      "Weight": 0.02,
+      "Scale": 400,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 400,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 5,
+  "UpperBound": 400,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1064,
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

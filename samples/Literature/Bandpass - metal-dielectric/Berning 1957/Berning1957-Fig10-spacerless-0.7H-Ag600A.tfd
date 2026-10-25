@@ -1,0 +1,229 @@
+{
+  "Version": 2,
+  "Name": "Berning1957-Fig10-spacerless-0.7H-Ag600A",
+  "Source": "P. H. Berning and A. F. Turner, \"Induced Transmission in Absorbing Films Applied to Band Pass Filter Design,\" J. Opt. Soc. Am. 47, 230-239 (1957). doi:10.1364/JOSA.47.000230 - Text p. 235; Fig. 10 caption (h_Ag = 0.1098 lambda)",
+  "Notes": "Spacerless induced-transmission silver band-pass filter, second stack type (calculated)\nSpecification: Pass band near 546 nm, wider than the HLHLH type\nReported: Fig. 10: half-width 7.3 deg phi. Peak is off phi = 90 deg (paper: error in the 0.7H thickness, should have been ~10 % thinner).\nNotes: Recorded exactly as published (0.7H); the paper says the 0.7H layers should have been approximately 10 % thinner, which is why the peak is off 546 nm.\nLayers from Text p. 235; Fig. 10 caption (h_Ag = 0.1098 lambda); layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "L n=1.38 (Berning 1957)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Berning & Turner 1957, p. 236 ('that of L to be 1.38')",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "H n=2.30 (Berning 1957)",
+      "N": [
+        2.3
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 1,
+        "Source": "Berning & Turner 1957, p. 236 ('The index of H was taken to be 2.30')",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Ag n=0.075 k=3.41 (Hass, Berning 1957)",
+      "N": [
+        0.075
+      ],
+      "K": [
+        3.41
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.075,
+          3.41
+        ],
+        "Source": "Berning & Turner 1957, p. 233 and p. 236: N_Ag = 0.075 - 3.41i at 546 nm (G. Hass, unpublished)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.34782608695652,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.34782608695652,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 41.54347826086957,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 59.95,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 41.54347826086957,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.34782608695652,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.34782608695652,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 98.91304347826087,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.52",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "TA",
+      "Comparison": "EQUAL",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 546,
+  "Plot": {
+    "From": 420,
+    "To": 800,
+    "Steps": 381,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

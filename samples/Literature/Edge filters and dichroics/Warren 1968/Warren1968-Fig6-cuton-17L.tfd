@@ -1,0 +1,177 @@
+{
+  "Version": 2,
+  "Name": "Warren1968-Fig6-cuton-17L",
+  "Source": "S. W. Warren, \"Properties and performance of basic designs of infrared interference filters,\" Infrared Phys. 8, 65-78 (1968). DOI not printed in the paper - Fig. 6 caption p. 72; Sec. 4.3 text p. 76; Fig. 11 p. 77",
+  "Notes": "Cut-on (long-wave pass) filter H/2 LHLHLHLHLHLHLHL H/2 S = (H/2 L H/2)^8, 17 layers, transmitting for lambda0/lambda < ~0.74\nSpecification: High transmission (plateau) for lambda0/lambda 0.54-0.72 (lambda ~5.5-7.4 um at lambda0 = 4 um), rejection beyond the edge at ~0.74.\nReported: Fig. 6 (p. 72): no-error minimum transmission 0.00038 % (rejection band); plateau ripple ~83-95 % over lambda0/lambda 0.54-0.72, edge 50 % point near 0.745. With first half 5 % too thin and second half 5 % too thick the minimum is 0.00048 %. Fig. 11 (p. 77): at 40 deg incidence the p, s and unpolarised edges separate (p edge ~0.78, s ~0.74 in lambda0/lambda), producing a \"step\"; Sec. 4.3: cut-on shifts 4 % for 35 deg. Recomputation (lossless, back surface included, lambda0/lambda 0.82-1.3) gives a minimum of 0.00034 % vs 0.00038 % printed.\nNotes: Inner string LHLHLHLHLHLHLHL (15 letters) read from Fig. 6 caption, p. 76 text and Fig. 11 caption (scan + OCR agree); with the two H/2 end layers that is 17 layers, H/2 = 0.5 QWOT of H. Angle in Fig. 11 is 40 deg in air. H = quarter-wave optical thickness of index 4.0, L = quarter wave of index 1.8 at lambda0, S = substrate of index 1.65 (p. 66); adjacent equal letters (HH, LL) are merged into one half-wave layer of 2 QWOT. The paper writes designs from the incident (air) side to S, so the order is kept as printed. lambda0 is not fixed for Tables 1-3 and the figures (results are in lambda0/lambda); 4000 nm (4 um, as in Tables 4-6) is used, which is harmless because all indices are constant. Recomputations against the paper match only if the uncoated back surface of the n=1.65 substrate is included incoherently (substrate -> air): air/L/1.65 alone gives T = 89.4 % at lambda0 while Table 4 prints 84.6 %, and with the back surface it is 84.6 %; the rejection minima of Sec. 2.1.3 (3.45 %, 0.087 %, 0.0020 %, 0.000047 %) also match exactly only with the back surface. Normal incidence, unpolarised.\nLayers from Fig. 6 caption p. 72; Sec. 4.3 text p. 76; Fig. 11 p. 77; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours minimum T 0.00034 % in the rejection band; paper 0.00038 % (Fig. 6).",
+  "Wavelength": [
+    4000
+  ],
+  "Materials": [
+    {
+      "Name": "H n=4.0 (Warren 1968)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          4,
+          0
+        ],
+        "MinMicrons": 2,
+        "MaxMicrons": 8,
+        "Source": "Warren, Infrared Phys. 8, 65 (1968), p. 66: \"H represents a quarter wavelength optical thickness of a high refractive index material of index 4.0 at wavelength lambda0\""
+      }
+    },
+    {
+      "Name": "L n=1.8 (Warren 1968)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.8,
+          0
+        ],
+        "MinMicrons": 2,
+        "MaxMicrons": 8,
+        "Source": "Warren 1968, p. 66: \"L represents a quarter wavelength optical thickness of a low refractive index material of index 1.8 at wavelength lambda0\""
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 250,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 555.5555555555555,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 125,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "S substrate n=1.65 (Warren 1968)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.65,
+        0
+      ],
+      "MinMicrons": 2,
+      "MaxMicrons": 8,
+      "Source": "Warren 1968, p. 66: \"S represents a substrate in this instance of refractive index 1.65\""
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 4000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 4800,
+    "To": 7500,
+    "Steps": 271,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 4000
+  },
+  "BackSurface": true,
+  "SubstrateThicknessMm": 1
+}

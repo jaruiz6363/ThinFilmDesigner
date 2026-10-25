@@ -1,0 +1,97 @@
+{
+  "Version": 2,
+  "Name": "Hass1952-MgF2-TiO2-QW",
+  "Source": "G. Hass, \"Preparation, properties and optical applications of thin films of titanium dioxide,\" Vacuum 2(4), 331-345 (1952). (doi not printed in the PDF) - Table on p. 338 (row 'MgF2 - TiO2'), text p. 338 ('With quarter wave-length thick films of these materials ... on glass with ng = 1.51 at lambda = 550 millimicrons')",
+  "Notes": "Two-layer quarter-wave beam divider (MgF2 then TiO2 on glass)\nSpecification: All layers quarter-wave at 550 nm; maximise reflectance with low loss.\nReported: Table p. 338: R = 50.0 %, T = 49.5 % at 550 nm.\nNotes: The table lists the films from the glass outward ('Film materials on glass', TiO2 always last as the top film, cf. text p. 338 'especially suitable as a top film'), so the list is reversed here. MgF2 n = 1.38 is the paper's nD value used as a constant. Ideal QW calculation with these constants gives R = 50.0 % at 550 nm, matching the table.\nLayers from Table on p. 338 (row 'MgF2 - TiO2'), text p. 338 ('With quarter wave-length thick films of these materials ... on glass with ng = 1.51 at lambda = 550 millimicrons'); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R 50.0 % at 550 nm; paper R 50 % (measured, table p. 338).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 rutile film n=2.713 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.713,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: rutile film of 505 A with optical thickness nt = 1370 A (lambda/4 at 550 nm), n = 1370/505 = 2.713 at 550 nm"
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: 'magnesium fluoride (nD = 1.38)'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.51",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.51,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

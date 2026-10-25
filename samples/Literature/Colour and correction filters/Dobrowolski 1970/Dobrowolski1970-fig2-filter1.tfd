@@ -1,0 +1,181 @@
+{
+  "Version": 2,
+  "Name": "Dobrowolski1970-fig2-filter1",
+  "Source": "J. A. Dobrowolski, \"Optical Interference Filters for the Adjustment of Spectral Response and Spectral Power Distribution,\" Appl. Opt. 9, 1396-1402 (1970). doi:10.1364/AO.9.001396 - Fig. 2 caption, filter 1: (L.3H)^2(L.5H)^2(L.7H)^2(L.9H)^2(L.11H.L), p. 1397; text p. 1398 (Sec. III.A, xenon line at 0.467 um) and Fig. 5",
+  "Notes": "Narrow-band rejection filter to suppress the 0.467 um xenon arc emission line in a xenon lamp + glass filter D65 simulator (Sec. III.A)\nSpecification: Reduce the xenon emission line at 0.467 um to the background level while leaving the rest of 0.3-0.7 um unchanged.\nReported: Fig. 2 curve 1: measured transmittance (uncorrected for surface reflection losses), high (~0.8-0.9) across 0.33-0.7 um with a shallow rejection near 0.467 um; Fig. 5: relative intensity of the xenon lamp around the line drops from a peak of ~3.8 (curve 1, before) to ~2.5 (curve 2, after), i.e. the rejection is roughly 30-35 % (plot readings, no printed numbers).\nNotes: 19 layers: (L 3H)(L 3H)(L 5H)(L 5H)(L 7H)(L 7H)(L 9H)(L 9H) L 11H L, in QWOT; the dots in the caption are separators, 3H = three quarter waves of H. n_H = 1.50, n_L = 1.38, substrate and medium 1.46 (Fig. 2 caption: substrate and medium 1.52 for all filters except filter 1, 1.46). ASSUMPTION: the reference (quarter-wave) wavelength is not printed; 467 nm is taken from the text, which says filter 1 was built to suppress the emission band at 0.467 um - all odd-order layers then reject at that wavelength. Which end faces the light is not stated; with equal, lossless media on both sides R/T are the same either way. Measured curve is uncorrected for the two outer surfaces. Normal incidence assumed.\nLayers from Fig. 2 caption, filter 1: (L.3H)^2(L.5H)^2(L.7H)^2(L.9H)^2(L.11H.L), p. 1397; text p. 1398 (Sec. III.A, xenon line at 0.467 um) and Fig. 5; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    467
+  ],
+  "Materials": [
+    {
+      "Name": "film n=1.380 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Fig. 2 caption: n_L = 1.38 for all quarter-wave filters 1-3, 5-8, n = 1.380"
+      }
+    },
+    {
+      "Name": "film n=1.500 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.5,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Fig. 2 caption: n_H = 1.50 for quarter-wave filters 1-3, 5-8, n = 1.500"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 233.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 233.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 389.1666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 389.1666666666667,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 544.8333333333334,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 544.8333333333334,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 700.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 700.5,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 856.1666666666666,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 84.60144927536233,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.46",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.46,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.46",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.46,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 467,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 300,
+    "To": 700,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 467
+  }
+}

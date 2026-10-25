@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- X1.8, binding to X1.7. Argument parsing, table formatting and exit codes; every question is
+       answered by the API so the CLI and the MCP server cannot disagree. -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>thinfilm</AssemblyName>
+    <RootNamespace>ThinFilm.Cli</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThinFilm.Api\ThinFilm.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeLibrary Include="..\..\build\**\thinfilm_native.dll" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.so" />
+    <NativeLibrary Include="..\..\build\**\libthinfilm_native.dylib" />
+    <None Include="@(NativeLibrary)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

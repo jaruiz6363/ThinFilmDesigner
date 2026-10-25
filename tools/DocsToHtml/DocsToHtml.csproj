@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Build-time only: turns the person-facing documents into web pages for the packages, so an
+       installed copy has its user guide (the user, 2026-10-25: "I didn't see any user guide files").
+       Not shipped, and not part of ThinFilm.sln. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.37.0" />
+  </ItemGroup>
+
+</Project>

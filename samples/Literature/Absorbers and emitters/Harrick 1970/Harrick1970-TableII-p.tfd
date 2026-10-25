@@ -1,0 +1,166 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-TableII-p",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table II (p design), p. 2112; construction Fig. 3",
+  "Notes": "Cavity with a semitransparent 55 A gold electrode inducing complete p-polarized absorption in an electrolyte-like absorber at 550 nm (internal reflection spectroscopy with a metal electrode)\nSpecification: Rp = 0 (complete p-polarized absorption in the absorber) at 550 nm, alpha = 72.8 deg in the n = 1.52 Dove prism.\nReported: Table III (p. 2113), p design with absorption (n0 = 1.4 - i0.04): Rp = 0.002, Rs = 0.223; without absorption (n0 = 1.4 - i0.00, see Harrick1970-TableII-p-noabs): Rp = 0.694, Rs = 0.540. All at 550 nm, 72.8 deg.\nNotes: Table II thicknesses h/lambda at lambda = 550 nm: Au 0.010 -> 5.5 nm (text: 'gold film electrode is 55 A thick'), n2 = 2.10 cavity 0.094 -> 51.7 nm, n3 = 1.38 FTR 0.204 -> 112.2 nm. Paper lists from the absorber side (n0 absorber, n1 Au, n2 cavity, n3 FTR, n prism); reversed here. Angle 72.8 deg is in the n = 1.52 prism (Fig. 3). Gold index 0.331 - i2.324 at 550 nm (Table II footnote a, presumably from ref. 8, AIP Handbook). Paper convention n - ik.\nLayers from Table II (p design), p. 2112; construction Fig. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.002, Rs 0.218 at 72.8 deg, 550 nm; paper Rp 0.002, Rs 0.223 (Tables I and III).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "FTR film n=1.38 (Harrick 1970)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Table II and Fig. 3: n3 = 1.38 FTR film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Cavity film n=2.10 (Harrick 1970)",
+      "N": [
+        2.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.1,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Table II and Fig. 3: n2 = 2.10 cavity film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Au 550nm n=0.331 k=2.324 (Harrick 1970)",
+      "N": [
+        0.331
+      ],
+      "K": [
+        2.324
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.331,
+          2.324
+        ],
+        "Source": "Harrick & Turner 1970, Table II: n1 = 0.331 - i2.324 (gold electrode at 550 nm)",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 112.2,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 51.7,
+      "Variable": true
+    },
+    {
+      "Material": 2,
+      "Thickness": 5.5,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 72.8
+    }
+  ],
+  "Incident": {
+    "Name": "Prism n=1.52 (Harrick 1970)",
+    "N": [
+      1.52
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Table II and Fig. 3: Dove prism n = 1.52",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Absorber n=1.4 k=0.04 (Harrick 1970)",
+    "N": [
+      1.4
+    ],
+    "K": [
+      0.04
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.4,
+        0.04
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1 and Tables I-III: n0 = 1.4 - i0.04",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RP",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 550,
+  "Plot": {
+    "From": 500,
+    "To": 600,
+    "Steps": 201,
+    "Angle": 72.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

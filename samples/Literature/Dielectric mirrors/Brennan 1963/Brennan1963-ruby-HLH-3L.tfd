@@ -1,0 +1,149 @@
+{
+  "Version": 2,
+  "Name": "Brennan1963-ruby-HLH-3L",
+  "Source": "E. R. Brennan, \"Multi-Layer All-Dielectric Reflection Filters,\" M.S. thesis (Physics), Polytechnic Institute of Brooklyn (1963), thesis adviser A. Zajac. No doi. - Abstract p. ii; Sec. II.A p. 4; Fig. 1(c), p. 3",
+  "Notes": "Three-layer all-dielectric ruby-laser end reflector, ZnS/MgF2/ZnS quarter waves, > 60 % reflectance at 694.3 nm\nSpecification: Reflectance > 60 % at the ruby wavelength 694.3 nm, light incident from inside the ruby, normal incidence.\nReported: Reflectance increases to 62 % at 694.3 nm, normal incidence (p. 4).\nNotes: Fig. 1(c): RUBY | ZnS | MgF2 | ZnS | AIR, n1 = n3. Ruby assumed n = 1.76 (not printed in the preview). A quarter-wave admittance calculation with the printed indices gives about 64.8 % (65.0 % with n0 = 1.75), not the 62 % printed; reaching 62 % would need n0 ~ 1.94, so the printed 62 % looks like a rounding or arithmetic difference in the thesis. Merit 'Min 0.6' encodes R >= 60 %.\nLayers from Abstract p. ii; Sec. II.A p. 4; Fig. 1(c), p. 3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R 64.8 % at 694.3 nm; paper R 62.0 % (pp. 2-4). The thesis’s own indices give 64.8 %, not its 62 %; 62 % would need a ruby index near 1.94. The ruby index (1.76) is assumed: the preview pages do not give it.",
+  "Wavelength": [
+    694.3
+  ],
+  "Materials": [
+    {
+      "Name": "ZnS n=2.36 (Brennan 1963)",
+      "N": [
+        2.36
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.36,
+          0
+        ],
+        "Source": "Brennan 1963 thesis, Sec. II.A p. 2: 'A layer of ZnS with an index of refraction 2.36'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Brennan 1963)",
+      "N": [
+        1.38
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Brennan 1963 thesis, Sec. II.A p. 2: 'a layer of MgFl2 with an index of refraction 1.38'",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 73.54872881355932,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 125.77898550724638,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 73.54872881355932,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "n=1.76",
+    "N": [
+      1.76
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.76,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "GE",
+      "Target": 0.6,
+      "Weight": 1,
+      "Scale": 0.4,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 694.3,
+  "Plot": {
+    "From": 417,
+    "To": 1111,
+    "Steps": 695,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 694.3
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

@@ -1,0 +1,76 @@
+{
+  "Version": 2,
+  "Name": "Kats2016-film10nm-n5-k4-air",
+  "Source": "M. A. Kats and F. Capasso, \"Optical absorbers based on strong interference in ultra-thin films,\" Laser Photonics Rev., 1-15 (2016) (Early View; volume and final pages not printed in this copy). doi:10.1002/lpor.201600098 - Sec. 3, p. 3: 'A = 0.48 for n2 = 5 + 4i' (same example: n1 = n3 = 1, lambda0 = 900 nm, h = 10 nm, Fig. 1(c))",
+  "Notes": "Same free-standing 10 nm lossy film, showing the tolerance of the A = 0.5 condition to the film index\nSpecification: Check of the tolerance of the absorption maximum (Fig. 1(c)).\nReported: A = 0.48 at lambda0 = 900 nm, normal incidence (Sec. 3, p. 3).\nNotes: h = 10 nm, n1 = n3 = 1 and lambda0 = 900 nm are assumed from the preceding sentence and Fig. 1(c) (h = 10 nm map); the paper states only n2 = 5 + 4i for this value.\nLayers from Sec. 3, p. 3: 'A = 0.48 for n2 = 5 + 4i' (same example: n1 = n3 = 1, lambda0 = 900 nm, h = 10 nm, Fig. 1(c)); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours A 0.480 at 900 nm; paper A 0.48.",
+  "Wavelength": [
+    900
+  ],
+  "Materials": [
+    {
+      "Name": "Film n=5+4i (Kats 2016)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          5,
+          4
+        ],
+        "Source": "Kats & Capasso 2016, Sec. 3 p. 3: 'A = 0.48 for n2 = 5 + 4i'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 10
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 900,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 1400,
+    "Steps": 1001,
+    "Angle": 0,
+    "Quantities": [
+      "AA",
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 900
+  }
+}

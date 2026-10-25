@@ -1,0 +1,210 @@
+{
+  "Version": 2,
+  "Name": "Shen2009-Cr-m1-2-m2-4",
+  "Source": "W. Shen, X. Sun, Y. Zhang, Z. Luo, X. Liu, and P. Gu, \"Narrow band filters in both transmission and reflection with metal/dielectric thin films,\" Opt. Commun. 282, 242-246 (2009). doi:10.1016/j.optcom.2008.09.080 - Sec. 2 p. 243 (structure Air/Cr (LH)^m1 2L(HL)^m2 H/Sub, m1 = 2, m2 = 4; nH = 2.17, nL = 1.45, ns = 1.52; Cr 5 nm with Table 1 constants; central wavelength 700 nm); Figs. 1-3",
+  "Notes": "Metal/dielectric narrow-band filter peaking in both reflection and transmission at 700 nm (m1 = 2, m2 = 4)\nSpecification: Reflectance and transmittance both maximal at the 700 nm central wavelength, absorptance minimal there, with deep rejection (high Cr absorption) elsewhere in 640-760 nm.\nReported: Calculated (TMM): Rmax = 76.5 % at 700 nm (Fig. 2a); Tmax = 19.6 % at ~700 nm (Fig. 2b, peak drawn near 701 nm; text: 'a peak transmittance at 700 nm with a value of 19.6 %'); absorptance minimum < 4 % at 700 nm rising to ~98 % at 640 and 760 nm (Fig. 3). Equivalent admittance of (LH)^2 2L(HL)^4/Sub (without Cr) is real at 700 nm with real-part peak ~15 (Fig. 1; analytically nH^6/(nL^4 ns) = 15.5 at 700 nm), imaginary part swinging from ~+7.5 at 698 nm to ~-7.5 at 702 nm. Measured (Fig. 5, Shimadzu UV310, 0.5 nm resolution): Rmax = 77.3 %, Tmax = 20 % near 700 nm, transmittance FWHM 22.5 nm.\nNotes: The paper writes the stack from the incident side (Air/Cr/(LH)^2/2L/(HL)^4/H/Sub), kept in that order: 1 Cr + 4 + 1 spacer + 8 + 1 cap H = 15 layers; no total thickness is printed. Dielectrics are quarter waves at 700 nm with constant indices nH = 2.17 (TiO2, '2.17@700 nm') and nL = 1.45 (SiO2, '1.45@700 nm'); dispersion ignored. Cr is 5 nm with the Table 1 n, k (from Johnson and Christy, ref. 15), which has no point at 700 nm (nearest 704 nm: 3.05 + 3.39i), so interpolation matters. Substrate glass n = 1.52; back surface not mentioned and assumed ignored (semi-infinite substrate). Normal incidence. Paper's admittance formula Y0 = (nH/nL)^(2(m2-m1+1))/ns gives 7.4, not the ~15 plotted in Fig. 1; the stack reduces to H L H L H/Sub at 700 nm, i.e. nH^6/(nL^4 ns) = 15.5, which matches the figure.\nLayers from Sec. 2 p. 243 (structure Air/Cr (LH)^m1 2L(HL)^m2 H/Sub, m1 = 2, m2 = 4; nH = 2.17, nL = 1.45, ns = 1.52; Cr 5 nm with Table 1 constants; central wavelength 700 nm); Figs. 1-3; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R max 78.4 % at 700.3 nm, T max 20.4 %; paper calculated R max 76.5 %, T max 19.6 % at 700 nm. Ours is 2-4 points higher; the paper’s Cr table has no point between 653 and 704 nm, so the Cr index at 700 nm is interpolated here and the paper may have used a different value.",
+  "Wavelength": [
+    700
+  ],
+  "Materials": [
+    {
+      "Name": "Cr Johnson-Christy table (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "TABLE",
+        "Table": [
+          [
+            0.496,
+            2.75,
+            3.3
+          ],
+          [
+            0.548,
+            3.18,
+            3.33
+          ],
+          [
+            0.617,
+            3.17,
+            3.3
+          ],
+          [
+            0.659,
+            3.09,
+            3.34
+          ],
+          [
+            0.704,
+            3.05,
+            3.39
+          ],
+          [
+            0.756,
+            3.08,
+            3.42
+          ],
+          [
+            0.821,
+            3.2,
+            3.48
+          ]
+        ],
+        "MinMicrons": 0.496,
+        "MaxMicrons": 0.821,
+        "Source": "Shen et al. 2009, Table 1 p. 243 'Optical constants of Cr film at different wavelengths' (taken from Johnson and Christy, Phys. Rev. B 9, 5056 (1974), ref. 15)"
+      }
+    },
+    {
+      "Name": "SiO2 n=1.45 (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "MinMicrons": 0.64,
+        "MaxMicrons": 0.76,
+        "Source": "Shen et al. 2009, Sec. 2 p. 243 and Sec. 3 p. 245 ('SiO2 (nL = 1.45@700 nm)')"
+      }
+    },
+    {
+      "Name": "TiO2 n=2.17 (Shen 2009)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.17,
+          0
+        ],
+        "MinMicrons": 0.64,
+        "MaxMicrons": 0.76,
+        "Source": "Shen et al. 2009, Sec. 2 p. 243 ('refractive indexes of H, L and substrate are respectively 2.17, 1.45 and 1.52') and Sec. 3 p. 245 ('TiO2 (nH = 2.17@700 nm)', photometric determination)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 5
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 241.3793103448276,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 120.6896551724138,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 80.64516129032258,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 700,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 640,
+    "To": 760,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA",
+      "AA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 700
+  }
+}

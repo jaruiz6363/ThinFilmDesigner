@@ -1,0 +1,199 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig15-single-tunnel-absorbing",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table III, columns 'Figs. 13-15' and footnote (p. 902); Fig. 15 caption, text p. 903",
+  "Notes": "Single tunnel layer bandpass filter of Fig. 13 with a slightly absorbing tunnel layer (1.35 - j0.01)\nSpecification: As Fig. 13; illustrates the effect of absorption in the tunnel layer.\nReported: Text p. 903: the peak transmittance (p polarization) is reduced to 84 % if the tunnel layer is slightly absorbing. Fig. 15: dashed (absorbing) p curve peaks ~0.84-0.86 near lambda0/lambda ~0.97-1.0, otherwise close to the lossless curve (~0.2 at 0.9, ~0.07 at 1.1).\nNotes: Same stack as Baumeister1967-Fig13-single-tunnel (including the corrections of printed layers 9 -> 1.302 and 18 -> 2.000, see that design's notes) with layer 11 = 1.35 - j0.01 (Table III footnote: 'For Fig. 15, the optical constant of layer 11 is n = n - jk = 1.35 - j0.01'). Own TMM check: p peak 0.866 at lambda0/lambda = 0.991 (paper 84 %).\nLayers from Table III, columns 'Figs. 13-15' and footnote (p. 902); Fig. 15 caption, text p. 903; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours p peak T 86.6 %; above 90 % of it from lambda0/lambda 0.957 to 1.006; paper p peak 84 % (p. 903). The absorbing layer’s k is read from the text; 2.6 points high.",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "H n=2.30 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "Baumeister 1967, Table III (Figs. 13-15, odd layers) and Fig. 11 caption: 'H is 1.3016 quarter-waves at lambda0 and index 2.30'"
+      }
+    },
+    {
+      "Name": "L n=1.70 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.7,
+          0
+        ],
+        "Source": "Baumeister 1967, Table III (Figs. 13-15, even layers) and Fig. 11 caption: 'L is 2.0 quarter-waves at lambda0 and index 1.70'"
+      }
+    },
+    {
+      "Name": "Tunnel layer n=1.35 k=0.01 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.35,
+          0.01
+        ],
+        "Source": "Baumeister 1967, Table III footnote: 'For Fig. 15, the optical constant of layer 11 is n = n - jk = 1.35 - j0.01'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 485.29411764705884,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 333.333
+    },
+    {
+      "Material": 1,
+      "Thickness": 485.29411764705884,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 294.11764705882354,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 141.52173913043478,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.7",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.7",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.7,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 833.33,
+    "To": 1250,
+    "Steps": 418,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

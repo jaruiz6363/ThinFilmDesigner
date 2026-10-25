@@ -1,0 +1,119 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gui="clr-namespace:ThinFilm.Gui"
+        x:Class="ThinFilm.Gui.MaterialsDialog"
+        Title="Materials" Width="1120" Height="760" MinWidth="960" MinHeight="660"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- THE DATABASE ON THE LEFT, THE DESIGN'S OWN COPIES IN THE MIDDLE, THE SELECTED COPY'S
+       DEFINITION ON THE RIGHT. Copying takes a database material's definition into the design;
+       the copy is what is edited, and the database is never written from here. Nothing reaches
+       the design until OK (MaterialsForm). -->
+  <DockPanel Margin="12">
+
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right"
+                Spacing="8" Margin="0,10,0,0">
+      <TextBlock x:Name="ProblemText" VerticalAlignment="Center"
+                 TextWrapping="Wrap" MaxWidth="700" Margin="0,0,12,0"/>
+      <Button x:Name="OkButton" Content="OK" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+
+    <Grid ColumnDefinitions="300,12,300,12,*">
+
+      <!-- ===== the database ===== -->
+      <!-- ONE SOURCE, ONE SET OF BUTTONS. The database and the glass catalogues are two lists but
+           a single choice: selecting in one clears the other, and the buttons below act on
+           whichever is selected, saying so in their labels. Two lists with a button each, the
+           first version, had a user select a glass, press the database's "Use as substrate", and
+           be told to select a material from the database. -->
+      <Grid Grid.Column="0" RowDefinitions="Auto,Auto,*,Auto,Auto,Auto,*,Auto,Auto">
+        <TextBlock Grid.Row="0" Text="Material database" FontWeight="SemiBold"/>
+        <TextBlock Grid.Row="1" x:Name="DatabasePathText" FontSize="10" Foreground="#606060"
+                   TextWrapping="Wrap" Margin="0,2,0,6"/>
+        <ListBox Grid.Row="2" x:Name="DatabaseList"/>
+
+        <!-- Catalogue glasses are named by the design, never copied or edited. -->
+        <TextBlock Grid.Row="3" Text="Glass catalogues" FontWeight="SemiBold" Margin="0,12,0,4"/>
+        <ComboBox Grid.Row="4" x:Name="CatalogueBox" HorizontalAlignment="Stretch" Margin="0,0,0,4"/>
+        <TextBox Grid.Row="5" x:Name="GlassFilterBox" Watermark="filter, e.g. BK7" Margin="0,0,0,4"/>
+        <ListBox Grid.Row="6" x:Name="GlassList"/>
+
+        <TextBlock Grid.Row="7" x:Name="SourceHint" FontSize="11" Foreground="#505050"
+                   TextWrapping="Wrap" Margin="0,8,0,4"/>
+        <StackPanel Grid.Row="8" Spacing="6">
+          <Button x:Name="CopyButton" Content="Add as a new material →" HorizontalAlignment="Stretch"/>
+          <Button x:Name="UseSubstrateButton" Content="Use as substrate →" HorizontalAlignment="Stretch"/>
+          <Button x:Name="UseIncidentButton" Content="Use as incident medium →" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+      </Grid>
+
+      <!-- ===== the design's copies ===== -->
+      <DockPanel Grid.Column="2">
+        <TextBlock DockPanel.Dock="Top" Text="In this design" FontWeight="SemiBold" Margin="0,0,0,6"/>
+        <!-- NEW MATERIAL (the user, 2026-10-25, "sort of confusing"): a material the database does
+             not have - a paper's coefficients, a measured table - started here, empty, instead of
+             by copying an unrelated database material in and overwriting it. -->
+        <DropDownButton DockPanel.Dock="Top" x:Name="NewMaterialButton" Content="New material"
+                        HorizontalAlignment="Stretch" Margin="0,0,0,6">
+          <DropDownButton.Flyout>
+            <MenuFlyout Placement="BottomEdgeAlignedLeft">
+              <MenuItem x:Name="NewCoatingItem" Header="New coating material…"/>
+              <MenuItem x:Name="NewSubstrateItem" Header="New substrate…"/>
+              <MenuItem x:Name="NewIncidentItem" Header="New incident medium…"/>
+            </MenuFlyout>
+          </DropDownButton.Flyout>
+        </DropDownButton>
+        <StackPanel DockPanel.Dock="Bottom" Spacing="6" Margin="0,8,0,0">
+          <!-- From constant to real: the selected design material takes the selected database
+               material's definition, and every layer made of it follows. -->
+          <TextBlock x:Name="DesignHint" FontSize="11" Foreground="#9A5B00" TextWrapping="Wrap"/>
+          <Button x:Name="ReplaceButton" Content="Replace with database material" HorizontalAlignment="Stretch"/>
+          <!-- Both sides of Replace, said before it is pressed: what the material is now and what
+               it becomes. -->
+          <TextBlock x:Name="ReplaceHint" FontSize="11" Foreground="#505050" TextWrapping="Wrap"/>
+          <Button x:Name="UpgradeButton" Content="Upgrade constant materials"
+                  ToolTip.Tip="Replace every constant-index material that has a database material of the same name"
+                  HorizontalAlignment="Stretch"/>
+          <Button x:Name="RemoveButton" Content="Remove from design" HorizontalAlignment="Stretch"/>
+          <TextBlock FontSize="10" Foreground="#606060" TextWrapping="Wrap"
+                     Text="These are the design's own copies. Editing one changes this design only; the database is not touched."/>
+        </StackPanel>
+        <ListBox x:Name="DesignList"/>
+      </DockPanel>
+
+      <!-- ===== the selected copy ===== -->
+      <DockPanel Grid.Column="4">
+        <TextBlock DockPanel.Dock="Top" x:Name="EditorTitle" Text="Select a material" FontWeight="SemiBold"
+                   Margin="0,0,0,6"/>
+        <!-- NO STRINGS OF NUMBERS HERE: the name, a sentence saying what the material is, and Edit
+             dispersion, which opens a form for the model with a field for each coefficient. -->
+        <Grid DockPanel.Dock="Top" x:Name="EditorPanel" ColumnDefinitions="110,*,Auto"
+              RowDefinitions="Auto,Auto,Auto">
+          <Grid.Styles>
+            <Style Selector="Grid > TextBlock, Grid > TextBox">
+              <Setter Property="Margin" Value="0,0,6,6"/>
+            </Style>
+          </Grid.Styles>
+          <TextBlock Text="Name" VerticalAlignment="Center"/>
+          <TextBox Grid.Column="1" x:Name="NameBox"/>
+          <Button Grid.Column="2" x:Name="RenameButton" Content="Rename" Margin="0,0,0,6"/>
+          <TextBlock Grid.Row="1" Text="Dispersion" VerticalAlignment="Top"/>
+          <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ModelSummary" TextWrapping="Wrap"/>
+          <Button Grid.Row="1" Grid.Column="2" x:Name="EditDispersionButton" Content="Edit dispersion…"
+                  VerticalAlignment="Top" Margin="0,0,0,6"/>
+          <!-- SAVE TO DATABASE (the user, 2026-10-25): a material made here, for the next design. -->
+          <TextBlock Grid.Row="2" Text="Reuse" VerticalAlignment="Top"/>
+          <TextBlock Grid.Row="2" Grid.Column="1" x:Name="SaveHint" TextWrapping="Wrap" FontSize="11"
+                     Foreground="#505050"/>
+          <Button Grid.Row="2" Grid.Column="2" x:Name="SaveToDatabaseButton" Content="Save to database…"
+                  VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,6"/>
+        </Grid>
+
+        <TextBlock DockPanel.Dock="Bottom" x:Name="PreviewNote" FontSize="10" Foreground="#606060"
+                   TextWrapping="Wrap" Margin="0,4,0,0"/>
+        <gui:SpectrumPlot x:Name="Preview" XTitle="wavelength (nm)" EmptyText="No preview." Margin="0,6,0,0"/>
+      </DockPanel>
+    </Grid>
+  </DockPanel>
+</Window>

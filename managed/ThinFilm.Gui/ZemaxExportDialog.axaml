@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.ZemaxExportDialog"
+        Title="Export to ZEMAX coating" Width="600" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- MODAL, AND THE FILE IS WRITTEN ONLY ON OK. A COAT of the same name already in the file is
+       replaced only after asking. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock Text="Coating file" FontWeight="SemiBold"/>
+    <DockPanel>
+      <Button x:Name="BrowseButton" DockPanel.Dock="Right" Content="Browse…" Margin="8,0,0,0" MinWidth="80"/>
+      <TextBox x:Name="PathBox"/>
+    </DockPanel>
+    <TextBlock FontSize="11" Foreground="#505050" TextWrapping="Wrap"
+               Text="An existing file is written into; a file that does not exist yet is made."/>
+
+    <Grid ColumnDefinitions="Auto,12,*" RowDefinitions="Auto,8,Auto">
+      <TextBlock Grid.Row="0" Grid.Column="0" Text="Coating name" VerticalAlignment="Center"/>
+      <DockPanel Grid.Row="0" Grid.Column="2">
+        <TextBox x:Name="CoatingBox" Width="260" DockPanel.Dock="Left" Margin="0,0,8,0"/>
+        <!-- Wraps: on one line it ran past the window's edge. -->
+        <TextBlock Text="in capitals, as OpticStudio names everything" FontSize="11" Foreground="#505050"
+                   VerticalAlignment="Center" TextWrapping="Wrap"/>
+      </DockPanel>
+      <TextBlock Grid.Row="2" Grid.Column="0" Text="n,k tables from" VerticalAlignment="Center"/>
+      <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Spacing="8">
+        <TextBox x:Name="FromBox" Width="90"/>
+        <TextBlock Text="to" VerticalAlignment="Center"/>
+        <TextBox x:Name="ToBox" Width="90"/>
+        <TextBlock x:Name="UnitText" VerticalAlignment="Center"/>
+      </StackPanel>
+    </Grid>
+    <TextBlock FontSize="11" Foreground="#505050" TextWrapping="Wrap"
+               Text="OpticStudio holds a table's end values beyond its range, so cover every wavelength the lens is used at. A table material is written as its own rows over this range, plus one beyond each end; one with more than 120 is thinned to 120, the most OpticStudio is known to take."/>
+
+    <Border Height="1" Background="#E0E0E0"/>
+    <TextBlock x:Name="ExplanationText" TextWrapping="Wrap" FontSize="11" Foreground="#505050"/>
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="Export" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

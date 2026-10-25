@@ -1,0 +1,285 @@
+{
+  "Version": 2,
+  "Name": "Dinca1996-dichroic-matched",
+  "Source": "A. Dinca, M. E. Trifan, V. Lupei, and M. Dinca, \"Dichroic mirror design by complete admittance matching,\" Opt. Eng. 35(5), 1284-1287 (1996). doi:10.1117/1.600667 - Sec. 3, p. 1286, Eq. (10): air (0.5L H 0.5L)^7 (0.193H 0.331L 0.193H)^2 substrate, centered on lambda0 = 1.064 um; spectrum in Fig. 4",
+  "Notes": "Dichroic mirror for Nd:YAG: high reflectance at 1064 nm, high transmittance at the doubled wavelength 532 nm (admittance-matched to the substrate at 532 nm)\nSpecification: High reflectance at 1064 nm; zero reflectance (complete admittance matching to the substrate) at 532 nm, low ripple in the short-wavelength passband.\nReported: Sec. 3: basic period (0.5L H 0.5L) has equivalent index Eb = 1.176 at lambda_m = 532 nm; the matching stack must have Em = sqrt(1.176*1.52) = 1.337 at 532 nm, fulfilled by (0.193H 0.331L 0.193H)^2 at lambda0 = 1064 nm, whose total phase thickness at 532 nm must be an odd number of quarter waves (Fig. 3: two periods). Fig. 4: high-reflectance band around 1.0-1.2 um (R near 1 at 1.064 um), low-ripple low-reflectance passband from ~0.45 to ~0.85 um. Recomputation check (this extraction, non-dispersive, normal incidence): matching period E = 1.342 and phase 0.748*pi per period (2 periods = 1.497*pi, i.e. 3 quarter waves) at 532 nm; R(1064) = 0.9916, R(532) = 0.0072 (the residual is the uncompensated air/stack mismatch, since only the substrate side is matched).\nNotes: Paper writes the structure air ... substrate, so the order is already incident-first. QWOT at lambda0 = 1064 nm ('centered on lambda0 = 1.064 um'); the recomputed equivalent index (1.342 vs printed 1.337) and phase (3 quarter waves at 532 nm) confirm this interpretation. Adjacent identical layers have been merged: (0.5L H 0.5L)^7 = 0.5L (H L)^6 H 0.5L (15 layers) and (0.193H 0.331L 0.193H)^2 = 0.193H 0.331L 0.386H 0.331L 0.193H (5 layers), 20 layers total (27 before merging). The basic stack's last 0.5L sits against the first 0.193H of the matching stack (different materials, not merged). Nondispersive constant indices nH = 2.23 (TiO2), nL = 1.46 (SiO2), substrate BK7 taken as n = 1.52 as printed. Normal incidence assumed (no angle given); light from air. No total thickness is printed. The air side is deliberately left unmatched because Eb is close to 1.\nLayers from Sec. 3, p. 1286, Eq. (10): air (0.5L H 0.5L)^7 (0.193H 0.331L 0.193H)^2 substrate, centered on lambda0 = 1.064 um; spectrum in Fig. 4; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R 99.2 % at 1064 nm, 0.722 % at 532 nm; paper high R at 1064 nm and low R at 532 nm (Fig. 4, a plot); Eb 1.176, Em 1.337 at 532 nm. Only the substrate side is matched, as in the paper, so the 0.7 % left at 532 nm is the air side’s reflection.",
+  "Wavelength": [
+    532,
+    1064
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.46 (Dinca 1996)",
+      "N": [
+        1.46,
+        1.46
+      ],
+      "K": [
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.46,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 2,
+        "Source": "Dinca et al., Opt. Eng. 35, 1284 (1996), Sec. 3, p. 1286: 'silicium dioxide (SiO2) with nL = 1.46'",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "TiO2 n=2.23 (Dinca 1996)",
+      "N": [
+        2.23,
+        2.23
+      ],
+      "K": [
+        0,
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.23,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 2,
+        "Source": "Dinca et al., Opt. Eng. 35, 1284 (1996), Sec. 3, p. 1286: 'titanium dioxide (TiO2) with nH = 2.23'",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 91.0958904109589,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 182.1917808219178,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 119.28251121076234,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 91.0958904109589,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 23.02152466367713,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 60.3054794520548,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 46.04304932735426,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 60.3054794520548,
+      "Variable": true,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 23.02152466367713,
+      "Variable": true,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 1,
+      "AngleDegrees": 0
+    },
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1,
+      1
+    ],
+    "K": [
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [
+      1.52,
+      1.52
+    ],
+    "K": [
+      0,
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    },
+    {
+      "Code": "TA",
+      "Comparison": "LE",
+      "Target": 1,
+      "Weight": 1,
+      "Scale": 1,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        1
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1064,
+  "Plot": {
+    "From": 400,
+    "To": 1400,
+    "Steps": 1001,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1064
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

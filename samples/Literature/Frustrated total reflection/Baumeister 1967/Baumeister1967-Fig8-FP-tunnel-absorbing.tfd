@@ -1,0 +1,95 @@
+{
+  "Version": 2,
+  "Name": "Baumeister1967-Fig8-FP-tunnel-absorbing",
+  "Source": "P. W. Baumeister, \"Optical Tunneling and Its Applications to Optical Filters,\" Appl. Opt. 6, 897-904 (1967). doi:10.1364/AO.6.000897 - Table I column 'Fig. 8' (p. 899); Fig. 8 caption, text p. 901",
+  "Notes": "Same Fabry-Perot tunnel layer filter as Fig. 6 but with slightly absorbing tunnel layers (1.38 - j0.01) to show the loss of peak transmittance\nSpecification: None (illustrates the effect of absorption k = 0.01 in the tunnel layers).\nReported: Text p. 901: for the p polarization the peak transmittance decreases to 49 % and the bandwidth increases to 400 A. Fig. 8: p peak ~0.49 near 0.48 um, s peak ~0.73 near 0.58 um (plot).\nNotes: Identical to Baumeister1967-Fig6-FP-tunnel except the tunnel layers are 1.38 - j0.01 (k = 0.01, positive = absorbing). Same assumptions (layer 2 = one quarter wave at 1.837 um; 60 deg in the 1.72 medium, angle not printed). Own TMM check: p peak T = 0.489 at 0.478 um, s peak T = 0.727 at 0.577 um - matches the quoted 49 %, confirming the 60 deg / quarter-wave-at-1.837-um reading.\nLayers from Table I column 'Fig. 8' (p. 899); Fig. 8 caption, text p. 901; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours p peak T 48.9 %; paper p peak 49 % (p. 901).",
+  "Wavelength": [
+    1837
+  ],
+  "Materials": [
+    {
+      "Name": "Tunnel layer n=1.38 k=0.01 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0.01
+        ],
+        "Source": "Baumeister 1967, Table I (Fig. 8, layers 1 and 3): index 1.38 - j0.01"
+      }
+    },
+    {
+      "Name": "Spacer n=2.30 (Baumeister 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "Baumeister 1967, Table I (Figs. 6 and 8, layer 2): index 2.30"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 180
+    },
+    {
+      "Material": 1,
+      "Thickness": 199.67391304347828,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 180
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.72",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.72,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1837,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 700,
+    "Steps": 301,
+    "Angle": 60,
+    "Quantities": [
+      "TS",
+      "TP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1837
+  }
+}

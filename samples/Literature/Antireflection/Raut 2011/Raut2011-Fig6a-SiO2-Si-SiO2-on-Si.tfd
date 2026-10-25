@@ -1,0 +1,95 @@
+{
+  "Version": 2,
+  "Name": "Raut2011-Fig6a-SiO2-Si-SiO2-on-Si",
+  "Source": "H. K. Raut, V. A. Ganesh, A. S. Nair, and S. Ramakrishna, \"Anti-reflective coatings: A critical, in-depth review,\" Energy Environ. Sci. 4, 3779-3804 (2011). doi:10.1039/c1ee01297e - Fig. 6(a) and caption, p. 3783 (layer labels SiO2 123 nm / Si 47.8 nm / SiO2 123 nm / Si active medium; caption: Si(RI 3.76)|SiO2(RI 1.455)|Si|SiO2|Air, layers lambda/4 thick at lambda0 = 720 nm, nH = 3.76, nL = 1.455); text p. 3784, Sec. 6.2.3 (ref. 20, Macleod)",
+  "Notes": "Simulated quarter-wave L-H-L multilayer on a Si absorber (transmissivity into Si), the reference case for Fig. 6(b)\nSpecification: Analysis of transmissivity in the far-red zone 720-750 nm (p. 3784).\nReported: Only a transmissivity curve (Fig. 6(a)) with unreadable axis numbers. Expected from the printed quarter-wave construction: an L-H-L quarter stack on n = 3.76 gives admittance 0.084 at 720 nm, i.e. T into Si only about 29 % (a quick recomputation with the printed nm values gives T = 0.287 at 720 nm, versus 0.664 for bare Si), so this stack is a poor AR - it is the comparison case for Fig. 6(b).\nNotes: Paper lists the stack from the substrate (Si | SiO2 | Si | SiO2 | Air); here reversed so layer 1 is next to air (the stack is symmetric, so the order is the same). The Si film and the Si substrate both use n = 3.76 (nH = n_active medium = 3.76); all indices constant, no absorption, as in the simulation. Printed thicknesses 123 nm and 47.8 nm are rounded quarter waves at 720 nm (exact: 123.71 nm and 47.87 nm). Transmissivity means transmittance into the semi-infinite Si (= 1 - R).\nLayers from Fig. 6(a) and caption, p. 3783 (layer labels SiO2 123 nm / Si 47.8 nm / SiO2 123 nm / Si active medium; caption: Si(RI 3.76)|SiO2(RI 1.455)|Si|SiO2|Air, layers lambda/4 thick at lambda0 = 720 nm, nH = 3.76, nL = 1.455); text p. 3784, Sec. 6.2.3 (ref. 20, Macleod); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours T 51.0 % at 480 nm, 28.7 % at 720 nm; paper comparison case for Fig. 6b (curve only).",
+  "Wavelength": [
+    720
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.455 (Raut 2011)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.455,
+          0
+        ],
+        "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'SiO2(RI 1.455)', nL = 1.455 (simulation from Macleod, ref. 20)"
+      }
+    },
+    {
+      "Name": "Si n=3.76 (Raut 2011)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.76,
+          0
+        ],
+        "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'Si(RI 3.76)', nH = nM = n_active medium = 3.76"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 123
+    },
+    {
+      "Material": 1,
+      "Thickness": 47.8
+    },
+    {
+      "Material": 0,
+      "Thickness": 123
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "Si n=3.76 (Raut 2011)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.76,
+        0
+      ],
+      "Source": "Raut et al. 2011, Fig. 6 caption p. 3783: 'Si(RI 3.76)', nH = nM = n_active medium = 3.76"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 720,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 1000,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 720
+  }
+}

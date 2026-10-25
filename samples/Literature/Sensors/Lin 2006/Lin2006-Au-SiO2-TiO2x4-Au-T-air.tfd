@@ -1,0 +1,137 @@
+{
+  "Version": 2,
+  "Name": "Lin2006-Au-SiO2-TiO2x4-Au-T-air",
+  "Source": "C.-W. Lin, K.-P. Chen, C.-N. Hsiao, S. Lin, and C.-K. Lee, \"Design and fabrication of an alternating dielectric multi-layer device for surface plasmon resonance sensor,\" Sens. Actuators B 113, 169-176 (2006). doi:10.1016/j.snb.2005.02.044 - Fig. 3 (layers), Table 1 (indices), Fig. 6 and Sec. 3 (transmittance)",
+  "Notes": "Same multilayer chip measured in normal-incidence transmittance in air (spectrophotometer), to compare with the calculated spectrum\nSpecification: No spec; transmittance check of the fabricated device (simulated 400-1200 nm per Sec. 3, plotted 200-1000 nm).\nReported: Fig. 6 / Sec. 3: two transmission peaks, ~500 nm (T ~6 %) and ~790 nm (T ~23 %, the larger), smaller shoulder near 400 nm (~3-4 % in the dashed theory), T ~1-2 % between peaks and near 0 beyond ~900 nm (values read off the plot; the peak wavelengths 500 and 790 nm are stated in the text and caption).\nNotes: Fig. 3 order, top (air side) to glass; light from air at normal incidence, glass slide as substrate (Table 1 BK7 1.515; slide quoted as 1.51); back surface of the slide ignored. Caution: Table 1 gives a single n, k per material (at 632 nm); the paper's curve over 200-1000 nm surely used dispersive Au, so a constant-index recomputation will only match near 632 nm - for the full spectrum substitute the database 'Au' for the two gold layers. 10 layers, total 230 nm.\nLayers from Fig. 3 (layers), Table 1 (indices), Fig. 6 and Sec. 3 (transmittance); layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    632
+  ],
+  "Materials": [
+    {
+      "Name": "Au n=0.16195 k=3.20991 (Lin 2006)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.16195,
+          3.20991
+        ],
+        "Source": "Lin et al. 2006, Table 1: Au n = 0.16195, k = 3.20991"
+      }
+    },
+    {
+      "Name": "SiO2 n=1.45705 (Lin 2006)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45705,
+          0
+        ],
+        "Source": "Lin et al. 2006, Table 1: SiO2 n = 1.45705, k = 0 (Sec. 2.3 quotes n = 1.46)"
+      }
+    },
+    {
+      "Name": "TiO2 n=2.27892 (Lin 2006)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.27892,
+          0.00015
+        ],
+        "Source": "Lin et al. 2006, Table 1: TiO2 n = 2.27892, k = 0.00015 (Sec. 2.3 quotes n = 2.28)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 30
+    },
+    {
+      "Material": 1,
+      "Thickness": 20
+    },
+    {
+      "Material": 2,
+      "Thickness": 20
+    },
+    {
+      "Material": 1,
+      "Thickness": 20
+    },
+    {
+      "Material": 2,
+      "Thickness": 20
+    },
+    {
+      "Material": 1,
+      "Thickness": 20
+    },
+    {
+      "Material": 2,
+      "Thickness": 20
+    },
+    {
+      "Material": 1,
+      "Thickness": 20
+    },
+    {
+      "Material": 2,
+      "Thickness": 20
+    },
+    {
+      "Material": 0,
+      "Thickness": 40
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "Glass BK7 n=1.515 (Lin 2006)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.515,
+        0
+      ],
+      "Source": "Lin et al. 2006, Table 1: Glass (BK7) n = 1.515, k = 0"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 632,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 1200,
+    "Steps": 801,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 632
+  }
+}

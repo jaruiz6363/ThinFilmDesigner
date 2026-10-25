@@ -1,0 +1,75 @@
+{
+  "Version": 2,
+  "Name": "Raut2011-MgF2-QW-on-BK7",
+  "Source": "H. K. Raut, V. A. Ganesh, A. S. Nair, and S. Ramakrishna, \"Anti-reflective coatings: A critical, in-depth review,\" Energy Environ. Sci. 4, 3779-3804 (2011). doi:10.1039/c1ee01297e - Sec. 6.2.1, p. 3783 (text: BK7 n = 1.5151 at 633 nm, MgF2 n = 1.38, reflectance from about 4 % to less than 1.3 % at the centre wavelength, normal incidence); curve in Fig. 7(a), p. 3784",
+  "Notes": "Classic single-layer quarter-wave MgF2 AR coating on BK7 glass\nSpecification: Single quarter-wave layer; zero reflectance would need n = sqrt(1.5151) = 1.22 (p. 3783).\nReported: Single-surface reflectance at the centre wavelength, normal incidence: bare BK7 about 4 %, with the MgF2 layer less than 1.3 % (p. 3783, Sec. 6.2.1; with these constant indices R(min) = ((1.5151 - 1.38^2)/(1.5151 + 1.38^2))^2 = 1.30 %). Fig. 7(a) (from ref. 161, not necessarily this exact case) shows the single-layer MgF2 curve with a broad minimum of roughly 1.3 % near 550 nm over 400-700 nm. Single-layer ARCs are said to suppress reflectance to about 2.5 % over 450-1100 nm (p. 3783, ref. 159).\nNotes: The review does not state the centre wavelength; reference_nm = 550 nm is assumed from the position of the minimum in Fig. 7(a). With constant indices the minimum value (1.30 %) does not depend on that choice. Indices are constants: BK7 1.5151 is quoted at 633 nm. Back surface of the glass not included (single interface).\nLayers from Sec. 6.2.1, p. 3783 (text: BK7 n = 1.5151 at 633 nm, MgF2 n = 1.38, reflectance from about 4 % to less than 1.3 % at the centre wavelength, normal incidence); curve in Fig. 7(a), p. 3784; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R min 1.30 % at 550 nm; paper R < 1.3 % at the centre wavelength.",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 n=1.38 (Raut 2011)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "Raut et al. 2011, p. 3783: 'Single layer magnesium fluoride (MgF2) ... its RI is 1.38'; also p. 3784 'MgF2 (RI 1.38)'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "BK7 n=1.5151 (Raut 2011)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.5151,
+        0
+      ],
+      "Source": "Raut et al. 2011, Sec. 6.2.1 p. 3783: 'the RI of glass is 1.5151 (BK7 at 633nm)'"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 700,
+    "Steps": 301,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "Version": 2,
+  "Name": "Cojocaru2004-QW-periodic-N50-npa035",
+  "Source": "E. Cojocaru, \"Quarter-wave discrete wavelet design of dichroic highly reflecting-transmitting mirrors for ultrafast solid-state lasers,\" Appl. Opt. 43, 1261-1265 (2004). doi:10.1364/AO.43.001261 - Secs. 3-4, p. 1262 and Fig. 3 (dashed): N = 50 alternating QW layers n1 = na + npa = 2.25, n2 = na - npa = 1.55, n0 = ns = na = 1.9, lambda0 = 1 um",
+  "Notes": "Periodic quarter-wave reference stack compared with the QWDW in Fig. 3\nSpecification: Periodic QW reflector with the same N, na and npa as the QWDW.\nReported: Fig. 3(a): full width at R = 0.5 almost equal to the QWDW's, Eq. (4): dl/l0 ~ (4/pi)(0.35/1.9) = 0.2345; strong sidelobes. Fig. 3(b): R0 at lambda0 higher than the QWDW's (dashed curve reaches ~1). Analytic R0 = tanh^2[(N/2) ln(n1/n2)] = 0.99999997.\nNotes: Whether H or L is first is not stated; with n0 = ns the reflectance is the same for either order. Normal incidence; incident medium and substrate both n = na = 1.9 (n0 = ns = na), non-dispersive and lossless, so R is the same whichever side faces the light.\nLayers from Secs. 3-4, p. 1262 and Fig. 3 (dashed): N = 50 alternating QW layers n1 = na + npa = 2.25, n2 = na - npa = 1.55, n0 = ns = na = 1.9, lambda0 = 1 um; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours R0 0.99999997 at 1000 nm; paper above the wavelet stack (Fig. 3b).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "Cojocaru2004 QW50 nH=2.25",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.25,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Secs. 3-4: periodic QW structure with n1 = na + npa, na = 1.9, npa = 0.35"
+      }
+    },
+    {
+      "Name": "Cojocaru2004 QW50 nL=1.55",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.55,
+          0
+        ],
+        "MinMicrons": 0.5,
+        "MaxMicrons": 1.3,
+        "Source": "Cojocaru, Appl. Opt. 43, 1261 (2004), Secs. 3-4: periodic QW structure with n2 = na - npa, na = 1.9, npa = 0.35"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 111.11111111111111,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 161.29032258064515,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.9",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.9,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.9",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.9,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 700,
+    "To": 1300,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.NewDesignDialog"
+        Title="New design" Width="620" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <Window.Styles>
+    <!-- Spacing in the form grids: this Avalonia's Grid has no RowSpacing or ColumnSpacing. -->
+    <Style Selector="Grid.form > TextBlock, Grid.form > TextBox, Grid.form > ComboBox">
+      <Setter Property="Margin" Value="0,0,6,6"/>
+    </Style>
+  </Window.Styles>
+
+  <!-- MODAL, AND NOTHING IS MADE UNTIL OK. The dialog fills a NewDesignForm (Gui.Core, tested)
+       and returns its request; a request the form refuses keeps the dialog open with the reason
+       above the buttons, rather than closing on a design that cannot be built. -->
+  <StackPanel Margin="16" Spacing="10">
+
+    <Grid ColumnDefinitions="130,*" RowDefinitions="Auto">
+      <TextBlock Text="Name" VerticalAlignment="Center"/>
+      <TextBox Grid.Column="1" x:Name="NameBox"/>
+    </Grid>
+
+    <!-- Media and materials are chosen from the material database and copied into the design;
+         to make one a little different, edit the design's copy in Edit > Materials. -->
+    <Grid Classes="form" ColumnDefinitions="130,*" RowDefinitions="Auto,Auto">
+      <TextBlock Text="Incident medium" VerticalAlignment="Top" Margin="0,6,6,6"/>
+      <!-- Air or a database material, or a catalogue glass: a plate immersed in index-matching
+           oil, or a cemented cube, has glass on both sides. -->
+      <StackPanel Grid.Column="1" Spacing="4" Margin="0,0,0,6">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <RadioButton x:Name="IncidentDatabaseChoice" GroupName="incident" Content="Air or database" Width="140"/>
+          <ComboBox x:Name="IncidentBox" Width="256"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <RadioButton x:Name="IncidentGlassChoice" GroupName="incident" Content="Catalogue glass" Width="140"/>
+          <ComboBox x:Name="IncidentCatalogueBox" Width="100"/>
+          <ComboBox x:Name="IncidentGlassBox" Width="150" IsTextSearchEnabled="True"/>
+        </StackPanel>
+      </StackPanel>
+      <TextBlock Grid.Row="1" Text="Substrate" VerticalAlignment="Top" Margin="0,6,6,6"/>
+      <!-- A catalogue glass is NAMED by the design (never copied, never edited); a database
+           material is copied in. -->
+      <StackPanel Grid.Row="1" Grid.Column="1" Spacing="4" Margin="0,0,0,6">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <RadioButton x:Name="GlassChoice" GroupName="substrate" Content="Catalogue glass" Width="140"/>
+          <ComboBox x:Name="CatalogueBox" Width="100"/>
+          <ComboBox x:Name="GlassBox" Width="150" IsTextSearchEnabled="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <RadioButton x:Name="DatabaseChoice" GroupName="substrate" Content="Database material" Width="140"/>
+          <ComboBox x:Name="SubstrateBox" Width="256"/>
+        </StackPanel>
+        <TextBlock x:Name="SubstrateCautionText" FontSize="11" Foreground="#9A5B00" TextWrapping="Wrap"
+                   IsVisible="False"/>
+      </StackPanel>
+    </Grid>
+
+    <StackPanel Spacing="4">
+      <TextBlock Text="Coating materials"/>
+      <TextBlock FontSize="11" Foreground="#505050" TextWrapping="Wrap"
+                 Text="The starting layers alternate through the ticked materials in the order listed, layer 1 (next to the incident medium) first. More can be copied in later from Edit > Materials."/>
+      <WrapPanel x:Name="MaterialChoices" Orientation="Horizontal"/>
+    </StackPanel>
+
+    <Grid Classes="form" ColumnDefinitions="130,90,Auto,*" RowDefinitions="Auto,Auto">
+      <TextBlock x:Name="ReferenceLabel" Text="Reference (nm)" VerticalAlignment="Center"/>
+      <TextBox Grid.Column="1" x:Name="ReferenceBox"/>
+      <TextBlock Grid.Column="2" Grid.ColumnSpan="2" FontSize="11" Foreground="#505050"
+                 VerticalAlignment="Center" Text="each starting layer is a quarter-wave here"/>
+      <TextBlock Grid.Row="1" Text="Starting layers" VerticalAlignment="Center"/>
+      <TextBox Grid.Row="1" Grid.Column="1" x:Name="LayersBox"/>
+    </Grid>
+
+    <TextBlock FontSize="11" Foreground="#505050" TextWrapping="Wrap"
+               Text="The merit function starts with one placeholder row, R = 0 at the reference wavelength: the engine needs at least one scored row. Edit it or replace it on the Merit Function tab."/>
+
+    <TextBlock x:Name="ProblemText" Foreground="#B00020" TextWrapping="Wrap" IsVisible="False"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="CreateButton" Content="Create" IsDefault="True" MinWidth="80"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="80"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

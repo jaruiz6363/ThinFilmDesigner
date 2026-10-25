@@ -1,0 +1,121 @@
+{
+  "Version": 2,
+  "Name": "Kats2016-film10nm-n3p8-k3p8-air",
+  "Source": "M. A. Kats and F. Capasso, \"Optical absorbers based on strong interference in ultra-thin films,\" Laser Photonics Rev., 1-15 (2016) (Early View; volume and final pages not printed in this copy). doi:10.1002/lpor.201600098 - Sec. 3, p. 3, first paragraph (example for Fig. 1(c)): n1 = n3 = 1, lambda0 = 900 nm, h = 10 nm, Re[n2] = Im[n2] = 3.8",
+  "Notes": "Ultra-thin lossy film between identical lossless media (n1 = n3 = 1) tuned to the A = 0.5 absorption limit at normal incidence\nSpecification: Maximum absorptance A = 0.5 of a film with h << lambda between identical transparent media (condition Re[n2] ~ Im[n2] ~ sqrt((n1+n3) lambda0 / (4 pi d))).\nReported: A = 0.5 at lambda0 = 900 nm, normal incidence (Sec. 3, p. 3; Fig. 1(c) shows the absorption map vs n and kappa for h = 10 nm with maximum near n = kappa = 3.8). A_limit = 0.5 for any n1 = n3 and any angle for both polarisations in the thin-film limit.\nNotes: Hypothetical material: n2 is a single complex number at 900 nm (paper's convention n + i kappa, so k = 3.8 positive). Free-standing film in air on both sides. The closed form Re = Im = sqrt(2*900/(4 pi 10)) = 3.785, printed as 3.8, so A computed with 3.8 + 3.8i should be very close to (just under) 0.5.\nLayers from Sec. 3, p. 3, first paragraph (example for Fig. 1(c)): n1 = n3 = 1, lambda0 = 900 nm, h = 10 nm, Re[n2] = Im[n2] = 3.8; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours A 0.501 at 900 nm; paper A 0.5.",
+  "Wavelength": [
+    900
+  ],
+  "Materials": [
+    {
+      "Name": "Film n=3.8+3.8i (Kats 2016)",
+      "N": [
+        3.8
+      ],
+      "K": [
+        3.8
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.8,
+          3.8
+        ],
+        "Source": "Kats & Capasso, Laser Photonics Rev. 2016, Sec. 3 p. 3: 'for n1 = n3 = 1, lambda0 = 900 nm, h = 10 nm ... A = 0.5 ... Re[n2] = Im[n2] = 3.8'",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 10,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 0
+    }
+  ],
+  "Incident": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "air",
+    "N": [
+      1
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "AA",
+      "Comparison": "EQUAL",
+      "Target": 0.5,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 900,
+  "Plot": {
+    "From": 400,
+    "To": 1400,
+    "Steps": 1001,
+    "Angle": 0,
+    "Quantities": [
+      "AA",
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 900
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

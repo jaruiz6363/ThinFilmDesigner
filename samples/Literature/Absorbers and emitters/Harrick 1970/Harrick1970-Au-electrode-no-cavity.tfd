@@ -1,0 +1,75 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-Au-electrode-no-cavity",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table III ('Au with no cavity'), p. 2113; gold film from Table II",
+  "Notes": "Reference case: 55 A gold electrode directly on the prism, no cavity films\nSpecification: None (analysis case).\nReported: Table III, Au with no cavity: with absorption (n0 = 1.4 - i0.04) Rp = 0.236, Rs = 0.665; without absorption (n0 = 1.4 - i0.00) Rp = 0.865, Rs = 0.829. At 550 nm, 72.8 deg.\nNotes: Text: 'reflectances calculated with and without absorption for the gold electrode alone, i.e., with no cavity films intervening between it and the prism'. Gold thickness 0.010 lambda = 5.5 nm at 550 nm. The without-absorption case needs substrate {n: 1.4, k: 0}.\nLayers from Table III ('Au with no cavity'), p. 2113; gold film from Table II; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.236, Rs 0.665 at 72.8 deg, 550 nm; paper Rp 0.236, Rs 0.665 (Tables I and III).",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "Au 550nm n=0.331 k=2.324 (Harrick 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          0.331,
+          2.324
+        ],
+        "Source": "Harrick & Turner 1970, Table II: n1 = 0.331 - i2.324 (gold electrode at 550 nm)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 5.5
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "Prism n=1.52 (Harrick 1970)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Table II and Fig. 3: Dove prism n = 1.52"
+    }
+  },
+  "Exit": {
+    "Name": "Absorber n=1.4 k=0.04 (Harrick 1970)",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.4,
+        0.04
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1 and Tables I-III: n0 = 1.4 - i0.04"
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 500,
+    "To": 600,
+    "Steps": 201,
+    "Angle": 72.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

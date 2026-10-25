@@ -1,0 +1,137 @@
+{
+  "Version": 2,
+  "Name": "Dobrowolski1970-filterB",
+  "Source": "J. A. Dobrowolski, \"Optical Interference Filters for the Adjustment of Spectral Response and Spectral Power Distribution,\" Appl. Opt. 9, 1396-1402 (1970). doi:10.1364/AO.9.001396 - Table I (Filter B), p. 1400; Sec. III.B and Fig. 6, p. 1399",
+  "Notes": "Four-layer component filter B of the constant-output-monochromator correction filter (5 filters B in series with 15 filters A, Sec. III.B)\nSpecification: See Dobrowolski1970-filterA: the series system 15A + 5B should follow the dotted curve of Fig. 6 (relative shape), 0.3-0.7 um.\nReported: No values for filter B alone; the 15A + 5B system result is plotted in Fig. 6 (see Dobrowolski1970-filterA reported).\nNotes: Incident medium air (Table I medium 1.000), substrate 1.450. Table lists Substrate, layers 1..N, Medium; layer 1 is next to the substrate (the synthesis program grows the design from the bare substrate), so the order is REVERSED here (layer 1 below = last printed layer, next to the medium). Thicknesses are printed as optical thicknesses n*d in micrometres; they are entered as FWOT at reference_nm = 1000 nm, which is the same number (1 FWOT at 1000 nm = 1 um optical thickness), with constant, non-dispersive, lossless indices exactly as printed. Physical thickness d = OT/n. Normal incidence assumed (not stated). 4 layers, as stated in the text; summed optical thickness of the printed layers = 0.5457 um (no total is printed).\nLayers from Table I (Filter B), p. 1400; Sec. III.B and Fig. 6, p. 1399; layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "film n=1.900 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.9,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table I filters A, B (text: 1.90 = PbF2, highest index allowed), n = 1.900"
+      }
+    },
+    {
+      "Name": "film n=1.335 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.335,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table I filter B, n = 1.335"
+      }
+    },
+    {
+      "Name": "film n=1.352 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.352,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table I filter B, n = 1.352"
+      }
+    },
+    {
+      "Name": "film n=1.757 (Dobrowolski 1970)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.757,
+          0
+        ],
+        "MinMicrons": 0.3,
+        "MaxMicrons": 0.75,
+        "Source": "Dobrowolski, Appl. Opt. 9, 1396 (1970): Table I filter B, n = 1.757"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 96.26315789473685,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 127.11610486891385,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 2,
+      "Thickness": 94.00887573964496,
+      "Unit": "FWOT"
+    },
+    {
+      "Material": 3,
+      "Thickness": 37.564029595902106,
+      "Unit": "FWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.45",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.45,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 300,
+    "To": 700,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

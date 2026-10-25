@@ -1,0 +1,127 @@
+{
+  "Version": 2,
+  "Name": "Young1967-MgF2-ZnS-QW-9L",
+  "Source": "L. Young, \"Multilayer Interference Filters with Narrow Stop Bands,\" Appl. Opt. 6, 297-315 (1967). doi:10.1364/AO.6.000297 - Sec. IV p. 301, paragraph after Eq. (17)",
+  "Notes": "Quarter-wave stack ABA...A of MgF2 (n1 = 1.38) and ZnS (n2 = 2.3) between end media of the geometric-mean index, used to check the ripple-envelope formula Eq. (16)\nSpecification: Symmetric stop band centred at reference_nm; passband ripple envelope Gamma_env = Gamma12/cos(theta).\nReported: p. 301: the first ripple peak (reflection coefficient amplitude) agrees with Eq. (16)-(17), Gamma_env = (n1 - n2)/(n1 + n2)/cos(theta) = 0.25/cos(theta), to better than 1 % for the 9-, 19- and 29-layer cases (theta = phase thickness of a layer at the ripple peak; R_env = Gamma_env^2). Herpin bandwidth Eq. (3): w_H = (4/pi) asin(0.25) = 0.3217.\nNotes: m = 9 layers, n1 = 1.38 is the first layer (paper: \"n2/n1 = 2.3/1.38\"), so both outer layers are MgF2. End media index n_0 = sqrt(n1 n2) = 1.78157 (Eq. (1), assumed in the paragraph). All layers quarter waves at reference_nm (arbitrary 550 nm). Normal incidence. The paper prints no numerical R for these stacks beyond the 1 % agreement.\nLayers from Sec. IV p. 301, paragraph after Eq. (17); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours first ripple |r| 0.4087 at 846.9 nm; Eq. 16 gives 0.4778; paper agrees with Eq. 16 to better than 1 % (p. 301). The gap to Eq. 16 shrinks with the layer count (15 %, 4 %, 2 % for 9, 19 and 29 layers), as for an approximation that improves with more layers; the paper’s 1 % claim is not reproduced.",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 n=1.38 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Sec. IV p. 301 (\"n2/n1 = 2.3/1.38 ... magnesium fluoride\") and Sec. VII p. 309 (n = 1.38)"
+      }
+    },
+    {
+      "Name": "ZnS n=2.3 (Young 1967)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "L. Young, Appl. Opt. 6, 297 (1967), Sec. VII p. 309 and Sec. VIII p. 312 (n = 2.3, zinc sulfide; called \"zinc oxide\" on p. 301)"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.78260869565218,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.78260869565218,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.78260869565218,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 59.78260869565218,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "n=1.78157",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.78157,
+        0
+      ]
+    }
+  },
+  "Exit": {
+    "Name": "n=1.78157",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.78157,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 367,
+    "To": 1100,
+    "Steps": 1467,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

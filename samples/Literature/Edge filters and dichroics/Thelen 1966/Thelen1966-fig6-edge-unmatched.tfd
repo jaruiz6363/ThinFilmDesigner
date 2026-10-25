@@ -1,0 +1,238 @@
+{
+  "Version": 2,
+  "Name": "Thelen1966-fig6-edge-unmatched",
+  "Source": "A. Thelen, \"Equivalent Layers in Multilayer Filters,\" J. Opt. Soc. Am. 56, 1533-1538 (1966). doi:10.1364/JOSA.56.001533 - Fig. 6 caption, p. 1536: 1.52 | [(H/2)L(H/2)]^15 | 1.0, nH = 2.3, nL = 1.56",
+  "Notes": "Long-wave-pass edge filter, plain 15-period [(H/2)L(H/2)] stack without matching (reference curve of Fig. 6)\nSpecification: Stop band around lambda0/lambda = 1, high transmittance for lambda0/lambda < ~0.87 (long-wave pass); plotted 0.6-1.2 in lambda0/lambda.\nReported: Fig. 6 (p. 1536), %T vs lambda0/lambda from 0.6 to 1.2 (read from plot, approximate): stop band with T ~ 0 from about lambda0/lambda 0.88 to 1.12; the unmatched design shows strong pass-band ripple near the edge (dips to roughly 70-80 % T around lambda0/lambda 0.84-0.87), whereas the matched design (Thelen1966-fig6-edge-matched) stays near 95-100 %. Total optical thickness 15 QW H + 15 QW L = 30 QW.\nNotes: Paper writes substrate | ... | medium (substrate on the left). The stack is symmetric, so reversal changes nothing. Adjacent H/2 layers of consecutive periods are merged into full QW H layers: 45 printed sub-layers -> 31 physical layers (H/2, 14 x H, 15 x L, H/2). lambda0 is not given (abscissa is lambda0/lambda), so reference_nm = 1000 is arbitrary: lambda0/lambda = 1000/lambda(nm), band 0.6-1.2 -> 1667-833 nm. Normal incidence assumed (not stated). Indices constant, k = 0. Incident medium 1.0 = air. Which of the two Fig. 6 curves is which is not labelled; the smoother one is presumably the matched design.\nLayers from Fig. 6 caption, p. 1536: 1.52 | [(H/2)L(H/2)]^15 | 1.0, nH = 2.3, nL = 1.56; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours T < 1 % from 0.891 to 1.124; pass band 0.70-0.86 between 81.2 % and 99.5 %; paper stop band 0.88-1.12; pass band dips to 70-80 % near 0.84-0.87 (read from Fig. 6).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "nH=2.3 (Thelen 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.3,
+          0
+        ],
+        "Source": "Thelen, JOSA 56, 1533 (1966), Fig. 6 caption: nH = 2.3"
+      }
+    },
+    {
+      "Name": "nL=1.56 (Thelen 1966)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.56,
+          0
+        ],
+        "Source": "Thelen 1966, Fig. 6 caption: nL = 1.56"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 54.34782608695652,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 108.69565217391305,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 160.25641025641025,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 54.34782608695652,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 1000,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 833,
+    "To": 1667,
+    "Steps": 835,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  }
+}

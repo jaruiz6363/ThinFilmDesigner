@@ -1,0 +1,75 @@
+{
+  "Version": 2,
+  "Name": "Li2013-MgF2-99nm-reference",
+  "Source": "X. Li, X. Yu, and Y. Han, \"Polymer thin films for antireflection coatings,\" J. Mater. Chem. C 1, 2266-2285 (2013). doi:10.1039/c2tc00529h - Fig. 3 caption p. 2269 ('a 99 nm thick MgF2 coating (triangles)'), MgF2 n = 1.38 from text p. 2268; from ref. 26 (Walheim et al., Science 283, 520 (1999))",
+  "Notes": "Conventional single-layer MgF2 antireflection coating on a glass slide, the comparison curve in Fig. 3c\nSpecification: Single quarter-wave MgF2 AR layer (comparison only).\nReported: No numbers: only the transmittance curve in Fig. 3c (triangles), compared with the nanoporous PMMA film (99.95 % at 534 nm, p. 2269) and an uncoated glass slide (squares). Text p. 2268: MgF2 (n = 1.38) is too high in index to reach zero reflectance on glass (n_ideal = 1.23). Expected single-surface minimum R = ((1.52 - 1.38^2)/(1.52 + 1.38^2))^2 ~ 1.26 % at 4 n d = 546 nm (computed, not printed).\nNotes: Whether the slide was coated on one or both sides, and the slide index, are not stated (glass n = 1.52 assumed, semi-infinite). The figure plots transmittance of a slide (two surfaces), so the curve cannot be compared quantitatively with a front-surface-only computation; listed mainly because the layer is fully specified. reference_nm = 4 n d, not stated in the paper.\nLayers from Fig. 3 caption p. 2269 ('a 99 nm thick MgF2 coating (triangles)'), MgF2 n = 1.38 from text p. 2268; from ref. 26 (Walheim et al., Science 283, 520 (1999)); layer 1 faces the incident medium.\nNot checked: the paper reports this design only as plots.",
+  "Wavelength": [
+    546
+  ],
+  "Materials": [
+    {
+      "Name": "MgF2 n=1.38 (Li 2013)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.76,
+        "Source": "Li et al. 2013, p. 2268: 'magnesium fluoride (n = 1.38) is the lowest among inorganic materials at the visible wavelength'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 99
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.52",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.52,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 546,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 1000,
+    "Steps": 601,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 546
+  }
+}

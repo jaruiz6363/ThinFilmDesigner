@@ -1,0 +1,112 @@
+{
+  "Version": 2,
+  "Name": "Hass1952-HLHLH-TiO2-MgF2-mirror",
+  "Source": "G. Hass, \"Preparation, properties and optical applications of thin films of titanium dioxide,\" Vacuum 2(4), 331-345 (1952). (doi not printed in the PDF) - Text p. 339 ('With five alternate lambda/4 thick layers of titanium dioxide and magnesium fluoride on glass 93.5 per cent reflectance with only 1 per cent absorption was obtained')",
+  "Notes": "High-reflecting, low-absorbing five-layer TiO2/MgF2 quarter-wave mirror for reflection interferometry\nSpecification: Maximum reflectance with five alternating quarter-wave TiO2/MgF2 layers.\nReported: Text p. 339: R = 93.5 % with only 1 % absorption (wavelength not stated, presumably the QW wavelength).\nNotes: Reference wavelength not stated; 550 nm assumed (the paper's standard lambda/4 position for TiO2). Five alternating layers starting and ending with TiO2 assumed (the procedure on p. 339 deposits titanium first on the glass, and TiO2 is the top film), i.e. glass/H L H L H/air. Ideal lossless calculation gives about 94.7 % at the QW wavelength; the measured 93.5 % includes ~1 % absorption.\nLayers from Text p. 339 ('With five alternate lambda/4 thick layers of titanium dioxide and magnesium fluoride on glass 93.5 per cent reflectance with only 1 per cent absorption was obtained'); layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), compare with the paper: ours R 94.7 % at 550 nm (lossless); paper R 93.5 % measured, with 1 % absorption. Lossless here; the paper measured 1 % absorption, which accounts for most of the difference.",
+  "Wavelength": [
+    550
+  ],
+  "Materials": [
+    {
+      "Name": "TiO2 rutile film n=2.713 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.713,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: rutile film of 505 A with optical thickness nt = 1370 A (lambda/4 at 550 nm), n = 1370/505 = 2.713 at 550 nm"
+      }
+    },
+    {
+      "Name": "MgF2 n=1.38 (Hass 1952)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.38,
+          0
+        ],
+        "MinMicrons": 0.4,
+        "MaxMicrons": 0.8,
+        "Source": "Hass 1952, p. 338: 'magnesium fluoride (nD = 1.38)'"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 1,
+      "Thickness": 99.6376811594203,
+      "Unit": "QWOT"
+    },
+    {
+      "Material": 0,
+      "Thickness": 50.681901953556945,
+      "Unit": "QWOT"
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=1.51",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.51,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 550,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 400,
+    "To": 800,
+    "Steps": 401,
+    "Angle": 0,
+    "Quantities": [
+      "RA",
+      "TA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 550
+  }
+}

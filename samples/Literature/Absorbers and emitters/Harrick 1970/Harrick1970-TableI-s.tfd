@@ -1,0 +1,143 @@
+{
+  "Version": 2,
+  "Name": "Harrick1970-TableI-s",
+  "Source": "N. J. Harrick and A. F. Turner, \"A Thin Film Optical Cavity to Induce Absorption or Thermal Emission,\" Appl. Opt. 9, 2111-2114 (1970). doi:10.1364/AO.9.002111 - Table I (s design), p. 2112; construction Fig. 1, p. 2111",
+  "Notes": "Cavity inducing complete s-polarized absorption in a weak absorber (n0 = 1.4 - i0.04) from a Si hemicylinder by internal reflection\nSpecification: Rs = 0 at alpha = 28.8 deg in the Si hemicylinder, s polarization.\nReported: Table I s design: Rp = 0.989, Rs = 0.001 at alpha = 28.8 deg. Absorber in direct contact with Si (no films): Rp = 0.82, Rs = 0.93 (text p. 2112).\nNotes: Same assumptions as Harrick1970-TableI-p: h/lambda thicknesses scaled with reference_nm = 1000 (0.043 -> 43 nm, 0.260 -> 260 nm); paper's list reversed (FTR film next to the Si hemicylinder). Fig. 5 (p. 2114) uses this s design scaled to 4 um with a gold emitter replacing the absorber (gold index at 4 um not given; not rebuilt).\nLayers from Table I (s design), p. 2112; construction Fig. 1, p. 2111; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours Rp 0.989, Rs 0.011 at 28.8 deg, 1000 nm; paper Rp 0.989, Rs 0.001 (Tables I and III).",
+  "Wavelength": [
+    1000
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 n=1.45 FTR film (Harrick 1970)",
+      "N": [
+        1.45
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.45,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n2 = 1.45 (SiO2) FTR film",
+        "IsCatalogueGlass": false
+      }
+    },
+    {
+      "Name": "Si n=3.1 cavity film (Harrick 1970)",
+      "N": [
+        3.1
+      ],
+      "K": [
+        0
+      ],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          3.1,
+          0
+        ],
+        "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n1 = 3.1 (Si) evaporated cavity film",
+        "IsCatalogueGlass": false
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 260,
+      "Variable": true
+    },
+    {
+      "Material": 1,
+      "Thickness": 43,
+      "Variable": true
+    }
+  ],
+  "Points": [
+    {
+      "Wavelength": 0,
+      "AngleDegrees": 28.8
+    }
+  ],
+  "Incident": {
+    "Name": "Si n=3.5 hemicylinder (Harrick 1970)",
+    "N": [
+      3.5
+    ],
+    "K": [
+      0
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        3.5,
+        0
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1, Tables I and IV: n = 3.5 (Si) hemicylinder",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Exit": {
+    "Name": "Absorber n=1.4 k=0.04 (Harrick 1970)",
+    "N": [
+      1.4
+    ],
+    "K": [
+      0.04
+    ],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1.4,
+        0.04
+      ],
+      "Source": "Harrick & Turner 1970, Fig. 1 and Tables I-III: n0 = 1.4 - i0.04",
+      "IsCatalogueGlass": false
+    }
+  },
+  "Operands": [
+    {
+      "Code": "RS",
+      "Comparison": "EQUAL",
+      "Target": 0,
+      "Weight": 1,
+      "Scale": 0.01,
+      "Tolerance": 0,
+      "TargetHi": 0,
+      "Points": [
+        0
+      ],
+      "Reduction": "SUM",
+      "Sharpness": 0,
+      "Threshold": 0,
+      "Temperature": 0
+    }
+  ],
+  "Norm": "L2",
+  "LowerBound": 1,
+  "UpperBound": 600,
+  "WavelengthUnit": "nm",
+  "ThicknessUnit": "nm",
+  "ReferenceWavelength": 1000,
+  "Plot": {
+    "From": 900,
+    "To": 1100,
+    "Steps": 201,
+    "Angle": 28.8,
+    "Quantities": [
+      "RS",
+      "RP"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 1000
+  },
+  "BackSurface": false,
+  "SubstrateThicknessMm": 1,
+  "AngleInAir": false
+}

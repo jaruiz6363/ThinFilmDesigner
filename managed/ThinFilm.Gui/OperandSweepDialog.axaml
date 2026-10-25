@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ThinFilm.Gui.OperandSweepDialog"
+        Title="Add Operands" Width="580" SizeToContent="Height"
+        CanResize="False" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+
+  <!-- THE THREE ADD DIALOGS ARE ONE: Add Operands (a band at one AOI), Add Operands Multiple AOI
+       (a band at each of several AOIs) and Add Operands Single Wv (one wavelength at several AOIs)
+       differ only in which boxes show. One row is added per wavelength and AOI, at the end of the
+       table; the count says how many before OK. -->
+  <StackPanel Margin="16" Spacing="10">
+    <TextBlock x:Name="IntroText" TextWrapping="Wrap" FontSize="12" Foreground="#505050"/>
+
+    <Grid ColumnDefinitions="180,*,12,*,12,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+      <Grid.Styles>
+        <Style Selector="Grid > TextBlock">
+          <Setter Property="VerticalAlignment" Value="Center"/>
+          <Setter Property="Margin" Value="0,0,8,8"/>
+        </Style>
+        <Style Selector="Grid > TextBox, Grid > ComboBox">
+          <Setter Property="Margin" Value="0,0,0,8"/>
+          <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+      </Grid.Styles>
+
+      <TextBlock Grid.Row="0" Text="Code"/>
+      <ComboBox Grid.Row="0" Grid.Column="1" x:Name="CodeBox"/>
+      <TextBlock Grid.Row="0" Grid.Column="3" Text="Mode" HorizontalAlignment="Right"/>
+      <ComboBox Grid.Row="0" Grid.Column="5" x:Name="ModeBox"/>
+
+      <TextBlock Grid.Row="1" Text="Target"/>
+      <TextBox Grid.Row="1" Grid.Column="1" x:Name="TargetBox"/>
+      <TextBlock Grid.Row="1" Grid.Column="3" x:Name="Target2Label" Text="Target 2" HorizontalAlignment="Right"/>
+      <TextBox Grid.Row="1" Grid.Column="5" x:Name="Target2Box"/>
+
+      <TextBlock Grid.Row="2" Text="Weight"/>
+      <TextBox Grid.Row="2" Grid.Column="1" x:Name="WeightBox"/>
+
+      <!-- WV1, WV2 and Step WV; Single Wv shows WV1 alone. -->
+      <TextBlock Grid.Row="3" x:Name="WavelengthLabel" Text="WV1, WV2, Step WV (nm)"/>
+      <TextBox Grid.Row="3" Grid.Column="1" x:Name="Wavelength1Box" Watermark="WV1"/>
+      <TextBox Grid.Row="3" Grid.Column="3" x:Name="Wavelength2Box" Watermark="WV2"/>
+      <TextBox Grid.Row="3" Grid.Column="5" x:Name="WavelengthStepBox" Watermark="Step WV"/>
+
+      <!-- AOI alone, or Start AOI, End AOI and Step AOI. -->
+      <TextBlock Grid.Row="4" x:Name="AngleLabel" Text="AOI (°)"/>
+      <TextBox Grid.Row="4" Grid.Column="1" x:Name="Angle1Box"/>
+      <TextBox Grid.Row="4" Grid.Column="3" x:Name="Angle2Box" Watermark="End AOI"/>
+      <TextBox Grid.Row="4" Grid.Column="5" x:Name="AngleStepBox" Watermark="Step AOI"/>
+    </Grid>
+
+    <TextBlock x:Name="CountText" FontWeight="SemiBold" TextWrapping="Wrap"/>
+    <TextBlock x:Name="ProblemText" Foreground="Firebrick" TextWrapping="Wrap"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+      <Button x:Name="OkButton" Content="Add" IsDefault="True" MinWidth="72"/>
+      <Button x:Name="CancelButton" Content="Cancel" IsCancel="True" MinWidth="72"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

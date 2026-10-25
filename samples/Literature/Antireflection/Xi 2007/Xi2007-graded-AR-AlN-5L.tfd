@@ -1,0 +1,141 @@
+{
+  "Version": 2,
+  "Name": "Xi2007-graded-AR-AlN-5L",
+  "Source": "J.-Q. Xi, M. F. Schubert, J. K. Kim, E. F. Schubert, M. Chen, S.-Y. Lin, W. Liu, and J. A. Smart, \"Optical thin-film materials with low refractive index for broadband elimination of Fresnel reflection,\" Nat. Photonics 1, 176-179 (2007). doi:10.1038/nphoton.2007.26 - Table 1, p. 178 (vapour incident angle, measured thickness and measured refractive index at 632.8 nm of layers 1-5); Fig. 3a; text p. 177-178",
+  "Notes": "Five-layer TiO2/SiO2 nanorod graded-index (step approximation of a modified-quintic profile) broadband, omnidirectional antireflection coating on AlN, air ambient\nSpecification: Low reflectance at all angles and over the visible/near-IR; measured R < 0.3 % for 0-55 deg at 632.8 nm (both polarizations) and R < 0.5 % from 574 to 1010 nm at normal incidence.\nReported: Measured at 632.8 nm (He-Ne, Fig. 4b): R = 0.14 % (TE) and 0.17 % (TM) at 5 deg; lowest R = 0.10 % at 30 deg (TE); R < 0.3 % for both polarizations from 0 to 55 deg; R rises steeply towards 90 deg. Fig. 4b calculated curves at 632.8 nm: TE ~0.1 % at 0-30 deg with a minimum of ~0.02 % near 45-50 deg; TM dips to ~0.002 % near 40 deg. Normal incidence spectrum (Fig. 4c, 0.3-2.0 um): measured R < 0.5 % from 574 to 1010 nm, rising around 400 nm (bluish colour) to ~10 % near 0.35 um; the calculated curve has a deep minimum (~0.0005 %) near 0.8 um and ~3 % at 2.0 um. Photograph Fig. 3b: coated AlN R = 0.10 % vs bare AlN 12 %. Total physical thickness (sum of Table 1) 624.9 nm, consistent with the ~0.62 um height in Fig. 3a (the paper prints no total).\nNotes: Table 1 numbers the layers from the substrate (layer 1, TiO2 at 25 deg, n = 2.03, sits on AlN; Fig. 3a labels 1 at the bottom); the list here is reversed so layer 1 is the n = 1.05 SiO2 next to air. Each layer is a separate constant-index material because the paper gives only the ellipsometric index at 632.8 nm for each deposition angle; no k given (k = 0 assumed). Dispersion (e.g. the Cauchy curve of low-n SiO2 in Fig. 1b, 1.0567 at 0.4 um to 1.0535 at 0.8 um) is not given numerically, so recomputed spectra away from 632.8 nm may differ from Fig. 4c. AlN substrate n = 2.05 (text and Fig. 4a), k = 0, treated as semi-infinite; the measured data include an unremovable reflection from the roughened AlN back side, so compare recomputations with the calculated curves. Nanorod films are slightly anisotropic per the text; treated as isotropic. Angle in air.\nLayers from Table 1, p. 178 (vapour incident angle, measured thickness and measured refractive index at 632.8 nm of layers 1-5); Fig. 3a; text p. 177-178; layer 1 faces the incident medium.\nChecked with ThinFilmDesigner (2026-10-21), agrees with the paper: ours at 632.8 nm, 5 deg: Rs 0.099 %, Rp 0.096 %; R < 0.5 % from 521 to 1201 nm; paper measured Rs 0.14 %, Rp 0.17 % at 5 deg; measured R < 0.5 % from 574 to 1010 nm (calculated curve lower). Indices are the paper’s ellipsometric values at 632.8 nm, held constant, so the band edges away from 632.8 nm are approximate; the measured curve is higher than the calculated one, as in the paper.",
+  "Wavelength": [
+    632.8
+  ],
+  "Materials": [
+    {
+      "Name": "SiO2 nanorod -87deg n=1.05 (Xi 2007)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.05,
+          0
+        ],
+        "Source": "Xi et al. 2007, Table 1, layer 5: SiO2, -87 deg, n = 1.05 at 632.8 nm (text: n = 1.05 for SiO2 grown at 87 deg)"
+      }
+    },
+    {
+      "Name": "SiO2 nanorod -68deg n=1.27 (Xi 2007)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.27,
+          0
+        ],
+        "Source": "Xi et al. 2007, Table 1, layer 4: SiO2, -68 deg, n = 1.27 at 632.8 nm"
+      }
+    },
+    {
+      "Name": "TiO2 nanorod 65deg n=1.67 (Xi 2007)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.67,
+          0
+        ],
+        "Source": "Xi et al. 2007, Table 1, layer 3: TiO2, 65 deg, n = 1.67 at 632.8 nm"
+      }
+    },
+    {
+      "Name": "TiO2 nanorod 40deg n=1.97 (Xi 2007)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          1.97,
+          0
+        ],
+        "Source": "Xi et al. 2007, Table 1, layer 2: TiO2, 40 deg, n = 1.97 at 632.8 nm"
+      }
+    },
+    {
+      "Name": "TiO2 nanorod 25deg n=2.03 (Xi 2007)",
+      "N": [],
+      "K": [],
+      "Model": {
+        "Kind": "CONSTANT",
+        "Coefficients": [
+          2.03,
+          0
+        ],
+        "Source": "Xi et al. 2007, Table 1, layer 1: TiO2, vapour incident angle 25 deg, measured refractive index 2.03 at 632.8 nm"
+      }
+    }
+  ],
+  "Layers": [
+    {
+      "Material": 0,
+      "Thickness": 223
+    },
+    {
+      "Material": 1,
+      "Thickness": 145
+    },
+    {
+      "Material": 2,
+      "Thickness": 99.3
+    },
+    {
+      "Material": 3,
+      "Thickness": 80.2
+    },
+    {
+      "Material": 4,
+      "Thickness": 77.4
+    }
+  ],
+  "Points": [],
+  "Incident": {
+    "Name": "air",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        1,
+        0
+      ],
+      "Source": "n = 1 exactly"
+    }
+  },
+  "Exit": {
+    "Name": "n=2.05",
+    "N": [],
+    "K": [],
+    "Model": {
+      "Kind": "CONSTANT",
+      "Coefficients": [
+        2.05,
+        0
+      ]
+    }
+  },
+  "Operands": [],
+  "ReferenceWavelength": 632.8,
+  "AngleInAir": false,
+  "Plot": {
+    "From": 300,
+    "To": 2000,
+    "Steps": 201,
+    "Angle": 0,
+    "Quantities": [
+      "RA"
+    ],
+    "VsAngle": false,
+    "AngleFrom": 0,
+    "AngleTo": 89,
+    "AngleSteps": 90,
+    "Wavelength": 632.8
+  }
+}
