@@ -10,6 +10,9 @@ There are three ways to get the program, from least to most work:
 
 ## 1. Installing
 
+The downloads are on the [release page](https://github.com/jaruiz6363/ThinFilmDesigner/releases/latest),
+with `SHA256SUMS.txt` to check them.
+
 | Platform | Download | Then |
 |---|---|---|
 | Windows | the installer (`.exe`) | Run it. It installs the GUI, `thinfilm` (the command line) and `thinfilm-mcp` (the MCP server) in `C:\Program Files\ThinFilmDesigner`, and can add that folder to your PATH. |
@@ -72,7 +75,8 @@ The engine is one library:
 | macOS | `libthinfilm_native.dylib` |
 | Linux | `libthinfilm_native.so` |
 
-Download the one for your platform from the release, and put it in a folder called `build` in
+Download the one for your platform from the
+[release page](https://github.com/jaruiz6363/ThinFilmDesigner/releases/latest), and put it in a folder called `build` in
 the top folder (create it). The .NET build looks for it there, in `build` or any folder inside
 it, and copies it next to each program. Then:
 
